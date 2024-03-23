@@ -7,6 +7,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="./menu.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="module" src="controller.js"></script>
 </head>
 
 <body>
@@ -30,88 +31,115 @@
 				<li><a href="https://www.naturgy.com/sala-de-prensa/">Sala de prensa</a></li>
 			</ul>
 		</div>
-		<img src="https://stpropwebcorporativangy.blob.core.windows.net/uploads/2022/10/logo-naturgy.svg" data-src="https://stpropwebcorporativangy.blob.core.windows.net/uploads/2022/10/logo-naturgy.svg" class="custom-logo" alt="Naturgy" decoding="async">
+		<img src="https://stpropwebcorporativangy.blob.core.windows.net/uploads/2022/10/logo-naturgy.svg"
+			data-src="https://stpropwebcorporativangy.blob.core.windows.net/uploads/2022/10/logo-naturgy.svg"
+			class="custom-logo" alt="Naturgy" decoding="async">
 	</div>
 	<div class="formClient">
 		Pásate a <span>Naturgy</span>
 	</div>
 	<div class="formulario">
-		<ul>
-			<li>
-				<fieldset>
-					<label for="tipoDocumento">Tipo de documento:</label><br>
-					<input type="text" name="tipoDocumento" id="tipoDocumento" placeholder="Tipo de documento">
-				</fieldset>
-			</li>
-			<li>
-				<fieldset>
-					<label for="nacionalidad">Nacionalidad:</label><br>
-					<input type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
-				</fieldset>
-			</li>
-			<li>
-				<fieldset>
-					<label for="numeroDocumento">Número de documento:</label><br>
-					<input type="text" name="numeroDocumento" id="numeroDocumento" placeholder="Número de documento:">
-				</fieldset>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<fieldset>
-					<label for="nombre">Nombre:</label><br>
-					<input type="text" name="nombre" id="nombre" placeholder="Nombre">
-				</fieldset>
-			</li>
-			<li>
-				<fieldset>
-					<label for="primerApellido">Primer apellido:</label><br>
-					<input type="text" name="primerApellido" id="primerApellido" placeholder="Primer apellido">
-				</fieldset>
-			</li>
-			<li>
-				<fieldset>
-					<label for="segundoApellido">Segundo apellido:</label><br>
-					<input type="text" name="segundoApellido" id="segundoApellido" placeholder="Segundo apellido">
-				</fieldset>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<fieldset>
-					<label for="telefonoMovil">Telefono móvil:</label><br>
-					<input type="text" name="telefonoMovil" id="telefonoMovil" placeholder="Teléfono móvil">
-				</fieldset>
-			</li>
-			<li>
-				<fieldset>
-					<label for="email">Email:</label><br>
-					<input type="text" name="email" id="email" placeholder="Email" autocomplete="on">
-				</fieldset>
-			</li>
-			<li>
-				<p></p>
-				<p>Información básica sobre Protección de Datos.</p>
-				<p>
-					Sus datos personales recabados durante el proceso de contratación serán tratados por NATURGY IBERIA, S.A. (“Naturgy”), en su condición de responsable del tratamiento, para el mantenimiento, desarrollo y gestión de la relación contractual. Le informamos de que, durante el proceso de contratación, Naturgy podrá consultar información sobre su solvencia patrimonial y de incumplimiento de obligaciones dinerarias, financieras o de crédito, lo que dará lugar a la adopción de una decisión automatizada sobre la aprobación o denegación de su solicitud de contratación. Asimismo, Naturgy tratará sus datos para consultarle sobre su grado de satisfacción con el servicio recibido o producto contratado, remitirle comunicaciones informativas relacionadas con dicho producto o servicio, realizar estudios de mercado, gestionar los impagos, elaborar un perfil básico comercial sobre usted y enviarle comunicaciones comerciales sobre productos de Naturgy similares a los ya contratados. Adicionalmente solicitamos su consentimiento, que podrá revocar libremente y de manera gratuita en cualquier momento, para las siguientes finalidades (tiene información detallada sobre cada una de ellas en nuestra 
-					<a target="_blank" href="https://www.naturgy.es/legal/politica_privacidad_naturgy">Política de Privacidad</a>):
-				</p>
-				<p>
-					<input type="checkbox" name="aaa" id="aaa">Quiero que mis datos sean comunicados solamente a empresas del Grupo Naturgy y sus entidades colaboradoras para que me puedan ofrecer sus productos y servicios.
-				</p>
-				<p>
-					<input type="checkbox" name="aaa" id="aaa">Quiero que Naturgy me remita, incluso por medios electrónicos, comunicaciones comerciales de productos y servicios, propios o de terceros colaboradores de Naturgy, aunque sean diferentes a los que ya tenga contratados, e incluso después de finalizada mi relación contractual con Naturgy.
-				</p>
-				<p>
-					<input type="checkbox" name="aaa" id="aaa">Quiero que Naturgy realice un perfil complejo sobre mi persona con fines comerciales, utilizando para ello tanto los datos derivados de mi relación contractual como otros obtenidos de terceras fuentes, públicas o privadas, para de este modo predecir productos o servicios que me puedan interesar.
-				</p>
-			</li>
-			<li>
-				<button class="continuar" tabindex="0" type="submit">
-					<span class="MuiButton-label">Continuar</span>
-				</button>
-			</li>
-		</ul>
+		<form action="" method="get">
+			<ul>
+				<li>
+					<fieldset>
+						<label for="tipoDocumento">Tipo de documento:</label><br>
+						<input type="text" name="tipoDocumento" id="tipoDocumento" placeholder="Tipo de documento">
+					</fieldset>
+				</li>
+				<li>
+					<fieldset>
+						<label for="nacionalidad">Nacionalidad:</label><br>
+						<input type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+					</fieldset>
+				</li>
+				<li>
+					<fieldset>
+						<label for="numeroDocumento">Número de documento:</label><br>
+						<input type="text" name="numeroDocumento" id="numeroDocumento"
+							placeholder="Número de documento:">
+					</fieldset>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<fieldset>
+						<label for="nombre">Nombre:</label><br>
+						<input type="text" name="nombre" id="nombre" placeholder="Nombre">
+					</fieldset>
+				</li>
+				<li>
+					<fieldset>
+						<label for="primerApellido">Primer apellido:</label><br>
+						<input type="text" name="primerApellido" id="primerApellido" placeholder="Primer apellido">
+					</fieldset>
+				</li>
+				<li>
+					<fieldset>
+						<label for="segundoApellido">Segundo apellido:</label><br>
+						<input type="text" name="segundoApellido" id="segundoApellido" placeholder="Segundo apellido">
+					</fieldset>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<fieldset>
+						<label for="telefonoMovil">Telefono móvil:</label><br>
+						<input type="text" name="telefonoMovil" id="telefonoMovil" placeholder="Teléfono móvil">
+					</fieldset>
+				</li>
+				<li>
+					<fieldset>
+						<label for="email">Email:</label><br>
+						<input type="text" name="email" id="email" placeholder="Email" autocomplete="on">
+					</fieldset>
+				</li>
+				<li>
+					<p></p>
+					<p>Información básica sobre Protección de Datos.</p>
+					<p>
+						Sus datos personales recabados durante el proceso de contratación serán tratados por NATURGY
+						IBERIA, S.A. (“Naturgy”), en su condición de responsable del tratamiento, para el mantenimiento,
+						desarrollo y gestión de la relación contractual. Le informamos de que, durante el proceso de
+						contratación, Naturgy podrá consultar información sobre su solvencia patrimonial y de
+						incumplimiento de obligaciones dinerarias, financieras o de crédito, lo que dará lugar a la
+						adopción de una decisión automatizada sobre la aprobación o denegación de su solicitud de
+						contratación. Asimismo, Naturgy tratará sus datos para consultarle sobre su grado de
+						satisfacción con el servicio recibido o producto contratado, remitirle comunicaciones
+						informativas relacionadas con dicho producto o servicio, realizar estudios de mercado, gestionar
+						los impagos, elaborar un perfil básico comercial sobre usted y enviarle comunicaciones
+						comerciales sobre productos de Naturgy similares a los ya contratados. Adicionalmente
+						solicitamos su consentimiento, que podrá revocar libremente y de manera gratuita en cualquier
+						momento, para las siguientes finalidades (tiene información detallada sobre cada una de ellas en
+						nuestra
+						<a target="_blank" href="https://www.naturgy.es/legal/politica_privacidad_naturgy">Política de
+							Privacidad</a>):
+					</p>
+					<p>
+						<input type="checkbox" name="restr1" id="restr1" value="true">Quiero que mis datos sean comunicados solamente a
+						empresas del Grupo Naturgy y sus entidades colaboradoras para que me puedan ofrecer sus
+						productos y servicios.
+					</p>
+					<p>
+						<input type="checkbox" name="restr2" id="restr2">Quiero que Naturgy me remita, incluso por medios
+						electrónicos, comunicaciones comerciales de productos y servicios, propios o de terceros
+						colaboradores de Naturgy, aunque sean diferentes a los que ya tenga contratados, e incluso
+						después de finalizada mi relación contractual con Naturgy.
+					</p>
+					<p>
+						<input type="checkbox" name="restr3" id="restr3">Quiero que Naturgy realice un perfil complejo sobre
+						mi persona con fines comerciales, utilizando para ello tanto los datos derivados de mi relación
+						contractual como otros obtenidos de terceras fuentes, públicas o privadas, para de este modo
+						predecir productos o servicios que me puedan interesar.
+					</p>
+				</li>
+				<li>
+					<button class="continuar" tabindex="0" type="submit">
+						<span class="MuiButton-label">Continuar</span>
+					</button>
+				</li>
+			</ul>
+		</form>
 	</div>
 	<div class="footer">
 		<ul>
@@ -119,5 +147,6 @@
 			<li>Avenida de América, 38 28028 Madrid</li>
 		</ul>
 	</div>
-	</body>
+</body>
+
 </html>
