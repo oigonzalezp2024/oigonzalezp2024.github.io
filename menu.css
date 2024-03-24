@@ -1,13 +1,10 @@
-*{
-    margin:0px;
-    padding:0px;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 .menu {
-    width: 95%;
-    height: 130px;
-    color: rgb(0, 69, 113);
-    font-family: "FS Emeric", sans-serif;
+    display: none;
 }
 
 .formClient {
@@ -20,21 +17,16 @@
     padding-top: 34px;
     padding-left: 50px;
     background-color: #e2e2e2;
-    height: 110px;
+    height: 150px;
+    width: 100%;
 }
 
 .formClient span {
     color: #004571;
 }
 
-.formulario {
-    color: #747474;
-    height: 250px;
-    background-color: #ffffff;
-}
-
 .borde {
-    width: 1140px;
+    width: 100%;/*width: 1140px;*/
     height: 12px;
     background-color: rgb(255, 255, 255);
     float: right;
@@ -46,7 +38,11 @@
     float: right;
 }
 
-a, a:link, a:visited, a:hover, a:active{
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
     padding-top: 5px;
     margin-top: 5px;
     text-decoration: none;
@@ -68,7 +64,7 @@ a, a:link, a:visited, a:hover, a:active{
     border-right: 1px #ffffff solid;
 }
 
-.menu a:hover{
+.menu a:hover {
     padding-bottom: 9px;
     border-bottom: 4px #E57200 solid;
 }
@@ -78,15 +74,25 @@ a, a:link, a:visited, a:hover, a:active{
     font-size: 1.2em;
 }
 
+.formulario {
+    margin: 5px;
+    color: #747474;
+    height: 1900px;
+    padding-left: 5px;
+    max-width: 320px;
+}
+
 .formulario li {
     display: inline;
-    max-width: 200px;
+    width: 95%;/*max-width: 200px;*/
     margin-top: 16px;
 }
 
 .formulario li label {
     float: left;
-    font-size: 12px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .formulario li input {
@@ -94,29 +100,7 @@ a, a:link, a:visited, a:hover, a:active{
     font-size: 24px;
 }
 
-fieldset {
-    display: inline;
-    background-color: #ffffff;
-    border: 1px #747474 solid;
-    border-top:0px;
-    border-right:0px;
-    margin: 5px;
-    padding: 5px;
-}
-
-.formulario {
-    margin: 50px;
-    color: #747474;
-    height: 650px;
-}
-
-.formulario li label {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.formulario li p:first-child{
+.formulario li p:first-child {
     margin-top: 50px;
 }
 
@@ -124,14 +108,24 @@ fieldset {
     margin-bottom: 25px;
 }
 
-.formulario ul li input{
+.formulario ul li input {
     border: 0px;
 }
 
-.formulario ul li input:focus{
+.formulario ul li input:focus {
     border: 0px;
     outline: none;
-  }
+}
+
+fieldset {
+    display: inline;
+    background-color: #ffffff;
+    border: 1px #747474 solid;
+    border-top: 0px;
+    border-right: 0px;
+    margin: 5px;
+    padding: 5px;
+}
 
 .custom-logo {
     margin-left: 50px;
@@ -151,7 +145,7 @@ fieldset {
     line-height: 1.2;
     padding-left: 16px;
     padding-right: 16px;
-    background-color:#E57200;
+    background-color: #E57200;
     float: right;
     margin-bottom: 50px;
 }
@@ -159,7 +153,7 @@ fieldset {
 .footer {
     background-color: #e2e2e2;
     padding-left: 50px;
-    width: 100%;
+    /*width: 100%;*/
     height: 100px;
 }
 
@@ -174,4 +168,28 @@ input[type="checkbox"] {
     margin-right: 16px;
     box-shadow: 3px 3px rgb(144, 183, 255);
     border-radius: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .menu {
+        display: block;
+
+        width: 95%;
+        height: 130px;
+        color: rgb(0, 69, 113);
+        font-family: "FS Emeric", sans-serif;
+    }
+
+    .formClient {
+        height: 110px;
+    }
+    
+    .formulario {
+        margin: 50px;
+        height: 650px;
+        padding-left: 0px;
+        max-width: 100%;
+    }
 }
