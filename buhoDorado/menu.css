@@ -209,7 +209,8 @@ li::marker {
     font-size: 1.5em;
 }
 
-#remitente {
+#remitente,
+#destinatario {
     background-color: #00000000;
     border: 2px #00000000 solid;
     display: block;
@@ -217,7 +218,10 @@ li::marker {
 
 #remitente>ul>li>fieldset>label,
 #remitente>ul>li>h2,
-#remitente>ul:nth-child(3)>li:nth-child(3)>p:nth-child(2) {
+#remitente>ul:nth-child(3)>li:nth-child(3)>p:nth-child(2),
+#destinatario>ul>li>fieldset>label,
+#destinatario>ul>li>h2,
+#destinatario>ul:nth-child(3)>li:nth-child(3)>p:nth-child(2) {
     margin-right: 50px;
     color: #b89859;
 }
@@ -239,7 +243,7 @@ li::marker {
     margin-right: 10px;
 }
 
-.destinatario {
+#destinatario {
     display: none;
 }
 

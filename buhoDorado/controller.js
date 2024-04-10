@@ -1,4 +1,5 @@
-function getQueryVariable(variable) {
+function getQueryVariable(variable)
+{
     var query = window.location.search.substring(1);
     var vars = query.split("&");
     for (var i = 0; i < vars.length; i++) {
@@ -10,7 +11,8 @@ function getQueryVariable(variable) {
     return false;
 }
 
-function myFunction() {
+function myFunction()
+{
     var x = document.getElementById("myLinks");
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -19,8 +21,20 @@ function myFunction() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function desapareceMercadeo()
+{
+    const element = document.getElementsByClassName("logotipo");
+    const formClient = document.getElementsByClassName("formClient");
+    const mercadeo = document.getElementsByClassName("mercadeo");
+    mercadeo[0].style.display = "none";
+    formClient[0].style.display = "none"
+    for(let i of element){
+        i.style.display = "none";
+    }
+}
 
+document.addEventListener("DOMContentLoaded", () => {
+    
     const tipoDocumento = document.getElementById("tipoDocumento");
     const nacionalidad = document.getElementById("nacionalidad");
     const numeroDocumento = document.getElementById("numeroDocumento");
@@ -107,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         restr1.value = "";
         remitente.style.display = "block";
     } else if (tipoDocumentor.value == "false") {
+        desapareceMercadeo();
         tipoDocumentor.value = "";
         nacionalidadr.value = "";
         numeroDocumentor.value = "";
