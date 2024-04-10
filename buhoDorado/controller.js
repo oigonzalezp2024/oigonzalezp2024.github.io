@@ -1,0 +1,122 @@
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return false;
+}
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const tipoDocumento = document.getElementById("tipoDocumento");
+    const nacionalidad = document.getElementById("nacionalidad");
+    const numeroDocumento = document.getElementById("numeroDocumento");
+    const nombre = document.getElementById("nombre");
+    const primerApellido = document.getElementById("primerApellido");
+    const segundoApellido = document.getElementById("segundoApellido");
+    const telefonoMovil = document.getElementById("telefonoMovil");
+    const email = document.getElementById("email");
+    const restr1 = document.getElementById("restr1");
+
+    const tipoDocumentor = document.getElementById("tipoDocumentor");
+    const nacionalidadr = document.getElementById("nacionalidadr");
+    const numeroDocumentor = document.getElementById("numeroDocumentor");
+    const nombrer = document.getElementById("nombrer");
+    const primerApellidor = document.getElementById("primerApellidor");
+    const segundoApellidor = document.getElementById("segundoApellidor");
+    const telefonoMovilr = document.getElementById("telefonoMovilr");
+    const emailr = document.getElementById("emailr");
+
+    const destinatario = document.getElementById("destinatario");
+    const remitente = document.getElementById("remitente");
+    const btnMenu = document.getElementById("btnMenu");
+
+    tipoDocumento.value = getQueryVariable("tipoDocumento");
+    nacionalidad.value = getQueryVariable("nacionalidad");
+    numeroDocumento.value = getQueryVariable("numeroDocumento");
+    nombre.value = getQueryVariable("nombre");
+    primerApellido.value = getQueryVariable("primerApellido");
+    segundoApellido.value = getQueryVariable("segundoApellido");
+    telefonoMovil.value = getQueryVariable("telefonoMovil");
+    email.value = getQueryVariable("email");
+    restr1.value = getQueryVariable("restr1");
+
+    tipoDocumentor.value = getQueryVariable("tipoDocumentor");
+    nacionalidadr.value = getQueryVariable("nacionalidadr");
+    numeroDocumentor.value = getQueryVariable("numeroDocumentor");
+    nombrer.value = getQueryVariable("nombrer");
+    primerApellidor.value = getQueryVariable("primerApellidor");
+    segundoApellidor.value = getQueryVariable("segundoApellidor");
+    telefonoMovilr.value = getQueryVariable("telefonoMovilr");
+    emailr.value = getQueryVariable("emailr");
+
+    btnMenu.addEventListener("click", ()=>{
+        myFunction();
+    });
+
+    //let data = window.location.href.replace("https://oigonzalezp2024.github.io/naturgy?",""); // MAIN
+    //let data = window.location.href.replace("https://oigonzalezp2024.github.io/naturgy/index.html?",""); // MAIN
+    let data = window.location.href.replace("http://127.0.0.1:5500/buho/index.html?", ""); // DEVELOP
+    data = data.replace("http://127.0.0.1:5500/buho/?", ""); // DEVELOP
+
+    for (let i = 0; i < data.length; i++) {
+        data = data.replace("=", ":%20").replace("&", "%0A");
+    }
+
+    data = data.replace("tipoDocumento", "%0A*Remitente:*%0A*Tipo%20de%20documento*");
+    data = data.replace("nacionalidad", "*Nacionalidad*");
+    data = data.replace("numeroDocumento", "*Número%20de%20documento*");
+    data = data.replace("nombre", "*Nombre*");
+    data = data.replace("primerApellido", "*Primer%20apellido*");
+    data = data.replace("segundoApellido", "*Segundo%20apellido*");
+    data = data.replace("telefonoMovil", "*Teléfono%20móvil*");
+    data = data.replace("email", "*Correo*");
+
+    data = data.replace("tipoDocumentor", "%0A*Destinatario:*%0A*Tipo%20de%20documento*");
+    data = data.replace("nacionalidadr", "*Nacionalidad*");
+    data = data.replace("numeroDocumentor", "*Numero%20de%20documento*");
+    data = data.replace("nombrer", "*Nombre*");
+    data = data.replace("primerApellidor", "*Primer%20apellido*");
+    data = data.replace("segundoApellidor", "*Segundo%20apellido*");
+    data = data.replace("telefonoMovilr", "*Teléfono%20móvil*");
+    data = data.replace("emailr", "*Correo*");
+
+    if (tipoDocumento.value == "false") {
+        tipoDocumento.value = "";
+        nacionalidad.value = "";
+        numeroDocumento.value = "";
+        nombre.value = "";
+        primerApellido.value = "";
+        segundoApellido.value = "";
+        telefonoMovil.value = "";
+        email.value = "";
+        restr1.value = "";
+        remitente.style.display = "block";
+    } else if (tipoDocumentor.value == "false") {
+        tipoDocumentor.value = "";
+        nacionalidadr.value = "";
+        numeroDocumentor.value = "";
+        nombrer.value = "";
+        primerApellidor.value = "";
+        segundoApellidor.value = "";
+        telefonoMovilr.value = "";
+        emailr.value = "";
+        remitente.style.display = "none";
+        destinatario.style.display = "block";
+    } else {
+        window.location.href = "https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20Vi%20tu%20página%20Necesito%20hacer%20una%20transferencia.%0A" + data;
+    }
+});

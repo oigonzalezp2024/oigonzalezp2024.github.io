@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Buho dorado cambios</title>
+	<link rel="stylesheet" href="./menu.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="module" src="controller.js"></script>
+</head>
+
+<body>
+	<!-- Simulate a smartphone / tablet -->
+	<div class="mobile-container">
+
+		<!-- Top Navigation Menu -->
+		<div class="topnav">
+			<a href="#home" class="active">Buho Dorado Cambios</a>
+			<div id="myLinks">
+				<a href="#remitente">Deseo enviar dinero</a>
+				<a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel">Conócenos</a>
+				<a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20tengo%20un%20PQR.">PQR's</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" id="btnMenu">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<div style="padding-left:16px">
+			<img class="logotipo logo" src="./images/logotipo.jpg">
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="menu">
+		<div class="borde"></div>
+		<div class="links">
+			<ul>
+				<li><a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20Deseo%20trabajar%20contigo.">Trabajacon nosotros</a></li>
+				<li><a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel"><i class="fa fa-search"></i></a></li>
+			</ul>
+		</div>
+		<div class="links">
+			<ul>
+				<li><a href="#remitente">Deseo enviar dinero</a></li>
+				<li><a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel">Conócenos</a></li>
+				<li><a href="https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20tengo%20un%20PQR.">PQR's</a></li>
+			</ul>
+		</div>
+		<img src="./images/241498872_363700911871696_3962147202817386670copy.jpg"
+			data-src="https://stpropwebcorporativangy.blob.core.windows.net/uploads/2022/10/logo-naturgy.svg"
+			class="custom-logo" alt="Naturgy" decoding="async">
+	</div>
+	<div class="formClient">
+		<span></span>
+		<img class="logotipo logo" src="./images/logotipo.jpg">
+		<img class="logotipo promo" src="./images/formFondo.jpg">
+		<img class="logotipo logo" src="./images/logotipo.jpg">
+		<img class="logotipo promo" src="./images/formFondo.jpg">
+	</div>
+	<div class="mercadeo"></div>
+	<div class="formClient">
+		<span></span>
+		<img src="./images/formFondo.jpg">
+	</div>
+	<div class="formulario">
+		<form action="" method="get">
+			<fieldset class="remitente" id="remitente">
+				<ul>
+					<li>
+						<h2>Datos que quien envía:</h2><br>
+					</li>
+					<li>
+						<fieldset>
+							<label for="tipoDocumento">Tipo de documento:</label><br>
+							<input type="text" name="tipoDocumento" id="tipoDocumento" placeholder="Tipo de documento">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="nacionalidad">Nacionalidad:</label><br>
+							<input type="text" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="numeroDocumento">Número de documento:</label><br>
+							<input type="text" name="numeroDocumento" id="numeroDocumento"
+								placeholder="Número de documento:">
+						</fieldset>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<fieldset>
+							<label for="nombre">Nombre:</label><br>
+							<input type="text" name="nombre" id="nombre" placeholder="Nombre">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="primerApellido">Primer apellido:</label><br>
+							<input type="text" name="primerApellido" id="primerApellido" placeholder="Primer apellido">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="segundoApellido">Segundo apellido:</label><br>
+							<input type="text" name="segundoApellido" id="segundoApellido"
+								placeholder="Segundo apellido">
+						</fieldset>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<fieldset>
+							<label for="telefonoMovil">Telefono móvil:</label><br>
+							<input type="text" name="telefonoMovil" id="telefonoMovil" placeholder="Teléfono móvil">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="email">Email:</label><br>
+							<input type="text" name="email" id="email" placeholder="Email" autocomplete="on">
+						</fieldset>
+					</li>
+					<li>
+						<p></p>
+						<p>
+							<input type="checkbox" name="restr1" id="restr1" value="true">
+							Entiendo que mis datos son usados exclusivamente para la operación que voy a realizar
+							y que soy absolutamente responsable de mis acciones ante la ley.
+						</p>
+					</li>
+					<li>
+						<button id="siguiente" class="continuar" tabindex="0" type="submit">
+							<span class="MuiButton-label">Continuar</span>
+						</button>
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset class="destinatario" id="destinatario">
+				<ul>
+					<li>
+						<h2>Datos que quien recibe:</h2><br>
+					</li>
+					<li>
+						<fieldset>
+							<label for="tipoDocumentor">Tipo de documento:</label><br>
+							<input type="text" name="tipoDocumentor" id="tipoDocumentor"
+								placeholder="Tipo de documento">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="nacionalidadr">Nacionalidad:</label><br>
+							<input type="text" name="nacionalidadr" id="nacionalidadr" placeholder="Nacionalidad">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="numeroDocumentor">Número de documento:</label><br>
+							<input type="text" name="numeroDocumentor" id="numeroDocumentor"
+								placeholder="Número de documento:">
+						</fieldset>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<fieldset>
+							<label for="nombrer">Nombre:</label><br>
+							<input type="text" name="nombrer" id="nombrer" placeholder="Nombre">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="primerApellidor">Primer apellido:</label><br>
+							<input type="text" name="primerApellidor" id="primerApellidor"
+								placeholder="Primer apellido">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="segundoApellidor">Segundo apellido:</label><br>
+							<input type="text" name="segundoApellidor" id="segundoApellidor"
+								placeholder="Segundo apellido">
+						</fieldset>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<fieldset>
+							<label for="telefonoMovilr">Telefono móvil:</label><br>
+							<input type="text" name="telefonoMovilr" id="telefonoMovilr" placeholder="Teléfono móvil">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label for="emailr">Email:</label><br>
+							<input type="text" name="emailr" id="emailr" placeholder="Email" autocomplete="on">
+						</fieldset>
+					</li>
+					<li>
+						<p></p>
+					</li>
+					<li>
+						<button class="continuar" tabindex="0" type="submit">
+							<span class="MuiButton-label">Continuar</span>
+						</button>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+	<div class="footer">
+		<ul>
+			<li>© Buho Dorado Cambios</li>
+			<li>Derechos reservados</li>
+			<li>Madrid, España.</li>
+		</ul>
+	</div>
+</body>
+
+</html>
