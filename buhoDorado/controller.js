@@ -1,18 +1,23 @@
-function getQueryVariable(variable)
-{
+function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
     for (var i = 0; i < vars.length; i++) {
         var pair = vars[i].split("=");
         if (pair[0] == variable) {
-            return pair[1];
+            let data = pair[1];
+            for (let i = 0; i < data.length; i++) {
+                    data = data.replace("%2B", " ");
+            }
+            for (let i = 0; i < data.length; i++) {
+                data =  data.replace("%20", " ");
+            }
+            return data.trim();
         }
     }
     return false;
 }
 
-function myFunction()
-{
+function myFunction() {
     var x = document.getElementById("myLinks");
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -21,20 +26,19 @@ function myFunction()
     }
 }
 
-function desapareceMercadeo()
-{
+function desapareceMercadeo() {
     const element = document.getElementsByClassName("logotipo");
     const formClient = document.getElementsByClassName("formClient");
     const mercadeo = document.getElementsByClassName("mercadeo");
     mercadeo[0].style.display = "none";
     formClient[0].style.display = "none"
-    for(let i of element){
+    for (let i of element) {
         i.style.display = "none";
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     const tipoDocumento = document.getElementById("tipoDocumento");
     const nacionalidad = document.getElementById("nacionalidad");
     const numeroDocumento = document.getElementById("numeroDocumento");
@@ -77,37 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     telefonoMovilr.value = getQueryVariable("telefonoMovilr");
     emailr.value = getQueryVariable("emailr");
 
-    btnMenu.addEventListener("click", ()=>{
+    btnMenu.addEventListener("click", () => {
         myFunction();
     });
-
-    //let data = window.location.href.replace("http://127.0.0.1:5500/buhoDorado/index.html?", ""); // DEVELOP
-    //data = data.replace("http://127.0.0.1:5500/buhoDorado/?", "");
-    
-    let data = window.location.href.replace("https://oigonzalezp2024.github.io/buhoDorado/index.html?", ""); // MAIN
-    data = data.replace("https://oigonzalezp2024.github.io/buhoDorado/?", ""); // MAIN
-
-    for (let i = 0; i < data.length; i++) {
-        data = data.replace("=", ":%20").replace("&", "%0A");
-    }
-
-    data = data.replace("tipoDocumento", "%0A*Remitente:*%0A*Tipo%20de%20documento*");
-    data = data.replace("nacionalidad", "*Nacionalidad*");
-    data = data.replace("numeroDocumento", "*Número%20de%20documento*");
-    data = data.replace("nombre", "*Nombre*");
-    data = data.replace("primerApellido", "*Primer%20apellido*");
-    data = data.replace("segundoApellido", "*Segundo%20apellido*");
-    data = data.replace("telefonoMovil", "*Teléfono%20móvil*");
-    data = data.replace("email", "*Correo*");
-
-    data = data.replace("tipoDocumentor", "%0A*Destinatario:*%0A*Tipo%20de%20documento*");
-    data = data.replace("nacionalidadr", "*Nacionalidad*");
-    data = data.replace("numeroDocumentor", "*Numero%20de%20documento*");
-    data = data.replace("nombrer", "*Nombre*");
-    data = data.replace("primerApellidor", "*Primer%20apellido*");
-    data = data.replace("segundoApellidor", "*Segundo%20apellido*");
-    data = data.replace("telefonoMovilr", "*Teléfono%20móvil*");
-    data = data.replace("emailr", "*Correo*");
 
     if (tipoDocumento.value == "false") {
         tipoDocumento.value = "";
@@ -133,6 +109,39 @@ document.addEventListener("DOMContentLoaded", () => {
         remitente.style.display = "none";
         destinatario.style.display = "block";
     } else {
+
+        //let data = window.location.href.replace("http://127.0.0.1:5500/buhoDorado/index.html?", ""); // DEVELOP
+        //data = data.replace("http://127.0.0.1:5500/buhoDorado/?", "");                               // DEVELOP
+
+        let data = window.location.href.replace("https://oigonzalezp2024.github.io/buhoDorado/index.html?", ""); // MAIN
+        data = data.replace("https://oigonzalezp2024.github.io/buhoDorado/?", "");                               // MAIN
+
+        for (let i = 0; i < data.length; i++) {
+            data = data.replace("=", ":%20").replace("&", "%0A");
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            data = data.replace("%2B", "%20").replace("%20%20", "%20");
+        }
+
+        data = data.replace("tipoDocumento", "%0A*Remitente:*%0A*Tipo%20de%20documento*");
+        data = data.replace("nacionalidad", "*Nacionalidad*");
+        data = data.replace("numeroDocumento", "*Número%20de%20documento*");
+        data = data.replace("nombre", "*Nombre*");
+        data = data.replace("primerApellido", "*Primer%20apellido*");
+        data = data.replace("segundoApellido", "*Segundo%20apellido*");
+        data = data.replace("telefonoMovil", "*Teléfono%20móvil*");
+        data = data.replace("email", "*Correo*");
+
+        data = data.replace("tipoDocumentor", "%0A*Destinatario:*%0A*Tipo%20de%20documento*");
+        data = data.replace("nacionalidadr", "*Nacionalidad*");
+        data = data.replace("numeroDocumentor", "*Numero%20de%20documento*");
+        data = data.replace("nombrer", "*Nombre*");
+        data = data.replace("primerApellidor", "*Primer%20apellido*");
+        data = data.replace("segundoApellidor", "*Segundo%20apellido*");
+        data = data.replace("telefonoMovilr", "*Teléfono%20móvil*");
+        data = data.replace("emailr", "*Correo*");
+
         window.location.href = "https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20Vi%20tu%20página%20Necesito%20hacer%20una%20transferencia.%0A" + data;
     }
 });
