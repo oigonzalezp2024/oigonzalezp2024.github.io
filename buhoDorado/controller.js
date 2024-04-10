@@ -67,10 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
         myFunction();
     });
 
-    //let data = window.location.href.replace("https://oigonzalezp2024.github.io/naturgy?",""); // MAIN
-    //let data = window.location.href.replace("https://oigonzalezp2024.github.io/naturgy/index.html?",""); // MAIN
-    let data = window.location.href.replace("http://127.0.0.1:5500/buho/index.html?", ""); // DEVELOP
-    data = data.replace("http://127.0.0.1:5500/buho/?", ""); // DEVELOP
+    //let data = window.location.href.replace("http://127.0.0.1:5500/buhoDorado/index.html?", ""); // DEVELOP
+    //data = data.replace("http://127.0.0.1:5500/buhoDorado/?", "");
+    
+    let data = window.location.href.replace("https://oigonzalezp2024.github.io/buhoDorado/index.html?", ""); // MAIN
+    data = data.replace("https://oigonzalezp2024.github.io/buhoDorado/?", ""); // MAIN
 
     for (let i = 0; i < data.length; i++) {
         data = data.replace("=", ":%20").replace("&", "%0A");
