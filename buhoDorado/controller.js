@@ -157,6 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
         data = data.replace("telefonoMovilr", "*Teléfono%20móvil*");
         data = data.replace("emailr", "*Correo*");
 
-        window.location.href = "https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Manuel,%20Vi%20tu%20página%20Necesito%20hacer%20una%20transferencia.%0A" + data;
+        window.location.href = "https://api.whatsapp.com/send?phone=34637232468&text=Hola%20Oscar,%20Vi%20tu%20página%20Necesito%20hacer%20una%20transferencia.%0A" + data;
     }
 });
