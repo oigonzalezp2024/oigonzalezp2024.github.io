@@ -6,13 +6,13 @@ function getQueryVariable(variable) {
         if (pair[0] == variable) {
             let data = pair[1];
             for (let i = 0; i < data.length; i++) {
-                    data = data.replace("%2B", " ");
-            }
-            for (let i = 0; i < data.length; i++) {
+                data = data.replace("%2B", " ");
                 data =  data.replace("%20", " ");
+                data =  data.replace("%40", "@");
             }
             for (let i = 0; i < data.length; i++) {
-                data =  data.replace("%40", "@");
+                data = data.replace("%C3%B1", "ñ");
+                data = data.replace("%C3%91", "Ñ");
             }
             return data.trim();
         }
@@ -109,6 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
         segundoApellidor.value = "";
         telefonoMovilr.value = "";
         emailr.value = "";
+
+        emailr.setAttribute("type","email")
+
         remitente.style.display = "none";
         destinatario.style.display = "block";
     } else {
@@ -129,6 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let i = 0; i < data.length; i++) {
             data = data.replace("%40", "@");
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            data = data.replace("%C3%B1", "ñ");
+            data = data.replace("%C3%91", "Ñ");
         }
 
         data = data.replace("tipoDocumento", "%0A*Remitente:*%0A*Tipo%20de%20documento*");
