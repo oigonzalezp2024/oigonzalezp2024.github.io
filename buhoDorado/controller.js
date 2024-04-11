@@ -11,6 +11,9 @@ function getQueryVariable(variable) {
             for (let i = 0; i < data.length; i++) {
                 data =  data.replace("%20", " ");
             }
+            for (let i = 0; i < data.length; i++) {
+                data =  data.replace("%40", "@");
+            }
             return data.trim();
         }
     }
@@ -122,6 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let i = 0; i < data.length; i++) {
             data = data.replace("%2B", "%20").replace("%20%20", "%20");
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            data = data.replace("%40", "@");
         }
 
         data = data.replace("tipoDocumento", "%0A*Remitente:*%0A*Tipo%20de%20documento*");
