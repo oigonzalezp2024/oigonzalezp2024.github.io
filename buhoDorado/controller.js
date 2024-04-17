@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nombre.value = getQueryVariable("nombre");
     primerApellido.value = getQueryVariable("primerApellido");
     segundoApellido.value = getQueryVariable("segundoApellido");
-    telefonoMovil.value = getQueryVariable("telefonoMovil");
+    telefonoMovil.value = getQueryVariable("telefonoMovil").toString();
     email.value = getQueryVariable("email");
     restr1.value = getQueryVariable("restr1");
 
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nombrer.value = getQueryVariable("nombrer");
     primerApellidor.value = getQueryVariable("primerApellidor");
     segundoApellidor.value = getQueryVariable("segundoApellidor");
-    telefonoMovilr.value = getQueryVariable("telefonoMovilr");
+    telefonoMovilr.value = getQueryVariable("telefonoMovilr").toString();
     emailr.value = getQueryVariable("emailr");
 
     btnMenu.addEventListener("click", () => {
