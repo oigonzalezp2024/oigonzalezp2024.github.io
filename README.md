@@ -2,5 +2,5 @@
 Mi portafolio.
 
 # buhoDorado
-Página para casas de cambio:
-https://oigonzalezp2024.github.io/buhoDorado/index.html
+Acceder a mi portafolio.
+https://oigonzalezp2024.github.io/
