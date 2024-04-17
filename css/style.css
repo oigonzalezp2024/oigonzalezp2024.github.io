@@ -10,7 +10,7 @@ p{
 }
 
 h2 {
-  background-color: #0866ffeb;
+  background-color: #000000;
 }
 
 .content {
@@ -34,7 +34,7 @@ h2 {
 }
 
 .content li a.active {
-  background-color: #0866ffeb;
+  background-color: #000000;
   color: white;
 }
 
@@ -51,7 +51,7 @@ h2 {
 }
 
 .content .title li a.active {
-  background-color: #0866ffeb;
+  background-color: #000000;
   color: white;
 }
 
