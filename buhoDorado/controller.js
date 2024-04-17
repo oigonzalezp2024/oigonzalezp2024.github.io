@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nombre.value = "";
         primerApellido.value = "";
         segundoApellido.value = "";
-        telefonoMovil.value = "";
+        telefonoMovil.value = 0;
         email.value = "";
         restr1.value = "";
         remitente.style.display = "block";
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nombrer.value = "";
         primerApellidor.value = "";
         segundoApellidor.value = "";
-        telefonoMovilr.value = "";
+        telefonoMovilr.value = 0;
         emailr.value = "";
 
         emailr.setAttribute("type","email")
