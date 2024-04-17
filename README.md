@@ -1,6 +1,6 @@
 # oigonzalezp2024.github.io
 Mi portafolio.
 
-# buhoDorado
+# Portafolio
 Acceder a mi portafolio.
 https://oigonzalezp2024.github.io/
