@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+p{
+  margin: 16px;
+  margin-left: 0px;
+  pad: 16px;
+}
+
+.content {
+  margin: 16px;
+  padding: 16px;
+}
+
+.content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.content li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.content li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.content li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
