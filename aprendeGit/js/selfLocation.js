@@ -1,0 +1,1 @@
+self.location = "../index.html"
