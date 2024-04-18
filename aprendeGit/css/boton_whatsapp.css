@@ -1,0 +1,40 @@
+
+#boton_telefono {
+    background-color: #35b548;
+    border: 0; 
+    box-sizing: border-box;
+    color: white;
+    
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 38px;
+    margin-bottom: 12px;
+    padding: 1px 10px;
+    text-align: center;
+}
+
+#boton_texto {
+    color: white;
+    font-size: 20px;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+#boton_icono {
+    line-height: initial;
+    padding-right: 5px;
+    padding-top: 9px;
+    text-decoration: none;
+    width:30px;
+    height:25px;
+    color:#ffffff;
+}
+
+#boton_icono img {
+    padding: 0px 0;
+    margin-left: -1px;
+    width: 25px;
+    height:25px;
+}
