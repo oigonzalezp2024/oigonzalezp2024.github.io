@@ -42,7 +42,9 @@ https://github.com/oigonzalezp2024/petstore3-client-python-swagger
 PyAudioFlow es una clase que hereda de la librería PyAudio. He aplicado herencia a la clase de PyAudio, para que por medio de este proyecto se pueda agregar o simplificar procesos de la misma, y al mismo tiempo tener acceso a todas herramientas presentes y futuras de PyAudio.
 https://github.com/oigonzalezp2024/pyAudioFlow
 
-
+## gopyFlow
+GopyFlow reune todo el potencial de la clase Translator de la API de traducción de texto de googletrans con las poderosas herramientas de pytesseract de reconocimiento de texto en imágenes. Con su método gopy, permite extraer textos en inglés de una lista de imágenes, los traduce al español y los guarda como contenido unitario, tanto el texto detectado como su respectiva traducción, cuyo título acompañante hace referencia al nombre de la imágen gestionada.  
+https://github.com/oigonzalezp2024/gopyFLow
 
 ## Conocimiento en lenguajes de programación:
 - Python
