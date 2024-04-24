@@ -12,7 +12,7 @@ Esta es una propuesta de arquitectura de software en python, donde se facilita l
 |<b>cliente-webservice-sipsa Servicio</b>| Facilita el acceso a la base de datos de la Webservice de SIPSA del DANE (Servicio SOAP - WSDL).| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#cliente-webservice-sipsa) |
 |<b>delimitedData</b>|Delimita la data a ser analizada. ([*](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#sobre-la-webservice-sipsa-del-dane))|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#delimiteddata)|
 |<b>transformData</b>|Transforma los datos de acuerdo al modelo de negocio.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#transformdata) |
-|<b>matployDraw</b>|Grafica los datos transformados en gráficos estadísticos.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) |
+|<b>matployDraw</b>|Transforma los datos en gráficos estadísticos.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) |
 |<b>flaskFlow</b>|Genera una visualización de los datos.|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#flaskFlow)|
 
 Este proyecto está actualmente en desarrollo, pero contará siempre con una versión de demostración estable basada en estructuras de datos; primero solucionaremos los problemas de flujo y luego nos preocuparemos por el diseño y desarrollo de una base datos.  Su documentación lo llevará a conocer el estado actual del proyecto.  Todo desarrollador está invitado a participar si lo desea, es software libre.
