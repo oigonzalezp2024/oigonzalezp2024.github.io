@@ -16,7 +16,8 @@ Esta es una propuesta de arquitectura de software en python, donde se facilita l
 |<b>matployDraw</b>|Grafica los datos transformados en gráficos estadísticos.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) |
 |<b>flaskFlow</b>|Genera una visualización de los datos.|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#flaskFlow)|
 
-Ir al proyecto: [https://github.com/oigonzalezp2024/python-software-architecture](https://github.com/oigonzalezp2024/python-software-architecture/blob/main/README.md)
+Este proyecto está actualmente en desarrollo, pero contará siempre con una versión de demostración estable basada en estructuras de datos; primero solucionaremos los problemas de flujo y luego nos preocuparemos por el diseño y desarrollo de una base datos.  Su documentación lo llevará a conocer el estado actual del proyecto.  Todo desarrollador esta invitado a participar si lo desea, es software libre.
+[https://github.com/oigonzalezp2024/python-software-architecture](https://github.com/oigonzalezp2024/python-software-architecture/blob/main/README.md)
 
 ## cliente-webservice-sipsa
 Cliente - Webservice SIPSA desarrollado en Python 3.8 usando la librería Zeep para acceder al servicio SOAP de la Webservice SIPSA mendiante la WSDL que aparece en el servicio web para consulta de la base de datos de sipsa.  
@@ -28,6 +29,7 @@ Delimita la data en formato json por periodos de tiempo.
 
 ## TransformData  
 TransformData es una clase desarrollada para la transformación de datos sueltos en información útil para la toma de decisiones. Este código está destinado a ser modificado de acuerdo a una determinada lógica de modelo de negocio en constante evolución.
+[https://github.com/oigonzalezp2024/transformData](https://github.com/oigonzalezp2024/transformData/blob/main/README.md)
 
 ## matployDraw
 MatployDraw aplica la librería matploy para la generación de gráficos estadísticos masivos a partir de la lectura de datos en formato json. Tan solo nos pide la ubicación de los datos Json ("/data/data.json") y la ruta donde queremos que se guarden los gráficos a generar.  
@@ -80,13 +82,11 @@ PyAudioFlow es una clase que hereda de la librería PyAudio. He aplicado herenci
 ## Notas:
 
 ### Sobre la Webservice SIPSA del DANE
-El servicio <b>SOAP</b> de la <b>Webservice del DANE</b> no tiene métodos (<b>Endpoints</b>) que permitan delimitar la consulta a la base de datos, se trae todos los datos registrados desde el 2020. La base de datos de la <b>Webservice de SIPSA</b> se ve obligada a extraer mas datos de lo necesario, esto costos de procesamiento del lado del servidor como del cliente.
+El servicio <b>SOAP</b> de la <b>Webservice del DANE</b> no tiene métodos (<b>Endpoints</b>) que permitan delimitar la consulta a la base de datos, se trae todos los datos registrados desde el 2020. La base de datos de la <b>Webservice de SIPSA</b> se ve obligada a extraer mas datos de los que el cliente puede que necesite.
 
-Mientras este problema persista, del lado del cliente, existirá la necesidad de filtrar los datos mas de lo necesario. Lo ideal es que el cliente decida cual es el rango de tiempo de su interés, con ello se solventaría este problema del lado del servidor. Hasta que no se solucione este problema, esto seguirá generando costos de tiempo de ejecución y procesamiento de datos, tanto del lado del servidor como del cliente.
+Mientras este problema persista, del lado del cliente, existirá la necesidad de filtrar los datos mas de lo necesario. Lo ideal es que el cliente decida cual es el rango de tiempo de su interés en el mismo momento que realiza la consulta, con ello se solventaría este problema del lado del servidor. Hasta que no se solucione este problema, esto seguirá generando costos de tiempo de ejecución y procesamiento de datos, tanto del lado del servidor como del cliente.
 
-con ello se reduciría esfuerzos del lado del servidor, minimizaría los costos derivados de procesamiento, como el consumo de energía eléctrica en sus equipos tecnológicos, y reduciría el tiempo de atención a las peticiones de consulta por parte de sus clientes.
-  
-Se ha priorizado el desarrollo basado en estructura de datos antes del diseño de base de datos. Este proyecto está actualmente en desarrollo, pero con una versión de demostración estable. Su documentación lo llevará a ejecurlo facilmente.  [volver...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#python-software-architecture)
+[volver...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#python-software-architecture)
 
 ## Mas información:  
 https://oigonzalezp2024.github.io/
