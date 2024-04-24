@@ -7,14 +7,16 @@ Desarrollo software para empresas, para intereses particulares y software libre.
 Los siguiente proyectos son una pequeña muestra de mi conocimiento y mi forma de trabajar:  
 
 ## python-software-architecture
-Esta es una propuesta de arquitectura de software en python, donde se facilita la actualización automática de dependencias que no se encuentren en gestores de paquetes de python, sino en repositorios remotos. Para esta muestra está configurado para usar los siguientes desarrollos:
-- [cliente-webservice-sipsa](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#cliente-webservice-sipsa) Servicio (SOAP - WSDL).
-- [delimitedData](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#delimiteddata) Delimita la data a ser analizada[*](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#sobre-la-webservice-sipsa-del-dane)
-- [transformData](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#transformdata) Transforma los datos de acuerdo al modelo de negocio.
-- [matployDraw](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) Grafica los datos transformados en gráficos estadísticos.
-- [flaskFlow](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#flaskFlow) Genera una visualización de los datos.
+Esta es una propuesta de arquitectura de software en python, donde se facilita la actualización automática de dependencias que no se encuentren en gestores de paquetes de python, sino en repositorios remotos. Para esta muestra, está configurado para usar los siguientes desarrollos:
+| Desarrollo |¿Qué hace en este proyecto?|Enlace|
+|:---|:---|:---|
+|<b>cliente-webservice-sipsa Servicio</b>|(SOAP - WSDL).| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#cliente-webservice-sipsa) |
+|<b>delimitedData</b>|Delimita la data a ser analizada.([*](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#sobre-la-webservice-sipsa-del-dane))|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#delimiteddata)|
+|<b>transformData</b>|Transforma los datos de acuerdo al modelo de negocio.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#transformdata) |
+|<b>matployDraw</b>|Grafica los datos transformados en gráficos estadísticos.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) |
+|<b>flaskFlow</b>|Genera una visualización de los datos.|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#flaskFlow)|
 
-[https://github.com/oigonzalezp2024/python-software-architecture](https://github.com/oigonzalezp2024/python-software-architecture/blob/main/README.md)
+Ir al proyecto: [https://github.com/oigonzalezp2024/python-software-architecture](https://github.com/oigonzalezp2024/python-software-architecture/blob/main/README.md)
 
 ## cliente-webservice-sipsa
 Cliente - Webservice SIPSA desarrollado en Python 3.8 usando la librería Zeep para acceder al servicio SOAP de la Webservice SIPSA mendiante la WSDL que aparece en el servicio web para consulta de la base de datos de sipsa.  
