@@ -1,22 +1,21 @@
 # Mi portafolio
-Hola, mi nombre es Oscar Gonzalez, desarrollo sitios web y sistemas ETL. (Extracción y transformación de datos en información para su cargado en bases de datos consolidada). 
-
-Desarrollo software para empresas, para intereses particulares y software libre. Diseño interfaces gráficas para la web y escritorio. Me intereso en proyectos de programación de alto y bajo nivel. Me gusta la electrónica y el internet de las cosas. 
+Hola, mi nombre es Óscar González, desarrollo sitios web y sistemas ETL. (Extracción y transformación de datos en información para su cargado en bases de datos consolidada).
+Diseño interfaces gráficas para la web y escritorio. Desarrollo para empresas, para intereses particulares y software libre.  Estudie Tecnología en Análisis y Desarrollo de Sistemas de Información. ADSI-SENA. Tengo experiencia como desarrollador desde el 2020. Me intereso en proyectos de programación de alto y bajo nivel. Me gusta la electrónica y el internet de las cosas.
 
 ## Proyectos
 Los siguiente proyectos son una pequeña muestra de mi conocimiento y mi forma de trabajar:  
 
 ## python-software-architecture
 Esta es una propuesta de arquitectura de software en python, donde se facilita la actualización automática de dependencias que no se encuentren en gestores de paquetes de python, sino en repositorios remotos. Para esta muestra, está configurado para usar los siguientes desarrollos:
-| Desarrollo |¿Qué hace en este proyecto?|Enlace|
+| Desarrollo |¿Qué es o qué hace en este proyecto?|Enlace|
 |:---|:---|:---|
-|<b>cliente-webservice-sipsa Servicio</b>|(SOAP - WSDL).| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#cliente-webservice-sipsa) |
-|<b>delimitedData</b>|Delimita la data a ser analizada.([*](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#sobre-la-webservice-sipsa-del-dane))|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#delimiteddata)|
+|<b>cliente-webservice-sipsa Servicio</b>| Facilita el acceso a la base de datos de la Webservice de SIPSA del DANE (Servicio SOAP - WSDL).| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#cliente-webservice-sipsa) |
+|<b>delimitedData</b>|Delimita la data a ser analizada. ([*](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#sobre-la-webservice-sipsa-del-dane))|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#delimiteddata)|
 |<b>transformData</b>|Transforma los datos de acuerdo al modelo de negocio.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#transformdata) |
 |<b>matployDraw</b>|Grafica los datos transformados en gráficos estadísticos.| [Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#matployDraw) |
 |<b>flaskFlow</b>|Genera una visualización de los datos.|[Saber mas...](https://github.com/oigonzalezp2024/oigonzalezp2024.github.io/blob/main/README.md#flaskFlow)|
 
-Este proyecto está actualmente en desarrollo, pero contará siempre con una versión de demostración estable basada en estructuras de datos; primero solucionaremos los problemas de flujo y luego nos preocuparemos por el diseño y desarrollo de una base datos.  Su documentación lo llevará a conocer el estado actual del proyecto.  Todo desarrollador esta invitado a participar si lo desea, es software libre.
+Este proyecto está actualmente en desarrollo, pero contará siempre con una versión de demostración estable basada en estructuras de datos; primero solucionaremos los problemas de flujo y luego nos preocuparemos por el diseño y desarrollo de una base datos.  Su documentación lo llevará a conocer el estado actual del proyecto.  Todo desarrollador está invitado a participar si lo desea, es software libre.
 [https://github.com/oigonzalezp2024/python-software-architecture](https://github.com/oigonzalezp2024/python-software-architecture/blob/main/README.md)
 
 ## cliente-webservice-sipsa
