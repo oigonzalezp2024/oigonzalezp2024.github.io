@@ -31,7 +31,7 @@ TransformData es una clase desarrollada para la transformación de datos sueltos
 [https://github.com/oigonzalezp2024/transformData](https://github.com/oigonzalezp2024/transformData/blob/main/README.md)
 
 ## StagesController  
-La clase StagesController establece la configuración DDL mínina de una tabla de base de una datos MySQL destino, a partir de una estructura Json que se haya generado a partir de la consulta a una base de datos origen; Crea el diseño de las tablas necesarias para el diseño de la base de datos destino en:"./bbdd/ddl.sql".
+StagesController establece la configuración DDL mínina de una tabla de base de una datos MySQL destino, a partir de una estructura Json que se haya generado a partir de la consulta a una base de datos origen; Crea el diseño de las tablas necesarias para el diseño de la base de datos destino en:"./bbdd/ddl.sql".
 Después de establecer la configuración de las tablas, crea las tablas en la base de datos destino y ejecuta las consultas desarrolladas por el mismo, todo de forma automática, y finalmente, pobla la tabla de la base de datos destino, a partir del diseño de una consulta que el mismo haya configurado, terminando así un proceso de integración básico.  
 [https://github.com/oigonzalezp2024/stagesController](https://github.com/oigonzalezp2024/stagesController/blob/main/README.md)
 
