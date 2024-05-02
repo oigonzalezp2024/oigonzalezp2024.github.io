@@ -1,17 +1,4 @@
 
-var cont = document.getElementsByTagName("body")
-cadena = `<svg id="opera" width="350px" height="585px">
-              <text x="13" y="70">¡Bienvenido!</text>
-              </svg>`
-cont[0].innerHTML = cadena;
-
-var cont = document.getElementById("opera")
-cadena = ""
-for (i = 1; 1000 > i; i = i + 1) {
-	cadena += "<rect/><rect/>";
-}
-cont.innerHTML = cadena;
-
 var cont = document.getElementsByTagName("rect")
 
 function move1(px, py) {
@@ -332,66 +319,8 @@ function personaje(n, x, y) {
 
 }
 
-function funTexto(p, x, y) {
-	var conten = document.getElementsByTagName("svg")
-	var text = document.getElementsByTagName("text")
-
-	cadena = `<text x="86" y="70">Developer</text>
-                 <text x="86" y="131">Status: Available</text>
-                 <text x="86" y="184">Óscar González</text>
-                 <text x="86" y="200">Fullstack developer</text>
-                 <text x="86" y="262">ETL development</text>
-                 <text x="86" y="311">Python, C, C++,</text>
-                 <text x="86" y="330">Javascript y PHP</text>
-                 <text x="86" y="391">Cúcuta-Colombia</text>
-                 <text x="86" y="410">2024-04-17</text>`
-	conten[0].innerHTML = conten[0].innerHTML + cadena;
-
-	for (i = 0; text.length > i; i++) {
-		text[i].style.fill = "#ffffff90"
-		text[i].style.stroke = "#ff000090"
-	}
+export {
+	move1, move2, move3, move4, move5,
+	move9, title, barraLateral,
+	move6, nodo, decoracion
 }
-
-setTimeout(function () { move1(0, 0) }, 2000, "javascript");
-setTimeout(function () { move1(5, 5) }, 2200, "javascript");
-setTimeout(function () { move1(20, 20) }, 2300, "javascript");
-setTimeout(function () { move1(40, 40) }, 2400, "javascript");
-
-x = 40
-y = 40
-
-setTimeout(function () { move1(x, y) }, 2500, "javascript");
-setTimeout(function () { move2(x, y) }, 2600, "javascript");
-setTimeout(function () { move3(x, y) }, 2700, "javascript");
-setTimeout(function () { move4(x, y) }, 2800, "javascript");
-setTimeout(function () { move5(x, y) }, 2900, "javascript");
-setTimeout(function () { move6(x, y) }, 4000, "javascript");
-
-setTimeout(function () { move9(52, 40) }, 4200, "javascript");
-setTimeout(function () { title() }, 4400, "javascript");
-setTimeout(function () { barraLateral(308, 35) }, 4500, "javascript");
-
-setTimeout(function () { move6(40, 40) }, 3400, "javascript");
-setTimeout(function () { move6(40, 35) }, 3500, "javascript");
-setTimeout(function () { move6(40, 30) }, 3600, "javascript");
-setTimeout(function () { move6(40, 25) }, 3700, "javascript");
-setTimeout(function () { move6(40, 20) }, 3800, "javascript");
-
-//setTimeout(function(){funTexto(50,50)},5200,"javascript");
-setTimeout(function () { nodo(62, 239, 77) }, 2000, "javascript");
-setTimeout(function () { nodo(67, 327, -11) }, 2100, "javascript");
-setTimeout(function () { nodo(27, 327, 77) }, 2200, "javascript");
-setTimeout(function () { nodo(57, 327, 165) }, 2300, "javascript");
-setTimeout(function () { nodo(32, 415, 77) }, 2400, "javascript");
-setTimeout(function () { nodo(37, 415, 165) }, 2500, "javascript");
-setTimeout(function () { nodo(52, 415, 253) }, 2600, "javascript");
-setTimeout(function () { nodo(42, 503, 165) }, 2700, "javascript");
-setTimeout(function () { decoracion(327, 77) }, 2800, "javascript");
-setTimeout(function () { funTexto(50, 50) }, 5500, "javascript");
-/*
-setTimeout(function(){data(72,591,253)},9000,"javascript");
-setTimeout(function(){data(77,503,341)},9000,"javascript");
-setTimeout(function(){personaje(82,520,341)},5200,"javascript");
-setTimeout(function(){personaje(82,503,341)},7000,"javascript");
-*/
