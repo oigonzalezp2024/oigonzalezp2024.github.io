@@ -14,7 +14,7 @@ div {
 }
 
 div.container {
-    width: 1200px;
+    width: 350px;
     text-align: center;
 }
 
@@ -26,7 +26,7 @@ div.container div.propuesta {
     max-width: 300px;
     border-radius: 15px;
     padding-top: 30px;
-    padding-bottom: 16px;
+    padding-bottom: 30px;
     margin-bottom: 16px;
     position: relative;
     transform-style: preserve-3d;
@@ -37,12 +37,13 @@ div.container div.propuesta div {
 }
 
 div.container div.propuesta div.fotografia img {
-    margin-top: 24px;
     width: 190px;
     min-width: 190px;
     min-height: 190px;
+    margin-top: 30px;
+    margin-bottom: 53px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    border: 2px #00ffff solid;
 }
 
 div.container div.propuesta div:hover {
@@ -119,7 +120,7 @@ div.container div.propuesta:nth-child(1) {
 div.container div.propuesta div.content {
     background-color: black;
     margin: 0px;
-    width: 267px;
+    width: 267.5px;
     font-size: 16px;
     height: 50px;
     padding: 16px;
@@ -127,6 +128,11 @@ div.container div.propuesta div.content {
 }
 
 @media only screen and (min-width: 600px) {
+
+    div.container {
+        width: 700px;
+        text-align: center;
+    }
 
     div.container div.propuesta {
         display: inline-block;
@@ -143,6 +149,11 @@ div.container div.propuesta div.content {
 }
 
 @media only screen and (min-width: 768px) {
+
+    div.container {
+        width: 1200px;
+        text-align: center;
+    }
 
     div.container div.propuesta {
         display: inline-block;
