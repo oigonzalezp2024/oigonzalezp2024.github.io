@@ -1,6 +1,5 @@
 # Mi portafolio
-Hola, mi nombre es Óscar González, desarrollo sitios web y sistemas ETL. (Extracción y transformación de datos en información para su cargado en bases de datos consolidada).
-Diseño interfaces gráficas para la web y escritorio. Desarrollo para empresas, para intereses particulares y software libre.  Estudie Tecnología en Análisis y Desarrollo de Sistemas de Información. ADSI-SENA. Tengo experiencia como desarrollador desde el 2020. Me intereso en proyectos de programación de alto y bajo nivel. Me gusta la electrónica y el internet de las cosas.
+Desarrollador de Software con más de 5 años de experiencia profesional enfocado en ingeniería backend, arquitectura de software y procesamiento de datos. Experiencia en el diseño e implementación de aplicaciones desacopladas utilizando PHP y Python, con conocimiento fundamental en Java. Capacidad comprobada en la construcción de pipelines de datos (ETL), diseño y consumo de servicios web (REST/SOAP) bajo arquitecturas orientadas a servicios (SOA). Enfocado en la aplicación de principios SOLID y patrones de arquitectura limpia para asegurar la escalabilidad y el mantenimiento del software.
 
 ## Proyectos
 Los siguiente proyectos son una pequeña muestra de mi conocimiento y mi forma de trabajar:  
