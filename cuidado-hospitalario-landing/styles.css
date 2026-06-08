@@ -1,0 +1,887 @@
+:root {
+    --bg: #0f172a;
+    --surface: #111827;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-soft: #dbeafe;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e5e7eb;
+    --shadow: 0 20px 50px rgba(15, 23, 42, .08);
+    --radius: 20px; /* Reducido ligeramente para pantallas pequeñas */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.background-glow {
+    position: fixed;
+    width: 300px; /* Reducido en móvil para evitar desbordes raros */
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, .12), transparent 70%);
+    top: -150px;
+    right: -100px;
+    z-index: -1;
+}
+
+.container {
+    width: calc(100% - 32px); /* Margen lateral más equilibrado en móviles (16px a cada lado) */
+    margin: auto;
+}
+
+/* ==========================================================================
+   ESTILOS BASE (MOBILE FIRST - PROPORCIONES OPTIMIZADAS)
+   ========================================================================== */
+
+section {
+    padding: 48px 0; /* Un padding más discreto y limpio para celular */
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 52px; /* Altura ideal para interactuar con el pulgar */
+    padding: 0 24px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: .25s ease;
+    width: 100%; /* Bloque completo en móvil */
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: #fff;
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+}
+
+/* Héroe */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 40px 0 20px 0;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem); /* Fluido y controlado en celulares */
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    font-size: 1.05rem; /* Cómodo para lectura móvil */
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    flex: 1 1 120px; /* Permite que se acomoden mejor en pantallas angostas */
+}
+
+.stat strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: .88rem;
+}
+
+/* Tarjeta del Héroe con Foto Real */
+.hero-card {
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.avatar {
+    width: 72px; 
+    height: 72px;
+    border-radius: 16px;
+    background: var(--primary-soft);
+    background-image: url('perfil.png');
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.card-header h3 {
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.card-header p {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 14px;
+    background: #f8fafc;
+}
+
+.card-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    flex-shrink: 0;
+}
+
+/* Títulos de Sección */
+.section-title {
+    margin-bottom: 36px;
+}
+
+.section-title span {
+    display: block;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: .1em;
+    font-size: .75rem;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -.03em;
+}
+
+/* Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: .25s ease;
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Tarifas */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.pricing-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.featured {
+    background: linear-gradient(180deg, #2563eb, #1d4ed8);
+    color: #fff;
+}
+
+.featured .pricing-top p {
+    color: rgba(255, 255, 255, .85);
+}
+
+.featured ul li {
+    color: rgba(255, 255, 255, .9);
+}
+
+.featured .price {
+    color: #fff;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fff;
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 700;
+}
+
+.pricing-top h3 {
+    font-size: 1.35rem;
+    margin-bottom: 4px;
+}
+
+.pricing-top p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 20px 0;
+    color: var(--primary);
+}
+
+.price small {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.pricing-card ul {
+    list-style: none;
+}
+
+.pricing-card ul li {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.extra-info {
+    margin-top: 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    text-align: left; /* Alineación a la izquierda para mejor lectura de cláusulas */
+}
+
+.extra-info p strong {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.extra-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Separación saludable entre cada regla de negocio */
+}
+
+.extra-info ul li {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.extra-info ul li strong {
+    color: var(--text); /* Destaca los conceptos clave como "Reserva:", "Recargo:" */
+}
+
+/* Cobertura */
+.coverage-box {
+    background: #0f172a;
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.coverage-label {
+    color: #93c5fd;
+    font-size: .75rem;
+    letter-spacing: .1em;
+    font-weight: 700;
+}
+
+.coverage-box h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 16px 0;
+}
+
+.coverage-box p {
+    color: rgba(255, 255, 255, .75);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    padding: 32px 0 60px;
+}
+
+.footer-content {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    font-size: 0.95rem;
+}
+
+.footer-note {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   ESCRITORIO PROGRESIVO (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Pantallas Medianas (Tablets) en adelante */
+@media (min-width: 641px) {
+    .container {
+        width: min(1200px, calc(100% - 40px));
+    }
+
+    .hero-actions {
+        flex-direction: row;
+    }
+
+    .btn {
+        width: auto;
+    }
+
+    .hero-stats {
+        flex-wrap: nowrap;
+    }
+
+    /* NUEVO: Evita que las tarifas se estiren feo en tablets */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Pantallas Grandes (Escritorio) */
+@media (min-width: 993px) {
+    :root {
+        --radius: 24px; /* Restauramos los bordes amplios originales en pantallas grandes */
+    }
+
+    .background-glow {
+        width: 600px;
+        height: 600px;
+        top: -250px;
+        right: -150px;
+        background: radial-gradient(circle, rgba(37, 99, 235, .18), transparent 70%);
+    }
+
+    section {
+        padding: 100px 0;
+    }
+
+    .hero {
+        min-height: 100vh;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 60px;
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        margin-bottom: 28px;
+    }
+
+    .hero-description {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        max-width: 640px;
+    }
+
+    .hero-actions {
+        margin-top: 40px;
+        gap: 16px;
+    }
+
+    .hero-stats {
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    .stat strong {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+
+    .stat span {
+        font-size: .95rem;
+    }
+
+    .hero-card {
+        padding: 35px;
+    }
+
+    .avatar {
+        width: 80px; 
+        height: 80px;
+        border-radius: 18px;
+    }
+
+    /* NUEVO: Asegura el comportamiento del botón de WhatsApp en la franja oscura */
+    .coverage-box .btn {
+        flex-shrink: 0;
+    }
+
+    .card-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-header p {
+        font-size: 0.95rem;
+    }
+
+    .card-item {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .icon {
+        width: 28px;
+        height: 28px;
+        font-size: .8rem;
+    }
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    .section-title span {
+        font-size: .8rem;
+        margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        max-width: 700px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .service-card {
+        padding: 40px;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .pricing-card {
+        padding: 40px;
+    }
+
+    .pricing-top h3 {
+        font-size: 1.6rem;
+    }
+
+    .price {
+        font-size: 3rem;
+        margin: 30px 0;
+    }
+
+    .price small {
+        font-size: 1rem;
+    }
+
+    .coverage-box {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 36px;
+        padding: 60px;
+        gap: 40px;
+    }
+
+    .coverage-box h2 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+
+    .coverage-box p {
+        max-width: 650px;
+    }
+
+    .footer {
+        padding: 40px 0 80px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 30px;
+        gap: 40px;
+    }
+
+    .footer-note {
+        max-width: 520px;
+        font-size: 0.9rem;
+    }
+    
+    /* El avatar crece de forma controlada en pantallas grandes */
+    .avatar {
+        width: 80px; 
+        height: 80px;
+        border-radius: 18px;
+    }
+
+    /* La caja de condiciones se integra mejor al diseño de escritorio */
+    .extra-info {
+        max-width: 750px;
+        margin: 40px auto 0 auto;
+        padding: 28px;
+    }
+    
+    .extra-info ul {
+        gap: 12px;
+    }
+    
+    .extra-info ul li {
+        font-size: 0.92rem;
+    }
+}
+
+/* Corrección de contraste para la tarjeta destacada */
+.pricing-card.featured ul li {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+}
+
+/* Cambia el color del check (✔) a un blanco brillante para que resalte */
+.pricing-card.featured ul li::first-letter {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   CORRECCIÓN DE CONTRASTE Y UI PARA SEÑALES DE CONFIANZA
+   ========================================================================== */
+.trust-signals {
+    background: #f4f7fa; /* Fondo gris/azul clínico sutil que contrasta con el blanco puro */
+    border: 1px solid #e1e8ed;
+    padding: 32px 24px;
+    border-radius: 12px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.trust-signals h3 {
+    color: #1e293b; /* Texto oscuro y legible */
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.trust-item {
+    padding: 16px;
+}
+
+.trust-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 1rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.trust-item p {
+    font-size: 0.875rem;
+    color: #475569; /* Gris oscuro que cumple con estándares de accesibilidad */
+    line-height: 1.5;
+}
+
+/* Ajuste de contraste para el "Desde" de las tarifas */
+.pricing-card .price span {
+    color: #64748b !important; /* Oscurecido para que no se pierda en el fondo blanco */
+}
+
+/* ==========================================================================
+   OPTIMIZACIONES RESPONSIVE (MÓVIL - iPHONE SE / SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 24px;
+    }
+    
+    /* Evita el sándwich aplastado en el hero móvil */
+    .hero-card {
+        margin-top: 32px !important; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    
+    .hero-stats {
+        margin-bottom: 16px;
+    }
+
+    /* Espaciado de la lista de términos legales en móvil */
+    .extra-info {
+        padding: 20px 16px !important;
+    }
+    
+    .extra-info ul li {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.6;
+    }
+    
+    /* Ajuste de tamaño de los títulos principales en pantallas pequeñas */
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   AJUSTES DE CONTRASTE Y ACCESIBILIDAD FINAL
+   ========================================================================== */
+
+/* Oscurecer el texto descriptivo de las señales de confianza para legibilidad WCAG */
+.trust-item p {
+    color: #334155 !important; /* Un gris pizarra oscuro de alta legibilidad */
+    font-size: 0.875rem;
+    line-height: 1.6; /* Mayor respiro al texto */
+}
+
+/* Forzar que el "Desde" de la tarjeta azul se mantenga blanco/semitransparente */
+.pricing-card.featured .price span {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Asegurar contraste en el "Desde" de la tarjeta blanca */
+.pricing-card:not(.featured) .price span {
+    color: #475569 !important; /* Gris oscuro que resalta en el fondo blanco */
+}
+
+/* ==========================================================================
+   PULIDO RESPONSIVE PARA DISPOSITIVOS MÓVILES
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* Optimización del contenedor de confianza en móvil */
+    .trust-signals {
+        padding: 24px 16px !important; /* Más espacio útil */
+        margin: 32px 0 !important;
+    }
+
+    .trust-item {
+        padding: 8px 4px !important; /* Evita que el texto se comprima horizontalmente */
+    }
+
+    .trust-item p {
+        font-size: 0.9rem !important; /* Un toque más grande en móvil para lectura rápida */
+        max-width: 280px; /* Centra el bloque de texto de forma armónica */
+        margin: 0 auto;
+    }
+    
+    /* Separación de las condiciones comerciales en el bloque blanco inferior */
+    .extra-info ul li {
+        margin-bottom: 14px !important;
+    }
+}
+
+/* ==========================================================================
+   AJUSTES DE CONTRASTE Y ACCESIBILIDAD FINAL
+   ========================================================================== */
+
+/* Oscurecer el texto descriptivo de las señales de confianza para legibilidad WCAG */
+.trust-item p {
+    color: #334155 !important; /* Un gris pizarra oscuro de alta legibilidad */
+    font-size: 0.875rem;
+    line-height: 1.6; /* Mayor respiro al texto */
+}
+
+/* Forzar que el "Desde" de la tarjeta azul se mantenga blanco/semitransparente */
+.pricing-card.featured .price span {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Asegurar contraste en el "Desde" de la tarjeta blanca */
+.pricing-card:not(.featured) .price span {
+    color: #475569 !important; /* Gris oscuro que resalta en el fondo blanco */
+}
+
+/* ==========================================================================
+   PULIDO RESPONSIVE PARA DISPOSITIVOS MÓVILES
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* Optimización del contenedor de confianza en móvil */
+    .trust-signals {
+        padding: 24px 16px !important; /* Más espacio útil */
+        margin: 32px 0 !important;
+    }
+
+    .trust-item {
+        padding: 8px 4px !important; /* Evita que el texto se comprima horizontalmente */
+    }
+
+    .trust-item p {
+        font-size: 0.9rem !important; /* Un toque más grande en móvil para lectura rápida */
+        max-width: 280px; /* Centra el bloque de texto de forma armónica */
+        margin: 0 auto;
+    }
+    
+    /* Separación de las condiciones comerciales en el bloque blanco inferior */
+    .extra-info ul li {
+        margin-bottom: 14px !important;
+    }
+}
