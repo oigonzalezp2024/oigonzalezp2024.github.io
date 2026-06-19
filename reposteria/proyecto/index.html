@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Repostería Digital 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Plan de Proyecto: Repostería Digital 2026</h1>
+        <p>Estrategia de escalabilidad y conversión para el mercado colombiano</p>
+    </header>
+
+    <main class="container">
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>Margen Bruto Meta</h3>
+                <p class="value">65% - 70%</p>
+            </div>
+            <div class="metric-card">
+                <h3>Recompra Objetivo</h3>
+                <p class="value">25% mensual</p>
+            </div>
+            <div class="metric-card">
+                <h3>Conversión Web</h3>
+                <p class="value">&gt; 2.5%</p>
+            </div>
+        </section>
+
+        <section class="phases-container">
+            <div class="phase-card" onclick="togglePhase(1)">
+                <div class="phase-header">
+                    <h2>Fase 1: Infraestructura Base y Costeo Técnico</h2>
+                    <span class="badge high">Prioridad Alta</span>
+                </div>
+                <div id="phase-1-content" class="phase-content">
+                    <p><strong>Meta:</strong> Asegurar la rentabilidad del menú y la resistencia del empaque en la última milla.</p>
+                    <ul>
+                        <li>Estandarizar recetas de monoporciones y línea <em>Clean Label</em>.</li>
+                        <li>Pruebas de estrés logístico en moto (Rappi/Mensajeros Urbanos) en hora pico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="phase-card" onclick="togglePhase(2)">
+                <div class="phase-header">
+                    <h2>Fase 2: Arquitectura de Canales (Omnicanalidad)</h2>
+                    <span class="badge high">Prioridad Alta</span>
+                </div>
+                <div id="phase-2-content" class="phase-content">
+                    <p><strong>Meta:</strong> Separar flujos de venta por impulso y pedidos programados.</p>
+                    <ul>
+                        <li>Habilitar canal de impulso (WhatsApp Business + catálogo en Rappi).</li>
+                        <li>Desplegar Shopify/WooCommerce responsivo con pasarelas locales (Wompi, Bold, Nequi).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="phase-card" onclick="togglePhase(3)">
+                <div class="phase-header">
+                    <h2>Fase 3: Tráfico y Pauta Digital de Conversión</h2>
+                    <span class="badge medium">Prioridad Media</span>
+                </div>
+                <div id="phase-3-content" class="phase-content">
+                    <p><strong>Meta:</strong> Atraer audiencias calificadas mediante ganchos sensoriales y segmentación local.</p>
+                    <ul>
+                        <li>Producción de videos ASMR y procesos con enfoque de origen (Cacao local).</li>
+                        <li>Campañas de Meta Ads hipersegmentadas geográficamente (radios de entrega).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="phase-card" onclick="togglePhase(4)">
+                <div class="phase-header">
+                    <h2>Fase 4: Retención y Automatización Backend</h2>
+                    <span class="badge low">Sostenibilidad</span>
+                </div>
+                <div id="phase-4-content" class="phase-content">
+                    <p><strong>Meta:</strong> Maximizar el tiempo de vida del cliente (LTV) y sincronizar stock.</p>
+                    <ul>
+                        <li>Flujos de automatización post-venta en WhatsApp solicitando reseñas (UGC).</li>
+                        <li>Sincronización de inventario web con órdenes de producción en cocina.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

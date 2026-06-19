@@ -1,0 +1,136 @@
+:root {
+    --bg-color: #fcf8f5;
+    --primary-color: #4a2c2a;
+    --accent-color: #d4a373;
+    --text-color: #333333;
+    --white: #ffffff;
+    --priority-high: #e63946;
+    --priority-medium: #f4a261;
+    --priority-low: #2a9d8f;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid var(--accent-color);
+}
+
+.metric-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.metric-card .value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0.5rem 0 0 0;
+}
+
+.phase-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.phase-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.phase-header h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.badge.high { background-color: var(--priority-high); }
+.badge.medium { background-color: var(--priority-medium); }
+.badge.low { background-color: var(--priority-low); }
+
+.phase-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: none;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.phase-content p {
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.phase-content ul {
+    padding-left: 1.2rem;
+}
+
+.phase-content li {
+    margin-bottom: 0.5rem;
+}
+
+.show-content {
+    display: block !important;
+}
