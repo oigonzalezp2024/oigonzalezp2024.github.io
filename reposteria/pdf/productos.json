@@ -1,0 +1,91 @@
+{
+    "titulo_catalogo": "Catálogo de Celebraciones 2026",
+    "empresa": "Paluv Repostería",
+    "whatsapp": "573158264530",
+    "productos": [
+        {
+            "nombre": "Pastel artezanal de guayaba y queso",
+            "descripcion": "Pastel artesanal horneado con una combinación clásica de dulce pasta de guayaba y trozos de queso firme.",
+            "precio": "Consultar",
+            "imagen": "img/pastel-artesanal-de-guayaba-y-queso.jpg"
+        },
+        {
+            "nombre": "Postre de Frutos Rojos",
+            "descripcion": "Base cremosa con una capa superior de mermelada de frambuesas frescas.",
+            "precio": "Consultar",
+            "imagen": "img/postre-frutos-rojos.jpg"
+        },
+        {
+            "nombre": "Postre Lotus Biscoff",
+            "descripcion": "Base cremosa cubierta con migas de galleta Lotus y crema de galleta.",
+            "precio": "Consultar",
+            "imagen": "img/postre-lotus.jpg"
+        },
+        {
+            "nombre": "Postre de Galleta y Caramelo",
+            "descripcion": "Postre cremoso con topping de galletas desmoronadas y un toque de salsa dulce.",
+            "precio": "Consultar",
+            "imagen": "img/postre-galleta-caramelo.jpg"
+        },
+        {
+            "nombre": "Postre de Oreo",
+            "descripcion": "Capa cremosa intensa decorada con una galleta Oreo completa y trocitos de chocolate.",
+            "precio": "Consultar",
+            "imagen": "img/postre-oreo.jpg"
+        },
+        {
+            "nombre": "Postre de Barquillo y Chispas",
+            "descripcion": "Base cremosa decorada con galletas tipo wafer, barquillo relleno y chispas de colores.",
+            "precio": "Consultar",
+            "imagen": "img/postre-barquillo.jpg"
+        },
+        {
+            "nombre": "Surtido de Postres en Vasitos (Vaso-postres)",
+            "descripcion": "Variedad de postres artesanales servidos en porciones individuales, incluyendo opciones de tres leches, cheesecake, mousses y cremas dulces.",
+            "precio": "Consultar",
+            "imagen": "img/nevera-surtido-postres.jpg"
+        },
+        {
+            "nombre": "Postre de Chocolate Paluv",
+            "descripcion": "Delicioso postre en vaso con capas de brownie o bizcocho de chocolate, crema de chocolate y abundantes chispas de chocolate semiamargo.",
+            "precio": "Consultar al 3158264530",
+            "imagen": "img/postre-chocolate-paluv.jpg"
+        },
+        {
+            "nombre": "Torta Surtida 'Sweet Indulgence'",
+            "descripcion": "Pastel de celebración con cobertura de dulce de leche o chocolate, decorado en cuatro secciones distintas: chispas de chocolate, galletas Oreo, barquillos crujientes y grajeas de chocolate tipo M&M.",
+            "precio": "Consultar a Paluv Repostería",
+            "imagen": "img/torta-surtida-paluv.jpg"
+        },
+        {
+            "nombre": "Postre de Limón",
+            "descripcion": "Base cremosa con un toque cítrico y cobertura superior decorada con ralladura de limón, presentado en envase individual.",
+            "precio": "Consultar",
+            "imagen": "img/postre-limon.jpg"
+        },
+        {
+            "nombre": "Postre de Mora o Frutos Silvestres",
+            "descripcion": "Postre cremoso con una capa superior de mermelada intensa de moras o frutos del bosque.",
+            "precio": "Consultar",
+            "imagen": "img/postre-mora.jpg"
+        },
+        {
+            "nombre": "Postre de Chocolate",
+            "descripcion": "Clásico postre con base cremosa y una cubierta de ganache o crema de chocolate suave.",
+            "precio": "Consultar",
+            "imagen": "img/postre-chocolate-individual.jpg"
+        },
+        {
+            "nombre": "Postre en Vaso (Línea de Servicio)",
+            "descripcion": "Selección de postres servidos en vasos ecológicos, ideales para llevar. Incluye opciones como postre de limón y variedades cremosas.",
+            "precio": "Consultar",
+            "imagen": "img/postres-vaso-domicilio.jpg"
+        },
+        {
+            "nombre": "Torta Temática de Snoopy",
+            "descripcion": "Torta personalizada con cobertura lisa, decoración superior de esferas de colores y apliques decorativos de Snoopy, Woodstock y letrero de 'Feliz Cumpleaños'.",
+            "precio": "Consultar",
+            "imagen": "img/torta-snoopy-personalizada.jpg"
+        }
+    ]
+}
