@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticia | Óscar Iván González Peña</title>
+    <title>Proyecto | Óscar Iván González Peña</title>
+    <meta name="description" content="Detalle técnico del proyecto desarrollado por Óscar Iván González Peña. Ingeniería, arquitectura y resultados.">
+    <link rel="canonical" href="https://oigonzalezp2024.github.io/">
+
+    <!-- Open Graph para compartir artículos individuales -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Portafolio Óscar Iván González Peña">
+    
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="../index.html" style="text-decoration: none;">
+        <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+            <a href="../index.html" style="text-decoration: none; color: inherit;">
                 <h1 style="font-size: 1.5rem; margin: 0;">Óscar Iván González Peña</h1>
             </a>
-            <button id="theme-toggle">🌙 Modo Oscuro</button>
-        </div>
+            <button id="theme-toggle" aria-label="Cambiar tema visual">🌙 Modo Oscuro</button>
+        </nav>
     </header>
 
-<main class="container">
-    <a href="../index.html" style="font-size: 0.8rem; color: #64748b; text-decoration: none;">← VOLVER AL FEED</a>
-    <h1 id="art-title" style="font-size: 2.5rem; margin: 1.5rem 0; line-height: 1.2;"></h1>
-    
-    <div id="art-container"></div> 
-    
-    <footer id="art-meta" style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: #64748b;"></footer>
-</main>
+    <main class="container">
+        <!-- Navegación contextual -->
+        <nav style="margin-bottom: 2rem;">
+            <a href="../index.html" style="font-size: 0.8rem; color: #64748b; text-decoration: none; font-weight: bold;">← VOLVER AL FEED</a>
+        </nav>
 
-    <script src="assets/js/article.js"></script>
-    <script src="assets/js/theme.js"></script>
+        <!-- Contenido principal -->
+        <article>
+            <h1 id="art-title" style="font-size: 2.5rem; margin: 1.5rem 0; line-height: 1.2;"></h1>
+            <div id="art-container"></div> 
+        </article>
+        
+        <footer id="art-meta" style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: #64748b;"></footer>
+    </main>
+
+    <script src="assets/js/article.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
 </body>
 </html>
