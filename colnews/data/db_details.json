@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "author": "Oscar Gonzalez",
+    "date": "2026-06-27",
+    "content": [
+      { "type": "image", "url": "./assets/img/ecobullbolsas-dispositivos.png", "caption": "Ecobullbolsas" },
+      { "type": "link", "url": "https://ecobullbolsas.com", "text": "ecobullbolsas.com" },
+      { "type": "image", "url": "./assets/img/rojas-distribuciones-dispositivos.png", "caption": "Rojas Distribuciones" },
+      { "type": "link", "url": "https://rojasdistribuciones.com", "text": "rojasdistribuciones.com" }
+    ]
+  },
+  {
+    "id": 2,
+    "author": "Oscar Gonzalez",
+    "date": "2026-06-27",
+    "content": [
+      { "type": "header", "data": "Demostración ETL Python" },
+      { "type": "paragraph", "data": "Integración y Automatización de Servicios Web (SIPSA DANE): Diseño y desarrollo de un script modular en Python para la extracción, transformación y consumo de datos desde servicios web (SOAP/WSDL) de la plataforma SIPSA DANE." },
+      { "type": "video", "url": "https://youtu.be/_5cRMoU1gzo", "orientation": "vertical" },
+      { "type": "paragraph", "data": "Integración SOAP WSDL SIPSA DANE." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/cliente-webservice-sipsa", "text": "ver repositorio: cliente-webservice-sipsa" },
+      { "type": "video", "url": "https://youtu.be/z7bgP4RN3Ak", "orientation": "vertical" },
+      { "type": "paragraph", "data": "DelimitedData: Filtrado JSON por periodos." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/delimitedData", "text": "ver repositorio: delimitedData" },
+      { "type": "video", "url": "https://youtu.be/9sxVDlE-CkA", "orientation": "vertical" },
+      { "type": "paragraph", "data": "TransformData: Procesamiento de datos." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/transformData", "text": "ver repositorio: transformData" },
+      { "type": "video", "url": "https://youtu.be/jv7YXpSP6oY", "orientation": "vertical" },
+      { "type": "paragraph", "data": "StageController: Integración de Bases de Datos." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/stagesController", "text": "ver repositorio: stagesController" },
+      { "type": "video", "url": "https://youtu.be/K45ZpBef8_M", "orientation": "vertical" },
+      { "type": "paragraph", "data": "MatplotDraw: Graficación estadística masiva." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/matplotDraw/", "text": "ver repositorio: matplotDraw" },
+      { "type": "video", "url": "https://youtu.be/wR3Va1674aQ", "orientation": "vertical" },
+      { "type": "paragraph", "data": "FlaskFlow: Visualización de datos JSON." },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/flaskFlow", "text": "ver repositorio: flaskFlow" },
+      { "type": "video", "url": "https://youtu.be/w9ieh3C67Nw?si=70QluqxcP8n7CFDY", "orientation": "vertical" },
+      { "type": "paragraph", "data": "Python Software Architecture - Propuesta de arquitectura de software para Python" },
+      { "type": "link", "url": "https://github.com/oigonzalezp2024/python-software-architecture", "text": "ver repositorio: python-software-architecture" }
+    ]
+  },
+  {
+    "id": 4,
+    "author": "Oscar Gonzalez",
+    "date": "2026-06-27",
+    "content": [
+      { "type": "header", "data": "Experiencia Laboral" },
+      { "type": "paragraph", "data": "Rojas Distribuciones: Backend, modelado de DB, optimización Lighthouse 95%+ (2026)." },
+      { "type": "paragraph", "data": "Ecobullbolsas: Inventarios, trazabilidad, analítica y desarrollo web (2024-2026)." },
+      { "type": "paragraph", "data": "SETI S.A.S.: Pipelines ETL (Python), arquitectura SOA, sector financiero (2022-2023)." }
+    ]
+  },
+  {
+    "id": 5,
+    "author": "Oscar Gonzalez",
+    "date": "2026-06-27",
+    "content": [
+      { "type": "header", "data": "Perfil Profesional" },
+      { "type": "paragraph", "data": "Desarrollador de Software con más de 5 años de experiencia en ingeniería backend, arquitectura de software y procesamiento de datos." },
+      { "type": "header", "data": "Habilidades Técnicas" },
+      { "type": "paragraph", "data": "• Lenguajes Backend: PHP (8.0+), Python, Java (Fundamentos)." },
+      { "type": "paragraph", "data": "• Bases de Datos: SQL Avanzado, PostgreSQL, MySQL, SQL Server." },
+      { "type": "paragraph", "data": "• Arquitectura y Datos: Clean Architecture, Arquitectura Hexagonal, Domain-Driven Design (DDD), Principios SOLID, Pipelines ETL, Manipulación de datos (Pandas, NumPy)." },
+      { "type": "paragraph", "data": "• Desarrollo e Integración Web: Consumo de APIs (REST/SOAP), formatos JSON/XML/XSLT, JavaScript (ES6+), HTML5, CSS3." },
+      { "type": "paragraph", "data": "• Herramientas y Entornos: Postman, Swagger, Git / GitHub, Docker (entornos locales), Metodologías Ágiles (Scrum)." },
+      { "type": "paragraph", "data": "• Rendimiento y Optimización: Enfoque de diseño móvil (Mobile First), auditoría y optimización de rendimiento frontend mediante Google Lighthouse (95%+)." },
+      { "type": "header", "data": "Formación Académica" },
+      { "type": "paragraph", "data": "Tecnólogo en Análisis y Desarrollo de Sistemas de Información (ADSI), SENA - Graduado (2020)." }
+    ]
+  }
+]
