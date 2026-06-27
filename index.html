@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óscar Iván González Peña | Inicio</title>
+
+    <!-- SEO Básico -->
+    <title>Óscar Iván González Peña | Desarrollador Backend & Ingeniero de Datos ETL</title>
+    <meta name="description"
+        content="Portafolio profesional de Óscar Iván González Peña. Desarrollador Backend con +5 años de experiencia especializado en arquitectura de software, pipelines ETL con Python, PHP 8.0+ y bases de datos escalables.">
+    <meta name="keywords"
+        content="Desarrollador Backend, Data Engineer, ETL Python, Arquitectura Hexagonal, Clean Architecture, PHP, SQL, Consultoría TI, Oscar Gonzalez">
+    <link rel="canonical" href="https://oigonzalezp2024.github.io/">
+
+    <!-- Open Graph (Metadatos para redes sociales) -->
+    <meta property="og:title" content="Óscar Iván González Peña | Desarrollador Backend & Data Engineer">
+    <meta property="og:description"
+        content="Especialista en arquitectura backend, automatización de datos y desarrollo de software de alto rendimiento.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://oigonzalezp2024.github.io/">
+    <meta property="og:site_name" content="Portafolio Profesional Óscar Iván González Peña">
+
+    <!-- Schema.org (Google Search Entity) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Óscar Iván González Peña",
+      "jobTitle": "Desarrollador de Software Backend",
+      "url": "https://oigonzalezp2024.github.io/",
+      "sameAs": [
+        "https://github.com/oigonzalezp2024"
+      ],
+      "knowsAbout": ["Python", "PHP", "ETL", "SQL", "Arquitectura de Software", "Clean Architecture", "SOLID"]
+    }
+    </script>
+
     <link rel="stylesheet" href="colnews/assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="text-decoration: none;">
+        <nav class="container"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
                 <h1 style="font-size: 1.5rem; margin: 0;">Óscar Iván González Peña</h1>
             </a>
-            <button id="theme-toggle">🌙 Modo Oscuro</button>
-        </div>
+            <button id="theme-toggle" aria-label="Cambiar tema visual">🌙 Modo Oscuro</button>
+        </nav>
     </header>
 
     <main class="container">
-        <div id="news-grid" class="news-grid"></div>
+        <!-- Sección de valor para motores de búsqueda -->
+        <section id="bio" style="margin-bottom: 2rem;">
+            <h2>Desarrollo WEB - Backend ETL y Soluciones de Datos</h2>
+            <p>Tecnólogo ADSI con más de 5 años creando soluciones backend sólidas. Me especializo en procesamiento de
+                datos (ETL), arquitecturas orientadas a servicios (SOA) y desarrollo de sistemas modulares. Mi enfoque
+                es simple: código limpio (SOLID), bases de datos bien estructuradas y un rendimiento web impecable
+                <strong>(Lighthouse 95%+)</strong>.</p>
+        </section>
+        <!-- Grid dinámico de proyectos -->
+        <section id="news-grid" class="news-grid" aria-label="Proyectos y Trayectoria"></section>
     </main>
 
-    <script src="colnews/assets/js/app.js"></script>
-    <script src="colnews/assets/js/theme.js"></script>
+    <footer class="container"
+        style="text-align: center; margin-top: 4rem; padding-bottom: 2rem; font-size: 0.9rem; border-top: 1px solid #ccc; padding-top: 2rem;">
+        <div style="margin-bottom: 1rem;">
+            <a href="mailto:oigonzalezp2024@gmail.com"
+                style="text-decoration: none; color: inherit; margin: 0 10px;">oigonzalezp2024@gmail.com</a>
+            |
+            <a href="https://wa.me/573212962876" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: inherit; margin: 0 10px;">+57 321 296 2876</a>
+        </div>
+        <p style="margin: 0;">&copy; 2026 Óscar Iván González Peña | Desarrollador de Software</p>
+    </footer>
+
+    <script src="colnews/assets/js/app.js" defer></script>
+    <script src="colnews/assets/js/theme.js" defer></script>
 </body>
+
 </html>

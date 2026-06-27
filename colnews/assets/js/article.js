@@ -77,7 +77,7 @@ async function loadArticle() {
                         }
                         case 'link':
                             return `<div class="my-6 p-4 border-l-4 border-blue-500 bg-slate-900">
-                                        <a target="_black" href="${block.url}" class="text-blue-400 hover:underline font-bold">${block.text}</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="${block.url}" class="text-blue-400 hover:underline font-bold">${block.text}</a>
                                     </div><br><br><br>`;
                         default: return '';
                     }
