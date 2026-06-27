@@ -7,11 +7,11 @@
       { "type": "header", "data": "Soluciones Digitales: Portafolio de Clientes" },
       { "type": "paragraph", "data": "Desarrollo de ecosistemas web orientados a la optimización de procesos operativos, gestión de inventarios y digitalización de catálogos comerciales." },
       
-      { "type": "image", "url": "./assets/img/ecobullbolsas-dispositivos.png", "caption": "Ecobullbolsas: Sistema de gestión" },
+      { "type": "image", "url": "./assets/img/ecobullbolsas-dispositivos.avif", "caption": "Ecobullbolsas: Sistema de gestión" },
       { "type": "paragraph", "data": "Implementación de un software integral para Ecobullbolsas enfocado en el control de trazabilidad, auditoría de recursos y gestión de órdenes de producción. El sistema permite una supervisión automatizada de los flujos de trabajo internos." },
       { "type": "link", "url": "https://ecobullbolsas.com", "text": "Visitar plataforma: ecobullbolsas.com" },
       
-      { "type": "image", "url": "./assets/img/rojas-distribuciones-dispositivos.png", "caption": "Rojas Distribuciones: Catálogo digital" },
+      { "type": "image", "url": "./assets/img/rojas-distribuciones-dispositivos.avif", "caption": "Rojas Distribuciones: Catálogo digital" },
       { "type": "paragraph", "data": "Desarrollo de una plataforma web para Rojas Distribuciones optimizada para alto rendimiento (Lighthouse 95%+). La solución integra catálogos inteligentes con generación dinámica de PDF, garantizando una sincronización real entre el stock y la experiencia del usuario." },
       { "type": "link", "url": "https://rojasdistribuciones.com", "text": "Visitar plataforma: rojasdistribuciones.com" }
     ]
