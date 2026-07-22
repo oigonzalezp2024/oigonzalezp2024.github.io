@@ -1,0 +1,215 @@
+{
+  "sitio": {
+    "titulo": "NEXO GLOBAL Cúcuta | Calzado, Tecnología, Moda y Variedades",
+    "descripcion": "Catálogo oficial de calzado para dama.",
+    "contacto": {
+      "whatsapp": [
+        {
+          "numero": "+57 3212962876",
+          "link": "https://api.whatsapp.com/send/?phone=573212962876&text=Hola%20Oscar%20Deseo%20Saber%20mas%20sobre%20el%20catalogo%20de%20sandalias%20para%20dama."
+        }
+      ],
+      "direccion": "Cl. Bermudez Esquina con Comercio Edf. Maria L-2, Maracay - Aragua, Venezuela"
+    },
+    "navegacion": [
+      {
+        "nombre": "Sandalias",
+        "url": "./index.html"
+      }
+    ],
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Sandalia Plana Marrón Tachuelas Doradas",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con tiras cruzadas en el empeine y pulsera al tobillo con hebilla.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a1.avif",
+        "especificaciones": [
+          "Color: Marrón",
+          "Detalles: Tachuelas doradas",
+          "Estilo: Casual",
+          "Ajuste: Hebilla"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 2,
+        "nombre": "Sandalia Plataforma Baja Negra Tachuelas",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma baja y tiras cruzadas adornadas con tachuelas.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a2.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Detalles: Tachuelas doradas",
+          "Suela: Plataforma baja",
+          "Ajuste: Hebilla al tobillo"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 3,
+        "nombre": "Sandalia Plana Blanca Tachuelas Doradas",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con tiras cruzadas y pulsera al tobillo, ambas con tachuelas doradas.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a3.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Detalles: Tachuelas doradas",
+          "Estilo: Casual",
+          "Ajuste: Hebilla"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 4,
+        "nombre": "Sandalia Plataforma Confort Blanca Prada Style",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma confort, tiras anchas con velcro y detalle metálico.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a4.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Marca: Inspiración Prada (detalle triangular)",
+          "Suela: Plataforma confort acolchada",
+          "Ajuste: Velcro"
+        ],
+        "stock": 8
+      },
+      {
+        "id": 5,
+        "nombre": "Sandalia Plataforma Cruzada Estrás Blanca (Nápoles)",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma media y tiras cruzadas recubiertas de estrás.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a5.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Detalles: Estrás plateado",
+          "Suela: Plataforma media",
+          "Inscripción: Nápoles"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 6,
+        "nombre": "Sandalia Plana Estrás Oro Rosa Tiras Tubulares",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con tiras tubulares cubiertas de estrás color oro rosa.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a6.avif",
+        "especificaciones": [
+          "Color: Oro Rosa",
+          "Detalles: Estrás brillante",
+          "Tiras: Tubulares",
+          "Ajuste: Pulsera al tobillo elástica/hebilla"
+        ],
+        "stock": 20
+      },
+      {
+        "id": 7,
+        "nombre": "Sandalia Plataforma Estrás Oro Rosa Cruzada",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma baja y tiras cruzadas con estrás oro rosa.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a7.avif",
+        "especificaciones": [
+          "Color: Oro Rosa",
+          "Detalles: Estrás brillante",
+          "Suela: Plataforma baja confort",
+          "Inscripción: Corina Factory"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 8,
+        "nombre": "Sandalia Plataforma Confort Marrón Prada Style",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma confort, tiras anchas con velcro y detalle metálico.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a8.avif",
+        "especificaciones": [
+          "Color: Marrón (Tostado)",
+          "Marca: Inspiración Prada (detalle triangular)",
+          "Suela: Plataforma confort acolchada",
+          "Ajuste: Velcro"
+        ],
+        "stock": 9
+      },
+      {
+        "id": 9,
+        "nombre": "Sandalia Plana Nudo Estrás Oro Rosa",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con tiras de estrás que forman un nudo decorativo en el empeine.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a9.avif",
+        "especificaciones": [
+          "Color: Oro Rosa",
+          "Detalles: Nudo central con estrás",
+          "Tiras: Finas",
+          "Ajuste: Deslizable"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 10,
+        "nombre": "Sandalia Plataforma Confort Blanca Tiras Cruzadas (Corina Factory)",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma confort blanca y tiras cruzadas con hebillas doradas.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a10.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Suela: Plataforma confort",
+          "Ajuste: Hebillas doradas",
+          "Inscripción: Corina Factory"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 11,
+        "nombre": "Sandalia Plataforma Estrás Oro Rosa Tiras Múltiples",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma alta y múltiples tiras de estrás color oro rosa.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a11.avif",
+        "especificaciones": [
+          "Color: Oro Rosa",
+          "Detalles: Estrás brillante",
+          "Suela: Plataforma alta confort",
+          "Ajuste: Tira trasera elástica/hebilla"
+        ],
+        "stock": 19
+      },
+      {
+        "id": 12,
+        "nombre": "Sandalia Plana Marrón Tiras Múltiples Confort",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con múltiples tiras marrones cruzadas para mayor ajuste.",
+        "precio": 55000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/a12.avif",
+        "especificaciones": [
+          "Color: Marrón",
+          "Tiras: Múltiples finas",
+          "Suela: Plana confort",
+          "Ajuste: Pulsera al tobillo con hebilla"
+        ],
+        "stock": 17
+      }
+    ]
+  }
+}
