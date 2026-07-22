@@ -12,7 +12,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nexoglobalcucuta.com/sandalias.html">
 
-  <!-- OPEN GRAPH (WhatsApp, Facebook, LinkedIn) -->
+  <!-- OPEN GRAPH -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sandalias para Dama en Cúcuta | Catálogo NEXO GLOBAL">
   <meta property="og:description" content="Explora nuestro catálogo interactivo de sandalias para dama. Elige tus tallas y arma tu pedido directo a WhatsApp.">
@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="Sandalias planas, plataformas y confort. Pide fácilmente por WhatsApp.">
   <meta name="twitter:image" content="https://nexoglobalcucuta.com/img/sandalias/og-banner.jpg">
 
-  <!-- DATOS ESTRUCTURADOS (SCHEMA.ORG JSON-LD) -->
+  <!-- DATOS ESTRUCTURADOS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,7 +76,7 @@
     body {
       background-color: var(--bg-light);
       color: var(--text-main);
-      padding: 70px 10px 20px 10px; /* Padding superior para dar espacio al menú fijo */
+      padding: 70px 10px 90px 10px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -131,30 +131,59 @@
       border-color: var(--gold);
     }
 
-    /* BOTÓN VOLVER ARRIBA */
-    .btn-top {
+    /* BOTONES FLOTANTES DE NAVEGACIÓN (ANTERIOR / SIGUIENTE - SIN EMOJIS) */
+    .floating-stepper {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 6px;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(5px);
+    }
+
+    .stepper-btn {
       background-color: var(--gold);
       color: #ffffff;
       border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.3rem;
+      border-radius: 20px;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 999;
-      transition: transform 0.2s, background-color 0.2s;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .btn-top:hover {
+    .stepper-btn:hover:not(:disabled) {
       background-color: var(--gold-hover);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
+    }
+
+    .stepper-btn:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+      box-shadow: none;
+    }
+
+    /* ESTADO DINÁMICO DEL BOTÓN SIGUIENTE AL COMPLETAR EL FORMULARIO */
+    .stepper-btn.btn-send-ready {
+      background-color: var(--green-whatsapp) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+
+    .stepper-btn.btn-send-ready:hover {
+      background-color: var(--green-whatsapp-hover) !important;
     }
 
     .main-container {
@@ -345,6 +374,7 @@
       border-color: var(--gold);
     }
 
+    /* RESUMEN DEL PEDIDO CON MINIATURAS */
     .order-summary {
       background-color: var(--gold-light);
       border: 2px dashed var(--gold);
@@ -364,29 +394,67 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .selected-items-list li {
+    .summary-item {
       background-color: #ffffff;
-      padding: 12px 15px;
-      border-radius: 8px;
+      padding: 10px 15px;
+      border-radius: 10px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
+      justify-content: space-between;
+      gap: 15px;
       border-left: 5px solid var(--gold);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
-    .selected-items-list li strong {
+    .summary-item-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .summary-thumb {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: #f0f0f0;
+      flex-shrink: 0;
+    }
+
+    .summary-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .summary-item-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .summary-item-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .summary-item-meta strong {
       color: var(--gold);
     }
 
+    .summary-item-subtotal {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
     .summary-total {
-      margin-top: 15px;
+      margin-top: 20px;
       padding-top: 15px;
       border-top: 2px solid var(--gold);
       display: flex;
@@ -510,53 +578,71 @@
       .header-checkout h1 {
         font-size: 1.5rem;
       }
-      .selected-items-list li {
+      .summary-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
+        gap: 10px;
+      }
+      .summary-item-subtotal {
+        align-self: flex-end;
       }
       .map-container {
         height: 250px;
+      }
+      .floating-stepper {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        justify-content: space-between;
+      }
+      .stepper-btn {
+        flex: 1;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR (SIN EMOJIS) -->
   <nav class="sticky-nav" aria-label="Navegación del sitio">
     <div class="nav-container">
-      <a href="#sec-productos" class="nav-btn">🛍️ Productos</a>
-      <a href="#sec-resumen" class="nav-btn">📋 Mi Pedido</a>
-      <a href="#sec-envio" class="nav-btn">📦 Envío</a>
-      <a href="#sec-mapa" class="nav-btn">📍 Ubicación</a>
+      <a href="#sec-productos" class="nav-btn">Productos</a>
+      <a href="#sec-resumen" class="nav-btn">Resumen</a>
+      <a href="#sec-envio" class="nav-btn">Envío</a>
+      <a href="#sec-mapa" class="nav-btn">Ubicación</a>
     </div>
   </nav>
 
-  <!-- BOTÓN FLOTANTE PARA VOLVER ARRIBA -->
-  <button id="btnTop" class="btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Volver arriba">
-    ⬆️
-  </button>
+  <!-- NAVEGACIÓN FLOTANTE PASO A PASO (SIN EMOJIS) -->
+  <div class="floating-stepper" aria-label="Navegación rápida de secciones">
+    <button id="btnPrevSection" class="stepper-btn" onclick="navegarSeccion(-1)" aria-label="Sección anterior">
+      Anterior
+    </button>
+    <button id="btnNextSection" class="stepper-btn" onclick="accionBotonSiguiente()" aria-label="Siguiente sección">
+      Siguiente
+    </button>
+  </div>
 
   <main class="main-container">
     
-    <!-- ENCABEZADO OPTIMIZADO -->
+    <!-- ENCABEZADO -->
     <header class="header-checkout" id="inicio">
       <h1>Catálogo de Sandalias para Dama en Cúcuta</h1>
       <p>NEXO GLOBAL — Toca o haz clic en los productos para personalizar tu pedido</p>
     </header>
 
-    <!-- PASO 1 -->
+    <!-- SECCIÓN 1: PRODUCTOS -->
     <section id="sec-productos" aria-labelledby="sec-productos-title">
       <h2 id="sec-productos-title" class="section-title">1. Selecciona tus productos</h2>
       <div id="catalogGrid" class="catalog-grid"></div>
     </section>
 
-    <!-- RESUMEN -->
+    <!-- SECCIÓN 2: RESUMEN -->
     <section id="sec-resumen" aria-labelledby="sec-resumen-title" class="order-summary">
-      <h3 id="sec-resumen-title">📋 Resumen del Pedido (<span id="totalSelectedCount">0</span> prendas)</h3>
+      <h3 id="sec-resumen-title">Resumen del Pedido (<span id="totalSelectedCount">0</span> prendas)</h3>
       <ul id="summaryList" class="selected-items-list">
-        <li style="color: var(--text-muted); border-left-color: #ccc;">Aún no has seleccionado ninguna prenda. ¡Haz clic en las fotos para agregar!</li>
+        <li style="color: var(--text-muted); padding: 10px; background: #fff; border-radius: 8px;">Aún no has seleccionado ninguna prenda. Haz clic en las fotos para agregar.</li>
       </ul>
       <div class="summary-total">
         <span>TOTAL ESTIMADO:</span>
@@ -564,26 +650,26 @@
       </div>
     </section>
 
-    <!-- PASO 2 -->
+    <!-- SECCIÓN 3: ENVÍO -->
     <section id="sec-envio" aria-labelledby="sec-envio-title">
       <h2 id="sec-envio-title" class="section-title">2. Datos para el Envío</h2>
-      <form class="client-form" onsubmit="return false;">
+      <form class="client-form" id="formEnvio" onsubmit="return false;">
         <div class="form-grid">
           <div class="form-group">
             <label for="clienteNombre">Nombre y Apellidos *</label>
-            <input type="text" id="clienteNombre" placeholder="Ej: María Gómez" required autocomplete="name">
+            <input type="text" id="clienteNombre" placeholder="Ej: María Gómez" required autocomplete="name" oninput="validarFormularioCompleto()">
           </div>
           <div class="form-group">
             <label for="clienteTelefono">Teléfono o WhatsApp *</label>
-            <input type="tel" id="clienteTelefono" placeholder="Ej: 300 123 4567" required autocomplete="tel">
+            <input type="tel" id="clienteTelefono" placeholder="Ej: 300 123 4567" required autocomplete="tel" oninput="validarFormularioCompleto()">
           </div>
           <div class="form-group">
             <label for="clienteDireccion">Dirección Completa y Barrio *</label>
-            <input type="text" id="clienteDireccion" placeholder="Ej: Av. 5 #10-20, Caobos" required autocomplete="street-address">
+            <input type="text" id="clienteDireccion" placeholder="Ej: Av. 5 #10-20, Caobos" required autocomplete="street-address" oninput="validarFormularioCompleto()">
           </div>
           <div class="form-group">
             <label for="clienteCiudad">Ciudad *</label>
-            <input type="text" id="clienteCiudad" value="Cúcuta" required autocomplete="address-level2">
+            <input type="text" id="clienteCiudad" value="Cúcuta" required autocomplete="address-level2" oninput="validarFormularioCompleto()">
           </div>
         </div>
         <div class="form-group" style="margin-top: 15px;">
@@ -593,21 +679,16 @@
       </form>
     </section>
 
-    <!-- PASO 3 -->
-    <button type="button" class="btn-whatsapp" onclick="enviarPedidoWhatsApp()" aria-label="Enviar pedido a WhatsApp">
-      📲 ENVIAR MI PEDIDO COMPLETO POR WHATSAPP
-    </button>
-
-    <!-- SECCIÓN DE UBICACIÓN Y MAPA -->
+    <!-- SECCIÓN 4: UBICACIÓN -->
     <section id="sec-mapa" aria-labelledby="sec-mapa-title" class="map-section">
-      <h2 id="sec-mapa-title" class="section-title">📍 Nuestra Ubicación</h2>
+      <h2 id="sec-mapa-title" class="section-title">Nuestra Ubicación</h2>
       <p class="map-address-text">
-        <strong>Sede Principal / Atención:</strong> <span id="direccionTexto">Cl. Bermúdez Esquina con Comercio Edf. María L-2, Maracay - Aragua, Venezuela</span>
+        <strong>Sede Principal / Atención:</strong> <span id="direccionTexto">Cl. 15 #1E-100, Los Caobos, Cúcuta, Norte de Santander - Cita previa.</span>
       </p>
       <div class="map-container">
         <iframe 
           title="Ubicación NEXO GLOBAL en Google Maps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.240728905206!2d-67.6022!3d10.2475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803ca85a3a1f2b%3A0x0!2zQ2FsbGUgQmVybcO6ZGV6IGNvbiBDYWxsZSBDb21lcmNpbywgTWFyYWNheQ!5e0!3m2!1ses!2sve!4v1700000000000!5m2!1ses!2sve"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.581077792335!2d-72.49868772499401!3d7.883182192139336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e665ba2002a13fd%3A0x73df8496598653cd!2sQu1nce%20Workclub!5e1!3m2!1ses-419!2sco!4v1784691912008!5m2!1ses-419!2sco"
           allowfullscreen="" 
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade">
@@ -627,16 +708,87 @@
     let WHATSAPP_NUMERO = "573212962876";
     let productosDisponibles = [];
     let seleccionados = {};
+    let formularioCompletado = false;
 
-    // Mostrar / Ocultar botón Volver Arriba al hacer Scroll
-    window.onscroll = function() {
-      const btnTop = document.getElementById("btnTop");
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btnTop.style.display = "flex";
+    // REGISTRO DE SECCIONES PARA NAVEGACIÓN SECUENCIAL
+    const IDs_SECCIONES = ['sec-productos', 'sec-resumen', 'sec-envio', 'sec-mapa'];
+    let indiceSeccionActual = 0;
+
+    function validarFormularioCompleto() {
+      const nombre = document.getElementById('clienteNombre').value.trim();
+      const telefono = document.getElementById('clienteTelefono').value.trim();
+      const direccion = document.getElementById('clienteDireccion').value.trim();
+      const ciudad = document.getElementById('clienteCiudad').value.trim();
+
+      formularioCompletado = (nombre !== '' && telefono !== '' && direccion !== '' && ciudad !== '');
+      actualizarBotonesStepper();
+    }
+
+    function actualizarBotonesStepper() {
+      const btnPrev = document.getElementById('btnPrevSection');
+      const btnNext = document.getElementById('btnNextSection');
+
+      btnPrev.disabled = (indiceSeccionActual === 0);
+
+      // SI EL FORMULARIO ESTÁ DILIGENCIADO, EL BOTÓN SIGUIENTE CAMBIA A ENVIAR PEDIDO
+      if (formularioCompletado) {
+        btnNext.disabled = false;
+        btnNext.textContent = 'Enviar Pedido';
+        btnNext.classList.add('btn-send-ready');
       } else {
-        btnTop.style.display = "none";
+        btnNext.textContent = 'Siguiente';
+        btnNext.classList.remove('btn-send-ready');
+        btnNext.disabled = (indiceSeccionActual === IDs_SECCIONES.length - 1);
       }
-    };
+    }
+
+    function accionBotonSiguiente() {
+      if (formularioCompletado) {
+        enviarPedidoWhatsApp();
+      } else {
+        navegarSeccion(1);
+      }
+    }
+
+    function navegarSeccion(direccion) {
+      let nuevoIndice = indiceSeccionActual + direccion;
+      if (nuevoIndice >= 0 && nuevoIndice < IDs_SECCIONES.length) {
+        indiceSeccionActual = nuevoIndice;
+        const targetElement = document.getElementById(IDs_SECCIONES[indiceSeccionActual]);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        actualizarBotonesStepper();
+      }
+    }
+
+    // INTERSECTION OBSERVER PARA MONITOREAR LA SECCIÓN VISIBLE
+    window.addEventListener('DOMContentLoaded', () => {
+      validarFormularioCompleto();
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -50% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = IDs_SECCIONES.indexOf(entry.target.id);
+            if (index !== -1) {
+              indiceSeccionActual = index;
+              actualizarBotonesStepper();
+            }
+          }
+        });
+      }, observerOptions);
+
+      IDs_SECCIONES.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    });
 
     const formatearCOP = (valor) => {
       return new Intl.NumberFormat('es-CO', {
@@ -790,7 +942,7 @@
       totalCountSpan.textContent = keys.length;
 
       if (keys.length === 0) {
-        listContainer.innerHTML = '<li style="color: var(--text-muted); border-left-color: #ccc;">Aún no has seleccionado ninguna prenda. ¡Haz clic en las fotos para agregar!</li>';
+        listContainer.innerHTML = '<li style="color: var(--text-muted); padding: 10px; background: #fff; border-radius: 8px;">Aún no has seleccionado ninguna prenda. Haz clic en las fotos para agregar.</li>';
         grandTotalSpan.textContent = formatearCOP(0);
         return;
       }
@@ -805,9 +957,16 @@
         acumuladoTotal += subtotal;
 
         const li = document.createElement('li');
+        li.className = 'summary-item';
         li.innerHTML = `
-          <span><strong>${item.producto.nombre}</strong></span>
-          <span>Talla: <strong>${item.talla}</strong> | Cant.: <strong>${item.cantidad}</strong> | Subtotal: <strong>${formatearCOP(subtotal)}</strong></span>
+          <div class="summary-item-left">
+            <img class="summary-thumb" src="${item.producto.imagen || 'https://via.placeholder.com/80'}" alt="${item.producto.nombre}" loading="lazy">
+            <div class="summary-item-info">
+              <span class="summary-item-title">${item.producto.nombre}</span>
+              <span class="summary-item-meta">Talla: <strong>${item.talla}</strong> | Cant.: <strong>${item.cantidad}</strong></span>
+            </div>
+          </div>
+          <div class="summary-item-subtotal">${formatearCOP(subtotal)}</div>
         `;
         listContainer.appendChild(li);
       });
@@ -834,10 +993,10 @@
       }
 
       let acumuladoTotal = 0;
-      let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!* 🛍️\n`;
+      let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!*\n`;
       mensaje += `Deseo realizar el siguiente pedido múltiple desde la web:\n\n`;
       
-      mensaje += `📌 *RELACIÓN COMPLETA DEL PEDIDO (${keys.length} prendas):*\n`;
+      mensaje += `*RELACIÓN COMPLETA DEL PEDIDO (${keys.length} prendas):*\n`;
       keys.forEach((key, index) => {
         const item = seleccionados[key];
         const precioUnitario = item.producto.precio || 0;
@@ -851,9 +1010,9 @@
         mensaje += `  • Subtotal: ${formatearCOP(subtotal)}\n`;
       });
 
-      mensaje += `\n💰 *TOTAL ESTIMADO A PAGAR: ${formatearCOP(acumuladoTotal)}*\n`;
+      mensaje += `\n*TOTAL ESTIMADO A PAGAR: ${formatearCOP(acumuladoTotal)}*\n`;
       mensaje += `─────────────────\n`;
-      mensaje += `👤 *DATOS DEL CLIENTE PARA ENTREGA:*\n`;
+      mensaje += `*DATOS DEL CLIENTE PARA ENTREGA:*\n`;
       mensaje += `• *Nombre:* ${nombre}\n`;
       mensaje += `• *Teléfono:* ${telefono}\n`;
       mensaje += `• *Dirección:* ${direccion}\n`;
