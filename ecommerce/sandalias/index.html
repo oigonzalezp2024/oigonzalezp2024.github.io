@@ -347,6 +347,7 @@
       gap: 10px;
       position: relative;
       z-index: 20;
+      scroll-margin-bottom: 80px;
     }
 
     .product-card.selected .item-controls {
@@ -1055,7 +1056,6 @@
         card.id = `card-prod-${prod.id}`;
 
         card.onclick = function (e) {
-          // Si el clic proviene del contenedor de controles o de alguno de sus hijos, lo ignoramos
           if (e.target.closest('.item-controls')) {
             return;
           }
@@ -1074,7 +1074,7 @@
               <p class="product-details">${prod.caracteristicas || ''}</p>
             </div>
 
-            <div class="item-controls" onclick="event.stopPropagation();">
+            <div class="item-controls" id="controls-prod-${prod.id}" onclick="event.stopPropagation();">
               <div class="control-row">
                 <label for="talla-${prod.id}">Talla:</label>
                 <select id="talla-${prod.id}" onchange="actualizarItemConfig(${prod.id})" aria-label="Seleccionar Talla">
@@ -1101,20 +1101,30 @@
     function toggleSeleccion(prodId) {
       const card = document.getElementById(`card-prod-${prodId}`);
       const producto = productosDisponibles.find(p => p.id === prodId);
+      const tallaSelect = document.getElementById(`talla-${prodId}`);
+      const cantInput = document.getElementById(`cant-${prodId}`);
+      const controlsBox = document.getElementById(`controls-prod-${prodId}`);
 
       if (seleccionados[prodId]) {
         delete seleccionados[prodId];
         card.classList.remove('selected');
       } else {
-        const tallaSelect = document.getElementById(`talla-${prodId}`);
-        const cantInput = document.getElementById(`cant-${prodId}`);
-
         seleccionados[prodId] = {
           producto: producto,
           talla: tallaSelect ? tallaSelect.value : '37',
           cantidad: parseInt(cantInput ? cantInput.value : 1, 10)
         };
         card.classList.add('selected');
+
+        // Scroll suave hacia los controles y auto-foco inmediato en el select de talla
+        setTimeout(() => {
+          if (controlsBox) {
+            controlsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          if (tallaSelect) {
+            tallaSelect.focus({ preventScroll: true });
+          }
+        }, 50);
       }
 
       actualizarResumen();
