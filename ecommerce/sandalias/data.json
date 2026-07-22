@@ -23,7 +23,7 @@
         "nombre": "Sandalia Plana Marrón Tachuelas Doradas",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia plana con tiras cruzadas en el empeine y pulsera al tobillo con hebilla.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a1.avif",
         "especificaciones": [
@@ -39,7 +39,7 @@
         "nombre": "Sandalia Plataforma Baja Negra Tachuelas",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma baja y tiras cruzadas adornadas con tachuelas.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a2.avif",
         "especificaciones": [
@@ -55,7 +55,7 @@
         "nombre": "Sandalia Plana Blanca Tachuelas Doradas",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia plana con tiras cruzadas y pulsera al tobillo, ambas con tachuelas doradas.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a3.avif",
         "especificaciones": [
@@ -71,7 +71,7 @@
         "nombre": "Sandalia Plataforma Confort Blanca Prada Style",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma confort, tiras anchas con velcro y detalle metálico.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a4.avif",
         "especificaciones": [
@@ -87,7 +87,7 @@
         "nombre": "Sandalia Plataforma Cruzada Estrás Blanca (Nápoles)",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma media y tiras cruzadas recubiertas de estrás.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a5.avif",
         "especificaciones": [
@@ -103,7 +103,7 @@
         "nombre": "Sandalia Plana Estrás Oro Rosa Tiras Tubulares",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia plana con tiras tubulares cubiertas de estrás color oro rosa.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a6.avif",
         "especificaciones": [
@@ -119,7 +119,7 @@
         "nombre": "Sandalia Plataforma Estrás Oro Rosa Cruzada",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma baja y tiras cruzadas con estrás oro rosa.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a7.avif",
         "especificaciones": [
@@ -135,7 +135,7 @@
         "nombre": "Sandalia Plataforma Confort Marrón Prada Style",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma confort, tiras anchas con velcro y detalle metálico.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a8.avif",
         "especificaciones": [
@@ -151,7 +151,7 @@
         "nombre": "Sandalia Plana Nudo Estrás Oro Rosa",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia plana con tiras de estrás que forman un nudo decorativo en el empeine.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a9.avif",
         "especificaciones": [
@@ -167,7 +167,7 @@
         "nombre": "Sandalia Plataforma Confort Blanca Tiras Cruzadas (Corina Factory)",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma confort blanca y tiras cruzadas con hebillas doradas.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a10.avif",
         "especificaciones": [
@@ -183,7 +183,7 @@
         "nombre": "Sandalia Plataforma Estrás Oro Rosa Tiras Múltiples",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia con plataforma alta y múltiples tiras de estrás color oro rosa.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a11.avif",
         "especificaciones": [
@@ -199,7 +199,7 @@
         "nombre": "Sandalia Plana Marrón Tiras Múltiples Confort",
         "categoria": "sandalias",
         "caracteristicas": "Sandalia plana con múltiples tiras marrones cruzadas para mayor ajuste.",
-        "precio": 55000,
+        "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/sandalias/a12.avif",
         "especificaciones": [
