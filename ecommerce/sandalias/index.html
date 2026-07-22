@@ -145,7 +145,7 @@
       display: flex;
       gap: 10px;
       z-index: 999;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       padding: 6px;
       border-radius: 30px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
@@ -257,6 +257,7 @@
       position: relative;
       user-select: none;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .product-card:hover {
@@ -301,7 +302,6 @@
       width: 100%;
       height: auto;
       aspect-ratio: 4 / 5;
-      /* O 1 / 1 si tus fotos son cuadradas */
       object-fit: cover;
       display: block;
       pointer-events: none;
@@ -345,6 +345,8 @@
       border: 1px solid var(--gold);
       margin-top: 10px;
       gap: 10px;
+      position: relative;
+      z-index: 20;
     }
 
     .product-card.selected .item-controls {
@@ -514,34 +516,6 @@
       font-weight: 700;
     }
 
-    .btn-whatsapp {
-      width: 100%;
-      background-color: var(--green-whatsapp);
-      color: #ffffff;
-      border: none;
-      padding: 20px;
-      border-radius: 10px;
-      font-size: 1.35rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.2s, background-color 0.2s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
-    }
-
-    .btn-whatsapp:hover {
-      background-color: var(--green-whatsapp-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-whatsapp:active {
-      transform: scale(0.98);
-    }
-
     .map-section {
       margin-top: 40px;
       background-color: #fafafa;
@@ -646,7 +620,6 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* BOTONES DE NAVEGACIÓN RE-DISEÑADOS (ELEGANTES Y ESTILIZADOS) */
     .modal-nav-btn {
       position: absolute;
       top: 50%;
@@ -689,7 +662,6 @@
       right: 30px;
     }
 
-    /* BARRA INFERIOR INTEGRADA CON UN DISEÑO PULIDO */
     .modal-bottom-bar {
       position: absolute;
       bottom: 25px;
@@ -736,15 +708,12 @@
     @media (max-width: 600px) {
       body {
         padding-top: 65px;
+        padding-bottom: 100px;
       }
 
       .nav-btn {
         font-size: 0.8rem;
         padding: 6px 8px;
-      }
-
-      .product-card img {
-        height: 240px;
       }
 
       .header-checkout h1 {
@@ -766,15 +735,18 @@
       }
 
       .floating-stepper {
-        bottom: 15px;
-        right: 15px;
-        left: 15px;
+        bottom: 12px;
+        right: 12px;
+        left: 12px;
         justify-content: space-between;
+        padding: 4px 8px;
       }
 
       .stepper-btn {
         flex: 1;
         justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.85rem;
       }
 
       .modal-nav-btn {
@@ -934,11 +906,9 @@
     let seleccionados = {};
     let formularioCompletado = false;
 
-    // GALERÍA Y CONTROL DEL MODAL
     let galeriaPedido = [];
     let indiceGaleriaActual = 0;
 
-    // REGISTRO DE SECCIONES PARA NAVEGACIÓN SECUENCIAL
     const IDs_SECCIONES = ['sec-productos', 'sec-resumen', 'sec-envio', 'sec-mapa'];
     let indiceSeccionActual = 0;
 
@@ -1085,7 +1055,8 @@
         card.id = `card-prod-${prod.id}`;
 
         card.onclick = function (e) {
-          if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') {
+          // Si el clic proviene del contenedor de controles o de alguno de sus hijos, lo ignoramos
+          if (e.target.closest('.item-controls')) {
             return;
           }
           toggleSeleccion(prod.id);
@@ -1103,7 +1074,7 @@
               <p class="product-details">${prod.caracteristicas || ''}</p>
             </div>
 
-            <div class="item-controls">
+            <div class="item-controls" onclick="event.stopPropagation();">
               <div class="control-row">
                 <label for="talla-${prod.id}">Talla:</label>
                 <select id="talla-${prod.id}" onchange="actualizarItemConfig(${prod.id})" aria-label="Seleccionar Talla">
@@ -1210,7 +1181,6 @@
       grandTotalSpan.textContent = formatearCOP(acumuladoTotal);
     }
 
-    /* MODAL: APERTURA, NAVEGACIÓN Y ELIMINACIÓN */
     function abrirModal(index) {
       if (galeriaPedido.length === 0) return;
       indiceGaleriaActual = index;
@@ -1250,16 +1220,13 @@
       const itemAEliminar = galeriaPedido[indiceGaleriaActual];
       const prodId = itemAEliminar.id;
 
-      // Deseleccionar producto
       toggleSeleccion(prodId);
 
-      // Si ya no quedan productos, cerrar modal
       if (galeriaPedido.length === 0) {
         cerrarModal();
         return;
       }
 
-      // Ajustar índice de la galería para seguir navegando sin interrupción
       if (indiceGaleriaActual >= galeriaPedido.length) {
         indiceGaleriaActual = galeriaPedido.length - 1;
       }
