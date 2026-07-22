@@ -41,13 +41,13 @@
     "telephone": "+573212962876",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Cl. Bermudez Esquina con Comercio Edf. Maria L-2",
-      "addressLocality": "Maracay",
-      "addressRegion": "Aragua",
-      "addressCountry": "VE"
+      "streetAddress": "Cl. 15 #1E-100, Los Caobos",
+      "addressLocality": "Cúcuta",
+      "addressRegion": "Norte de Santander",
+      "addressCountry": "CO"
     },
     "url": "https://nexoglobalcucuta.com/sandalias.html",
-    "priceRange": "$$$"
+    "priceRange": "$$"
   }
   </script>
 
@@ -90,7 +90,6 @@
       font-size: 18px;
     }
 
-    /* BARRA DE NAVEGACIÓN FLOTANTE SUPERIOR */
     .sticky-nav {
       position: fixed;
       top: 0;
@@ -137,7 +136,6 @@
       border-color: var(--gold);
     }
 
-    /* BOTONES FLOTANTES DE NAVEGACIÓN */
     .floating-stepper {
       position: fixed;
       bottom: 20px;
@@ -222,6 +220,7 @@
       color: var(--text-muted);
       font-size: 1.1rem;
       font-weight: 600;
+      margin-top: 4px;
     }
 
     section {
@@ -387,7 +386,6 @@
       border-color: var(--gold);
     }
 
-    /* RESUMEN DEL PEDIDO CON MINIATURAS */
     .order-summary {
       background-color: var(--gold-light);
       border: 2px dashed var(--gold);
@@ -471,23 +469,45 @@
       font-weight: 800;
       color: var(--gold);
       white-space: nowrap;
+      text-align: right;
     }
 
-    .summary-total {
+    .summary-total-container {
       margin-top: 20px;
       padding-top: 15px;
       border-top: 2px solid var(--gold);
       display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .summary-row {
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 1.3rem;
-      font-weight: 800;
+      font-size: 1.1rem;
+      font-weight: 700;
       color: var(--text-main);
     }
 
-    .summary-total span.total-price {
+    .summary-row.total-final {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .summary-row span.total-price {
       color: var(--gold);
       font-size: 1.5rem;
+    }
+
+    .summary-row.ahorro-row {
+      color: #2e7d32;
+      font-weight: 800;
+      background-color: #e8f5e9;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 1.05rem;
     }
 
     .client-form {
@@ -556,7 +576,6 @@
       padding-top: 15px;
     }
 
-    /* ESTILOS DEL MODAL (CORREGIDO PARA MÓVILES) */
     .image-modal {
       display: none;
       position: fixed;
@@ -611,7 +630,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 0; /* Previene desbordamiento grid */
+      min-height: 0;
     }
 
     .modal-img {
@@ -787,7 +806,6 @@
 
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
   <nav class="sticky-nav" aria-label="Navegación del sitio">
     <div class="nav-container">
       <a href="#sec-productos" class="nav-btn">Productos</a>
@@ -797,7 +815,6 @@
     </div>
   </nav>
 
-  <!-- NAVEGACIÓN FLOTANTE PASO A PASO -->
   <div class="floating-stepper" aria-label="Navegación rápida de secciones">
     <button id="btnPrevSection" class="stepper-btn" onclick="navegarSeccion(-1)" aria-label="Sección anterior">
       Anterior
@@ -809,34 +826,39 @@
 
   <main class="main-container">
 
-    <!-- ENCABEZADO -->
     <header class="header-checkout" id="inicio">
-      <h1>Canal de ventas Preferencial | Catálogo de Sandalias para Dama | Ventas al Detal y Por Mayor</h1>
-      <p>Cobertura en todo Colombia | <b>PAGO CONTRA ENTREGA</b></p>
-      <p>Los precios aqui expuestos son unicamente para los clientes que compren 5 o más unidades por pedido.</b></p>
-      <p>Toca o haz clic en los productos para personalizar tu pedido</p>
+      <h1>Catálogo Oficial de Sandalias para Dama | NEXO GLOBAL</h1>
+      <p>Envíos a todo Colombia | <b>PAGO CONTRA ENTREGA</b></p>
+      <p>Toca o haz clic en las prendas para personalizarlas y armar tu pedido directamente por WhatsApp.</p>
     </header>
 
-    <!-- SECCIÓN 1: PRODUCTOS -->
     <section id="sec-productos" aria-labelledby="sec-productos-title">
       <h2 id="sec-productos-title" class="section-title">1. Selecciona tus productos</h2>
       <div id="catalogGrid" class="catalog-grid"></div>
     </section>
 
-    <!-- SECCIÓN 2: RESUMEN -->
     <section id="sec-resumen" aria-labelledby="sec-resumen-title" class="order-summary">
       <h3 id="sec-resumen-title">Resumen del Pedido (<span id="totalSelectedCount">0</span> prendas)</h3>
       <ul id="summaryList" class="selected-items-list">
         <li style="color: var(--text-muted); padding: 10px; background: #fff; border-radius: 8px;">Aún no has
           seleccionado ninguna prenda. Haz clic en las fotos para agregar.</li>
       </ul>
-      <div class="summary-total">
-        <span>TOTAL ESTIMADO:</span>
-        <span id="grandTotal" class="total-price">$0</span>
+      <div class="summary-total-container">
+        <div class="summary-row" id="rowSubtotalPlena" style="display: none;">
+          <span>Subtotal (Tarifa Plena):</span>
+          <del id="subtotalPlena">$0</del>
+        </div>
+        <div class="summary-row ahorro-row" id="rowAhorroTotal" style="display: none;">
+          <span>Ahorro Total:</span>
+          <span id="ahorroTotal">$0 (0% OFF)</span>
+        </div>
+        <div class="summary-row total-final">
+          <span>TOTAL ESTIMADO:</span>
+          <span id="grandTotal" class="total-price">$0</span>
+        </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: ENVÍO -->
     <section id="sec-envio" aria-labelledby="sec-envio-title">
       <h2 id="sec-envio-title" class="section-title">2. Datos para el Envío</h2>
       <form class="client-form" id="formEnvio" onsubmit="return false;">
@@ -869,7 +891,6 @@
       </form>
     </section>
 
-    <!-- SECCIÓN 4: UBICACIÓN -->
     <section id="sec-mapa" aria-labelledby="sec-mapa-title" class="map-section">
       <h2 id="sec-mapa-title" class="section-title">Nuestra Ubicación</h2>
       <p class="map-address-text">
@@ -890,7 +911,6 @@
 
   </main>
 
-  <!-- MODAL DE VISUALIZACIÓN RE-DISEÑADO Y OPTIMIZADO -->
   <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
     <button class="modal-close-btn" onclick="cerrarModal()" aria-label="Cerrar visor">&#x2715;</button>
 
@@ -916,6 +936,9 @@
 
     let galeriaPedido = [];
     let indiceGaleriaActual = 0;
+
+    const PRECIO_MAYORISTA = 55000;
+    const MINIMO_UNIDADES_MAYORISTA = 5;
 
     const IDs_SECCIONES = ['sec-productos', 'sec-resumen', 'sec-envio', 'sec-mapa'];
     let indiceSeccionActual = 0;
@@ -1150,26 +1173,59 @@
       const listContainer = document.getElementById('summaryList');
       const totalCountSpan = document.getElementById('totalSelectedCount');
       const grandTotalSpan = document.getElementById('grandTotal');
+      const subtotalPlenaSpan = document.getElementById('subtotalPlena');
+      const ahorroTotalSpan = document.getElementById('ahorroTotal');
+      const rowSubtotalPlena = document.getElementById('rowSubtotalPlena');
+      const rowAhorroTotal = document.getElementById('rowAhorroTotal');
+
       const keys = Object.keys(seleccionados);
 
-      totalCountSpan.textContent = keys.length;
+      let totalUnidades = 0;
+      keys.forEach(key => {
+        totalUnidades += seleccionados[key].cantidad;
+      });
+
+      totalCountSpan.textContent = totalUnidades;
 
       if (keys.length === 0) {
         listContainer.innerHTML = '<li style="color: var(--text-muted); padding: 10px; background: #fff; border-radius: 8px;">Aún no has seleccionado ninguna prenda. Haz clic en las fotos para agregar.</li>';
         grandTotalSpan.textContent = formatearCOP(0);
+        rowSubtotalPlena.style.display = 'none';
+        rowAhorroTotal.style.display = 'none';
         galeriaPedido = [];
         return;
       }
 
+      const esMayorista = totalUnidades >= MINIMO_UNIDADES_MAYORISTA;
+
       listContainer.innerHTML = '';
-      let acumuladoTotal = 0;
+      let subtotalPlenaAcumulado = 0;
+      let totalPagarAcumulado = 0;
       galeriaPedido = [];
+
+      if (esMayorista) {
+        const bannerBeneficio = document.createElement('li');
+        bannerBeneficio.style.cssText = "background-color: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; padding: 10px 14px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; text-align: center; list-style: none; margin-bottom: 5px;";
+        bannerBeneficio.innerHTML = `🎉 ¡Felicidades! Has alcanzado ${totalUnidades} unidades. Se ha aplicado automáticamente la tarifa especial por mayor de ${formatearCOP(PRECIO_MAYORISTA)} por unidad.`;
+        listContainer.appendChild(bannerBeneficio);
+      } else {
+        const faltantes = MINIMO_UNIDADES_MAYORISTA - totalUnidades;
+        const bannerAlerta = document.createElement('li');
+        bannerAlerta.style.cssText = "background-color: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; padding: 10px 14px; border-radius: 8px; font-weight: bold; font-size: 0.9rem; text-align: center; list-style: none; margin-bottom: 5px;";
+        bannerAlerta.innerHTML = `💡 Agrega <strong>${faltantes}</strong> prenda(s) más para activar la tarifa por mayor (${formatearCOP(PRECIO_MAYORISTA)} c/u).`;
+        listContainer.appendChild(bannerAlerta);
+      }
 
       keys.forEach((key, index) => {
         const item = seleccionados[key];
-        const precioUnitario = item.producto.precio || 0;
-        const subtotal = precioUnitario * item.cantidad;
-        acumuladoTotal += subtotal;
+        const tarifaPlenaUnitario = item.producto.precio || 0;
+        const precioAplicadoUnitario = esMayorista ? PRECIO_MAYORISTA : tarifaPlenaUnitario;
+
+        const subtotalItemPlena = tarifaPlenaUnitario * item.cantidad;
+        const subtotalItemPagar = precioAplicadoUnitario * item.cantidad;
+
+        subtotalPlenaAcumulado += subtotalItemPlena;
+        totalPagarAcumulado += subtotalItemPagar;
 
         galeriaPedido.push({
           id: item.producto.id,
@@ -1189,12 +1245,29 @@
               <span class="summary-item-meta">Talla: <strong>${item.talla}</strong> | Cant.: <strong>${item.cantidad}</strong></span>
             </div>
           </div>
-          <div class="summary-item-subtotal">${formatearCOP(subtotal)}</div>
+          <div class="summary-item-subtotal">
+            ${formatearCOP(subtotalItemPagar)}
+            ${esMayorista ? '<br><small style="font-size:0.75rem; color:#2e7d32; font-weight:normal;">(Precio por mayor)</small>' : ''}
+          </div>
         `;
         listContainer.appendChild(li);
       });
 
-      grandTotalSpan.textContent = formatearCOP(acumuladoTotal);
+      if (esMayorista) {
+        const ahorroTotal = subtotalPlenaAcumulado - totalPagarAcumulado;
+        const porcentajeAhorro = subtotalPlenaAcumulado > 0 ? Math.round((ahorroTotal / subtotalPlenaAcumulado) * 100) : 0;
+
+        subtotalPlenaSpan.textContent = formatearCOP(subtotalPlenaAcumulado);
+        ahorroTotalSpan.textContent = `${formatearCOP(ahorroTotal)} (${porcentajeAhorro}% OFF)`;
+        
+        rowSubtotalPlena.style.display = 'flex';
+        rowAhorroTotal.style.display = 'flex';
+      } else {
+        rowSubtotalPlena.style.display = 'none';
+        rowAhorroTotal.style.display = 'none';
+      }
+
+      grandTotalSpan.textContent = formatearCOP(totalPagarAcumulado);
     }
 
     function abrirModal(index) {
@@ -1277,25 +1350,46 @@
         return;
       }
 
-      let acumuladoTotal = 0;
-      let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!*\n`;
-      mensaje += `Deseo realizar el siguiente pedido múltiple desde la web:\n\n`;
+      let totalUnidades = 0;
+      keys.forEach(key => totalUnidades += seleccionados[key].cantidad);
 
-      mensaje += `*RELACIÓN COMPLETA DEL PEDIDO (${keys.length} prendas):*\n`;
+      const esMayorista = totalUnidades >= MINIMO_UNIDADES_MAYORISTA;
+      let subtotalPlenaAcumulado = 0;
+      let totalPagarAcumulado = 0;
+
+      let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!*\n`;
+      mensaje += `Deseo realizar el siguiente pedido desde la web:\n\n`;
+
+      if (esMayorista) {
+        mensaje += `🌟 *TIPO DE PEDIDO: AL POR MAYOR (${totalUnidades} unidades)*\n\n`;
+      }
+
+      mensaje += `*RELACIÓN DEL PEDIDO:*\n`;
       keys.forEach((key, index) => {
         const item = seleccionados[key];
-        const precioUnitario = item.producto.precio || 0;
-        const subtotal = precioUnitario * item.cantidad;
-        acumuladoTotal += subtotal;
+        const tarifaPlenaUnitario = item.producto.precio || 0;
+        const precioUnitario = esMayorista ? PRECIO_MAYORISTA : tarifaPlenaUnitario;
+
+        subtotalPlenaAcumulado += (tarifaPlenaUnitario * item.cantidad);
+        const subtotalPagar = precioUnitario * item.cantidad;
+        totalPagarAcumulado += subtotalPagar;
 
         mensaje += `\n*Prenda ${index + 1}:* ${item.producto.nombre}\n`;
         mensaje += `  • Talla: ${item.talla}\n`;
         mensaje += `  • Cantidad: ${item.cantidad}\n`;
-        mensaje += `  • Precio Unitario: ${formatearCOP(precioUnitario)}\n`;
-        mensaje += `  • Subtotal: ${formatearCOP(subtotal)}\n`;
+        mensaje += `  • Precio Aplicado: ${formatearCOP(precioUnitario)}\n`;
+        mensaje += `  • Subtotal: ${formatearCOP(subtotalPagar)}\n`;
       });
 
-      mensaje += `\n*TOTAL ESTIMADO A PAGAR: ${formatearCOP(acumuladoTotal)}*\n`;
+      const ahorroTotal = subtotalPlenaAcumulado - totalPagarAcumulado;
+      const porcentajeAhorro = subtotalPlenaAcumulado > 0 ? Math.round((ahorroTotal / subtotalPlenaAcumulado) * 100) : 0;
+
+      mensaje += `\n─────────────────\n`;
+      if (esMayorista) {
+        mensaje += `• *Subtotal Tarifa Plena:* ${formatearCOP(subtotalPlenaAcumulado)}\n`;
+        mensaje += `• *Ahorro Total:* ${formatearCOP(ahorroTotal)} (${porcentajeAhorro}% OFF)\n`;
+      }
+      mensaje += `• *TOTAL ESTIMADO A PAGAR:* ${formatearCOP(totalPagarAcumulado)}\n`;
       mensaje += `─────────────────\n`;
       mensaje += `*DATOS DEL CLIENTE PARA ENTREGA:*\n`;
       mensaje += `• *Nombre:* ${nombre}\n`;
@@ -1307,7 +1401,7 @@
         mensaje += `• *Notas adicionales:* ${notas}\n`;
       }
 
-      mensaje += `\nQuedo atento(a) para confirmar disponibilidad total y coordinar el pago/envío. ¡Muchas gracias!`;
+      mensaje += `\nQuedo atento(a) para confirmar disponibilidad y coordinar la entrega. ¡Muchas gracias!`;
 
       const urlWhatsApp = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
       window.open(urlWhatsApp, '_blank');
