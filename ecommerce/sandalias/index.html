@@ -531,10 +531,49 @@
       gap: 8px;
     }
 
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
     .form-group label {
       color: var(--text-main);
       font-size: 1rem;
       font-weight: 700;
+    }
+
+    .habeas-data-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin-top: 20px;
+    }
+
+    .habeas-data-box input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--gold);
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .habeas-data-box label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    .habeas-data-box a {
+      color: var(--gold);
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
     }
 
     .map-section {
@@ -576,7 +615,7 @@
       padding-top: 15px;
     }
 
-    .image-modal {
+    .image-modal, .conditions-modal, .privacy-policy-modal {
       display: none;
       position: fixed;
       top: 0;
@@ -590,11 +629,49 @@
       padding: 15px 10px calc(15px + env(safe-area-inset-bottom, 0px)) 10px;
     }
 
-    .image-modal.active {
+    .image-modal.active, .conditions-modal.active, .privacy-policy-modal.active {
       display: grid;
-      grid-template-rows: 1fr auto;
       align-items: center;
       justify-items: center;
+    }
+
+    .image-modal.active {
+      grid-template-rows: 1fr auto;
+    }
+
+    .conditions-modal-content, .privacy-policy-modal-content {
+      background: #ffffff;
+      width: 100%;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+      border: 2px solid var(--gold);
+      text-align: left;
+    }
+
+    .conditions-modal-content h3, .privacy-policy-modal-content h3 {
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .conditions-modal-content p, .conditions-modal-content li, 
+    .privacy-policy-modal-content p, .privacy-policy-modal-content li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .conditions-modal-content ul, .privacy-policy-modal-content ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
     }
 
     .modal-close-btn {
@@ -617,9 +694,17 @@
       line-height: 1;
     }
 
+    .conditions-modal-content .modal-close-btn,
+    .privacy-policy-modal-content .modal-close-btn {
+      background: #f0f0f0;
+      color: var(--text-main);
+      border-color: #ddd;
+    }
+
     .modal-close-btn:hover {
       background: var(--gold);
       border-color: var(--gold);
+      color: #ffffff;
       transform: rotate(90deg);
     }
 
@@ -827,11 +912,14 @@
   <main class="main-container">
 
     <header class="header-checkout" id="inicio">
-      <h1>Catálogo de Hermosas Sandalias para Dama</h1>
-      <p><b>ENVÍO GRATIS A TODO COLOMBIA*</b> | <b>PAGO CONTRA ENTREGA</b></p>
-      <p>*Aplican condiciones y restricciones. Válido solo hasta 5 unidades. A por menor, se require un pequeño abono no inferior a $10.000 que se restará del total a pagar cuando reciba su pedido. A por mayor, pagará flete por adelantado.</p>
-      <br>
-      <p>Toca o haz clic en las prendas para personalizarlas y armar tu pedido directamente por WhatsApp.</p>
+      <h1>Catálogo Oficial de Sandalias para Dama | NEXO GLOBAL</h1>
+      <p style="font-size: 1.25rem; font-weight: 800; color: #2e7d32; margin-top: 5px;">
+        🚀 ENVÍO GRATIS A TODO COLOMBIA* | PAGO CONTRA ENTREGA
+      </p>
+      <p style="font-size: 0.85rem; margin-top: 6px;">
+        <a href="javascript:void(0);" onclick="abrirModalCondiciones()" style="color: var(--gold); text-decoration: underline; font-weight: 600;">*Ver términos, condiciones y políticas de envío para mayoristas</a>
+      </p>
+      <p style="margin-top: 10px;">Toca o haz clic en las prendas para personalizarlas y armar tu pedido directamente por WhatsApp.</p>
     </header>
 
     <section id="sec-productos" aria-labelledby="sec-productos-title">
@@ -868,27 +956,35 @@
           <div class="form-group">
             <label for="clienteNombre">Nombre y Apellidos *</label>
             <input type="text" id="clienteNombre" placeholder="Ej: María Gómez" required autocomplete="name"
-              oninput="validarFormularioCompleto()">
+              oninput="guardarDatosFormularioYValidar()">
           </div>
           <div class="form-group">
             <label for="clienteTelefono">Teléfono o WhatsApp *</label>
             <input type="tel" id="clienteTelefono" placeholder="Ej: 300 123 4567" required autocomplete="tel"
-              oninput="validarFormularioCompleto()">
+              oninput="guardarDatosFormularioYValidar()">
           </div>
           <div class="form-group">
             <label for="clienteDireccion">Dirección Completa y Barrio *</label>
             <input type="text" id="clienteDireccion" placeholder="Ej: Av. 5 #10-20, Caobos" required
-              autocomplete="street-address" oninput="validarFormularioCompleto()">
+              autocomplete="street-address" oninput="guardarDatosFormularioYValidar()">
           </div>
           <div class="form-group">
             <label for="clienteCiudad">Ciudad *</label>
             <input type="text" id="clienteCiudad" value="Cúcuta" required autocomplete="address-level2"
-              oninput="validarFormularioCompleto()">
+              oninput="guardarDatosFormularioYValidar()">
           </div>
-        </div>
-        <div class="form-group" style="margin-top: 15px;">
-          <label for="clienteNotas">Notas Adicionales (Opcional)</label>
-          <input type="text" id="clienteNotas" placeholder="Ej: Entregar por la tarde o recibir en la recepción">
+          <div class="form-group full-width">
+            <label for="clienteNotas">Notas Adicionales (Opcional)</label>
+            <input type="text" id="clienteNotas" placeholder="Ej: Entregar por la tarde o recibir en la recepción" oninput="guardarDatosFormularioYValidar()">
+          </div>
+          <div class="form-group full-width">
+            <div class="habeas-data-box">
+              <input type="checkbox" id="checkHabeasData" onchange="guardarDatosFormularioYValidar()">
+              <label for="checkHabeasData">
+                Autorizo de manera previa, expresa e informada a <strong>NEXO GLOBAL Cúcuta</strong> para el tratamiento de mis datos personales según la <a href="javascript:void(0);" onclick="abrirModalPrivacidad()">Política de Tratamiento de Datos Personales</a> en cumplimiento de la Ley 1581 de 2012. *
+              </label>
+            </div>
+          </div>
         </div>
       </form>
     </section>
@@ -928,6 +1024,33 @@
     </div>
   </div>
 
+  <!-- MODAL DE CONDICIONES Y POLÍTICAS -->
+  <div id="conditionsModal" class="conditions-modal" role="dialog" aria-modal="true" aria-label="Términos y Condiciones">
+    <div class="conditions-modal-content">
+      <button class="modal-close-btn" onclick="cerrarModalCondiciones()" aria-label="Cerrar condiciones">&#x2715;</button>
+      <h3>Términos y Condiciones</h3>
+      <p>Aplica envío gratis a todo Colombia bajo las siguientes pautas:</p>
+      <ul>
+        <li><strong>Venta al detal (hasta 5 unidades):</strong> Pago contra entrega disponible. Se requiere un pequeño abono no inferior a $10.000 para procesar el envío, el cual se descuenta del total al recibir tu pedido.</li>
+        <li><strong>Venta al por mayor (a partir de 5 unidades):</strong> El flete se paga por adelantado.</li>
+      </ul>
+      <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-main);">Nuestro equipo te contactará por WhatsApp para coordinar los detalles de pago y despacho.</p>
+    </div>
+  </div>
+
+  <!-- MODAL DE POLÍTICA DE PRIVACIDAD / HABEAS DATA -->
+  <div id="privacyModal" class="privacy-policy-modal" role="dialog" aria-modal="true" aria-label="Política de Privacidad">
+    <div class="privacy-policy-modal-content">
+      <button class="modal-close-btn" onclick="cerrarModalPrivacidad()" aria-label="Cerrar política">&#x2715;</button>
+      <h3>Política de Tratamiento de Datos Personales</h3>
+      <p>En cumplimiento de la <strong>Ley 1581 de 2012</strong> y el Decreto 1377 de 2013 de Colombia:</p>
+      <p><strong>1. Responsable:</strong> NEXO GLOBAL Cúcuta, con domicilio principal en Cl. 15 #1E-100, Los Caobos, Cúcuta. Teléfono/WhatsApp: +57 3212962876.</p>
+      <p><strong>2. Finalidad:</strong> Los datos recolectados (nombre, teléfono, dirección y ciudad) son incorporados en bases de datos exclusivamente para gestionar la cotización, procesamiento, facturación y despacho de los productos adquiridos, así como para atender solicitudes o PQR.</p>
+      <p><strong>3. Derechos del Titular:</strong> Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y suprimir su información, así como a revocar la autorización otorgada enviando su solicitud a nuestros canales de atención oficiales.</p>
+      <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-main);">Al marcar la casilla de aceptación en el formulario, usted otorga su consentimiento previo, expreso e informado para estos fines.</p>
+    </div>
+  </div>
+
   <script id="schema-products" type="application/ld+json"></script>
 
   <script>
@@ -945,13 +1068,83 @@
     const IDs_SECCIONES = ['sec-productos', 'sec-resumen', 'sec-envio', 'sec-mapa'];
     let indiceSeccionActual = 0;
 
+    // PERSISTENCIA LOCALSTORAGE
+    const STORAGE_KEY_SELECCIONADOS = 'nexo_global_seleccionados';
+    const STORAGE_KEY_FORMULARIO = 'nexo_global_formulario';
+
+    function guardarEstadoLocal() {
+      try {
+        localStorage.setItem(STORAGE_KEY_SELECCIONADOS, JSON.stringify(seleccionados));
+        
+        const datosForm = {
+          nombre: document.getElementById('clienteNombre').value,
+          telefono: document.getElementById('clienteTelefono').value,
+          direccion: document.getElementById('clienteDireccion').value,
+          ciudad: document.getElementById('clienteCiudad').value,
+          notas: document.getElementById('clienteNotas').value,
+          habeasData: document.getElementById('checkHabeasData').checked
+        };
+        localStorage.setItem(STORAGE_KEY_FORMULARIO, JSON.stringify(datosForm));
+      } catch (e) {
+        console.error("Error al guardar en localStorage", e);
+      }
+    }
+
+    function cargarEstadoLocal() {
+      try {
+        const selGuardados = localStorage.getItem(STORAGE_KEY_SELECCIONADOS);
+        if (selGuardados) {
+          seleccionados = JSON.parse(selGuardados);
+        }
+
+        const formGuardado = localStorage.getItem(STORAGE_KEY_FORMULARIO);
+        if (formGuardado) {
+          const datosForm = JSON.parse(formGuardado);
+          if (datosForm.nombre) document.getElementById('clienteNombre').value = datosForm.nombre;
+          if (datosForm.telefono) document.getElementById('clienteTelefono').value = datosForm.telefono;
+          if (datosForm.direccion) document.getElementById('clienteDireccion').value = datosForm.direccion;
+          if (datosForm.ciudad) document.getElementById('clienteCiudad').value = datosForm.ciudad;
+          if (datosForm.notas) document.getElementById('clienteNotas').value = datosForm.notas;
+          if (datosForm.habeasData !== undefined) document.getElementById('checkHabeasData').checked = datosForm.habeasData;
+        }
+      } catch (e) {
+        console.error("Error al cargar de localStorage", e);
+      }
+    }
+
+    function abrirModalCondiciones() {
+      document.getElementById('conditionsModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModalCondiciones() {
+      document.getElementById('conditionsModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function abrirModalPrivacidad() {
+      document.getElementById('privacyModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModalPrivacidad() {
+      document.getElementById('privacyModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function guardarDatosFormularioYValidar() {
+      validarFormularioCompleto();
+      guardarEstadoLocal();
+    }
+
     function validarFormularioCompleto() {
       const nombre = document.getElementById('clienteNombre').value.trim();
       const telefono = document.getElementById('clienteTelefono').value.trim();
       const direccion = document.getElementById('clienteDireccion').value.trim();
       const ciudad = document.getElementById('clienteCiudad').value.trim();
+      const habeasDataChecked = document.getElementById('checkHabeasData').checked;
 
-      formularioCompletado = (nombre !== '' && telefono !== '' && direccion !== '' && ciudad !== '');
+      formularioCompletado = (nombre !== '' && telefono !== '' && direccion !== '' && ciudad !== '' && habeasDataChecked);
       actualizarBotonesStepper();
     }
 
@@ -993,7 +1186,38 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      validarFormularioCompleto();
+      fetch('data.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Error al cargar data.json');
+          return response.json();
+        })
+        .then(data => {
+          if (data.sitio && data.sitio.productos) {
+            productosDisponibles = data.sitio.productos;
+            
+            // Cargar estado guardado antes de renderizar
+            cargarEstadoLocal();
+
+            renderizarMosaico(productosDisponibles);
+            inyectarSchemaProductos(productosDisponibles);
+            actualizarResumen();
+            validarFormularioCompleto();
+
+            if (data.sitio.contacto) {
+              if (data.sitio.contacto.direccion) {
+                document.getElementById('direccionTexto').textContent = data.sitio.contacto.direccion;
+              }
+              if (data.sitio.contacto.whatsapp && data.sitio.contacto.whatsapp.length > 0) {
+                let numLimpio = data.sitio.contacto.whatsapp[0].numero.replace(/\D/g, '');
+                if (numLimpio) WHATSAPP_NUMERO = numLimpio;
+              }
+            }
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          document.getElementById('catalogGrid').innerHTML = '<p style="color:red; text-align:center;">No se pudo cargar el catálogo desde data.json.</p>';
+        });
 
       const observerOptions = {
         root: null,
@@ -1026,33 +1250,6 @@
         maximumFractionDigits: 0
       }).format(valor);
     };
-
-    fetch('data.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Error al cargar data.json');
-        return response.json();
-      })
-      .then(data => {
-        if (data.sitio && data.sitio.productos) {
-          productosDisponibles = data.sitio.productos;
-          renderizarMosaico(productosDisponibles);
-          inyectarSchemaProductos(productosDisponibles);
-
-          if (data.sitio.contacto) {
-            if (data.sitio.contacto.direccion) {
-              document.getElementById('direccionTexto').textContent = data.sitio.contacto.direccion;
-            }
-            if (data.sitio.contacto.whatsapp && data.sitio.contacto.whatsapp.length > 0) {
-              let numLimpio = data.sitio.contacto.whatsapp[0].numero.replace(/\D/g, '');
-              if (numLimpio) WHATSAPP_NUMERO = numLimpio;
-            }
-          }
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        document.getElementById('catalogGrid').innerHTML = '<p style="color:red; text-align:center;">No se pudo cargar el catálogo desde data.json.</p>';
-      });
 
     function inyectarSchemaProductos(productos) {
       const itemList = {
@@ -1087,6 +1284,11 @@
         card.className = 'product-card';
         card.id = `card-prod-${prod.id}`;
 
+        const estaSeleccionado = !!seleccionados[prod.id];
+        if (estaSeleccionado) {
+          card.classList.add('selected');
+        }
+
         card.onclick = function (e) {
           if (e.target.closest('.item-controls')) {
             return;
@@ -1095,6 +1297,8 @@
         };
 
         const precioFormateado = prod.precio ? formatearCOP(prod.precio) : 'Consultar';
+        const tallaActual = estaSeleccionado ? seleccionados[prod.id].talla : '37';
+        const cantActual = estaSeleccionado ? seleccionados[prod.id].cantidad : 1;
 
         card.innerHTML = `
           <div class="select-badge" id="badge-prod-${prod.id}">✓</div>
@@ -1110,17 +1314,17 @@
               <div class="control-row">
                 <label for="talla-${prod.id}">Talla:</label>
                 <select id="talla-${prod.id}" onchange="actualizarItemConfig(${prod.id})" aria-label="Seleccionar Talla">
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37" selected>37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
+                  <option value="35" ${tallaActual === '35' ? 'selected' : ''}>35</option>
+                  <option value="36" ${tallaActual === '36' ? 'selected' : ''}>36</option>
+                  <option value="37" ${tallaActual === '37' ? 'selected' : ''}>37</option>
+                  <option value="38" ${tallaActual === '38' ? 'selected' : ''}>38</option>
+                  <option value="39" ${tallaActual === '39' ? 'selected' : ''}>39</option>
+                  <option value="40" ${tallaActual === '40' ? 'selected' : ''}>40</option>
                 </select>
               </div>
               <div class="control-row">
                 <label for="cant-${prod.id}">Cantidad:</label>
-                <input type="number" id="cant-${prod.id}" value="1" min="1" max="10" onchange="actualizarItemConfig(${prod.id})" aria-label="Cantidad">
+                <input type="number" id="cant-${prod.id}" value="${cantActual}" min="1" max="10" onchange="actualizarItemConfig(${prod.id})" aria-label="Cantidad">
               </div>
             </div>
           </div>
@@ -1159,6 +1363,7 @@
       }
 
       actualizarResumen();
+      guardarEstadoLocal();
     }
 
     function actualizarItemConfig(prodId) {
@@ -1168,6 +1373,7 @@
         seleccionados[prodId].talla = tallaSelect.value;
         seleccionados[prodId].cantidad = parseInt(cantInput.value || 1, 10);
         actualizarResumen();
+        guardarEstadoLocal();
       }
     }
 
@@ -1327,8 +1533,16 @@
 
     document.addEventListener('keydown', (e) => {
       const modal = document.getElementById('imageModal');
+      const conditionsModal = document.getElementById('conditionsModal');
+      const privacyModal = document.getElementById('privacyModal');
+
+      if (e.key === 'Escape') {
+        if (modal.classList.contains('active')) cerrarModal();
+        if (conditionsModal.classList.contains('active')) cerrarModalCondiciones();
+        if (privacyModal.classList.contains('active')) cerrarModalPrivacidad();
+      }
+
       if (modal.classList.contains('active')) {
-        if (e.key === 'Escape') cerrarModal();
         if (e.key === 'ArrowLeft') cambiarImagenModal(-1);
         if (e.key === 'ArrowRight') cambiarImagenModal(1);
       }
@@ -1346,9 +1560,10 @@
       const direccion = document.getElementById('clienteDireccion').value.trim();
       const ciudad = document.getElementById('clienteCiudad').value.trim();
       const notas = document.getElementById('clienteNotas').value.trim();
+      const habeasDataChecked = document.getElementById('checkHabeasData').checked;
 
-      if (!nombre || !telefono || !direccion) {
-        alert("Por favor completa tus datos de entrega (Nombre, Teléfono y Dirección).");
+      if (!nombre || !telefono || !direccion || !habeasDataChecked) {
+        alert("Por favor completa tus datos de entrega y acepta la política de tratamiento de datos personales.");
         return;
       }
 
