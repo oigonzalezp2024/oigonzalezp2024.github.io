@@ -60,8 +60,8 @@
       --border-color: #e0e0e0;
       --green-whatsapp: #25d366;
       --green-whatsapp-hover: #1ebc57;
-      --danger: #dc3545;
-      --danger-hover: #bd2130;
+      --danger: #e63946;
+      --danger-hover: #c82333;
     }
 
     html {
@@ -572,7 +572,7 @@
       padding-top: 15px;
     }
 
-    /* ESTILOS DEL MODAL Y BOTÓN DE ELIMINAR */
+    /* ESTILOS ELEGANTES DEL MODAL */
     .image-modal {
       display: none;
       position: fixed;
@@ -580,11 +580,12 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.92);
+      background-color: rgba(10, 10, 10, 0.94);
       z-index: 2000;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      backdrop-filter: blur(8px);
     }
 
     .image-modal.active {
@@ -593,19 +594,28 @@
 
     .modal-close-btn {
       position: absolute;
-      top: 20px;
+      top: 25px;
       right: 25px;
-      background: transparent;
-      border: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: #ffffff;
-      font-size: 2.5rem;
-      font-weight: bold;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       z-index: 2002;
+      transition: all 0.25s ease;
+      line-height: 1;
     }
 
     .modal-close-btn:hover {
-      color: var(--gold);
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: rotate(90deg);
     }
 
     .modal-content-wrapper {
@@ -619,78 +629,99 @@
     }
 
     .modal-img {
-      max-width: 90vw;
-      max-height: 75vh;
+      max-width: 85vw;
+      max-height: 72vh;
       object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* BOTONES DE NAVEGACIÓN RE-DISEÑADOS (ELEGANTES Y ESTILIZADOS) */
     .modal-nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #ffffff;
-      border: none;
-      font-size: 2rem;
-      padding: 15px 20px;
-      cursor: pointer;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      transition: background 0.2s;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 2001;
       user-select: none;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .modal-nav-btn:hover {
-      background: rgba(179, 139, 64, 0.8);
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #ffffff;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 20px rgba(179, 139, 64, 0.4);
+    }
+
+    .modal-nav-btn:active {
+      transform: translateY(-50%) scale(0.95);
     }
 
     .modal-nav-btn.prev {
-      left: 20px;
+      left: 30px;
     }
 
     .modal-nav-btn.next {
-      right: 20px;
+      right: 30px;
     }
 
-    /* BARRA INFERIOR DEL MODAL CON INFORMACIÓN Y BOTÓN DE ELIMINAR */
+    /* BARRA INFERIOR INTEGRADA CON UN DISEÑO PULIDO */
     .modal-bottom-bar {
       position: absolute;
-      bottom: 20px;
+      bottom: 25px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       z-index: 2002;
+      background: rgba(20, 20, 20, 0.75);
+      padding: 8px 10px 8px 20px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
     .modal-caption {
       color: #ffffff;
-      text-align: center;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 6px 16px;
-      border-radius: 20px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
     }
 
     .modal-remove-btn {
-      background-color: var(--danger);
-      color: #ffffff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      background-color: rgba(230, 57, 70, 0.2);
+      color: #ff6b6b;
+      border: 1px solid rgba(230, 57, 70, 0.4);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
       font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+      transition: all 0.25s ease;
+      white-space: nowrap;
     }
 
     .modal-remove-btn:hover {
-      background-color: var(--danger-hover);
-      transform: translateY(-1px);
+      background-color: var(--danger);
+      color: #ffffff;
+      border-color: var(--danger);
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
     }
 
     @media (max-width: 600px) {
@@ -729,14 +760,27 @@
         justify-content: center;
       }
       .modal-nav-btn {
-        padding: 10px 15px;
-        font-size: 1.5rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
       }
       .modal-nav-btn.prev {
-        left: 5px;
+        left: 10px;
       }
       .modal-nav-btn.next {
-        right: 5px;
+        right: 10px;
+      }
+      .modal-bottom-bar {
+        flex-direction: column;
+        padding: 12px 16px;
+        border-radius: 20px;
+        gap: 10px;
+        max-width: 90vw;
+      }
+      .modal-caption {
+        white-space: normal;
+        text-align: center;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -841,17 +885,17 @@
 
   </main>
 
-  <!-- MODAL PARA VER FOTOS Y ELIMINAR DESDE EL VISOR -->
+  <!-- MODAL DE VISUALIZACIÓN RE-DISEÑADO -->
   <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
-    <button class="modal-close-btn" onclick="cerrarModal()" aria-label="Cerrar visor">&times;</button>
+    <button class="modal-close-btn" onclick="cerrarModal()" aria-label="Cerrar visor">&#x2715;</button>
     <div class="modal-content-wrapper">
-      <button class="modal-nav-btn prev" onclick="cambiarImagenModal(-1)" aria-label="Imagen anterior">&lt;</button>
+      <button class="modal-nav-btn prev" onclick="cambiarImagenModal(-1)" aria-label="Imagen anterior">&#10094;</button>
       <img id="modalImg" class="modal-img" src="" alt="Vista ampliada">
-      <button class="modal-nav-btn next" onclick="cambiarImagenModal(1)" aria-label="Siguiente imagen">&gt;</button>
+      <button class="modal-nav-btn next" onclick="cambiarImagenModal(1)" aria-label="Siguiente imagen">&#10095;</button>
       
       <div class="modal-bottom-bar">
         <div id="modalCaption" class="modal-caption"></div>
-        <button class="modal-remove-btn" onclick="eliminarProductoDesdeModal()">Eliminar del pedido</button>
+        <button class="modal-remove-btn" onclick="eliminarProductoDesdeModal()">Eliminar prenda</button>
       </div>
     </div>
   </div>
