@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- SEO BÁSICO -->
   <title>Sandalias para Dama en Cúcuta | NEXO GLOBAL | Calzado y Moda</title>
@@ -556,7 +556,7 @@
       padding-top: 15px;
     }
 
-    /* ESTILOS ELEGANTES DEL MODAL */
+    /* ESTILOS DEL MODAL (CORREGIDO PARA MÓVILES) */
     .image-modal {
       display: none;
       position: fixed;
@@ -564,35 +564,37 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(10, 10, 10, 0.94);
+      background-color: rgba(10, 10, 10, 0.95);
       z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       backdrop-filter: blur(8px);
+      box-sizing: border-box;
+      padding: 15px 10px calc(15px + env(safe-area-inset-bottom, 0px)) 10px;
     }
 
     .image-modal.active {
-      display: flex;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+      justify-items: center;
     }
 
     .modal-close-btn {
       position: absolute;
-      top: 25px;
-      right: 25px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 2002;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       line-height: 1;
     }
 
@@ -609,15 +611,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px 110px 20px;
+      min-height: 0; /* Previene desbordamiento grid */
     }
 
     .modal-img {
-      max-width: 85vw;
-      max-height: 72vh;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -625,85 +627,81 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       font-size: 1.2rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.2s ease;
       z-index: 2001;
       user-select: none;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
     }
 
     .modal-nav-btn:hover {
       background: var(--gold);
       border-color: var(--gold);
-      color: #ffffff;
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 6px 20px rgba(179, 139, 64, 0.4);
-    }
-
-    .modal-nav-btn:active {
-      transform: translateY(-50%) scale(0.95);
     }
 
     .modal-nav-btn.prev {
-      left: 30px;
+      left: 10px;
     }
 
     .modal-nav-btn.next {
-      right: 30px;
+      right: 10px;
     }
 
     .modal-bottom-bar {
-      position: absolute;
-      bottom: 25px;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 10px;
       z-index: 2002;
-      background: rgba(20, 20, 20, 0.75);
-      padding: 8px 10px 8px 20px;
-      border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      background: rgba(252, 252, 252, 0.08);
+      padding: 10px 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
     }
 
     .modal-caption {
       color: #ffffff;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      letter-spacing: 0.3px;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
+      flex: 1;
     }
 
     .modal-remove-btn {
-      background-color: rgba(230, 57, 70, 0.2);
-      color: #ff6b6b;
-      border: 1px solid rgba(230, 57, 70, 0.4);
-      padding: 8px 18px;
-      border-radius: 30px;
+      background-color: var(--danger);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .modal-remove-btn:hover {
-      background-color: var(--danger);
-      color: #ffffff;
-      border-color: var(--danger);
-      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+      background-color: var(--danger-hover);
+      box-shadow: 0 2px 8px rgba(230, 57, 70, 0.4);
     }
 
     @media (max-width: 600px) {
@@ -751,31 +749,37 @@
       }
 
       .modal-nav-btn {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
       }
 
       .modal-nav-btn.prev {
-        left: 10px;
+        left: 5px;
       }
 
       .modal-nav-btn.next {
-        right: 10px;
+        right: 5px;
       }
 
       .modal-bottom-bar {
         flex-direction: column;
-        padding: 12px 16px;
-        border-radius: 20px;
-        gap: 10px;
-        max-width: 90vw;
+        align-items: center;
+        border-radius: 16px;
+        padding: 10px 14px;
+        gap: 8px;
       }
 
       .modal-caption {
         white-space: normal;
         text-align: center;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+      }
+
+      .modal-remove-btn {
+        width: 100%;
+        padding: 8px;
+        text-align: center;
       }
     }
   </style>
@@ -884,18 +888,19 @@
 
   </main>
 
-  <!-- MODAL DE VISUALIZACIÓN RE-DISEÑADO -->
+  <!-- MODAL DE VISUALIZACIÓN RE-DISEÑADO Y OPTIMIZADO -->
   <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
     <button class="modal-close-btn" onclick="cerrarModal()" aria-label="Cerrar visor">&#x2715;</button>
+
     <div class="modal-content-wrapper">
       <button class="modal-nav-btn prev" onclick="cambiarImagenModal(-1)" aria-label="Imagen anterior">&#10094;</button>
       <img id="modalImg" class="modal-img" src="" alt="Vista ampliada">
       <button class="modal-nav-btn next" onclick="cambiarImagenModal(1)" aria-label="Siguiente imagen">&#10095;</button>
+    </div>
 
-      <div class="modal-bottom-bar">
-        <div id="modalCaption" class="modal-caption"></div>
-        <button class="modal-remove-btn" onclick="eliminarProductoDesdeModal()">Eliminar prenda</button>
-      </div>
+    <div class="modal-bottom-bar">
+      <div id="modalCaption" class="modal-caption"></div>
+      <button class="modal-remove-btn" onclick="eliminarProductoDesdeModal()">Eliminar prenda</button>
     </div>
   </div>
 
@@ -1116,7 +1121,6 @@
         };
         card.classList.add('selected');
 
-        // Scroll suave hacia los controles y auto-foco inmediato en el select de talla
         setTimeout(() => {
           if (controlsBox) {
             controlsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
