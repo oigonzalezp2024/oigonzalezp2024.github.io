@@ -1,0 +1,87 @@
+{
+  "empresa": {
+    "nombre": "Chevrolet Autos",
+    "sublema": "Maneja el futuro hoy",
+    "descripcion": "Landing page de concesionario Chevrolet, especialistas en venta de vehículos nuevos, SUVs, pickups y modelos eléctricos.",
+    "mensaje_estrategico": "Te acompañamos a estrenar el carro de tus sueños con el respaldo, tecnología y seguridad que solo Chevrolet te puede brindar.",
+    "telefono_whatsapp": "573016388895"
+  },
+  "rutas_imagenes": {
+    "logo": "../img/vehiculos/logo.png",
+    "hero_fondo": "https://www.chevrolet.com.co/content/dam/chevrolet/south-america/ecuador/espanol/index/vehiculos-electricos/captiva-ev/nov-refresh/universo-ev/universo-ev.jpg?imwidth=3000",
+    "spark_euv_azul_aqua": "../img/vehiculos/spark_euv_azul_aqua.png",
+    "spark_euv_negro_galaxia": "../img/vehiculos/spark_euv_negro_galaxia.png",
+    "spark_euv_gris_nube": "../img/vehiculos/spark_euv_gris_nube.png",
+    "spark_euv_blanco_destello": "../img/vehiculos/spark_euv_blanco_destello.png",
+    "spark_euv_azul_tormenta": "../img/vehiculos/spark_euv_azul_tormenta.png"
+  },
+  "menu_navegacion": [
+    { "id": "catalogo", "etiqueta": "MODELOS", "icono_clase": "fa-solid fa-car", "activo": true },
+    { "id": "promos", "etiqueta": "OFFERS", "icono_clase": "fa-solid fa-tags", "activo": false },
+    { "id": "videos", "etiqueta": "TEST DRIVE", "icono_clase": "fa-solid fa-play", "activo": false },
+    { "id": "ecobull", "etiqueta": "TECNOLOGÍA EV", "icono_clase": "fa-solid fa-bolt", "activo": false },
+    { "id": "contacto", "etiqueta": "CONTACTO", "icono_clase": "fa-solid fa-comments", "activo": false }
+  ],
+  "redes_sociales": [
+    { "nombre": "TikTok", "etiqueta_aria": "TikTok", "icono_clase": "fa-brands fa-tiktok", "url": "#" },
+    { "nombre": "Facebook", "etiqueta_aria": "Facebook", "icono_clase": "fa-brands fa-facebook-f", "url": "#" },
+    { "nombre": "Instagram", "etiqueta_aria": "Instagram", "icono_clase": "fa-brands fa-instagram", "url": "#" },
+    { "nombre": "YouTube", "etiqueta_aria": "YouTube", "icono_clase": "fa-brands fa-youtube", "url": "#" }
+  ],
+  "filtros_catalogo": [
+    { "valor": "todos", "etiqueta": "TODOS", "activo": true },
+    { "valor": "automoviles", "etiqueta": "AUTOMÓVILES", "activo": false },
+    { "valor": "suv", "etiqueta": "SUVs", "activo": false },
+    { "valor": "pickups", "etiqueta": "PICKUPS", "activo": false },
+    { "valor": "electricos", "etiqueta": "ELÉCTRICOS", "activo": false },
+    { "valor": "comerciales", "etiqueta": "COMERCIALES", "activo": false }
+  ],
+  "elementos_clave_seo": {
+    "estructura_encabezados": {
+      "h1": "Vehículos Chevrolet nuevos: estrena carro con los mejores planes de financiación y garantía.",
+      "h2_secciones": ["Síguenos en redes", "Catálogo de Vehículos"]
+    }
+  },
+  "vehiculos": [
+    {
+      "slug": "spark_euv",
+      "categoria": "electricos",
+      "nombre": "Spark EUV",
+      "medidas": "Capacidad de Carga 720 kg / Motor 1.5L",
+      "descripcion_general": "El Spark EUV ofrece una experiencia única para quienes buscan diseño, tecnología y seguridad en un SUV 100% eléctrico.",
+      "imagen_destacada_key": "spark_euv_azul_aqua",
+      "variantes": [
+        {
+          "id": "spark-euv-negro",
+          "nombre": "Spark EUV Negro Galaxia",
+          "descripcion": "Diseño robusto y elegante en acabado Negro Galaxia. Autonomía de hasta 360 km y tecnología 100% eléctrica.",
+          "imagen_key": "spark_euv_negro_galaxia"
+        },
+        {
+          "id": "spark-euv-gris",
+          "nombre": "Spark EUV Gris Nube",
+          "descripcion": "Estilo moderno y sofisticado en tono Gris Nube. Conectividad total y máximo confort en ciudad.",
+          "imagen_key": "spark_euv_gris_nube"
+        },
+        {
+          "id": "spark-euv-blanco",
+          "nombre": "Spark EUV Blanco Destello",
+          "descripcion": "Acabado limpio e imponente en Blanco Destello. Eficiencia energética superior.",
+          "imagen_key": "spark_euv_blanco_destello"
+        },
+        {
+          "id": "spark-euv-azul-tormenta",
+          "nombre": "Spark EUV Azul Tormenta",
+          "descripcion": "Personalidad única en tono Azul Tormenta. Equipado con asistentes de conducción de última generación.",
+          "imagen_key": "spark_euv_azul_tormenta"
+        },
+        {
+          "id": "spark-euv-azul-aqua",
+          "nombre": "Spark EUV Azul Aqua",
+          "descripcion": "Vibrante y tecnológico en color Azul Aqua. Carga rápida y rendimiento óptimo.",
+          "imagen_key": "spark_euv_azul_aqua"
+        }
+      ]
+    }
+  ]
+}
