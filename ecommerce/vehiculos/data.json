@@ -13,7 +13,11 @@
     "spark_euv_negro_galaxia": "../img/vehiculos/spark_euv_negro_galaxia.png",
     "spark_euv_gris_nube": "../img/vehiculos/spark_euv_gris_nube.png",
     "spark_euv_blanco_destello": "../img/vehiculos/spark_euv_blanco_destello.png",
-    "spark_euv_azul_tormenta": "../img/vehiculos/spark_euv_azul_tormenta.png"
+    "spark_euv_azul_tormenta": "../img/vehiculos/spark_euv_azul_tormenta.png",
+    "captia-ev-azul-alba-techo-negro": "../img/vehiculos/captia-ev-azul-alba-techo-negro.png",
+    "captia-ev-arena-metalico-techo-negro": "../img/vehiculos/captia-ev-arena-metalico-techo-negro.png",
+    "captia-ev-plata-perlado-techo-negro": "../img/vehiculos/captia-ev-plata-perlado-techo-negro.png",
+    "captiva-ev-gris-intenso-techo-negro": "../img/vehiculos/captiva-ev-gris-intenso-techo-negro.png"
   },
   "menu_navegacion": [
     { "id": "catalogo", "etiqueta": "MODELOS", "icono_clase": "fa-solid fa-car", "activo": true },
@@ -80,6 +84,40 @@
           "nombre": "Spark EUV Azul Aqua",
           "descripcion": "Vibrante y tecnológico en color Azul Aqua. Carga rápida y rendimiento óptimo.",
           "imagen_key": "spark_euv_azul_aqua"
+        }
+      ]
+    },
+    {
+      "slug": "captia-ev",
+      "categoria": "electricos",
+      "nombre": "captia ev",
+      "medidas": "Capacidad de Carga 720 kg / Motor 1.5L",
+      "descripcion_general": "El Spark EUV ofrece una experiencia única para quienes buscan diseño, tecnología y seguridad en un SUV 100% eléctrico.",
+      "imagen_destacada_key": "captia-ev-azul-alba-techo-negro",
+      "variantes": [
+        {
+          "id": "spark-euv-negro",
+          "nombre": "captia ev",
+          "descripcion": "Diseño robusto y elegante en acabado Negro Galaxia. Autonomía de hasta 360 km y tecnología 100% eléctrica.",
+          "imagen_key": "captia-ev-arena-metalico-techo-negro"
+        },
+        {
+          "id": "spark-euv-gris",
+          "nombre": "captia ev",
+          "descripcion": "Estilo moderno y sofisticado en tono Gris Nube. Conectividad total y máximo confort en ciudad.",
+          "imagen_key": "captia-ev-azul-alba-techo-negro"
+        },
+        {
+          "id": "spark-euv-blanco",
+          "nombre": "captia ev",
+          "descripcion": "Acabado limpio e imponente en Blanco Destello. Eficiencia energética superior.",
+          "imagen_key": "captia-ev-plata-perlado-techo-negro"
+        },
+        {
+          "id": "spark-euv-azul-tormenta",
+          "nombre": "captia ev",
+          "descripcion": "Personalidad única en tono Azul Tormenta. Equipado con asistentes de conducción de última generación.",
+          "imagen_key": "captiva-ev-gris-intenso-techo-negro"
         }
       ]
     }

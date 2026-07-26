@@ -656,6 +656,7 @@
     <!-- JavaScript Consumiendo data.json -->
     <script>
         let siteData = {};
+        let currentModelFilter = null; // Controla cuando estamos filtrando por un modelo en específico
 
         async function loadData() {
             try {
@@ -675,9 +676,9 @@
             if (siteData.empresa && siteData.empresa.nombre) {
                 const nombrePartes = siteData.empresa.nombre.split(' ');
                 document.getElementById('logo-text-container').innerHTML = `
-                    ${nombrePartes[0]}
-                    <span>${nombrePartes.slice(1).join(' ')}</span>
-                `;
+                ${nombrePartes[0]}
+                <span>${nombrePartes.slice(1).join(' ')}</span>
+            `;
             }
 
             // 2. Hero Section
@@ -708,11 +709,11 @@
             // 4. Navegación Secundario
             if (siteData.menu_navegacion) {
                 document.getElementById('navGrid').innerHTML = siteData.menu_navegacion.map(nav => `
-                    <a href="#${nav.id}" class="nav-item ${nav.activo ? 'active' : ''}">
-                        <span class="icon"><i class="${nav.icono_clase}"></i></span>
-                        ${nav.etiqueta}
-                    </a>
-                `).join('');
+                <a href="#${nav.id}" class="nav-item ${nav.activo ? 'active' : ''}">
+                    <span class="icon"><i class="${nav.icono_clase}"></i></span>
+                    ${nav.etiqueta}
+                </a>
+            `).join('');
             }
 
             // 5. Redes Sociales
@@ -724,10 +725,10 @@
 
             if (siteData.redes_sociales) {
                 document.getElementById('socialIcons').innerHTML = siteData.redes_sociales.map(social => `
-                    <a href="${social.url}" class="social-icon" aria-label="${social.etiqueta_aria}" target="_blank" rel="noopener">
-                        <i class="${social.icono_clase}"></i>
-                    </a>
-                `).join('');
+                <a href="${social.url}" class="social-icon" aria-label="${social.etiqueta_aria}" target="_blank" rel="noopener">
+                    <i class="${social.icono_clase}"></i>
+                </a>
+            `).join('');
             }
 
             // 6. CTAs de WhatsApp
@@ -738,54 +739,57 @@
             // 7. Filtros y Renderizado
             if (siteData.filtros_catalogo) {
                 document.getElementById('filterButtons').innerHTML = siteData.filtros_catalogo.map(filter => `
-                    <button class="filter-btn ${filter.activo ? 'active' : ''}" onclick="filterCategory('${filter.valor}', this)">
-                        ${filter.etiqueta}
-                    </button>
-                `).join('');
+                <button class="filter-btn ${filter.activo ? 'active' : ''}" onclick="filterCategory('${filter.valor}', this)">
+                    ${filter.etiqueta}
+                </button>
+            `).join('');
             }
 
             renderProducts('todos');
         }
 
-        function selectCategoryFilter(categoria) {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            let targetBtn = null;
-
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick')?.includes(`'${categoria}'`)) {
-                    targetBtn = btn;
-                }
-            });
-
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-            }
-
-            renderProducts(categoria);
-            document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function renderProducts(categoriaFiltro = 'todos') {
+        function renderProducts(filtro = 'todos') {
             const container = document.getElementById('productContainer');
             if (!siteData.vehiculos) return;
 
             let itemsToRender = [];
-            const isAllTab = categoriaFiltro === 'todos';
+            const isAllTab = filtro === 'todos';
 
             if (isAllTab) {
-                // En "TODOS" mostramos 1 tarjeta principal por modelo
+                // En "TODOS" mostramos 1 tarjeta principal (raíz) por cada modelo
                 itemsToRender = siteData.vehiculos.map(v => ({
                     nombre: v.nombre,
                     descripcion: v.descripcion_general,
                     imagen_key: v.imagen_destacada_key,
                     categoria: v.categoria,
+                    slug: v.slug,
                     isModelRoot: true
                 }));
+            } else if (currentModelFilter) {
+                // Filtrado específico por el MODELO (usando su slug)
+                const modeloEncontrado = siteData.vehiculos.find(v => v.slug === currentModelFilter);
+
+                if (modeloEncontrado) {
+                    if (modeloEncontrado.variantes && modeloEncontrado.variantes.length > 0) {
+                        itemsToRender = modeloEncontrado.variantes.map(variante => ({
+                            ...variante,
+                            categoria: modeloEncontrado.categoria,
+                            isModelRoot: false
+                        }));
+                    } else {
+                        itemsToRender.push({
+                            nombre: modeloEncontrado.nombre,
+                            descripcion: modeloEncontrado.descripcion_general,
+                            imagen_key: modeloEncontrado.imagen_destacada_key,
+                            categoria: modeloEncontrado.categoria,
+                            isModelRoot: false
+                        });
+                    }
+                }
             } else {
-                // Al filtrar por categoría desglosamos las variantes
+                // Filtrado general por CATEGORÍA (automoviles, suv, pickups, electricos, etc.)
                 siteData.vehiculos.forEach(v => {
-                    if (v.categoria === categoriaFiltro) {
+                    if (v.categoria === filtro) {
                         if (v.variantes && v.variantes.length > 0) {
                             v.variantes.forEach(variante => {
                                 itemsToRender.push({
@@ -809,44 +813,59 @@
 
             if (itemsToRender.length === 0) {
                 container.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
-                        <p>No hay vehículos disponibles en esta categoría.</p>
-                    </div>
-                `;
+                <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                    <p>No hay vehículos disponibles con este filtro.</p>
+                </div>
+            `;
                 return;
             }
 
-            const telefono = siteData.empresa ? siteData.empresa.telefono_whatsapp : '573016388895';
+            const telefono = siteData.empresa ? siteData.empresa.telefono_whatsapp : '573212962876';
 
             container.innerHTML = itemsToRender.map(product => {
                 const mensajeWa = encodeURIComponent(`Hola, deseo cotizar el vehículo ${product.nombre}`);
                 const linkWa = `https://wa.me/${telefono}?text=${mensajeWa}`;
                 const imgSrc = siteData.rutas_imagenes ? siteData.rutas_imagenes[product.imagen_key] : '';
 
+                // Se pasa el slug del modelo al presionar "Ver más versiones"
                 const actionButton = product.isModelRoot
-                    ? `<button onclick="selectCategoryFilter('${product.categoria}')" class="btn-whatsapp-sm" style="background-color: var(--primary);">
-                           <i class="fa-solid fa-eye"></i> Ver más versiones
-                       </button>`
+                    ? `<button onclick="filterByModel('${product.slug}')" class="btn-whatsapp-sm" style="background-color: var(--primary);">
+                       <i class="fa-solid fa-eye"></i> Ver más versiones
+                   </button>`
                     : `<a href="${linkWa}" class="btn-whatsapp-sm" target="_blank" rel="noopener">
-                           <i class="fa-brands fa-whatsapp" style="font-size: 1rem;"></i> Cotizar por WhatsApp
-                       </a>`;
+                       <i class="fa-brands fa-whatsapp" style="font-size: 1rem;"></i> Cotizar por WhatsApp
+                   </a>`;
 
                 return `
-                    <article class="product-card" data-category="${product.categoria}">
-                        <div>
-                            <img src="${imgSrc || './images/placeholder.png'}" alt="${product.nombre}" class="product-img">
-                            <div class="product-info">
-                                <h3>${product.nombre}</h3>
-                                <p>${product.descripcion}</p>
-                            </div>
+                <article class="product-card" data-category="${product.categoria}">
+                    <div>
+                        <img src="${imgSrc || './images/placeholder.png'}" alt="${product.nombre}" class="product-img">
+                        <div class="product-info">
+                            <h3>${product.nombre}</h3>
+                            <p>${product.descripcion}</p>
                         </div>
-                        ${actionButton}
-                    </article>
-                `;
+                    </div>
+                    ${actionButton}
+                </article>
+            `;
             }).join('');
         }
 
+        // Filtra exclusivamente las variantes pertenecientes al modelo seleccionado por su SLUG
+        function filterByModel(slug) {
+            currentModelFilter = slug;
+
+            // Desmarcamos las pestañas superiores de categoría
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+
+            renderProducts(slug);
+            document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Maneja el clic en la botonera superior de categorías
         function filterCategory(categoria, btnElement) {
+            currentModelFilter = null; // Reseteamos el filtro de modelo específico
+
             if (btnElement) {
                 document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
                 btnElement.classList.add('active');
