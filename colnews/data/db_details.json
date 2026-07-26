@@ -9,7 +9,7 @@
       
       { "type": "image", "url": "./assets/img/sandalias.avif", "caption": "Demo de Landing Page para venta de Sandalias." },
       { "type": "paragraph", "data": "Es un catálogo de sandalias para dama de la marca nexo global con sede principal en Cúcuta en la parte superior ofrece envío gratis a todo Colombia y pago contra entrega además puedes personalizar tu pedido directamente por WhatsApp." },
-      { "type": "link", "url": "https://ecobullbolsas.com", "text": "Visitar plataforma: ecobullbolsas.com" },
+      { "type": "link", "url": "https://oigonzalezp2024.github.io/ecommerce/sandalias/", "text": "Visita la demo de Ecommerce de venta de sandalias." },
       
       { "type": "image", "url": "./assets/img/rojas-distribuciones-dispositivos.avif", "caption": "Rojas Distribuciones: Catálogo digital" },
       { "type": "paragraph", "data": "Desarrollo de una plataforma web para Rojas Distribuciones optimizada para alto rendimiento (Lighthouse 95%+). La solución integra catálogos inteligentes con generación dinámica de PDF, garantizando una sincronización real entre el stock y la experiencia del usuario." },
