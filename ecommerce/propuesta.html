@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta Comercial - Soluciones Web</title>
+  <style>
+    /* VARIABLES DE COLOR Y ESTILOS BASE (Facebook UI Kit) */
+    :root {
+      --fb-blue: #1877f2;
+      --fb-bg: #f0f2f5;
+      --fb-card: #ffffff;
+      --fb-text: #050505;
+      --fb-secondary-text: #65676b;
+      --fb-border: #e4e6eb;
+      --fb-green: #42b72a;
+      --fb-purple: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--fb-bg);
+      color: var(--fb-text);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* HEADER ESTILO FACEBOOK */
+    .fb-header {
+      background-color: var(--fb-card);
+      border-radius: 8px;
+      padding: 12px 16px;
+      border: 1px solid var(--fb-border);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fb-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--fb-blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .fb-header-info h1 {
+      font-size: 18px;
+      color: var(--fb-blue);
+      font-weight: 700;
+    }
+
+    .fb-header-info p {
+      font-size: 13px;
+      color: var(--fb-secondary-text);
+    }
+
+    /* TARJETA DE ESTÁNDAR OBLIGATORIO */
+    .mandatory-card {
+      background-color: var(--fb-card);
+      border-radius: 8px;
+      border: 1px solid var(--fb-border);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .mandatory-header {
+      background-color: #e7f3ff;
+      border-bottom: 1px solid var(--fb-blue);
+      padding: 12px 16px;
+    }
+
+    .mandatory-title {
+      color: var(--fb-blue);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mandatory-subtitle {
+      font-size: 12px;
+      color: var(--fb-text);
+      margin-top: 2px;
+    }
+
+    .mandatory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .mandatory-box {
+      background-color: #f7f8fa;
+      border: 1px solid var(--fb-border);
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .mandatory-box-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--fb-blue);
+      margin-bottom: 4px;
+    }
+
+    .mandatory-box-desc {
+      font-size: 11px;
+      color: var(--fb-secondary-text);
+      line-height: 1.3;
+    }
+
+    /* TARJETAS DE FEED (POSTS) */
+    .fb-post {
+      background-color: var(--fb-card);
+      border-radius: 8px;
+      border: 1px solid var(--fb-border);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      margin-bottom: 16px;
+      padding: 14px 16px;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--fb-blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .avatar-b2b { background-color: var(--fb-green); }
+    .avatar-saas { background-color: var(--fb-purple); }
+
+    .post-author {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .post-time {
+      font-size: 12px;
+      color: var(--fb-secondary-text);
+    }
+
+    .badge {
+      background-color: #e7f3ff;
+      color: var(--fb-blue);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .badge-b2b { background-color: #eafbe7; color: #2b8a3e; }
+    .badge-saas { background-color: #f3e8ff; color: #6b21a8; }
+
+    .post-tagline {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* TABLA DE CARACTERÍSTICAS */
+    .feature-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .feature-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--fb-bg);
+      font-size: 13px;
+    }
+
+    .feature-icon {
+      width: 20px;
+      color: var(--fb-green);
+      font-weight: bold;
+    }
+
+    /* BOTONES DE ACCIÓN (FB ACTIONS) */
+    .post-actions {
+      border-top: 1px solid var(--fb-border);
+      padding-top: 10px;
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-btn {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--fb-secondary-text);
+      padding: 8px 0;
+      background-color: var(--fb-bg);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .action-btn:hover { background-color: #e4e6eb; }
+    .action-btn-primary { background-color: var(--fb-blue); color: #fff; }
+    .action-btn-primary:hover { background-color: #1565c0; }
+    .action-btn-green { background-color: var(--fb-green); color: #fff; }
+    .action-btn-green:hover { background-color: #369b23; }
+    .action-btn-purple { background-color: var(--fb-purple); color: #fff; }
+    .action-btn-purple:hover { background-color: #7c3aed; }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--fb-secondary-text);
+      padding: 10px;
+      background-color: var(--fb-card);
+      border-radius: 6px;
+      border: 1px solid var(--fb-border);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- HEADER ESTILO FACEBOOK -->
+    <header class="fb-header">
+      <div class="fb-icon">f</div>
+      <div class="fb-header-info">
+        <h1>Propuesta Comercial & Portfolio de Soluciones Web</h1>
+        <p>Comercio Electrónico Transaccional con Cierre en WhatsApp</p>
+      </div>
+    </header>
+
+    <!-- MÓDULO OBLIGATORIO Y ESTÁNDAR BASE -->
+    <section class="mandatory-card">
+      <div class="mandatory-header">
+        <h2 class="mandatory-title">🔒 Estándar Innegociable Incluido (Base Estructural Obligatoria)</h2>
+        <p class="mandatory-subtitle">Todas las soluciones integran nativamente los componentes legales, de confianza y usabilidad:</p>
+      </div>
+      <div class="mandatory-grid">
+        <div class="mandatory-box">
+          <div class="mandatory-box-title">🛡️ Cumplimiento Legal</div>
+          <div class="mandatory-box-desc">Tratamiento de datos personales según la <strong>Ley 1581 (Habeas Data)</strong> con casilla de aceptación obligatoria.</div>
+        </div>
+        <div class="mandatory-box">
+          <div class="mandatory-box-title">📍 Confianza Garantizada</div>
+          <div class="mandatory-box-desc">Ubicación física visible, mapa interactivo embebido y políticas transparentes de fletes y devoluciones.</div>
+        </div>
+        <div class="mandatory-box">
+          <div class="mandatory-box-title">📱 Experiencia Mobile-First</div>
+          <div class="mandatory-box-desc">Diseño fluido para celular, controles táctiles, visor modal de productos y velocidad de carga optimizada.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEED DE SOLUCIONES -->
+    <main class="feed-container">
+
+      <!-- SOLUCIÓN 1: B2C -->
+      <article class="fb-post">
+        <div class="post-header">
+          <div class="avatar">B2C</div>
+          <div>
+            <h3 class="post-author">Solución 1: Catálogo Ventas Rápidas <span class="badge">Venta Detal</span></h3>
+            <p class="post-time">Ideal para: Boutiques, Instagram, calzado, ropa y venta al detal</p>
+          </div>
+        </div>
+        <div class="post-body">
+          <p class="post-tagline">"Elimina la fricción en el chat y convierte visitantes en pedidos estructurados en un clic."</p>
+          <table class="feature-table">
+            <tr><td class="feature-icon">✓</td><td><strong>Selector de Tallas y Cantidades:</strong> Controles dinámicos por producto.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Carrito en Vivo:</strong> Sumatoria instantánea con modal de confirmación.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Cierre en WhatsApp:</strong> Mensaje estructurado con el desglose del pedido.</td></tr>
+          </table>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" onclick="likePost(this)">👍 Me gusta</button>
+          <button class="action-btn" onclick="commentPost('B2C')">💬 Comentar</button>
+          <button class="action-btn action-btn-primary" onclick="cotizar('Solución B2C')">🚀 Cotizar B2C</button>
+        </div>
+      </article>
+
+      <!-- SOLUCIÓN 2: B2B -->
+      <article class="fb-post">
+        <div class="post-header">
+          <div class="avatar avatar-b2b">B2B</div>
+          <div>
+            <h3 class="post-author">Solución 2: Catálogo Mayorista <span class="badge badge-b2b">Venta por Mayor</span></h3>
+            <p class="post-time">Ideal para: Fabricantes, distribuidores, bodegas y ventas por volumen</p>
+          </div>
+        </div>
+        <div class="post-body">
+          <p class="post-tagline">"Automatiza tus reglas de negocio y estimula compras de mayor volumen sin atención manual."</p>
+          <table class="feature-table">
+            <tr><td class="feature-icon">✓</td><td><strong>Motor de Precios Dinámico:</strong> Cambio automático de precio detal ($95k) a mayorista ($55k) al sumar 5+ unidades.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Cálculo de Ahorro:</strong> Desglose automático de subtotal y porcentaje de descuento.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Condiciones Mayoristas:</strong> Reglas de despacho y fletes integradas en el checkout.</td></tr>
+          </table>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" onclick="likePost(this)">👍 Me gusta</button>
+          <button class="action-btn" onclick="commentPost('B2B')">💬 Comentar</button>
+          <button class="action-btn action-btn-green" onclick="cotizar('Solución B2B Mayorista')">📈 Cotizar B2B</button>
+        </div>
+      </article>
+
+      <!-- SOLUCIÓN 3: SAAS / RECURRENTE -->
+      <article class="fb-post">
+        <div class="post-header">
+          <div class="avatar avatar-saas">SaaS</div>
+          <div>
+            <h3 class="post-author">Servicio Recurrente <span class="badge badge-saas">Suscripción</span></h3>
+            <p class="post-time">Ideal para: Comercios que requieren actualización continua sin gestionar código</p>
+          </div>
+        </div>
+        <div class="post-body">
+          <p class="post-tagline">"Tu negocio en línea 100% operativo sin preocuparte por aspectos técnicos."</p>
+          <table class="feature-table">
+            <tr><td class="feature-icon">✓</td><td><strong>Infraestructura Web Completa:</strong> Dominio (.com / .co) + Servidor rápido con SSL.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Gestión Mensual:</strong> Carga de nuevos productos, precios y mantenimiento de datos.</td></tr>
+            <tr><td class="feature-icon">✓</td><td><strong>Soporte Continuo:</strong> Garantía de disponibilidad y asistencia técnica.</td></tr>
+          </table>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" onclick="likePost(this)">👍 Me gusta</button>
+          <button class="action-btn" onclick="commentPost('Suscripción')">💬 Comentar</button>
+          <button class="action-btn action-btn-purple" onclick="cotizar('Suscripción SaaS')">⚙️ Contratar Plan</button>
+        </div>
+      </article>
+
+    </main>
+
+    <footer class="footer-note">
+      💻 <strong>Desarrollado como Solución Web de Alto Rendimiento</strong> | Carga ultrarrápida y optimizada
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT INTERACTIVO -->
+  <script>
+    function likePost(button) {
+      if (button.innerText.includes('Me gusta')) {
+        button.innerText = '❤️ Te gusta';
+        button.style.color = '#e41e3f';
+      } else {
+        button.innerText = '👍 Me gusta';
+        button.style.color = 'var(--fb-secondary-text)';
+      }
+    }
+
+    function commentPost(paquete) {
+      const comentario = prompt(`Escribe tu comentario o duda sobre la ${paquete}:`);
+      if (comentario) {
+        alert(`¡Gracias por tu comentario sobre ${paquete}! Lo hemos registrado.`);
+      }
+    }
+
+    function cotizar(nombrePaquete) {
+      const mensaje = encodeURIComponent(`Hola, estoy interesado en solicitar una cotización para la *${nombrePaquete}*.`);
+      window.open(`https://wa.me/573000000000?text=${mensaje}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
