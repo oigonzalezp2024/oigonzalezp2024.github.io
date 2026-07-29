@@ -1090,50 +1090,6 @@ footer {
     const IDs_SECCIONES = ['sec-productos', 'sec-resumen', 'sec-envio', 'sec-mapa'];
     let indiceSeccionActual = 0;
 
-    // PERSISTENCIA LOCALSTORAGE
-    const STORAGE_KEY_SELECCIONADOS = 'nexo_global_seleccionados';
-    const STORAGE_KEY_FORMULARIO = 'nexo_global_formulario';
-
-    function guardarEstadoLocal() {
-      try {
-        localStorage.setItem(STORAGE_KEY_SELECCIONADOS, JSON.stringify(seleccionados));
-        
-        const datosForm = {
-          nombre: document.getElementById('clienteNombre').value,
-          telefono: document.getElementById('clienteTelefono').value,
-          direccion: document.getElementById('clienteDireccion').value,
-          ciudad: document.getElementById('clienteCiudad').value,
-          notas: document.getElementById('clienteNotas').value,
-          habeasData: document.getElementById('checkHabeasData').checked
-        };
-        localStorage.setItem(STORAGE_KEY_FORMULARIO, JSON.stringify(datosForm));
-      } catch (e) {
-        console.error("Error al guardar en localStorage", e);
-      }
-    }
-
-    function cargarEstadoLocal() {
-      try {
-        const selGuardados = localStorage.getItem(STORAGE_KEY_SELECCIONADOS);
-        if (selGuardados) {
-          seleccionados = JSON.parse(selGuardados);
-        }
-
-        const formGuardado = localStorage.getItem(STORAGE_KEY_FORMULARIO);
-        if (formGuardado) {
-          const datosForm = JSON.parse(formGuardado);
-          if (datosForm.nombre) document.getElementById('clienteNombre').value = datosForm.nombre;
-          if (datosForm.telefono) document.getElementById('clienteTelefono').value = datosForm.telefono;
-          if (datosForm.direccion) document.getElementById('clienteDireccion').value = datosForm.direccion;
-          if (datosForm.ciudad) document.getElementById('clienteCiudad').value = datosForm.ciudad;
-          if (datosForm.notas) document.getElementById('clienteNotas').value = datosForm.notas;
-          if (datosForm.habeasData !== undefined) document.getElementById('checkHabeasData').checked = datosForm.habeasData;
-        }
-      } catch (e) {
-        console.error("Error al cargar de localStorage", e);
-      }
-    }
-
     function abrirModalCondiciones() {
       document.getElementById('conditionsModal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -1156,7 +1112,6 @@ footer {
 
     function guardarDatosFormularioYValidar() {
       validarFormularioCompleto();
-      guardarEstadoLocal();
     }
 
     function validarFormularioCompleto() {
@@ -1216,9 +1171,6 @@ footer {
         .then(data => {
           if (data.sitio && data.sitio.productos) {
             productosDisponibles = data.sitio.productos;
-            
-            // Cargar estado guardado antes de renderizar
-            cargarEstadoLocal();
 
             renderizarMosaico(productosDisponibles);
             inyectarSchemaProductos(productosDisponibles);
@@ -1368,7 +1320,6 @@ footer {
       }
 
       actualizarResumen();
-      guardarEstadoLocal();
     }
 
     function actualizarItemConfig(prodId) {
@@ -1376,7 +1327,6 @@ footer {
         const cantInput = document.getElementById(`cant-${prodId}`);
         seleccionados[prodId].cantidad = parseInt(cantInput.value || 1, 10);
         actualizarResumen();
-        guardarEstadoLocal();
       }
     }
 
