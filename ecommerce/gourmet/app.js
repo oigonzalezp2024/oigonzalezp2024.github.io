@@ -66,7 +66,7 @@ function renderizarCatalogo(productos) {
                 <div class="action-row">
                     <div class="stock-info">Stock: ${prod.stock} unds.</div>
                     <a target="_blank" 
-                       href="https://api.whatsapp.com/send/?phone=573212962876&text=Hola, solicito información de: ${prod.nombre.replace(' ', '+')} http://localhost/ecommerce/img/${prod.imagen.replace('../img/', '').replace('.avif', '.jpeg')}" 
+                       href="https://api.whatsapp.com/send/?phone=573105561474&text=Hola, solicito información de: ${prod.nombre.replace(' ', '+')} http://localhost/ecommerce/img/${prod.imagen.replace('../img/', '').replace('.avif', '.jpeg')}" 
                        class="btn-whatsapp-modern">Cotizar</a>
                 </div>
             </div>
