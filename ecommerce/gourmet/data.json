@@ -20,9 +20,42 @@
     "productos": [
       {
         "id": 1,
+        "nombre": "Lomo de cerdo premium con ensalada fresca",
+        "categoria": "gourmet",
+        "caracteristicas": "cerdo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/gourmet/lomo-de-cerdo-premium-con-ensalada-fresca.avif",
+        "especificaciones": [],
+        "stock": 15
+      },
+      {
+        "id": 2,
+        "nombre": "Medallones de cerdo con vegetales sin sal",
+        "categoria": "gourmet",
+        "caracteristicas": "cerdo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/gourmet/medallones-de-cerdo-con-vegetales-sin-sal.avif",
+        "especificaciones": [],
+        "stock": 15
+      },
+      {
+        "id": 3,
+        "nombre": "Pollo a la jardinera",
+        "categoria": "gourmet",
+        "caracteristicas": "jardinera.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/gourmet/pollo-a-la-jardinera.avif",
+        "especificaciones": [],
+        "stock": 15
+      },
+      {
+        "id": 4,
         "nombre": "Torta de naranja con arándanos",
         "categoria": "gourmet",
-        "caracteristicas": "Arándanos.",
+        "caracteristicas": "naranja.",
         "precio": 95000,
         "voltaje": "N/A",
         "imagen": "../img/gourmet/torta-de-naranja-con-arandanos.avif",
@@ -30,13 +63,13 @@
         "stock": 15
       },
       {
-        "id": 2,
-        "nombre": "Lomo de cerdo premium con ensalada fresca",
+        "id": 5,
+        "nombre": "Torta de vainilla",
         "categoria": "gourmet",
-        "caracteristicas": "Arándanos.",
+        "caracteristicas": "vainilla.",
         "precio": 95000,
         "voltaje": "N/A",
-        "imagen": "../img/gourmet/lomo-de-cerdo-premium-con-ensalada-fresca.avif",
+        "imagen": "../img/gourmet/torta-de-vainilla.avif",
         "especificaciones": [],
         "stock": 15
       }
