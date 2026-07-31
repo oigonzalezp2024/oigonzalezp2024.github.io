@@ -237,7 +237,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   4. MODAL / FICHA ABIERTA (MÓVIL PRIMERO - REGLAS FLEX RIGIDAS)
+   4. MODAL / FICHA ABIERTA (MÓVIL PRIMERO - REGLAS FLEX RÍGIDAS)
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -261,18 +261,15 @@ header h1 {
   pointer-events: auto;
 }
 
-/* Modifica la clase .bottom-sheet en styles.css */
 .bottom-sheet {
   background-color: #FFFFFF;
   width: 100%;
-  
-  /* REEMPLAZA las propiedades de height anteriores por estas: */
   height: 90%; 
   max-height: 90vh;
   max-height: 90dvh;
   min-height: 0;
 
-  /* Manejo de barra de navegación inferior de Android/iOS (Safe Area) */
+  /* Safe Area para navegación gestual (iOS/Android) */
   padding-bottom: env(safe-area-inset-bottom, 0px);
   
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
@@ -305,34 +302,63 @@ header h1 {
   border-radius: 10px;
 }
 
+/* Cabecera Fija de 2 Filas */
 .sheet-header {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  flex-shrink: 0; /* Mantiene la cabecera arriba intacta */
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-.sheet-header h3 {
-  font-size: 1.1rem;
+/* Fila 1: Título completo y botón de cierre */
+.modal-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal-title-row h3 {
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-primary);
+  margin: 0;
+  padding-right: 12px;
+}
+
+.btn-close-sheet {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+/* Fila 2: Precio a la izquierda, WhatsApp a la derecha */
+.modal-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
 }
 
 .modal-price-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-right: 36px;
+  align-items: flex-start;
+  margin-right: 0;
 }
 
-/* PRECIO DENTRO DEL MODAL: Azul Océano */
 #modalPrice {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--jmc-blue);
+  line-height: 1.1;
 }
 
 .price-disclaimer {
@@ -340,24 +366,39 @@ header h1 {
   color: var(--text-secondary);
 }
 
-.btn-close-sheet {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  line-height: 1;
+/* Botón de Conversión WhatsApp en la cabecera */
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background-color var(--transition-fast);
+  width: auto;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--whatsapp-dark);
+}
+
+.btn-whatsapp svg {
+  width: 18px;
+  height: 18px;
+  fill: #FFFFFF;
 }
 
 .sheet-body {
   padding: 12px 16px;
-  overflow-y: auto; /* Scroll strictly isolated inside the body */
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  flex: 1 1 0%;    /* Flex-basis 0% obliga a respetar los límites del padre */
-  min-height: 0;   /* Fuerza el overflow-y independientemente del contenido */
+  flex: 1 1 0%;
+  min-height: 0;
 }
 
 .compact-carousel {
@@ -400,7 +441,6 @@ header h1 {
   transition: all var(--transition-fast);
 }
 
-/* Pestaña seleccionada en Rojo */
 .tab-btn-mobile.active {
   background-color: var(--jmc-red);
   color: #FFFFFF;
@@ -423,7 +463,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   6. TRUST SIGNALS & ACCIONES DE CONVERSIÓN (BOTÓN FIJO INFERIOR)
+   6. TRUST SIGNALS
    ========================================================================== */
 .trust-badges-container {
   display: grid;
@@ -453,41 +493,6 @@ header h1 {
   font-size: 0.68rem;
   font-weight: 600;
   color: var(--text-secondary);
-}
-
-.sheet-footer-actions {
-  flex-shrink: 0; /* Prohíbe totalmente que el footer se encoja u oculte */
-  width: 100%;
-  padding: 12px 16px;
-  background-color: #FFFFFF;
-  border-top: 1px solid var(--border-color);
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.btn-whatsapp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 12px;
-  background-color: var(--whatsapp-green);
-  color: #FFFFFF;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: background-color var(--transition-fast);
-}
-
-.btn-whatsapp:hover {
-  background-color: var(--whatsapp-dark);
-}
-
-.btn-whatsapp svg {
-  width: 20px;
-  height: 20px;
-  fill: #FFFFFF;
 }
 
 /* ==========================================================================
