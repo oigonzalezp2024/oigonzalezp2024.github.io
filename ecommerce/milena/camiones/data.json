@@ -5,10 +5,10 @@
       "producto": "camion-chr-cs",
       "precio_sugerido": "$115.900.000 COP",
       "fotos": [
-        "./images/chr-portada-foto.png",
-        "./images/chr-aplicaciones.png",
-        "./images/chr-dimensiones.png",
-        "./images/chr-caracteristicas.png"
+        "./images/chr-portada-foto.avif",
+        "./images/chr-aplicaciones.avif",
+        "./images/chr-dimensiones.avif",
+        "./images/chr-caracteristicas.avif"
       ],
       "pilar_1": "Diseñado para ferreterías, mudanzas, agricultura y construcción, emprendedores, empresarios y administradores de flotas urbanas que necesitan un vehículo ágil y compacto. Bueno para carrozar en furgón, estacas, planchón o grúa.",
       "pilar_2": "¿Buscas un verdadero motor para impulsarte? El JMC HR Cabina Sencilla cuenta con un motor Euro VI de 2.8L con turbo VGT que entrega 121 Hp y un torque plano de 33 Kgm desde muy bajas revoluciones, ideal para moverte con fuerza en cualquier camino.",
@@ -19,10 +19,10 @@
       "producto": "camion-chr-doble-cabina",
       "precio_sugerido": "$124.900.000 COP",
       "fotos": [
-        "./images/chr-dc-portada-foto.png",
-        "./images/chr-dc-aplicaciones.png",
-        "./images/chr-dc-dimensiones.png",
-        "./images/chr-dc-caracteristicas.png"      
+        "./images/chr-dc-portada-foto.avif",
+        "./images/chr-dc-aplicaciones.avif",
+        "./images/chr-dc-dimensiones.avif",
+        "./images/chr-dc-caracteristicas.avif"      
       ],
       "pilar_1": "Enfocado en empresas y contratistas que requieren trasladar simultáneamente a su personal (hasta 5 ocupantes) y sus herramientas o insumos de trabajo. Una solución que optimiza costos operativos para cuadrillas en sectores como minería, construcción, infraestructura, telecomunicaciones y servicios públicos.",
       "pilar_2": "Combina el transporte de equipo con la fuerza motriz necesaria. Su motor Euro VI de 2.8L te entrega 121 Hp y 33 Kgm de torque para mover al personal y la carga sin perder rendimiento en terreno.",
@@ -33,10 +33,10 @@
       "producto": "camion-ckr-cabina-sencilla",
       "precio_sugerido": "$132.900.000 COP",
       "fotos": [
-        "./images/ckr-portada-foto.png",
-        "./images/ckr-aplicaciones.png",
-        "./images/ckr-dimensiones.png",
-        "./images/ckr-caracteristicas.png"     
+        "./images/ckr-portada-foto.avif",
+        "./images/ckr-aplicaciones.avif",
+        "./images/ckr-dimensiones.avif",
+        "./images/ckr-caracteristicas.avif"     
       ],
       "pilar_1": "Dirigido a empresarios y administradores de flotas que buscan un camión funcional para la logística urbana e intermunicipal ligera. Su estructura con rueda doble trasera y chasis reforzado le permite adaptarse fácilmente a furgones, estacas o grúas.",
       "pilar_2": "Un socio infalible para el trabajo duro: incorpora un motor Euro VI de 2.771 cc con inyección Directa Common Rail BOSCH, generando 121 Hp y 33 Kgm de torque para una marcha sólida y eficiente.",
@@ -47,10 +47,10 @@
       "producto": "camion-ckr-doble-cabina",
       "precio_sugerido": "$141.900.000 COP",
       "fotos": [
-        "./images/ckr-dc-portada-foto.png",
-        "./images/ckr-dc-aplicaciones.png",
-        "./images/ckr-dc-dimensiones.png",
-        "./images/ckr-dc-caracteristicas.png"      
+        "./images/ckr-dc-portada-foto.avif",
+        "./images/ckr-dc-aplicaciones.avif",
+        "./images/ckr-dc-dimensiones.avif",
+        "./images/ckr-dc-caracteristicas.avif"      
       ],
       "pilar_1": "Orientado a empresas que operan en entornos complejos y necesitan trasladar cuadrillas completas junto con maquinaria o materiales pesados. Ideal para concesiones viales, minería y mantenimiento de redes de energía o gas.",
       "pilar_2": "Desarrollado para el trabajo continuo: integra un motor Euro VI de 2.8L, 121 Hp y 33 Kgm de torque, junto a una transmisión mecánica GETRAG de 5 velocidades de alta precisión.",
@@ -61,10 +61,10 @@
       "producto": "camion-cpr",
       "precio_sugerido": "$158.900.000 COP",
       "fotos": [
-        "./images/cpr-portada-foto.png",
-        "./images/cpr-aplicaciones.png",
-        "./images/cpr-dimensiones.png",
-        "./images/cpr-caracteristicas.png" 
+        "./images/cpr-portada-foto.avif",
+        "./images/cpr-aplicaciones.avif",
+        "./images/cpr-dimensiones.avif",
+        "./images/cpr-caracteristicas.avif" 
       ],
       "pilar_1": "Diseñado para empresas de transporte de carga, operadores logísticos y distribución masiva de materiales. Su chasis robusto de canal escalonado está homologado para carrocerías de furgón, estacas y grúa.",
       "pilar_2": "Darás un salto de potencia: su motor de 2.892 cc Euro VI eroga 161 Hp @ 2.800 Rpm y un torque masivo de 45 Kgm. Fuerza suficiente para afrontar cualquier topografía a plena carga.",
@@ -75,10 +75,10 @@
       "producto": "camion-cqr",
       "precio_sugerido": "$172.900.000 COP",
       "fotos": [
-        "./images/cqr-portada-foto.png",
-        "./images/cqr-aplicaciones.png",
-        "./images/cqr-dimensiones.png",
-        "./images/cqr-caracteristicas.png" 
+        "./images/cqr-portada-foto.avif",
+        "./images/cqr-aplicaciones.avif",
+        "./images/cqr-dimensiones.avif",
+        "./images/cqr-caracteristicas.avif" 
       ],
       "pilar_1": "El modelo insignia para empresas de logística a mediana y larga distancia, transporte de carga pesada y distribución a gran escala.",
       "pilar_2": "Potencia para el trabajo pesado: motor de 2.892 cc Euro VI con 161 Hp y un torque de 45 Kgm @ 1.600-2.400 Rpm, acoplado a una transmisión WLY de 6 marchas.",
