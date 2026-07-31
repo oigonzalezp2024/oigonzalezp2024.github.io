@@ -1,143 +1,146 @@
 /* ==========================================================================
-   1. VARIABLES Y CONFIGURACIÓN GLOBAL (Design Tokens)
+   1. VARIABLES DE DISEÑO & RESET (PALETA CORPORATIVA JMC COLOMBIA)
    ========================================================================== */
 :root {
-  /* Identidad Visual Oficial JMC */
-  --jmc-red: #E31B23;
-  --jmc-red-dark: #B70E15;
-  --jmc-black: #111827;
-  --jmc-slate: #1F2937;
-  --jmc-bg: #F8FAFC;
-  --jmc-card-bg: #FFFFFF;
-  --jmc-border: #E2E8F0;
-  --jmc-text: #0F172A;
-  --jmc-text-muted: #64748B;
-
-  /* Paleta Comercial de Precio */
-  --price-bg: #F1F5F9;
-  --price-color: #0F172A;
-  --price-border: #CBD5E1;
-  --price-modal-color: #CBD5E1;
+  /* Identidad de Marca JMC */
+  --jmc-blue: #003366;          /* Azul océano institucional (precios, confianza, finanzas) */
+  --jmc-blue-dark: #002244;     /* Azul profundo para cabeceras y contrastes */
+  --jmc-red: #E31E24;           /* Rojo corporativo (botones, llamadas a la acción, pestañas activas) */
+  --jmc-red-dark: #C11318;       /* Rojo oscuro para hover */
+  
+  /* Sistema de Colores Neutros */
+  --bg-main: #F4F6F9;
+  --bg-card: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --border-color: #E5E7EB;
+  
+  /* Botón de Conversión */
+  --whatsapp-green: #25D366;
+  --whatsapp-dark: #128C7E;
+  
+  /* Sombras y Radios */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.18);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  
+  --transition-fast: 0.2s ease;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background-color: var(--jmc-bg);
-  color: var(--jmc-text);
-  padding-bottom: 2rem;
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
-   2. HEADER CABECERA
+   2. HEADER & CABECERA
    ========================================================================== */
 header {
-  background: var(--jmc-black);
+  background: linear-gradient(135deg, var(--jmc-blue-dark) 0%, var(--jmc-blue) 100%);
+  color: #FFFFFF;
+  padding: 24px 16px 32px;
   border-bottom: 4px solid var(--jmc-red);
-  padding: 1.25rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .brand-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .brand-badge {
-  background: var(--jmc-red);
+  background-color: var(--jmc-red);
   color: #FFFFFF;
-  font-weight: 900;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
-  padding: 0.3rem 0.6rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 4px 8px;
   border-radius: 4px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .header-tag {
-  color: #94A3B8;
-  font-size: 0.75rem;
-  font-weight: 600;
+  color: #9CA3AF;
+  font-size: 0.85rem;
 }
 
-h1 {
-  font-size: 1.35rem;
+header h1 {
+  font-size: 1.6rem;
   font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.2;
+  margin-bottom: 12px;
 }
 
 .intro-box {
-  background: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.08);
   border-left: 3px solid var(--jmc-red);
-  padding: 0.75rem;
-  margin-top: 0.8rem;
-  border-radius: 0 6px 6px 0;
-  color: #CBD5E1;
-  font-size: 0.85rem;
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  color: #E5E7EB;
   line-height: 1.4;
 }
 
 /* ==========================================================================
-   3. CONTENEDOR Y GRID DE VEHÍCULOS
+   3. CONTENEDOR PRINCIPAL & TARJETAS DEL CATÁLOGO
    ========================================================================== */
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 20px 16px 60px;
 }
 
-/* Layout por defecto (Móvil - 1 Columna) */
 .vehicles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 20px;
 }
 
-/* ==========================================================================
-   4. TARJETAS DE PRODUCTO (SHOWROOM CARDS)
-   ========================================================================== */
+/* Tarjeta de Vehículo */
 .vehicle-card {
-  background: var(--jmc-card-bg);
-  border-radius: 14px;
-  border: 1px solid var(--jmc-border);
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .vehicle-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-/* Carrusel Táctil / Deslizante */
+/* Carrusel Horizontal de Fotos en Tarjetas */
 .card-carousel {
+  width: 100%;
+  height: 220px;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  background: #0F172A;
-  height: 220px;
+  background-color: #000000;
+  position: relative;
 }
 
 .card-carousel::-webkit-scrollbar {
@@ -148,100 +151,93 @@ h1 {
   flex: 0 0 100%;
   scroll-snap-align: start;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0F172A;
+  height: 100%;
 }
 
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Mantiene la imagen completa sin recortar */
-  object-position: center;
+  object-fit: cover;
 }
 
 .swipe-hint {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.65);
   color: #FFFFFF;
-  font-size: 0.65rem;
-  padding: 2px 6px;
-  border-radius: 10px;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 12px;
   pointer-events: none;
 }
 
+/* Cuerpo de la Tarjeta */
 .card-body {
-  padding: 1.2rem;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
   flex-grow: 1;
 }
 
 .card-header-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .vehicle-title {
   font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--jmc-black);
-  text-transform: lowercase;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-/* Etiqueta de Precio */
+/* PRECIO EN LAS TARJETAS DE CATÁLOGO: Azul Océano */
 .price-tag {
-  background: var(--price-bg);
-  color: var(--price-color);
+  background-color: #E6F0FA;  /* Fondo azul claro de alto contraste */
+  color: var(--jmc-blue);     /* Azul océano corporativo */
   font-weight: 800;
-  font-size: 0.85rem;
-  padding: 0.35rem 0.7rem;
+  font-size: 0.95rem;
+  padding: 4px 10px;
   border-radius: 6px;
-  border: 1px solid var(--price-border);
-  letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 
 .snippet-text {
-  color: var(--jmc-text-muted);
   font-size: 0.85rem;
-  line-height: 1.5;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex-grow: 1;
 }
 
-/* Botón Action */
+/* Botón de Acción Principal (Rojo Comercial) */
 .btn-action {
   width: 100%;
-  background-color: var(--jmc-black);
+  padding: 12px;
+  background-color: var(--jmc-red);
   color: #FFFFFF;
   border: none;
-  padding: 0.85rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-weight: 700;
-  font-size: 0.88rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-fast);
+  margin-top: auto;
 }
 
-.btn-action:hover,
-.btn-action:active {
-  background-color: var(--jmc-red);
+.btn-action:hover {
+  background-color: var(--jmc-red-dark);
 }
 
 /* ==========================================================================
-   5. MODAL INTERACTIVO ADAPTATIVO (Bottom Sheet / Modal)
+   4. MODAL / FICHA ABIERTA
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -249,32 +245,33 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.75);
+  background-color: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(4px);
   z-index: 1000;
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
 }
 
 .modal-overlay.active {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
 }
 
 .bottom-sheet {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   width: 100%;
-  max-height: 88vh;
-  border-radius: 20px 20px 0 0;
+  max-height: 85vh;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   display: flex;
   flex-direction: column;
-  transform: translateY(100%);
-  transition: transform 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-overlay.active .bottom-sheet {
@@ -283,72 +280,90 @@ h1 {
 
 .sheet-handle-bar {
   width: 100%;
-  padding: 0.6rem 0 0.3rem 0;
+  padding: 10px 0 4px;
   display: flex;
   justify-content: center;
-  background: var(--jmc-black);
   cursor: pointer;
 }
 
 .sheet-handle {
   width: 40px;
-  height: 4px;
-  background: #4B5563;
-  border-radius: 2px;
+  height: 5px;
+  background-color: #D1D5DB;
+  border-radius: 10px;
 }
 
 .sheet-header {
-  background: var(--jmc-black);
-  color: #FFFFFF;
-  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid var(--jmc-red);
+  justify-content: space-between;
+  position: relative;
 }
 
 .sheet-header h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  text-transform: lowercase;
+  color: var(--text-primary);
 }
 
+.modal-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 36px;
+}
+
+/* PRECIO DENTRO DEL MODAL: Azul Océano */
 #modalPrice {
-  color: var(--price-modal-color);
-  font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--jmc-blue);
+}
+
+.price-disclaimer {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
 }
 
 .btn-close-sheet {
-  background: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: none;
   border: none;
-  color: #FFFFFF;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
   cursor: pointer;
+  line-height: 1;
 }
 
 .sheet-body {
-  padding: 1.25rem;
+  padding: 16px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Pestañas Interactivas */
+.compact-carousel {
+  height: 180px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   5. PESTAÑAS / TABS DENTRO DE LA FICHA (ACTIVAS EN ROJO COMERCIAL)
+   ========================================================================== */
 .tabs-scroll {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--jmc-border);
-  scrollbar-width: none;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  -webkit-overflow-scrolling: touch;
 }
 
 .tabs-scroll::-webkit-scrollbar {
@@ -356,101 +371,152 @@ h1 {
 }
 
 .tab-btn-mobile {
-  flex: 0 0 auto;
-  padding: 0.5rem 1rem;
-  background: #F1F5F9;
-  border: 1px solid var(--jmc-border);
+  padding: 8px 14px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--jmc-text-muted);
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
   cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
+/* Pestaña seleccionada en Rojo */
 .tab-btn-mobile.active {
-  background: var(--jmc-red);
+  background-color: var(--jmc-red);
   color: #FFFFFF;
   border-color: var(--jmc-red);
 }
 
 .tab-content-mobile {
   display: none;
-  background: #F8FAFC;
-  padding: 1.25rem;
-  border-radius: 10px;
-  border: 1px solid var(--jmc-border);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--jmc-slate);
+  min-height: 90px;
 }
 
 .tab-content-mobile.active {
   display: block;
 }
 
-/* ==========================================================================
-   6. RESPONSIVIDAD (MEDIA QUERIES)
-   ========================================================================== */
-
-/* Tablet (min-width: 768px) */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  .intro-box {
-    font-size: 0.95rem;
-  }
-
-  .vehicles-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+.tab-content-mobile p {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.5;
 }
 
-/* Escritorio / PC (min-width: 1024px) */
-@media (min-width: 1024px) {
-  .app-container {
-    padding: 2rem 1rem;
-  }
+/* ==========================================================================
+   6. TRUST SIGNALS & ACCIONES DE CONVERSIÓN
+   ========================================================================== */
+.trust-badges-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 16px 0;
+  padding: 12px 8px;
+  background-color: var(--bg-main);
+  border-radius: var(--radius-sm);
+}
 
+.trust-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.trust-badge-item svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--jmc-blue);
+}
+
+.trust-badge-item span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.sheet-footer-actions {
+  margin-top: 12px;
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--whatsapp-dark);
+}
+
+.btn-whatsapp svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (TABLETS Y DESKTOP >= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  
   .vehicles-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
   }
 
-  .vehicle-card:hover {
-    transform: translateY(-4px);
-  }
-
-  /* Transición de Bottom-Sheet a Modal Flotante Centrado */
   .modal-overlay {
-    justify-content: center;
     align-items: center;
+    padding: 20px;
   }
 
   .bottom-sheet {
-    width: 100%;
-    max-width: 650px;
-    max-height: 80vh;
-    border-radius: 16px;
-    transform: scale(0.95);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-  }
-
-  .modal-overlay.active .bottom-sheet {
-    transform: scale(1);
+    width: 90%;
+    max-width: 960px;
+    max-height: 88vh;
+    border-radius: var(--radius-lg);
+    transform: translateY(20px);
   }
 
   .sheet-handle-bar {
     display: none;
   }
 
-  .sheet-header {
-    padding: 1.25rem 1.5rem;
+  .modal-layout-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    align-items: start;
   }
 
-  .sheet-body {
-    padding: 1.5rem;
+  .compact-carousel {
+    height: 280px;
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+  }
+
+  .modal-info-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .tab-content-mobile p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
