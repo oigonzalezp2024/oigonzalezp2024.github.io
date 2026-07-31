@@ -1,0 +1,89 @@
+{
+  "introduccion_cliente": "Catálogo de modelos JMC Motors con especificaciones comerciales y aplicación sugerida para cada tipo de negocio.",
+  "modelos": [
+    {
+      "producto": "camion-chr-cs",
+      "precio_sugerido": "$115.900.000 COP",
+      "fotos": [
+        "./images/chr-portada-foto.png",
+        "./images/chr-aplicaciones.png",
+        "./images/chr-dimensiones.png",
+        "./images/chr-caracteristicas.png"
+      ],
+      "pilar_1": "Diseñado para ferreterías, mudanzas, agricultura y construcción, emprendedores, empresarios y administradores de flotas urbanas que necesitan un vehículo ágil y compacto. Bueno para carrozar en furgón, estacas, planchón o grúa.",
+      "pilar_2": "¿Buscas un verdadero motor para impulsarte? El JMC HR Cabina Sencilla cuenta con un motor Euro VI de 2.8L con turbo VGT que entrega 121 Hp y un torque plano de 33 Kgm desde muy bajas revoluciones, ideal para moverte con fuerza en cualquier camino.",
+      "pilar_3": "Para negocios que exigen el máximo rendimiento: ofrece una capacidad de carga en chasis de 3.185 kg y un largo carrozable sugerido de hasta 4.200 mm. Es la herramienta perfecta para escalar la productividad de tu empresa.",
+      "pilar_4": "Pasas muchas horas al volante y necesitas un entorno ergonómico. Su cabina cuenta con aire acondicionado de fábrica, elevavidrios eléctricos, computador a bordo de 3.5”, volante ajustable y sillas de alta durabilidad para tus jornadas diarias."
+    },
+    {
+      "producto": "camion-chr-doble-cabina",
+      "precio_sugerido": "$124.900.000 COP",
+      "fotos": [
+        "./images/chr-dc-portada-foto.png",
+        "./images/chr-dc-aplicaciones.png",
+        "./images/chr-dc-dimensiones.png",
+        "./images/chr-dc-caracteristicas.png"      
+      ],
+      "pilar_1": "Enfocado en empresas y contratistas que requieren trasladar simultáneamente a su personal (hasta 5 ocupantes) y sus herramientas o insumos de trabajo. Una solución que optimiza costos operativos para cuadrillas en sectores como minería, construcción, infraestructura, telecomunicaciones y servicios públicos.",
+      "pilar_2": "Combina el transporte de equipo con la fuerza motriz necesaria. Su motor Euro VI de 2.8L te entrega 121 Hp y 33 Kgm de torque para mover al personal y la carga sin perder rendimiento en terreno.",
+      "pilar_3": "Su chasis soporta una capacidad de carga de 3.100 kg con una longitud carrozable de 2.700 mm. Es perfecto para adaptar carrocerías de estacas o furgón resistente para operaciones exigentes.",
+      "pilar_4": "Diseñado para el bienestar de la cuadrilla: incorpora aire acondicionado de fábrica, elevavidrios eléctricos en las 4 puertas, cierre centralizado desde la llave navaja y múltiples portaobjetos ergonómicos."
+    },
+    {
+      "producto": "camion-ckr-cabina-sencilla",
+      "precio_sugerido": "$132.900.000 COP",
+      "fotos": [
+        "./images/ckr-portada-foto.png",
+        "./images/ckr-aplicaciones.png",
+        "./images/ckr-dimensiones.png",
+        "./images/ckr-caracteristicas.png"     
+      ],
+      "pilar_1": "Dirigido a empresarios y administradores de flotas que buscan un camión funcional para la logística urbana e intermunicipal ligera. Su estructura con rueda doble trasera y chasis reforzado le permite adaptarse fácilmente a furgones, estacas o grúas.",
+      "pilar_2": "Un socio infalible para el trabajo duro: incorpora un motor Euro VI de 2.771 cc con inyección Directa Common Rail BOSCH, generando 121 Hp y 33 Kgm de torque para una marcha sólida y eficiente.",
+      "pilar_3": "Maximiza la rentabilidad por trayecto con su capacidad de carga en chasis de 3.665 kg y una longitud carrozable de 4.200 mm, permitiendo transportar más volumen con absoluta seguridad.",
+      "pilar_4": "Pensado para el conductor que pasa el día en la ruta: incluye cabina espaciosa, controles al volante, aire acondicionado de fábrica, computador a bordo de 3.5” y radio AM/FM con USB y Bluetooth."
+    },
+    {
+      "producto": "camion-ckr-doble-cabina",
+      "precio_sugerido": "$141.900.000 COP",
+      "fotos": [
+        "./images/ckr-dc-portada-foto.png",
+        "./images/ckr-dc-aplicaciones.png",
+        "./images/ckr-dc-dimensiones.png",
+        "./images/ckr-dc-caracteristicas.png"      
+      ],
+      "pilar_1": "Orientado a empresas que operan en entornos complejos y necesitan trasladar cuadrillas completas junto con maquinaria o materiales pesados. Ideal para concesiones viales, minería y mantenimiento de redes de energía o gas.",
+      "pilar_2": "Desarrollado para el trabajo continuo: integra un motor Euro VI de 2.8L, 121 Hp y 33 Kgm de torque, junto a una transmisión mecánica GETRAG de 5 velocidades de alta precisión.",
+      "pilar_3": "Destaca por su capacidad de carga en chasis de 3.600 kg y un sistema de frenado 100% neumático con ABS y freno de ahogo para máxima seguridad en rutas exigentes.",
+      "pilar_4": "Espacio y ergonomía para 5 ocupantes, 4 elevavidrios eléctricos con función one touch para el conductor, aire acondicionado de fábrica y apertura remota con llave tipo navaja."
+    },
+    {
+      "producto": "camion-cpr",
+      "precio_sugerido": "$158.900.000 COP",
+      "fotos": [
+        "./images/cpr-portada-foto.png",
+        "./images/cpr-aplicaciones.png",
+        "./images/cpr-dimensiones.png",
+        "./images/cpr-caracteristicas.png" 
+      ],
+      "pilar_1": "Diseñado para empresas de transporte de carga, operadores logísticos y distribución masiva de materiales. Su chasis robusto de canal escalonado está homologado para carrocerías de furgón, estacas y grúa.",
+      "pilar_2": "Darás un salto de potencia: su motor de 2.892 cc Euro VI eroga 161 Hp @ 2.800 Rpm y un torque masivo de 45 Kgm. Fuerza suficiente para afrontar cualquier topografía a plena carga.",
+      "pilar_3": "Con una capacidad de carga en chasis de 5.010 kg (PBV de 7.700 kg) y un largo carrozable sugerido de 4.200 mm, es la herramienta clave para elevar el tonelaje por viaje.",
+      "pilar_4": "Confort y control operacional: cabina con aire acondicionado de fábrica, mandos integrados en el timón, sistema de frenos de aire con ABS y freno de ahogo para descensos seguros."
+    },
+    {
+      "producto": "camion-cqr",
+      "precio_sugerido": "$172.900.000 COP",
+      "fotos": [
+        "./images/cqr-portada-foto.png",
+        "./images/cqr-aplicaciones.png",
+        "./images/cqr-dimensiones.png",
+        "./images/cqr-caracteristicas.png" 
+      ],
+      "pilar_1": "El modelo insignia para empresas de logística a mediana y larga distancia, transporte de carga pesada y distribución a gran escala.",
+      "pilar_2": "Potencia para el trabajo pesado: motor de 2.892 cc Euro VI con 161 Hp y un torque de 45 Kgm @ 1.600-2.400 Rpm, acoplado a una transmisión WLY de 6 marchas.",
+      "pilar_3": "Diseñado para mover volúmenes exigentes con una capacidad de carga en chasis de 6.010 kg (PBV de 8.900 kg) y una longitud carrozable de 5.215 mm (longitud total de 6.990 mm).",
+      "pilar_4": "Máximo confort en carretera: cabina ancha de 2.280 mm, asiento de conductor ajustable, aire acondicionado de fábrica, mandos en el timón, toma de 12V y frenos de aire de alta confiabilidad."
+    }
+  ]
+}
