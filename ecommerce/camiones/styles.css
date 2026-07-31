@@ -237,7 +237,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   4. MODAL / FICHA ABIERTA (MÓVIL PRIMERO)
+   4. MODAL / FICHA ABIERTA (MÓVIL PRIMERO - REGLAS FLEX RIGIDAS)
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -265,15 +265,16 @@ header h1 {
   background-color: #FFFFFF;
   width: 100%;
   
-  /* OCUPAR HASTA EL 94% DEL ALTO EN MÓVILES (ELIMINA EL AIRE) */
+  /* Ocupa el 94% del alto real de la pantalla móvil sin aire superior */
   height: 94vh;
   height: 94dvh;
   max-height: 94dvh;
+  min-height: 0; /* CRÍTICO: Anula la expansión automática de flexbox por imágenes pesadas */
   
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   display: flex;
   flex-direction: column; 
-  overflow: hidden; /* Mantiene la barra superior y footer congelados */
+  overflow: hidden; /* Garantiza cabecera y footer inmóviles */
   
   box-shadow: var(--shadow-lg);
   transform: translateY(100%);
@@ -307,7 +308,7 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  flex-shrink: 0; /* Cabecera fija */
+  flex-shrink: 0; /* Mantiene la cabecera arriba intacta */
 }
 
 .sheet-header h3 {
@@ -349,14 +350,17 @@ header h1 {
 
 .sheet-body {
   padding: 12px 16px;
-  overflow-y: auto; /* Scroll contenido solo en el cuerpo */
+  overflow-y: auto; /* Scroll strictly isolated inside the body */
   -webkit-overflow-scrolling: touch;
-  flex: 1 1 auto;
+  flex: 1 1 0%;    /* Flex-basis 0% obliga a respetar los límites del padre */
+  min-height: 0;   /* Fuerza el overflow-y independientemente del contenido */
 }
 
 .compact-carousel {
   height: 180px;
+  max-height: 180px;
   width: 100%;
+  flex-shrink: 0;
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
   background-color: #000000;
@@ -448,7 +452,7 @@ header h1 {
 }
 
 .sheet-footer-actions {
-  flex-shrink: 0; /* Se asegura de nunca encogerse */
+  flex-shrink: 0; /* Prohíbe totalmente que el footer se encoja u oculte */
   width: 100%;
   padding: 12px 16px;
   background-color: #FFFFFF;
@@ -519,6 +523,7 @@ header h1 {
 
   .compact-carousel {
     height: 280px;
+    max-height: 280px;
     margin-bottom: 0;
     position: sticky;
     top: 0;
