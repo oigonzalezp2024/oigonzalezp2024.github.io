@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return slug.replace(/-/g, ' ').toUpperCase();
   };
 
+  // Utility para formatear el precio con el prefijo "Desde"
+  const formatPrice = (precio) => {
+    if (!precio) return '';
+    return precio.toLowerCase().startsWith('desde') ? precio : `Desde ${precio}`;
+  };
+
   // Inicialización: Fetching de Datos
   const initApp = async () => {
     try {
@@ -41,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       catalogData = rawData.modelos || [];
       renderCatalog(catalogData);
+      initLightbox(); // Inicializar detector de imágenes a pantalla completa
     } catch (error) {
       console.error("Error al cargar el catálogo de vehículos:", error);
       introBox.textContent = "Error al obtener la información comercial.";
@@ -52,13 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderCatalog = (modelos) => {
     vehiclesGrid.innerHTML = modelos.map(m => {
       const titleFormatted = formatTitle(m.producto);
+      const priceFormatted = formatPrice(m.precio_sugerido);
       
       return `
         <article class="vehicle-card">
           <div class="card-carousel">
             ${m.fotos.map((imgUrl, i) => `
               <div class="carousel-slide">
-                <img src="${imgUrl}" alt="${titleFormatted}" loading="lazy">
+                <img src="${imgUrl}" alt="${titleFormatted}" class="zoomable-img" loading="lazy">
                 ${i === 0 && m.fotos.length > 1 ? '<span class="swipe-hint">Desliza &rarr;</span>' : ''}
               </div>
             `).join('')}
@@ -67,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-body">
             <div class="card-header-info">
               <h2 class="vehicle-title">${titleFormatted}</h2>
-              <span class="price-tag">${m.precio_sugerido}</span>
+              <span class="price-tag">${priceFormatted}</span>
             </div>
 
             <p class="snippet-text">${m.pilar_1}</p>
@@ -101,15 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Abrir Modal e inyectar datos
   const openModal = (modelo) => {
     const titleFormatted = formatTitle(modelo.producto);
+    const priceFormatted = formatPrice(modelo.precio_sugerido);
 
     modalTitle.textContent = titleFormatted;
-    modalPrice.textContent = modelo.precio_sugerido;
+    modalPrice.textContent = priceFormatted;
 
     // Renderizar Galería Compacta
     if (modelo.fotos && modelo.fotos.length > 0) {
       modalCarousel.innerHTML = modelo.fotos.map((imgUrl, i) => `
         <div class="carousel-slide">
-          <img src="${imgUrl}" alt="${titleFormatted}" loading="lazy">
+          <img src="${imgUrl}" alt="${titleFormatted}" class="zoomable-img" loading="lazy">
           ${i === 0 && modelo.fotos.length > 1 ? '<span class="swipe-hint">Desliza &rarr;</span>' : ''}
         </div>
       `).join('');
@@ -124,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contentPilar4.textContent = modelo.pilar_4;
 
     const waMessage = encodeURIComponent(
-      `Hola, me interesa obtener información y cotización del camión JMC ${titleFormatted} (${modelo.precio_sugerido}). Quisiera recibir asesoría sobre opciones de financiación y entrega.`
+      `Hola, me interesa obtener información y cotización del camión JMC ${titleFormatted} (${priceFormatted}). Quisiera recibir asesoría sobre opciones de financiación y entrega.`
     );
     btnWhatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
 
@@ -163,6 +172,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tabButtons.length > 0 && tabContents.length > 0) {
       tabButtons[0].classList.add('active');
       tabContents[0].classList.add('active');
+    }
+  };
+
+  // Modal a pantalla completa para imágenes (Lightbox)
+  const initLightbox = () => {
+    if (!document.getElementById('lightboxModal')) {
+      const lightboxHTML = `
+        <div id="lightboxModal" class="lightbox-overlay">
+          <button type="button" id="closeLightbox" class="btn-close-lightbox">&times;</button>
+          <img id="lightboxImage" src="" alt="Vista ampliada">
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    }
+
+    const lightboxModal = document.getElementById('lightboxModal');
+    const closeBtn = document.getElementById('closeLightbox');
+
+    // Delegación de eventos para las imágenes con la clase zoomable-img
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.classList.contains('zoomable-img')) {
+        const imgSrc = e.target.getAttribute('src');
+        openLightbox(imgSrc);
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    
+    if (lightboxModal) {
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        if (modalOverlay.classList.contains('active')) closeModal();
+      }
+    });
+  };
+
+  const openLightbox = (src) => {
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    if (lightboxModal && lightboxImage) {
+      lightboxImage.src = src;
+      lightboxModal.classList.add('active');
+    }
+  };
+
+  const closeLightbox = () => {
+    const lightboxModal = document.getElementById('lightboxModal');
+    if (lightboxModal) {
+      lightboxModal.classList.remove('active');
     }
   };
 

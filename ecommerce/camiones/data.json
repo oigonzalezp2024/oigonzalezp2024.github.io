@@ -21,9 +21,10 @@
       "producto": "camion-chr-doble-cabina",
       "precio_sugerido": "$124.900.000 COP",
       "fotos": [
-        "./images/cqr1.png",
-        "./images/cqr2.png",
-        "./images/cqr3.png"
+        "./images/chr-dc-portada-foto.png",
+        "./images/chr-dc-aplicaciones.png",
+        "./images/chr-dc-dimensiones.png",
+        "./images/chr-dc-caracteristicas.png"      
       ],
       "pilar_1": "Enfocado en empresas y contratistas que requieren trasladar simultáneamente a su personal (hasta 5 ocupantes) y sus herramientas o insumos de trabajo. Una solución que optimiza costos operativos para cuadrillas en sectores como minería, construcción, infraestructura, telecomunicaciones y servicios públicos.",
       "pilar_2": "Combina el transporte de equipo con la fuerza motriz necesaria. Su motor Euro VI de 2.8L te entrega 121 Hp y 33 Kgm de torque para mover al personal y la carga sin perder rendimiento en terreno.",
