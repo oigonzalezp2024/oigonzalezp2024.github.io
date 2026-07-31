@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const WHATSAPP_NUMBER = "573000000000"; // Reemplazar con el número de ventas
+  const WHATSAPP_NUMBER = "573212962876"; // Reemplazar con el número de ventas
   let catalogData = [];
 
   // Referencias DOM
