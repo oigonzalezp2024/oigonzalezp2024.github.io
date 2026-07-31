@@ -237,7 +237,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   4. MODAL / FICHA ABIERTA (CONTROL DE FLEXBOX Y ALTURA MÓVIL)
+   4. MODAL / FICHA ABIERTA (MÓVIL PRIMERO)
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -264,14 +264,16 @@ header h1 {
 .bottom-sheet {
   background-color: #FFFFFF;
   width: 100%;
-  max-height: 85vh; /* Limita la altura al 85% de la pantalla */
-  max-height: 85dvh;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   
-  /* FLEXBOX OBLIGATORIO */
+  /* OCUPAR HASTA EL 94% DEL ALTO EN MÓVILES (ELIMINA EL AIRE) */
+  height: 94vh;
+  height: 94dvh;
+  max-height: 94dvh;
+  
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   display: flex;
   flex-direction: column; 
-  overflow: hidden; /* Evita que el modal entero haga scroll */
+  overflow: hidden; /* Mantiene la barra superior y footer congelados */
   
   box-shadow: var(--shadow-lg);
   transform: translateY(100%);
@@ -305,7 +307,7 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  flex-shrink: 0; /* Mantiene la cabecera fija arriba */
+  flex-shrink: 0; /* Cabecera fija */
 }
 
 .sheet-header h3 {
@@ -346,10 +348,10 @@ header h1 {
 }
 
 .sheet-body {
-  padding: 16px;
-  overflow-y: auto; /* Solo aquí se permite scroll vertical */
+  padding: 12px 16px;
+  overflow-y: auto; /* Scroll contenido solo en el cuerpo */
   -webkit-overflow-scrolling: touch;
-  flex: 1 1 auto; /* Toma el espacio disponible entre cabecera y footer */
+  flex: 1 1 auto;
 }
 
 .compact-carousel {
@@ -446,12 +448,12 @@ header h1 {
 }
 
 .sheet-footer-actions {
-  flex-shrink: 0; /* Prohíbe que se reduzca o se oculte */
+  flex-shrink: 0; /* Se asegura de nunca encogerse */
   width: 100%;
   padding: 12px 16px;
   background-color: #FFFFFF;
   border-top: 1px solid var(--border-color);
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil para separarlo del contenido */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .btn-whatsapp {
@@ -498,6 +500,7 @@ header h1 {
   .bottom-sheet {
     width: 90%;
     max-width: 960px;
+    height: auto;
     max-height: 88vh;
     border-radius: var(--radius-lg);
     transform: translateY(20px);
