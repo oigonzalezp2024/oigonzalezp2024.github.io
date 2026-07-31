@@ -1,0 +1,224 @@
+/* Variables Globales y Reset */
+:root {
+  --bg-plaza: #f8fafc;
+  --bg-card: #ffffff;
+  --primary-navy: #0f172a;
+  --secondary-slate: #334155;
+  --accent-gold: #d97706;
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+  --radius: 12px;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-plaza);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Header Comercial */
+.mall-header {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-slate) 100%);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.mall-badge {
+  background: var(--accent-gold);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.mall-header h1 {
+  font-size: 2.2rem;
+  margin: 12px 0 6px;
+}
+
+.mall-header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Directorio (Barra Fija) */
+.directory-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.directory-btn {
+  background: var(--bg-plaza);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.directory-btn.active,
+.directory-btn:hover {
+  background: var(--accent-gold);
+  color: #ffffff;
+  border-color: var(--accent-gold);
+}
+
+/* Plaza de Locales */
+.mall-plaza {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Estructura de Cada Local Comercial */
+.store-building {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+/* Fachada / Rótulo */
+.store-façade {
+  background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
+  color: #ffffff;
+  padding: 1.2rem 1.8rem;
+}
+
+.store-number {
+  background: var(--accent-gold);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.store-brand {
+  margin: 8px 0 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+/* Interior del Local */
+.store-interior {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  padding: 1.8rem;
+}
+
+@media (min-width: 850px) {
+  .store-interior {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Vitrina de Exposición con Respeto Absoluto a Aspect-Ratio */
+.store-display-window {
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.store-display-window img {
+  width: 100%;
+  height: auto; /* Permite escalar libremente */
+  max-height: 450px;
+  object-fit: contain; /* Garantiza mostrar el 100% del mockup sin recortes */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.store-info h3 {
+  color: var(--primary-navy);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.store-info p {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-enter-store {
+  display: inline-block;
+  background: var(--accent-blue);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.btn-enter-store:hover {
+  background: var(--accent-blue-hover);
+}
+
+/* Footer */
+.mall-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  background: #ffffff;
+}
