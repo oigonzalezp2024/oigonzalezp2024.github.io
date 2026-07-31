@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnWhatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
 
     resetTabs();
+
+    // Reiniciar posición de scroll interno del bottom sheet si se navega entre modelos
+    const sheetContent = modalOverlay.querySelector('.bottom-sheet') || modalOverlay.firstElementChild;
+    if (sheetContent) sheetContent.scrollTop = 0;
+
     modalOverlay.offsetHeight;   // fuerza el reflow
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';

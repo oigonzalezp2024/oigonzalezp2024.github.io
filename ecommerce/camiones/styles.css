@@ -261,20 +261,24 @@ header h1 {
   pointer-events: auto;
 }
 
+/* Modifica la clase .bottom-sheet en styles.css */
 .bottom-sheet {
   background-color: #FFFFFF;
   width: 100%;
   
-  /* Ocupa el 94% del alto real de la pantalla móvil sin aire superior */
-  height: 94vh;
-  height: 94dvh;
-  max-height: 94dvh;
-  min-height: 0; /* CRÍTICO: Anula la expansión automática de flexbox por imágenes pesadas */
+  /* REEMPLAZA las propiedades de height anteriores por estas: */
+  height: 90%; 
+  max-height: 90vh;
+  max-height: 90dvh;
+  min-height: 0;
+
+  /* Manejo de barra de navegación inferior de Android/iOS (Safe Area) */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   display: flex;
   flex-direction: column; 
-  overflow: hidden; /* Garantiza cabecera y footer inmóviles */
+  overflow: hidden;
   
   box-shadow: var(--shadow-lg);
   transform: translateY(100%);
