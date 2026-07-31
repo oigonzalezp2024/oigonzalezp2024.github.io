@@ -401,14 +401,23 @@ header h1 {
   min-height: 0;
 }
 
+/* Carrusel del Modal adaptado a proporción exacta 800x500px */
 .compact-carousel {
-  height: 180px;
-  max-height: 180px;
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10; /* Respeta exactamente la relación de aspecto 800x500 */
+  max-height: 240px;
   flex-shrink: 0;
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
   background-color: #000000;
+}
+
+/* Evita que la imagen se recorte en el modal */
+.compact-carousel .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* En lugar de 'cover', ajusta la imagen completa sin recortes */
 }
 
 /* ==========================================================================
