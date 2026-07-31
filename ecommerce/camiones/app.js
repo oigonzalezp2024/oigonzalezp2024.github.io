@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnWhatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
 
     resetTabs();
+    modalOverlay.offsetHeight;   // fuerza el reflow
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
