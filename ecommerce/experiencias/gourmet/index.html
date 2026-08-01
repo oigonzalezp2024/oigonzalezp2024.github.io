@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Culinario - Experiencia Visual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="site-wrapper">
+    <header>
+      <h1>ATELIER CULINARIO</h1>
+      <p>Gastronomía • Utensilios • Experiencias</p>
+    </header>
+
+    <!-- Matriz Dinámica Fotográfica -->
+    <main class="desktop-matrix" id="desktop-matrix"></main>
+  </div>
+
+  <!-- MODAL GENERAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+
+      <!-- Vistas dinámicas cargadas por JS -->
+      <div class="modal-step" id="step-receta"></div>
+      <div class="modal-step" id="step-comprar-utensilios"></div>
+      <div class="modal-step" id="step-asistencia"></div>
+
+      <!-- PASO QR -->
+      <div class="modal-step" id="step-qr">
+        <h2 style="font-family:'Playfair Display'; color:#fff; text-align:center;">💳 Pago con Código QR</h2>
+        <p style="font-size:0.85rem; color:var(--text-muted); text-align:center; margin-top:5px;">Escanea con tu aplicación bancaria preferida para completar el pedido.</p>
+        
+        <div style="text-align:center; padding:20px;">
+          <img style="width:180px; height:180px; border-radius:10px; border:2px solid var(--accent-gold);" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=AtelierPagoGourmet" alt="QR Pago">
+        </div>
+
+        <button class="btn-action btn-buy" style="width:100%;" onclick="closeModal()">Finalizar Pedido</button>
+      </div>
+
+      <!-- CONFIRMACIÓN -->
+      <div class="modal-step" id="step-confirmacion">
+        <h2 style="font-family:'Playfair Display'; color:#fff; text-align:center;">🎉 ¡Reserva Confirmada!</h2>
+        <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin:15px 0;">Hemos agendado tu sesión privada. Te enviamos los detalles a tu correo electrónico.</p>
+        <button class="btn-action btn-buy" style="width:100%;" onclick="closeModal()">Entendido</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

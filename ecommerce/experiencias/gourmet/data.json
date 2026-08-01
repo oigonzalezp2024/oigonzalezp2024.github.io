@@ -1,0 +1,113 @@
+{
+  "platillos": [
+    {
+      "id": "plato-1",
+      "titulo": "Risotto de Hongos Porcini",
+      "tiempoEstimado": "40 Mins",
+      "dificultad": "Media",
+      "imagen": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=800&q=80",
+      "ingredientes": [
+        "Arroz Carnaroli o Arborio",
+        "Hongos Porcini y champiñones frescos",
+        "Caldo vegetal concentrado",
+        "Vino blanco seco",
+        "Queso Parmigiano Reggiano",
+        "Mantequilla artesanal"
+      ],
+      "preparacion": "Sofreír la cebolla, nacarar el arroz, agregar el vino y evaporar. Añadir caldo hirviendo poco a poco durante 18 minutos. Mantecar con mantequilla fría y queso Parmigiano.",
+      "utensiliosIds": ["utensilio-1", "utensilio-2"],
+      "ofertaKit": {
+        "nombre": "Kit Completo Risotto Gourmet",
+        "precioRegular": 145.00,
+        "precioDescuento": 120.00,
+        "moneda": "USD"
+      }
+    },
+    {
+      "id": "plato-2",
+      "titulo": "Risotto de Hongos Porcini",
+      "tiempoEstimado": "40 Mins",
+      "dificultad": "Media",
+      "imagen": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=800&q=80",
+      "ingredientes": [
+        "Arroz Carnaroli o Arborio",
+        "Hongos Porcini y champiñones frescos",
+        "Caldo vegetal concentrado",
+        "Vino blanco seco",
+        "Queso Parmigiano Reggiano",
+        "Mantequilla artesanal"
+      ],
+      "preparacion": "Sofreír la cebolla, nacarar el arroz, agregar el vino y evaporar. Añadir caldo hirviendo poco a poco durante 18 minutos. Mantecar con mantequilla fría y queso Parmigiano.",
+      "utensiliosIds": ["utensilio-1", "utensilio-2"],
+      "ofertaKit": {
+        "nombre": "Kit Completo Risotto Gourmet",
+        "precioRegular": 145.00,
+        "precioDescuento": 120.00,
+        "moneda": "USD"
+      }
+    },
+    {
+      "id": "plato-3",
+      "titulo": "Risotto de Hongos Porcini",
+      "tiempoEstimado": "40 Mins",
+      "dificultad": "Media",
+      "imagen": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=800&q=80",
+      "ingredientes": [
+        "Arroz Carnaroli o Arborio",
+        "Hongos Porcini y champiñones frescos",
+        "Caldo vegetal concentrado",
+        "Vino blanco seco",
+        "Queso Parmigiano Reggiano",
+        "Mantequilla artesanal"
+      ],
+      "preparacion": "Sofreír la cebolla, nacarar el arroz, agregar el vino y evaporar. Añadir caldo hirviendo poco a poco durante 18 minutos. Mantecar con mantequilla fría y queso Parmigiano.",
+      "utensiliosIds": ["utensilio-1", "utensilio-2"],
+      "ofertaKit": {
+        "nombre": "Kit Completo Risotto Gourmet",
+        "precioRegular": 145.00,
+        "precioDescuento": 120.00,
+        "moneda": "USD"
+      }
+    }
+  ],
+  "utensilios": [
+    {
+      "id": "utensilio-1",
+      "nombre": "Cacerola Hierro Fundido 24cm",
+      "descripcion": "Retención térmica uniforme para mantecados y cocciones lentas.",
+      "precio": 85.00,
+      "moneda": "USD",
+      "imagen": "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "utensilio-2",
+      "nombre": "Cuchillo Chef Santoku 7\"",
+      "descripcion": "Corte preciso con alvéolos antiadherentes.",
+      "precio": 45.00,
+      "moneda": "USD",
+      "imagen": "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "utensilio-3",
+      "nombre": "Cuchillo Chef Santoku 7\"",
+      "descripcion": "Corte preciso con alvéolos antiadherentes.",
+      "precio": 45.00,
+      "moneda": "USD",
+      "imagen": "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=600&q=80"
+    }
+  ],
+  "servicios": [
+    {
+      "id": "servicio-asistencia",
+      "titulo": "Asistencia Gourmet en Vivo",
+      "descripcion": "Acompañamiento 1 a 1 por videollamada con un Chef Ejecutivo.",
+      "imagen": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "servicio-asesoria",
+      "titulo": "Asesoría en Compras de Utensilios",
+      "descripcion": "Sesión personalizada para armar tu batería de cocina ideal.",
+      "imagen": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=800&q=80"
+    }
+  ]
+}
