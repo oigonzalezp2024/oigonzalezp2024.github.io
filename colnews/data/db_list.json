@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Portafolio Web",
-    "excerpt": "Proyectos de desarrollo web a medida con enfoque en rendimiento, escalabilidad y estándares de calidad Google Lighthouse.",
-    "category": "Desarrollo",
-    "isBreaking": true
-  },
-  {
     "id": 2,
     "title": "Ingeniería de Datos y ETL",
     "excerpt": "Automatización de flujos de datos, integración SOAP/WSDL y consumo de servicios web complejos con Python.",

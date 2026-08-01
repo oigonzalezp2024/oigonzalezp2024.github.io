@@ -7,7 +7,14 @@ async function loadHome() {
         if (!res.ok) throw new Error('No se pudo cargar la lista');
         const data = await res.json();
         
-        grid.innerHTML = data.map(item => `
+        grid.innerHTML = `
+            <a href="ecommerce/centrocomercial/index.html" class="news-card">
+                <span class="category">Desarrollo Web</span>
+                <h2>Mis Clientes</h2>
+                <p>Conoce mis aliados, empresarios serios que aman su tierra.</p>
+            </a>`;
+        
+        grid.innerHTML += data.map(item => `
             <a href="colnews/article.html?id=${item.id}" class="news-card">
                 <span class="category">${item.category}</span>
                 <h2>${item.title}</h2>

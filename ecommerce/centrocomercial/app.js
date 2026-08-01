@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
       "content": [
         { "type": "header", "data": "Soluciones Digitales" },
         { "type": "paragraph", "data": "Desarrollo de ecosistemas web orientados a la optimización de procesos operativos, gestión de inventarios y digitalización de catálogos comerciales." },
+        
+        { "type": "image", "url": "../../colnews/assets/img/rojas-distribuciones-dispositivos.avif", "caption": "Aprovisionamiento industrial: Rojas Distribuciones." },
+        { "type": "paragraph", "data": "El mejor aliado que puedes tener para dotar a tu negocio con el equipo industrial que se necesita para fortalecer tus procesos productivos." },
+        { "type": "link", "url": "https://rojasdistribuciones.com", "text": "Visita https://rojasdistribuciones.com" },
 
-        { "type": "image", "url": "../../colnews/assets/img/ecobullbolsas-dispositivos.avif", "caption": "Ecobullbolsas: Fábrica de bolsas ecológicas para tiendas de ropa, calzado, accesorios, perfumería, droguerias y eventos." },
-        { "type": "paragraph", "data": "Fábrica de bolsas de lujo para boutiques. Crea una experiencia memorable en la experiencia de compra y crea productos amigables con el medio ambiente. Sus bolsas son biodegradables y se transforman en abono. Ofrece bolsas para su negocio avaladas por Corponor." },
-        { "type": "link", "url": "https://ecobullbolsas.com", "text": "Visitar plataforma: ecobullbolsas.com" },
-        
-        { "type": "image", "url": "../../colnews/assets/img/rojas-distribuciones-dispositivos.avif", "caption": "Rojas Distribuciones: Fábrica de máquinas y aprovisionamiento industrial." },
-        { "type": "paragraph", "data": "Desarrollo de una plataforma web para Rojas Distribuciones optimizada para alto rendimiento (Lighthouse 95%+). La solución integra catálogos inteligentes con generación dinámica de PDF, garantizando una sincronización real entre el stock y la experiencia del usuario." },
-        { "type": "link", "url": "https://rojasdistribuciones.com", "text": "Visitar plataforma: rojasdistribuciones.com" },
-        
-        { "type": "image", "url": "../../colnews/assets/img/sandalias.avif", "caption": "Fábrica de Sandalias: Venta al por Mayor y Detal" },
-        { "type": "paragraph", "data": "La fábrica tiene su sede principal en Cúcuta. Ventas al mayor y Detal. Envíos gratis a todo Colombia. Pago contra entrega. Arma tu pedido como un mensaje de WhatsApp personalizado. Al mayor, pagas el flete." },
-        { "type": "link", "url": "https://oigonzalezp2024.github.io/ecommerce/sandalias/", "text": "Visita la demo de Ecommerce de venta de sandalias." }
+        { "type": "image", "url": "../../colnews/assets/img/ecobullbolsas-dispositivos.avif", "caption": "Empaque de producto: Ecobullbolsas - Fábrica de bolsas ecológicas" },
+        { "type": "paragraph", "data": "Fábrica de bolsas de lujo para boutiques. Bolsas ecológicas para tiendas de ropa, calzado, accesorios, perfumería, droguerias y eventos. Crea una experiencia memorable de compra para tus clientes. Sello verde avalado por Corponor." },
+        { "type": "link", "url": "https://ecobullbolsas.com", "text": "Visita https://ecobullbolsas.com" },
+
+        { "type": "image", "url": "../milena/camiones/images/camiones-cucuta-og.avif", "caption": "Equipos de transporte: JMC" },
+        { "type": "paragraph", "data": "Construye la buena experiencia de llevarle a tus clientes sus productos en las mejores condiciones que pueda soñar. Dale a tu emprendimiento la inversión que necesita para llevarlo hasta donde quieres con los mejores equipos de transporte. " },
+        { "type": "link", "url": "../milena/camiones/index.html", "text": "Visita el catálogo comercial" },
 
       ]
     },
@@ -84,7 +84,7 @@ function buildMall(data) {
   // 1. Botón "Ver Todos"
   const btnAll = document.createElement('button');
   btnAll.className = 'directory-btn active';
-  btnAll.innerText = 'Ver Todos los Locales';
+  btnAll.innerText = 'Ver todos los aliados';
   btnAll.onclick = (e) => filterMallStores('all', e.target);
   directoryContainer.appendChild(btnAll);
 
@@ -115,7 +115,7 @@ function buildMall(data) {
 
         <div class="store-info">
           <div>
-            <h3>Propuesta del Local</h3>
+            <h3>Propuesta:</h3>
             <p>${client.description}</p>
           </div>
 
