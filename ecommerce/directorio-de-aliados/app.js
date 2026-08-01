@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "type": "paragraph", "data": "Construye la buena experiencia de llevarle a tus clientes sus productos en las mejores condiciones que pueda soñar. Dale a tu emprendimiento la inversión que necesita para llevarlo hasta donde quieres con los mejores equipos de transporte. " },
         { "type": "link", "url": "../milena/camiones/index.html", "text": "Visita el catálogo comercial" },
 
+        { "type": "image", "url": "../img/vehiculos/spark_euv_azul_aqua.png", "caption": "Concesionario: Automotores." },
+        { "type": "paragraph", "data": "Es probable que ya te merecezcas un vehículo nuevo." },
+        { "type": "link", "url": "../vehiculos/index.html", "text": "Visita el catálogo comercial" },
+
       ]
     },
     {
