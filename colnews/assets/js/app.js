@@ -8,7 +8,7 @@ async function loadHome() {
         const data = await res.json();
         
         grid.innerHTML = `
-            <a href="ecommerce/centrocomercial/index.html" class="news-card">
+            <a href="ecommerce/directorio-de-aliados/index.html" class="news-card">
                 <span class="category">Desarrollo Web</span>
                 <h2>Mis Clientes</h2>
                 <p>Conoce mis aliados, empresarios serios que aman su tierra.</p>
