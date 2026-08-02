@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "type": "paragraph", "data": "Construye la buena experiencia de llevarle a tus clientes sus productos en las mejores condiciones que pueda soñar. Dale a tu emprendimiento la inversión que necesita para llevarlo hasta donde quieres con los mejores equipos de transporte. " },
         { "type": "link", "url": "../milena/camiones/index.html", "text": "Visita el catálogo comercial" },
 
+        { "type": "image", "url": "../arquitectura-hexagonal-empresarial/img/image.png", "caption": "Software: Arquitectura de soluciones" },
+        { "type": "paragraph", "data": "Trasforma tus ideas en soluciones digitales robustas y escalables. Diseñamos arquitectura de software a la medida de tu negocio." },
+        { "type": "link", "url": "../arquitectura-hexagonal-empresarial/index.html", "text": "Visita el catálogo comercial" },
+
       ]
     },
     {
