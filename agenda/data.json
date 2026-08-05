@@ -1,0 +1,366 @@
+[
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "completado"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "en_proceso"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "en_proceso"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "en_proceso"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "en_proceso"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Sandalias",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "en_proceso"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Chef",
+    "tarea": "Rediseñar el sitio web de asistencia Gourmet",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Chef",
+    "tarea": "Sugerir crear una pagina de venta de asistencia gourmet",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chef",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de platos y recetas",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chef",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de platos y recetas",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chef",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Chef",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "urgente importante",
+    "categoria": "Chef",
+    "tarea": "Crear una campaña para venta de asistencia gourmet (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camiones",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camionestas",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Chevrolet",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Software",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Rojas D.",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Agregar todas las fotografías en la pagina de facebook de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Agregar todas las fotografías en el sitio web de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Mostrar la actualizacion de la pagina al señor Stiven para que compre de nuevo.",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Comprar 10000 pesos de publicidad en meta",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Publicar 10 anuncios de venta de sandalias",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "ECBLL.",
+    "tarea": "Crear una campaña para venta de sandalias (Whatsapp)",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "FMCN",
+    "tarea": "Agendar cita",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "RCPLST",
+    "tarea": "Agendar cita",
+    "seguimiento": "",
+    "estado": "pendiente"
+  },
+  {
+    "prioridad": "no urgente no importante",
+    "categoria": "Camisetas",
+    "tarea": "Agendar cita",
+    "seguimiento": "",
+    "estado": "pendiente"
+  }
+]
