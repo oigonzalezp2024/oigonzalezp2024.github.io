@@ -1,0 +1,31 @@
+{
+  "introduccion_cliente": "Catálogo de camionetas JMC Motors con especificaciones comerciales y aplicación sugerida para cada tipo de negocio.",
+  "modelos": [
+    {
+      "producto": "grand-avenue",
+      "precio_sugerido": "(Consultar precio)",
+      "fotos": [
+        "./images/grand-avenue-portada-foto.avif",
+        "./images/grand-avenue-detalles.avif",
+        "./images/grand-avenue-dimensiones.avif"
+      ],
+      "pilar_1": "Está diseñada para el trabajo, emprendimientos y uso personal, combinando la versatilidad de una pickup con un chasis robusto.",
+      "pilar_2": "Cuenta con un motor Ford Puma diésel de 2.3 litros, con una potencia de 174 caballos de fuerza y un torque de 441 Nm.",
+      "pilar_3": "Ofrece un peso bruto vehicular de 3.250 kg y una capacidad de carga bruta que supera los 1.100 kg con un platón de dimensiones generosas.",
+      "pilar_4": "En el apartado de confort y cabina ofrece equipamiento como pantalla táctil de 10 pulgadas con conectividad, aire acondicionado electrónico y acceso sin llave."
+    },
+    {
+      "producto": "vigus-work-2027",
+      "precio_sugerido": "(Consultar precio)",
+      "fotos": [
+        "./images/vigus-work-portada-foto.avif",
+        "./images/vigus-work-detalles.avif",
+        "./images/vigus-work-dimensiones.avif"
+      ],
+      "pilar_1": "Camioneta pickup orientada al trabajo pesado con un diseño robusto y suspensión con ballestas en la parte trasera.",
+      "pilar_2": "Motor JMC de 2.498 cc que entrega 165 caballos de fuerza y un torque de 410 Nm desde muy abajo, a tan solo 1.400 rpm.",
+      "pilar_3": "Ofrece una capacidad de carga bruta de 1.090 kg y un peso bruto vehicular de 3.050 kg con suspensión trasera pensada para el trabajo duro.",
+      "pilar_4": "Equipamiento orientado al trabajo diario con gran durabilidad y opciones de transmisión configurables según requerimiento."
+    }
+  ]
+}
