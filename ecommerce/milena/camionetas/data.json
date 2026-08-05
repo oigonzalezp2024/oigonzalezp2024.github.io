@@ -5,9 +5,9 @@
       "producto": "grand-avenue",
       "precio_sugerido": "(Consultar precio)",
       "fotos": [
-        "./images/grand-avenue-portada-foto.png",
-        "./images/grand-avenue-detalles.png",
-        "./images/grand-avenue-dimensiones.png"
+        "./images/grand-avenue-portada-foto.avif",
+        "./images/grand-avenue-detalles.avif",
+        "./images/grand-avenue-dimensiones.avif"
       ],
       "pilar_1": "Está diseñada para el trabajo, emprendimientos y uso personal, combinando la versatilidad de una pickup con un chasis robusto.",
       "pilar_2": "Cuenta con un motor Ford Puma diésel de 2.3 litros, con una potencia de 174 caballos de fuerza y un torque de 441 Nm.",
@@ -18,9 +18,9 @@
       "producto": "vigus-work-2027",
       "precio_sugerido": "(Consultar precio)",
       "fotos": [
-        "./images/vigus-work-portada-foto.png",
-        "./images/vigus-work-detalles.png",
-        "./images/vigus-work-dimensiones.png"
+        "./images/vigus-work-portada-foto.avif",
+        "./images/vigus-work-detalles.avif",
+        "./images/vigus-work-dimensiones.avif"
       ],
       "pilar_1": "Camioneta pickup orientada al trabajo pesado con un diseño robusto y suspensión con ballestas en la parte trasera.",
       "pilar_2": "Motor JMC de 2.498 cc que entrega 165 caballos de fuerza y un torque de 410 Nm desde muy abajo, a tan solo 1.400 rpm.",
