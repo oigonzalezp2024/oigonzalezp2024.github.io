@@ -196,19 +196,954 @@
       },
       {
         "id": 12,
-        "nombre": "Sandalia Plana Marrón Tiras Múltiples Confort",
+        "nombre": "Sandalia Plataforma Confort Negra Prada Style",
         "categoria": "sandalias",
-        "caracteristicas": "Sandalia plana con múltiples tiras marrones cruzadas para mayor ajuste.",
+        "caracteristicas": "Sandalia de plataforma confort con doble correa de velcro y detalle metálico estilo Prada.",
         "precio": 95000,
         "voltaje": "N/A",
-        "imagen": "../img/sandalias/a12.avif",
+        "imagen": "../img/sandalias/b1.avif",
         "especificaciones": [
-          "Color: Marrón",
-          "Tiras: Múltiples finas",
-          "Suela: Plana confort",
-          "Ajuste: Pulsera al tobillo con hebilla"
+          "Color: Negro",
+          "Suela: Plataforma confort",
+          "Ajuste: Doble velcro",
+          "Detalle: Placa metálica decorativa"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 13,
+        "nombre": "Sandalia Plana Nude Lazo con Estrás",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana con lazo decorativo y aplicaciones de estrás brillantes.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b2.avif",
+        "especificaciones": [
+          "Color: Nude",
+          "Detalles: Lazo con estrás",
+          "Estilo: Casual elegante",
+          "Ajuste: Deslizable"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 14,
+        "nombre": "Sandalia Plataforma Blanca Doble Velcro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma ligera con doble correa ajustable en velcro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b3.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Suela: Plataforma confort",
+          "Ajuste: Velcro",
+          "Estilo: Urbano"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 15,
+        "nombre": "Sandalia Plana Negra Lazo con Estrás",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana negra con lazo decorativo y tiras de estrás.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b4.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Detalles: Estrás brillante",
+          "Estilo: Casual",
+          "Ajuste: Deslizable"
         ],
         "stock": 17
+      },
+      {
+        "id": 16,
+        "nombre": "Sandalia Tipo Slide Guess Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia tipo slide con banda ancha y logotipo Guess.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b5.avif",
+        "especificaciones": [
+          "Color: Beige y Blanco",
+          "Marca: Inspiración Guess",
+          "Suela: Antideslizante",
+          "Ajuste: Deslizable"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 17,
+        "nombre": "Sandalia Plana Blanca Lazo con Estrás",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana blanca con lazo decorativo y aplicaciones de estrás.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b6.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Detalles: Estrás brillante",
+          "Estilo: Casual elegante",
+          "Ajuste: Deslizable"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 18,
+        "nombre": "Sandalia Plataforma Cuadros Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma con estampado de cuadros y doble correa ajustable.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b7.avif",
+        "especificaciones": [
+          "Color: Beige",
+          "Diseño: Cuadros",
+          "Suela: Plataforma confort",
+          "Ajuste: Doble velcro"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 19,
+        "nombre": "Sandalia Plataforma Cuadros Café",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma con estampado de cuadros en tonos café y negro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b8.avif",
+        "especificaciones": [
+          "Color: Café",
+          "Diseño: Cuadros",
+          "Suela: Plataforma confort",
+          "Ajuste: Doble velcro"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 20,
+        "nombre": "Sandalia Plataforma Animal Print",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma con acabado animal print y doble correa ajustable.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b9.avif",
+        "especificaciones": [
+          "Color: Animal Print",
+          "Estampado: Leopardo",
+          "Suela: Plataforma confort",
+          "Ajuste: Velcro"
+        ],
+        "stock": 9
+      },
+      {
+        "id": 21,
+        "nombre": "Sandalia Plataforma Negra Suela Tractor",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia urbana con suela tractor y doble correa ajustable.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b10.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Suela: Tractor",
+          "Ajuste: Velcro",
+          "Estilo: Urbano"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 22,
+        "nombre": "Sandalia Plataforma Negra Doble Velcro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma ligera con doble correa ajustable en acabado texturizado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/b11.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Material: Acabado texturizado",
+          "Suela: Plataforma confort",
+          "Ajuste: Doble velcro"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 23,
+        "nombre": "Sandalia Plana Negra Tiras Fina Estrás y Anillos Dorados",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de suela confort negra con tiras finas recubiertas de estrás brillante y anillos dorados decorativos.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c3.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Detalles: Estrás brillante y apliques dorados",
+          "Estilo: Casual / Elegante",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 24,
+        "nombre": "Sandalia Plana Blanca Tiras Fina Estrás y Anillos Dorados",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de suela confort blanca con tiras finas recubiertas de estrás brillante y apliques dorados.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c5.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Detalles: Estrás brillante y apliques dorados",
+          "Estilo: Casual / Elegante",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 25,
+        "nombre": "Sandalia Plana Café Tiras Fina Estrás y Anillos Dorados",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de suela confort marrón con tiras finas de estrás brillante y detalles de anillos dorados.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c6.avif",
+        "especificaciones": [
+          "Color: Café / Marrón",
+          "Detalles: Estrás brillante y apliques dorados",
+          "Estilo: Casual / Elegante",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 26,
+        "nombre": "Sandalia Plana Nudo Grueso Estrás Bronce",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort con capellada en nudo de tiras anchas acolchadas completamente recubiertas de estrás bronce.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c7.avif",
+        "especificaciones": [
+          "Color: Bronce / Marrón",
+          "Detalles: Estrás continuo",
+          "Diseño: Capellada cruzada con nudo",
+          "Suela: Confort ergonómica"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 27,
+        "nombre": "Sandalia Plana Nudo Grueso Estrás Bronce y Plata",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con nudo de tiras anchas combinadas en estrás bronce y plata.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c8.avif",
+        "especificaciones": [
+          "Color: Bicolor (Bronce y Plata)",
+          "Detalles: Estrás multicolor brillante",
+          "Diseño: Capellada cruzada con nudo",
+          "Suela: Confort ergonómica"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 28,
+        "nombre": "Sandalia Plana Nudo Grueso Estrás Plata y Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de suela negra confort con capellada en nudo de tiras anchas recubiertas de estrás plateado brillante.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c9.avif",
+        "especificaciones": [
+          "Color: Negro / Plata",
+          "Detalles: Estrás plateado brillante",
+          "Diseño: Capellada cruzada con nudo",
+          "Suela: Confort ergonómica"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 29,
+        "nombre": "Colección Sandalias Tipo Mula GUESS Tejidas",
+        "categoria": "sandalias",
+        "caracteristicas": "Variedad de sandalias destalonadas tipo mula con faja ancha de yute/rafia tejida y logo GUESS bordado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c10.avif",
+        "especificaciones": [
+          "Color: Surtido (Blanco, Negro, Rojo, Café)",
+          "Marca: GUESS",
+          "Material: Textil efecto rafia tejida y sintético",
+          "Suela: Plataforma confort ligera"
+        ],
+        "stock": 25
+      },
+      {
+        "id": 30,
+        "nombre": "Sandalia Tipo Mula GUESS Blanco y Rojo",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de suela blanca con capellada tejida en tono beige y logo GUESS en relieve color rojo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c11.avif",
+        "especificaciones": [
+          "Color: Blanco / Rojo",
+          "Marca: GUESS",
+          "Detalles: Faja con textura de tejido y bordes en charol",
+          "Suela: Plataforma confort"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 31,
+        "nombre": "Sandalia Tipo Mula GUESS Negra",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de suela negra con capellada tejida en textura natural y logo GUESS en relieve color negro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c12.avif",
+        "especificaciones": [
+          "Color: Negro / Beige",
+          "Marca: GUESS",
+          "Detalles: Faja acolchada con bordes de charol negro",
+          "Suela: Plataforma confort"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 32,
+        "nombre": "Sandalia Tipo Mula Prada Style Acolchada Camel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada estilo confort con capellada ancha de cuero sintético acolchado con grabado geométrico y placa metálica Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/c1.avif",
+        "especificaciones": [
+          "Color: Camel / Marrón Claro",
+          "Marca: Inspiración Prada (placa triangular Milano)",
+          "Diseño: Textura de rombos acolchada",
+          "Suela: Confort ergonómica"
+        ],
+        "stock": 20
+      },
+      {
+        "id": 33,
+        "nombre": "Sandalia Tipo Mula Coach Monograma Negro Hebilla Dorada",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort con capellada en estampado monograma estilo Coach sobre tono negro y elegante aplique metálico dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d1.avif",
+        "especificaciones": [
+          "Color: Negro / Gris Oscuro",
+          "Marca: Inspiración Coach",
+          "Detalles: Hebilla/aplique metálico dorado",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 34,
+        "nombre": "Sandalia Tipo Mula Coach Monograma Beige/Dorado",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con capellada en monograma textil beige con destellos dorados y hebilla metálica frontal.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d2.avif",
+        "especificaciones": [
+          "Color: Beige / Blanco / Dorado",
+          "Marca: Inspiración Coach",
+          "Detalles: Hebilla/aplique metálico dorado",
+          "Suela: Plataforma confort acolchada negra"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 35,
+        "nombre": "Sandalia Tipo Mula Coach Monograma Café Hebilla Dorada",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort con textura de monograma clásico en tono café/marrón y detalle de aplique dorado en capellada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d3.avif",
+        "especificaciones": [
+          "Color: Café / Marrón",
+          "Marca: Inspiración Coach",
+          "Detalles: Hebilla/aplique metálico dorado",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 36,
+        "nombre": "Sandalia Tipo Mula Karl Lagerfeld Script Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia tipo mula con capellada blanca con estampado de caligrafía Karl, apliques de corazones dorados y muñeco icónico.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d4.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Estampado tipográfico, pines de corazón y figura icónica",
+          "Suela: Plataforma confort negra"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 37,
+        "nombre": "Sandalia Tipo Mula Karl Lagerfeld Script Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada negra con estampado de firma Karl en contraste blanco, pines dorados y parche decorativo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d5.avif",
+        "especificaciones": [
+          "Color: Negro / Blanco",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Estampado tipográfico, pines dorados y personaje icónico",
+          "Suela: Plataforma confort"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 38,
+        "nombre": "Sandalia Plataforma Karl Lagerfeld Doble Tira Camel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma media y doble tira de ajuste en color camel, adorno con apliques metálicos de Karl y su gato Choupette.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d6.avif",
+        "especificaciones": [
+          "Color: Camel / Marrón claro",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Apliques en relieve de Karl y gato",
+          "Suela: Plataforma deportiva / confort"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 39,
+        "nombre": "Sandalia Plataforma Karl Lagerfeld Doble Tira Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con suela plataforma y doble correa ancha en tono beige/marfil adornada con figuras representativas de Karl Lagerfeld.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d8.avif",
+        "especificaciones": [
+          "Color: Beige / Marfil",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Apliques decorativos de Karl y Choupette",
+          "Suela: Plataforma confort negra"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 40,
+        "nombre": "Sandalia Plataforma Karl Lagerfeld Doble Tira Negra",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort de plataforma negra con dos fajas anchas e icónicos dijes/apliques metálicos en la capellada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d9.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Apliques de figuras icónicas en relieve",
+          "Suela: Plataforma confort"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 41,
+        "nombre": "Sandalia Plataforma Tiras Múltiples Estrás Negra",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma alta con pulsera al tobillo y tiras delgadas recubiertas de estrás brillante plateado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d10.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Detalles: Tiras con estrás brillante",
+          "Ajuste: Hebilla metálica al tobillo",
+          "Suela: Plataforma media confort"
+        ],
+        "stock": 17
+      },
+      {
+        "id": 42,
+        "nombre": "Sandalia Plataforma Tiras Múltiples Estrás Oro Rosa",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma alta acolchada, pulsera al tobillo y tiras cruzadas recubiertas de estrás brillante oro rosa.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/d11.avif",
+        "especificaciones": [
+          "Color: Oro Rosa",
+          "Detalles: Tiras con estrás brillante",
+          "Ajuste: Hebilla en tobillo",
+          "Suela: Plataforma acolchada confort"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 43,
+        "nombre": "Sandalia Tipo Mula Acolchada Negro Aplique Metalico",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confortable con faja ancha acolchada en diseño geométrico arruchado sobre tono negro y logo metálico dorado estilo Gucci.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e1.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Inspiración Gucci",
+          "Detalles: Capellada acolchada arruchada con herraje metálico",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 44,
+        "nombre": "Sandalia Tipo Mula Acolchada Beige Suela Cafe",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada con capellada acolchada arruchada en tono beige con aplique dorado y suela confort en color café.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e2.avif",
+        "especificaciones": [
+          "Color: Beige / Café",
+          "Marca: Inspiración Gucci",
+          "Detalles: Faja arruchada y herraje dorado",
+          "Suela: Plataforma ergonómica tono café"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 45,
+        "nombre": "Sandalia Tipo Mula Acolchada Blanco Monocromatica",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confortable destalonada totalmente blanca con faja acolchada en relieve y broche metálico dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e3.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Marca: Inspiración Gucci",
+          "Detalles: Textura acanalada acolchada con aplique metálico",
+          "Suela: Plataforma confort blanca"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 46,
+        "nombre": "Sandalia Plataforma Tiras Trenzadas Negro Corina Factory",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma deportiva, tiras frontales trenzadas en tono negro y correa de ajuste al tobillo con hebilla dorada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e4.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tiras múltiples trenzadas y correa con hebilla",
+          "Suela: Plataforma dentada confort"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 47,
+        "nombre": "Sandalia Plataforma Tiras Trenzadas Beige Corina Factory",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con plataforma negra de diseño moderno, tiras superiores trenzadas en tono crema/beige y talón con hebilla.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e5.avif",
+        "especificaciones": [
+          "Color: Beige / Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con textura trenzada y ajuste en tobillo",
+          "Suela: Plataforma deportiva negra"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 48,
+        "nombre": "Sandalia Tipo Playera Karl Lagerfeld Texturizada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia playera/confort en cuero sintético grabado tono negro, decorada con pines metálicos en relieve de Karl, Choupette y corazones.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e6.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Capellada graneada con pines/dijes en relieve",
+          "Suela: Base confort ergonómica"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 49,
+        "nombre": "Sandalia Tipo Playera Karl Lagerfeld Texturizada Camel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono camel/marrón claro con faja graneada y dijes metálicos decorativos de la marca.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e7.avif",
+        "especificaciones": [
+          "Color: Camel / Marrón claro",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Apliques de figuras icónicas en relieve y corazones",
+          "Suela: Base ergonómica"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 50,
+        "nombre": "Sandalia Tipo Playera Karl Lagerfeld Texturizada Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma confort en tono blanco con capellada de textura graneada, adornada con característicos pines de Karl y gato.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/e8.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Capellada texturizada con dijes metálicos",
+          "Suela: Plataforma ergonómica confort"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 51,
+        "nombre": "Sandalia Maxiplataforma Faja Ancha Prada Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia tipo sueco con maxiplataforma negra revestida en gamuza/ante y capellada ancha lisa blanca con triángulo metálico Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f1.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Inspiración Prada",
+          "Detalles: Placa triangular dorada/negra Prada",
+          "Suela: Maxiplataforma recta en ante negro"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 52,
+        "nombre": "Sandalia Maxiplataforma Faja Ancha Prada Nude Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de maxiplataforma en tono nude/beige con faja acolchada lisa y logo triangular representativo de la marca Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f2.avif",
+        "especificaciones": [
+          "Color: Nude / Beige / Negro",
+          "Marca: Inspiración Prada",
+          "Detalles: Herraje triangular metálico Prada Milano",
+          "Suela: Maxiplataforma alta recubierta"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 53,
+        "nombre": "Sandalia Plataforma Triple Hebilla Textura Graneada Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort con capellada de tres tiras anchas en textura graneada color blanco, hebillas doradas ajustables y tachas laterales decorativas sobre suela negra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f5.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Detalles: 3 tiras con hebillas doradas y remaches laterales",
+          "Suela: Plataforma confort anatómica negra"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 54,
+        "nombre": "Sandalia Plataforma Triple Hebilla Textura Graneada Camel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono camel/marrón con faja de tres correas, hebillas doradas y tachas laterales metálicas.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f6.avif",
+        "especificaciones": [
+          "Color: Camel / Marrón",
+          "Detalles: Capellada arruchada/graneada con hebillas doradas",
+          "Suela: Plataforma ergonómica negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 55,
+        "nombre": "Sandalia Plataforma Doble Tira Velcro Guess Cafe",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia deportiva confort de dos tiras anchas ajustables en tono café/marrón oscuro con aplique metálico dorado de la marca GUESS.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f7.avif",
+        "especificaciones": [
+          "Color: Café / Marrón oscuro",
+          "Marca: Inspiración GUESS",
+          "Detalles: Tiras con velcro y letras metálicas doradas",
+          "Suela: Plataforma confort negra"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 56,
+        "nombre": "Sandalia Plataforma Doble Tira Velcro Guess Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia tipo mula deportiva en color negro monocromático, con tiras ajustables y logotipo dorado en relieve GUESS.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f8.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Inspiración GUESS",
+          "Detalles: Cierre de velcro con herraje dorado GUESS",
+          "Suela: Base confort deportiva"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 57,
+        "nombre": "Sandalia Plataforma Doble Tira Velcro Guess Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono blanco con tiras superiores ajustables y distintivo dorado GUESS sobre suela negra contraste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f9.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Inspiración GUESS",
+          "Detalles: Tiras con ajuste cómodo y logo metálico",
+          "Suela: Plataforma negra anatómica"
+        ],
+        "stock": 10
+      },
+      {
+        "id": 58,
+        "nombre": "Sandalia Plataforma Alta Doble Tira Lisa Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma alta tipo track en color negro con capellada de tiras anchas blancas y apliques metálicos oscuros.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f10.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Detalles: Capellada blanca lisa con tachas ovales metálicas",
+          "Suela: Maxiplataforma deportiva dentada"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 59,
+        "nombre": "Sandalia Confort Tiras Brillantes Pedreria Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana/confort en tono crema/blanco marfil con tiras delgadas cruzadas con detalle de nudo y recubiertas completamente de pedrería/brillos.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f11.avif",
+        "especificaciones": [
+          "Color: Beige / Marfil",
+          "Detalles: Tiras con aplique de strass/brillos y nudo frontal",
+          "Suela: Base confort ergonómica ligera"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 60,
+        "nombre": "Sandalia Confort Tiras Brillantes Pedreria Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada en tono negro con tiras cruzadas y ancha recubiertas en fina pedrería plateada resplandeciente.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/f12.avif",
+        "especificaciones": [
+          "Color: Negro / Plata",
+          "Detalles: Strass/pedrería brillante sobre tiras y nudo",
+          "Suela: Plataforma confort negra"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 61,
+        "nombre": "Sandalia Confort Doble Tira Ancha Hebillas Nude",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana tipo confort en tono beige/nude con capellada de dos tiras anchas, hebillas al tono y plantilla anatómica acolchada en color negro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g1.avif",
+        "especificaciones": [
+          "Color: Nude / Beige",
+          "Detalles: Doble faja con hebillas cuadradas monocromáticas",
+          "Suela: Plataforma baja confort ergonómica negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 62,
+        "nombre": "Sandalia Confort Doble Tira Ancha Hebillas Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo mule confort totalmente negra, con doble tira ancha ajustable mediante hebillas cuadradas al tono y base ergonómica.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g2.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Detalles: Tiras anchas con hebillas al tono",
+          "Suela: Base confort ergonómica"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 63,
+        "nombre": "Sandalia Confort Doble Tira Velcro Louis Vuitton Gris",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia deportiva con capellada de tiras anchas en patrón de ajedrez/damier gris y negro, con cierre de velcro y herraje metálico dorado LV.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g3.avif",
+        "especificaciones": [
+          "Color: Gris / Negro (Damier)",
+          "Marca: Inspiración Louis Vuitton",
+          "Detalles: Herraje dorado con logo LV y ajuste de velcro",
+          "Suela: Base anatómica negra confort"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 64,
+        "nombre": "Sandalia Maxiplataforma Faja Ancha Prada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma alta tipo sueco en color negro, faja superior ancha y suave con aplique metálico triangular en relieve de la marca Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g4.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Inspiración Prada",
+          "Detalles: Placa triangular dorada/negra Prada Milano",
+          "Suela: Maxiplataforma de alta densidad recubierta"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 65,
+        "nombre": "Sandalia Plataforma Track Tiras Cruzadas Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia deportiva en color blanco monocromático con tiras cruzadas, correa posterior de ajuste con velcro y suela dentada tipo track.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g5.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Tiras cruzadas al empeine y correa trasera",
+          "Suela: Maxiplataforma track dentada"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 66,
+        "nombre": "Sandalia Romana Confort Gladiadora Tiras Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia tipo romana destalonada en tono negro, con diseño de múltiples tiras entrecruzadas y correa superior ajustable con hebilla dorada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g6.avif",
+        "especificaciones": [
+          "Color: Negro",
+          "Marca: Corina Factory",
+          "Detalles: Diseño gladiadora con hebilla dorada",
+          "Suela: Base confort ergonómica"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 67,
+        "nombre": "Sandalia Romana Confort Gladiadora Tiras Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana gladiadora con tiras anchas blancas entrelazadas en el empeine, hebilla ajustable y suela negra confort.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g7.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Capellada multitiras con hebilla dorada",
+          "Suela: Plataforma confortable ergonómica"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 68,
+        "nombre": "Sandalia Confort Diseño En H Hermès Beige Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en tono beige/nude con capellada de corte en H distintivo y tira superior con ajuste de velcro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g8.avif",
+        "especificaciones": [
+          "Color: Beige / Nude / Negro",
+          "Marca: Corina Factory (Inspiración Hermès)",
+          "Detalles: Corte en H con tira de velcro acolchada",
+          "Suela: Base confort ligera negra"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 69,
+        "nombre": "Sandalia Plataforma Track Tiras Trenzadas Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia con maxiplataforma dentada color blanco marfil, con tiras superiores de diseño trenzado y cruzado súper cómodas.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g9.avif",
+        "especificaciones": [
+          "Color: Blanco / Marfil",
+          "Detalles: Tiras anchas trenzadas y delgadas cruzadas",
+          "Suela: Maxiplataforma deportiva track"
+        ],
+        "stock": 17
+      },
+      {
+        "id": 70,
+        "nombre": "Sandalia Confort Tiras Cruzadas Y Argollas Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada en suave gamuza/ante negro con tiras cruzadas en el empeine unidas por herrajes/argollas doradas y tira superior con velcro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g10.avif",
+        "especificaciones": [
+          "Color: Negro / Dorado",
+          "Detalles: Material tipo ante, argollas metálicas doradas y velcro",
+          "Suela: Plataforma anatómica confort"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 71,
+        "nombre": "Sandalia Maxiplataforma Faja Ancha Prada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de maxiplataforma alta recubierta en ante negro, con faja ancha acolchada lisa y distintivo herraje triangular metálico Prada Milano.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/g11.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Inspiración Prada",
+          "Detalles: Placa triangular metálica dorada/negra Prada Milano",
+          "Suela: Maxiplataforma recta de alta densidad recubierta"
+        ],
+        "stock": 15
       }
     ]
   }
