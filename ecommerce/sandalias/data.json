@@ -1605,6 +1605,582 @@
           "Suela: Maxiplataforma track dentada"
         ],
         "stock": 16
+      },
+      {
+        "id": 101,
+        "nombre": "Sandalia Maxiplataforma Doble Tira Monograma Gucci Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule de maxiplataforma alta forrada en estampado monograma GG blanco sobre negro, con doble tira ancha de ajuste con velcro, detalle de cinta tribanda verde/roja y dije de hebilla metálica GG dorada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L2.avif",
+        "especificaciones": [
+          "Color: Negro con Monograma Blanco",
+          "Marca: Inspiración Gucci",
+          "Detalles: Hebilla metálica GG en tono dorado y tira distintiva tribanda verde y roja",
+          "Suela: Maxiplataforma alta forrada en monograma"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 102,
+        "nombre": "Sandalia Deportiva Confort Placa Prada Blanco/Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia deportiva con tiras de velcro ajustables en color blanco contraste con plantilla negra, resaltada por la icónica placa triangular en tono dorado y negro de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L3.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory (Inspiración Prada)",
+          "Detalles: Placa metálica triangular distintiva de marca",
+          "Suela: Base confort ergonómica en color negro"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 103,
+        "nombre": "Sandalia Confort Faja Ancha Dijes Karl Lagerfeld Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono negro con faja ancha lisa, decorada con encantadores dijes metálicos esmaltados en tono dorado inspirados en Karl Lagerfeld.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L4.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Inspiración Karl Lagerfeld",
+          "Detalles: Aplicaciones metálicas esmaltadas tipo pin de muñeco y logo KL",
+          "Suela: Base confort liviana con plantilla anatómica"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 104,
+        "nombre": "Sandalia Confort Tiras Cruzadas Animal Print Animalier Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con tiras ajustables por hebilla dorada en textura peluche con estampado Animal Print (Leopardo) sobre base negra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L5.avif",
+        "especificaciones": [
+          "Color: Animal Print Leopardo / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Acabado afelpado/pelo sintético y hebillas doradas",
+          "Suela: Base confort anatómica negra"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 105,
+        "nombre": "Sandalia Maxiplataforma Deportiva Estampado Cebra Blanco/Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia urbana de maxiplataforma track con faja frontal mullida en llamativo estampado Animal Print de Cebra y tira de ajuste en tobillo con velcro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L6.avif",
+        "especificaciones": [
+          "Color: Estampado Cebra Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Faja abullonada cebra y correa ajustable al tobillo",
+          "Suela: Maxiplataforma dentada tipo track"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 106,
+        "nombre": "Sandalia Romana Confort Tiras Velcro Animal Print Leopardo Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort estilo deportiva con tiras ajustables de velcro recubiertas de textura pelo sintético con estampado de leopardo y suela liviana.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L7.avif",
+        "especificaciones": [
+          "Color: Animal Print Leopardo / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Ajustes de velcro en empeine y tobillo, material sintético estilo pelo",
+          "Suela: Base confort liviana ergonómica"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 107,
+        "nombre": "Sandalia Maxiplataforma Cadena Eslabones Tono Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de maxiplataforma track en color negro, destacada por una faja frontal adornada con una cadena gruesa de eslabones acrílicos al tono.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L8.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Adorno de cadena en eslabones oversized negros brillantes",
+          "Suela: Maxiplataforma dentada de alta densidad"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 108,
+        "nombre": "Sandalia Confort Tiras Cruzadas Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en color blanco, con diseño de tiras anchas cruzadas en el empeine sobre una base anatómica confort en color negro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L9.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tiras cruzadas textura semi-cuero con remache metálico",
+          "Suela: Base confort acolchada bi-color"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 109,
+        "nombre": "Sandalia Maxiplataforma Ojalillos Metálicos Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo mule con maxiplataforma track en tono negro, equipada con doble faja con múltiples ojalillos metálicos plateados y hebillas ajustables estilo rocker/grunge.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L10.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Ojalillos plateados en toda la capellada y doble hebilla de ajuste",
+          "Suela: Maxiplataforma dentada ergonómica"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 110,
+        "nombre": "Sandalia Maxiplataforma Deportiva Tira Acolchada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana deportiva con base de maxiplataforma dentada, faja delantera mullida/acolchada y tira posterior con ajuste de velcro al tobillo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L1.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Faja frontal acolchada y cierre de velcro",
+          "Suela: Maxiplataforma track de alta densidad"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 111,
+        "nombre": "Sandalia Confort Doble Tira Estampado Damier Beige Louis Vuitton",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de confort con doble faja ancha ajustable recubierta en estampado tipo ajedrez/Damier en tonos beige y blanco, adornada con el aplique metálico LV en tono dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/L11.avif",
+        "especificaciones": [
+          "Color: Beige / Blanco / Marfil",
+          "Marca: Inspiración Louis Vuitton",
+          "Detalles: Estampado a cuadros Damier y aplique metálico con iniciales LV doradas",
+          "Suela: Base confort acolchada en tono blanco"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 112,
+        "nombre": "Sandalia Mule Maxiplataforma Faja Fruncida Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada estilo mule con maxiplataforma track dentada en tono negro y faja frontal ancha con acabado plisado/fruncido suave.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M1.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Capellada con diseño fruncido/ruched de textura suave",
+          "Suela: Maxiplataforma dentada tipo track"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 113,
+        "nombre": "Sandalia Romana Maxiplataforma Animal Print Leopardo y Marrón",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma baja/track con faja acolchada en estampado Animal Print de leopardo y correa ajustable en tono café/marrón al tobillo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M2.avif",
+        "especificaciones": [
+          "Color: Animal Print Leopardo / Marrón / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Faja mullida en leopardo y correa posterior sintética marrón",
+          "Suela: Maxiplataforma dentada confort"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 114,
+        "nombre": "Sandalia Mule Maxiplataforma Faja Fruncida Cebra Blanco/Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule destalonada con maxiplataforma dentada negra, destacada por una faja ancha fruncida en estampado Animal Print de cebra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M3.avif",
+        "especificaciones": [
+          "Color: Estampado Cebra Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Capellada con pliegues estilo ruching en patrón de cebra",
+          "Suela: Maxiplataforma dentada en color negro"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 115,
+        "nombre": "Sandalia Mule Maxiplataforma Faja Fruncida Leopardo Marrón",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort sobre maxiplataforma track negra, con faja frontal ancha de acabado fruncido en estampado clásico de leopardo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M4.avif",
+        "especificaciones": [
+          "Color: Animal Print Leopardo / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Faja abullonada plisada con textura suave",
+          "Suela: Maxiplataforma track de alta resistencia"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 116,
+        "nombre": "Sandalia Mule Maxiplataforma Tiras Trenzadas y Cruzadas Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma dentada en color blanco puro, con diseño de múltiples tiras frontales que combinan texturas trenzadas y tiras lisas cruzadas.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M5.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Combinación de tiras trenzadas y tiras delgadas cruzadas",
+          "Suela: Maxiplataforma dentada totalmente blanca"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 117,
+        "nombre": "Sandalia Confort Corte H con Correa Posterior Marrón Hermès",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort en tono marrón suela/miel con icónico corte frontal en forma de 'H' y correa ajustable en empeine, sobre suela track negra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M6.avif",
+        "especificaciones": [
+          "Color: Marrón / Miel / Negro",
+          "Marca: Inspiración Hermès",
+          "Detalles: Capellada calada tipo H y correa ajustable con velcro",
+          "Suela: Base confort track dentada"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 118,
+        "nombre": "Sandalia Confort Corte H con Tira de Ajuste Blanco Hermès",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule confort en color blanco con capellada calada en diseño de 'H', tira superior con ajuste de velcro y base anatómica negra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M7.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory (Inspiración Hermès)",
+          "Detalles: Diseño de corte H y correa superior ajustable",
+          "Suela: Base confort ergonómica en color negro"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 119,
+        "nombre": "Sandalia Maxiplataforma Doble Tira Monograma Gucci Rosado",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule de maxiplataforma alta forrada en estampado monograma GG en tono rosa pastel, con doble tira ancha, cinta tribanda verde/roja y dije de hebilla metálica GG dorada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M8.avif",
+        "especificaciones": [
+          "Color: Rosa Pastel con Monograma Marrón",
+          "Marca: Inspiración Gucci",
+          "Detalles: Hebilla metálica GG dorada y tira tribanda distintiva",
+          "Suela: Maxiplataforma alta forrada al tono"
+        ],
+        "stock": 11
+      },
+      {
+        "id": 120,
+        "nombre": "Sandalia Maxiplataforma Doble Tira Monograma Gucci Beige/Beige",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule con maxiplataforma forrada en estampado clásico monograma GG en tonos beige y café, con tiras ajustables con velcro y dije GG metálico dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M9.avif",
+        "especificaciones": [
+          "Color: Beige / Café Clásico",
+          "Marca: Inspiración Gucci",
+          "Detalles: Hebilla metálica GG en tono dorado y cinta tribanda verde/roja",
+          "Suela: Maxiplataforma confort forrada en monograma"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 121,
+        "nombre": "Sandalia Confort Doble Tira Acolchada Matelassé Blanco Chanel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en tono marfil/blanco con fajas anchas acolchadas en costura rombo/matelassé, decoradas con broches de doble C de Chanel en tono dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M10.avif",
+        "especificaciones": [
+          "Color: Blanco Marfil Monocromático",
+          "Marca: Inspiración Chanel",
+          "Detalles: Textura acolchada matelassé y apliques metálicos de doble C dorados",
+          "Suela: Base confort ergonómica acolchada"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 122,
+        "nombre": "Sandalia Confort Doble Tira Acolchada Matelassé Negro Chanel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono negro con doble faja acolchada en patrón de diamantes y apliques metálicos de logo doble C dorados estilo Chanel.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M11.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Inspiración Chanel",
+          "Detalles: Capellada acolchada matelassé con herrajes dorados de marca",
+          "Suela: Base confort anatómica negra"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 123,
+        "nombre": "Sandalia Confort Doble Tira Acolchada Matelassé Beige Chanel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en tono beige neutro con doble faja acolchada matelassé y apliques metálicos con logo doble C en acabado dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/M12.avif",
+        "especificaciones": [
+          "Color: Beige Neutro / Crema",
+          "Marca: Inspiración Chanel",
+          "Detalles: Acabado acolchado matelassé y apliques de marca metálicos dorados",
+          "Suela: Base confort ergonómica en tono beige"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 124,
+        "nombre": "Sandalia Plana Mule Capellada Labrada Cuero Castaño",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana destalonada con capellada ancha en tono marrón castaño, destacada por cortes geométricos y relieve de costura decorativa.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N1.avif",
+        "especificaciones": [
+          "Color: Marrón Castaño / Suela",
+          "Marca: Corina Factory",
+          "Detalles: Capellada con troquelado geométrico y costura en relieve",
+          "Suela: Plana con ligero tacón confort"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 125,
+        "nombre": "Sandalia Confort Tira Cruzada Blanca y Ajuste Leopardo",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia ligera sobre base negra confort, con tira cruzada en dedo en sintético blanco y correa superior ajustable de velcro en estampado Animal Print leopardo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N2.avif",
+        "especificaciones": [
+          "Color: Blanco / Animal Print Leopardo / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tira cruzada para dedo y correa de velcro leopardo con pelo sintético",
+          "Suela: Base confort ergonómica en tono negro"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 126,
+        "nombre": "Sandalia Romana Maxiplataforma Tiras Ajustables Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de maxiplataforma track con tiras anchas en el empeine y tobillo con cierres de velcro ajustables y herrajes metálicos en tono negro.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N3.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con velcro al tobillo y empeine con remaches metálicos",
+          "Suela: Maxiplataforma dentada de alta densidad"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 127,
+        "nombre": "Sandalia Romana Maxiplataforma Tiras Ajustables Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana urbana con maxiplataforma negra dentada en contraste con tiras de empeine y talón ajustables por velcro en tono blanco.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N4.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con velcro y suela bicolor en contraste",
+          "Suela: Maxiplataforma track en tono negro"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 128,
+        "nombre": "Sandalia Mule Maxiplataforma Liviana Charol Negro Prada",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada con maxiplataforma ultra liviana en color negro, capellada ancha en acabado charol brillante y placa metálica triangular de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N5.avif",
+        "especificaciones": [
+          "Color: Negro Brillante",
+          "Marca: Inspiración Prada",
+          "Detalles: Capellada de charol sintético y placa triangular icónica de marca",
+          "Suela: Maxiplataforma recta ultraliviana"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 129,
+        "nombre": "Sandalia Romana Maxiplataforma Tiras Ajustables Marrón Miel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana deportiva sobre maxiplataforma negra dentada, con tiras anchas ajustables de velcro en sintético textura cuero marrón miel.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N6.avif",
+        "especificaciones": [
+          "Color: Marrón Miel / Suela / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Ajustes de velcro en tobillo y empeine sobre textura sintética cuero",
+          "Suela: Maxiplataforma dentada tipo track"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 130,
+        "nombre": "Sandalia Mule Maxiplataforma Liviana Charol Beige Prada",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada sobre maxiplataforma liviana negra, con faja superior en charol beige/nude decorada con la emblemática placa triangular metálica de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N7.avif",
+        "especificaciones": [
+          "Color: Beige Nude / Negro",
+          "Marca: Inspiración Prada",
+          "Detalles: Faja en acabado charol y aplique metálico triangular en empeine",
+          "Suela: Maxiplataforma recta en tono negro"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 131,
+        "nombre": "Sandalia Confort Mule Tiras Acolchadas Cruzadas Negro Magaldas",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en tono negro, con diseño de tiras cruzadas en capellada súper mullidas/abullonadas y plantilla anatómica.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N8.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Magaldas Factory",
+          "Detalles: Tiras múltiples abullonadas en efecto tubolar cruzado",
+          "Suela: Base confort ergonómica acolchada"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 132,
+        "nombre": "Sandalia Confort Mule Tiras Acolchadas Cruzadas Blanco Magaldas",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada totalmente blanca, con capellada de tiras mullidas/tubulares cruzadas y plantilla ergonómica de descanso.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N9.avif",
+        "especificaciones": [
+          "Color: Blanco Marfil Monocromático",
+          "Marca: Magaldas Factory",
+          "Detalles: Tiras múltiples acolchadas y plantilla suave",
+          "Suela: Base confort liviana blanca"
+        ],
+        "stock": 17
+      },
+      {
+        "id": 133,
+        "nombre": "Sandalia Plana Mule Capellada Labrada Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plana estilo mule en color blanco, con faja frontal decorada con labrados y relieves geométricos calados de acabado delicado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N10.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Faja frontal con grabado en relieve y pequeñas aberturas caladas",
+          "Suela: Base plana ultra cómoda"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 134,
+        "nombre": "Sandalia Confort Tira Cruzada Miel y Ajuste Leopardo",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con tira para dedo cruzada en sintético color miel/marrón y correa superior con tira ajustable de velcro en estampado leopardo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N11.avif",
+        "especificaciones": [
+          "Color: Marrón Miel / Animal Print Leopardo / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Textura afelpada en correa de leopardo y faja cruzada suave",
+          "Suela: Base confort acolchada negra"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 135,
+        "nombre": "Sandalia Confort Tira Cruzada Negro y Ajuste Leopardo",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort con tiras cruzadas en empeine color negro y correa de ajuste en empeine recubierta en textura felpa con estampado Animal Print de leopardo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N12.avif",
+        "especificaciones": [
+          "Color: Negro / Animal Print Leopardo",
+          "Marca: Corina Factory",
+          "Detalles: Tira superior con velcro en leopardo afelpado",
+          "Suela: Base confort anatómica negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 136,
+        "nombre": "Sandalia Plana Mule Capellada Labrada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada plana en color negro, con faja ancha decorada por detalles labrados, costuras en relieve y aberturas caladas elegantes.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/N13.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Diseño geométrico en relieve sobre faja frontal",
+          "Suela: Plana con leve tacón confort"
+        ],
+        "stock": 16
       }
     ]
   }
