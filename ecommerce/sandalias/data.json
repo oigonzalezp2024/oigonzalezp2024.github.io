@@ -1144,6 +1144,467 @@
           "Suela: Maxiplataforma recta de alta densidad recubierta"
         ],
         "stock": 15
+      },
+      {
+        "id": 72,
+        "nombre": "Sandalia Maxiplataforma Multi-Tiras Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de maxiplataforma negra acolchada con capellada de tres tiras horizontales en color blanco y hebilla de ajuste en tono metálico.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h1.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tres tiras con hebilla metálica",
+          "Suela: Maxiplataforma deportiva track negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 73,
+        "nombre": "Sandalia Confort Doble Tira Ancha Hebillas Prada Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia plataforma confort en color blanco con faja de doble tira, hebillas metálicas en tono oro rosa y aplique triangular en relieve de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h2.avif",
+        "especificaciones": [
+          "Color: Blanco",
+          "Marca: Inspiración Prada",
+          "Detalles: Hebillas tono oro rosa y placa triangular Prada",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 74,
+        "nombre": "Sandalia Confort Doble Tira Ancha Hebillas Prada Miel",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo mule confort en tono miel/marrón, con doble tira ancha, hebillas tono oro rosa y aplique triangular distintivo de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h3.avif",
+        "especificaciones": [
+          "Color: Miel / Marrón",
+          "Marca: Inspiración Prada",
+          "Detalles: Hebillas tono oro rosa y placa triangular Prada",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 75,
+        "nombre": "Sandalia Confort Tiras Delgadas Cruzadas Minimalista",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de estilo minimalista con tiras tubulares cruzadas sobre la plantilla anatómica de alta comodidad.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h4.avif",
+        "especificaciones": [
+          "Color: Disponible en Blanco, Miel y Negro",
+          "Detalles: Capellada de tiras delgadas cruzadas al tono",
+          "Suela: Base ultracómoda anatómica"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 76,
+        "nombre": "Sandalia Maxiplataforma Multi-Tiras Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de maxiplataforma plana en color negro monocromático, con diseño de tres tiras anchas unidas y hebilla de ajuste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h5.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con hebilla metálica plateada",
+          "Suela: Maxiplataforma track dentada"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 77,
+        "nombre": "Sandalia Maxiplataforma Multi-Tiras Beige Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada con maxiplataforma negra dentada y capellada en tono beige con tres tiras y hebilla metálica de ajuste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h6.avif",
+        "especificaciones": [
+          "Color: Beige / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Tres tiras horizontales con hebilla de ajuste",
+          "Suela: Maxiplataforma deportiva track negra"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 78,
+        "nombre": "Sandalia Confort Tiras Cruzadas Pedrería Glitter Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort tipo mule con tiras tubulares entrecruzadas totalmente cubiertas de pedrería/brillos sobre base negra.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h7.avif",
+        "especificaciones": [
+          "Color: Negro con brillo plateado",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con apliques de pedrería/strass brillante",
+          "Suela: Base confort acolchada"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 79,
+        "nombre": "Sandalia Confort Romana Tiras Finas Pedrería Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada con tiras finas de pedrería brillante que envuelven el empeine y herraje dorado de ajuste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h8.avif",
+        "especificaciones": [
+          "Color: Negro con destellos brillantes",
+          "Marca: Corina Factory",
+          "Detalles: Tiras finas con incrustaciones y pasador metálico dorado",
+          "Suela: Plataforma baja anatómica confortable"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 80,
+        "nombre": "Sandalia Confort Romana Tiras Finas Pedrería Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort con base blanca y tiras delgadas cargadas de brillo que cruzan el empeine, sujetas con pasador dorado.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h9.avif",
+        "especificaciones": [
+          "Color: Blanco / Plata",
+          "Marca: Corina Factory",
+          "Detalles: Tiras delgadas con pedrería strass y pasador dorado",
+          "Suela: Base anatómica acolchada blanca"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 81,
+        "nombre": "Sandalia Plataforma Confort Ojaletes Metálicos",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada con maxiplataforma negra y capellada de dos tiras anchas decoradas con ojaletes metálicos remachados y hebillas dobles.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/h10.avif",
+        "especificaciones": [
+          "Color: Disponible en Negro, Miel y Beige/Blanco",
+          "Detalles: Doble faja con perforaciones de ojaletes plateados y hebillas",
+          "Suela: Plataforma alta confort ligera"
+        ],
+        "stock": 17
+      },
+      {
+        "id": 82,
+        "nombre": "Sandalia Maxiplataforma Tiras Cruzadas Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de plataforma gruesa deportiva en color negro, con tiras asimétricas cruzadas sobre el empeine y ajuste de correa al tobillo.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j1.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Tiras asimétricas y correa ajustable con hebilla",
+          "Suela: Maxiplataforma track dentada"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 83,
+        "nombre": "Sandalia Confort Doble Tira Monograma Tabaco LV Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con doble tira ancha en estampado de cuadros monograma café/tabaco, hebilla metálica dorada y herraje de monograma.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j2.avif",
+        "especificaciones": [
+          "Color: Estampado Cuadros Tabaco / Café",
+          "Marca: Corina Factory (Inspiración LV)",
+          "Detalles: Hebilla dorada y dije metálico de marca",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 84,
+        "nombre": "Sandalia Confort Doble Tira Monograma Gris LV Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con doble tira en patrón de cuadros monograma tono gris/negro, equipada con hebilla dorada y aplique metálico de monograma.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j3.avif",
+        "especificaciones": [
+          "Color: Estampado Cuadros Gris / Negro",
+          "Marca: Corina Factory (Inspiración LV)",
+          "Detalles: Hebilla dorada de ajuste y herraje metálico de marca",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 85,
+        "nombre": "Sandalia Confort Doble Tira Ojaletes Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo mule en color blanco, con faja de doble tira ancha decorada con perforaciones de ojaletes metálicos remachados y hebillas dobles.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j4.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Ojaletes de metal y hebillas cuadradas",
+          "Suela: Plataforma confort track liviana"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 86,
+        "nombre": "Sandalia Romana Maxiplataforma Tiras Beige Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana de maxiplataforma negra con capellada beige de múltiples tiras entrecruzadas, tira central en T y hebilla de ajuste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j5.avif",
+        "especificaciones": [
+          "Color: Beige / Negro",
+          "Marca: Corina Factory",
+          "Detalles: Diseño de red/gladiadora con hebilla dorada",
+          "Suela: Maxiplataforma deportiva negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 87,
+        "nombre": "Sandalia Confort Doble Tira Hebilla Ancha Blanco",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en color blanco con capellada de dos fajas anchas e integradas, complementadas con hebillas rectangulares al tono.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j6.avif",
+        "especificaciones": [
+          "Color: Blanco / Negro",
+          "Marca: E-C 6-65",
+          "Detalles: Hebillas anchas forradas al tono",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 88,
+        "nombre": "Sandalia Romana Monograma Velcros Tabaco LV Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo deportivo/romana con tiras anchas en estampado monograma café, cierre de ajuste por velcro, pasadores dorados y herraje de monograma.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j7.avif",
+        "especificaciones": [
+          "Color: Estampado Cuadros Tabaco / Café",
+          "Marca: Corina Factory (Inspiración LV)",
+          "Detalles: Cierre de velcro, aplique dorado y herrajes metálicos",
+          "Suela: Base anatómica confortable negra"
+        ],
+        "stock": 17
+      },
+      {
+        "id": 89,
+        "nombre": "Sandalia Maxiplataforma Tiras Pedrería Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de maxiplataforma track en color blanco, con tiras delgadas cargadas de pedrería/glitter brillante que cruzan el empeine y correa con hebilla.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j8.avif",
+        "especificaciones": [
+          "Color: Blanco / Plata",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con apliques de strass brillante y correa al tobillo",
+          "Suela: Maxiplataforma track dentada blanca"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 90,
+        "nombre": "Sandalia Confort Tiras Cruzadas Glitter Multicolor",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada con tiras tubulares cruzadas totalmente recubiertas de pedrería brillante en tonos plata, bronce y oro rosa sobre base café.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j9.avif",
+        "especificaciones": [
+          "Color: Café / Metálicos (Plata, Bronce, Oro Rosa)",
+          "Detalles: Tiras entrelazadas con incrustaciones de strass brillante",
+          "Suela: Base confort acolchada anatómica"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 91,
+        "nombre": "Sandalia Confort Tiras Cruzadas Gamuza Miel Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada confort en acabado tipo gamuza/suede color miel, con tiras ancha cruzadas sobre el empeine unidas por pasadores dorados.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/j10.avif",
+        "especificaciones": [
+          "Color: Miel / Marrón",
+          "Marca: Corina Factory",
+          "Detalles: Acabado suave efecto gamuza con argollas/pasadores dorados",
+          "Suela: Base confortable acolchada negra"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 92,
+        "nombre": "Sandalia Confort Faja Ancha Hebilla Dorada Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort destalonada en tono blanco, con faja ancha acolchada adornada con hebilla metálica rectangular en tono oro con detalles.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k1.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Hebilla metálica grande en tono oro con carey",
+          "Suela: Base confort ergonómica blanca"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 93,
+        "nombre": "Sandalia Confort Triple Tira Acolchada Prada Negro",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo mule en color negro, confeccionada con tiras tubulares mullidas/acolchadas y aplique triangular en relieve distintivo de Prada.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k2.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Inspiración Prada",
+          "Detalles: Placa triangular distintiva de Prada en dorado/negro",
+          "Suela: Base confort acolchada"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 94,
+        "nombre": "Sandalia Plataforma Confort Capellada Estilo H Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia destalonada de plataforma liviana en color blanco, con capellada de corte geométrico entrelazado estilo 'H' de Hermès.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k3.avif",
+        "especificaciones": [
+          "Color: Blanco Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Diseños troquelados acolchados estilo H",
+          "Suela: Plataforma confort alta de una sola pieza"
+        ],
+        "stock": 16
+      },
+      {
+        "id": 95,
+        "nombre": "Sandalia Plataforma Confort Capellada Estilo H Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia mule con plataforma anatómica en color negro monocromático, capellada con diseño icónico entrelazado en 'H'.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k4.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Capellada troquelada efecto H",
+          "Suela: Plataforma confort acolchada"
+        ],
+        "stock": 18
+      },
+      {
+        "id": 96,
+        "nombre": "Sandalia Confort Doble Tira Monograma Blanco/Gris LV Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confortable destalonada con doble tira en patrón Damier/cuadros gris claro y blanco, hebilla dorada y dije metálico con logo LV.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k5.avif",
+        "especificaciones": [
+          "Color: Estampado Cuadros Blanco / Gris",
+          "Marca: Corina Factory (Inspiración LV)",
+          "Detalles: Hebilla de ajuste dorada y aplique metálico de marca",
+          "Suela: Base confort ergonómica negra"
+        ],
+        "stock": 13
+      },
+      {
+        "id": 97,
+        "nombre": "Sandalia Confort Deportiva Cinta Cinch Gucci Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort tipo deportiva con cierres de velcro, faja con cinta textil de franjas verde/rojo y herraje metálico entrelazado de doble G.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k6.avif",
+        "especificaciones": [
+          "Color: Negro con detalle Verde / Rojo",
+          "Marca: Corina Factory (Inspiración Gucci)",
+          "Detalles: Cinta icónica Gucci y herraje dorado Doble G",
+          "Suela: Base confort ergonómica tipo sporty"
+        ],
+        "stock": 15
+      },
+      {
+        "id": 98,
+        "nombre": "Sandalia Romana Monograma Velcros Gris/Negro LV Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia estilo romana deportiva con ajuste de tiras en velcro sobre estampado monograma cuadros gris y negro, pasadores y aplique metálico LV.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k7.avif",
+        "especificaciones": [
+          "Color: Estampado Cuadros Gris / Negro",
+          "Marca: Corina Factory (Inspiración LV)",
+          "Detalles: Ajuste velcro, herrajes dorados y dije metálico",
+          "Suela: Base confort anatómica negra"
+        ],
+        "stock": 12
+      },
+      {
+        "id": 99,
+        "nombre": "Sandalia Confort Deportiva Cinta Cinch Gucci Blanco Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia confort deportiva en color blanco, con tiras ajustables por velcro decoradas con cinta tricolor (verde/rojo) y broche dorado de doble G.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k8.avif",
+        "especificaciones": [
+          "Color: Blanco con detalle Verde / Rojo",
+          "Marca: Corina Factory (Inspiración Gucci)",
+          "Detalles: Cinta textil tricolor y aplique metálico doble G",
+          "Suela: Base confort liviana blanca"
+        ],
+        "stock": 14
+      },
+      {
+        "id": 100,
+        "nombre": "Sandalia Maxiplataforma Tiras Pedrería Negro Corina",
+        "categoria": "sandalias",
+        "caracteristicas": "Sandalia de maxiplataforma track en color negro, con tres tiras delgadas en el empeine con acabado brillante de pedrería y correa con hebilla de ajuste.",
+        "precio": 95000,
+        "voltaje": "N/A",
+        "imagen": "../img/sandalias/k9.avif",
+        "especificaciones": [
+          "Color: Negro Monocromático",
+          "Marca: Corina Factory",
+          "Detalles: Tiras con incrustaciones de strass brillante y correa al tobillo",
+          "Suela: Maxiplataforma track dentada"
+        ],
+        "stock": 16
       }
     ]
   }
