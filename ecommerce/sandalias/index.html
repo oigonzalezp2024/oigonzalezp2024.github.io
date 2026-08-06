@@ -1037,9 +1037,10 @@
     <button id="btnPrevSection" class="stepper-btn" onclick="navegarSeccion(-1)" aria-label="Sección anterior">
       Anterior
     </button>
-    <button id="btnNextSection" class="stepper-btn" onclick="accionBotonSiguiente()" aria-label="Siguiente sección">
+    <a id="btnNextSection" href="#" target="_blank" rel="noopener noreferrer" class="stepper-btn"
+      onclick="accionBotonSiguiente(event)">
       Siguiente
-    </button>
+    </a>
   </div>
 
   <!-- BOTÓN FLOTANTE DE ATENCIÓN POR WHATSAPP -->
@@ -1196,39 +1197,92 @@
 
       btnPrev.disabled = (indiceSeccionActual === 0);
 
-      const hayProductos = Object.keys(seleccionados).length > 0;
+      const keys = Object.keys(seleccionados);
+      const nombre = document.getElementById('clienteNombre')?.value.trim() || '';
+      const telefono = document.getElementById('clienteTelefono')?.value.trim() || '';
 
-      // Evaluamos si el usuario está en la sección de Envío O en la de Mapa
+      const hayProductos = keys.length > 0;
+      const formularioCompleto = (nombre !== '' && telefono !== '');
       const seccionActual = IDs_SECCIONES[indiceSeccionActual];
       const estaEnSeccionFinal = (seccionActual === 'sec-envio' || seccionActual === 'sec-mapa');
 
-      // Aparece en verde si: hay productos + datos llenos + está en "envio" o "mapa"
-      if (hayProductos && formularioCompletado && estaEnSeccionFinal) {
+      // Si cumple las condiciones para enviar
+      if (hayProductos && formularioCompleto && estaEnSeccionFinal) {
         if (!btnNext.classList.contains('btn-send-ready')) {
-          if ('vibrate' in navigator) {
-            navigator.vibrate(100); // Vibración física en móviles al activarse
-          }
+          if ('vibrate' in navigator) navigator.vibrate(100);
         }
 
-        btnNext.disabled = false;
+        // Armar el mensaje directamente aquí
+        let totalUnidades = 0;
+        keys.forEach(key => totalUnidades += seleccionados[key].cantidad);
+
+        const esMayorista = totalUnidades >= MINIMO_UNIDADES_MAYORISTA;
+        let subtotalPlenaAcumulado = 0;
+        let totalPagarAcumulado = 0;
+
+        let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!*\n`;
+        mensaje += `Deseo realizar el siguiente pedido desde la web:\n\n`;
+
+        if (esMayorista) {
+          mensaje += `🌟 *TIPO DE PEDIDO: AL POR MAYOR (${totalUnidades} unidades)*\n\n`;
+        }
+
+        mensaje += `*RELACIÓN DEL PEDIDO:*\n`;
+        keys.forEach((key, index) => {
+          const item = seleccionados[key];
+          const tarifaPlenaUnitario = item.producto.precio || 0;
+          const precioUnitario = esMayorista ? PRECIO_MAYORISTA : tarifaPlenaUnitario;
+
+          subtotalPlenaAcumulado += (tarifaPlenaUnitario * item.cantidad);
+          const subtotalPagar = precioUnitario * item.cantidad;
+          totalPagarAcumulado += subtotalPagar;
+
+          mensaje += `\n*Prenda ${index + 1}:* ${item.producto.nombre}\n`;
+          mensaje += `  • Talla: ${item.talla}\n`;
+          mensaje += `  • Cantidad: ${item.cantidad}\n`;
+          mensaje += `  • Precio Aplicado: ${formatearCOP(precioUnitario)}\n`;
+          mensaje += `  • Subtotal: ${formatearCOP(subtotalPagar)}\n`;
+        });
+
+        const ahorroTotal = subtotalPlenaAcumulado - totalPagarAcumulado;
+        const porcentajeAhorro = subtotalPlenaAcumulado > 0 ? Math.round((ahorroTotal / subtotalPlenaAcumulado) * 100) : 0;
+
+        mensaje += `\n─────────────────\n`;
+        if (esMayorista) {
+          mensaje += `• *Subtotal Tarifa Plena:* ${formatearCOP(subtotalPlenaAcumulado)}\n`;
+          mensaje += `• *Ahorro Total:* ${formatearCOP(ahorroTotal)} (${porcentajeAhorro}% OFF)\n`;
+        }
+        mensaje += `• *TOTAL ESTIMADO A PAGAR:* ${formatearCOP(totalPagarAcumulado)}\n`;
+        mensaje += `─────────────────\n`;
+        mensaje += `*DATOS DEL CLIENTE PARA ENTREGA:*\n`;
+        mensaje += `• *Nombre:* ${nombre}\n`;
+        mensaje += `• *Teléfono:* ${telefono}\n`;
+        mensaje += `\nQuedo atento(a) para confirmar disponibilidad y coordinar la entrega. ¡Muchas gracias!`;
+
+        // Asignación directa al atributo HTML
+        btnNext.href = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
         btnNext.textContent = 'Enviar Pedido';
         btnNext.classList.add('btn-send-ready');
       } else {
+        // Si no está listo para enviar, reseteamos el enlace a '#'
+        btnNext.href = '#';
         btnNext.textContent = 'Siguiente';
         btnNext.classList.remove('btn-send-ready');
-        btnNext.disabled = (indiceSeccionActual === IDs_SECCIONES.length - 1);
       }
     }
 
-    function accionBotonSiguiente() {
-      const hayProductos = Object.keys(seleccionados).length > 0;
-      const estaEnSeccionEnvio = (IDs_SECCIONES[indiceSeccionActual] === 'sec-envio');
+    function accionBotonSiguiente(e) {
+      const btnNext = document.getElementById('btnNextSection');
 
-      if (hayProductos && formularioCompletado && estaEnSeccionEnvio) {
-        enviarPedidoWhatsApp();
-      } else {
-        navegarSeccion(1);
+      // Si el botón ya tiene la clase 'btn-send-ready' y el href apunta a WhatsApp,
+      // NO hacemos e.preventDefault(). Dejamos que el navegador maneje el clic nativo con el dedo o mouse.
+      if (btnNext.classList.contains('btn-send-ready') && btnNext.href.includes('api.whatsapp.com')) {
+        return;
       }
+
+      // En cualquier otro caso, evitamos la navegación por defecto del '#' y avanzamos de sección
+      e.preventDefault();
+      navegarSeccion(1);
     }
 
     function navegarSeccion(direccion) {
@@ -1613,75 +1667,6 @@
         if (e.key === 'ArrowRight') cambiarImagenModal(1);
       }
     });
-
-    function enviarPedidoWhatsApp() {
-      const keys = Object.keys(seleccionados);
-      if (keys.length === 0) {
-        alert("Por favor selecciona al menos un producto haciendo clic sobre sus fotos.");
-        return;
-      }
-
-      const nombre = document.getElementById('clienteNombre').value.trim();
-      const telefono = document.getElementById('clienteTelefono').value.trim();
-
-      if (!nombre || !telefono) {
-        alert("Por favor completa tu nombre y número de teléfono.");
-        return;
-      }
-
-      let totalUnidades = 0;
-      keys.forEach(key => totalUnidades += seleccionados[key].cantidad);
-
-      const esMayorista = totalUnidades >= MINIMO_UNIDADES_MAYORISTA;
-      let subtotalPlenaAcumulado = 0;
-      let totalPagarAcumulado = 0;
-
-      let mensaje = `*¡HOLA NEXO GLOBAL CÚCUTA!*\n`;
-      mensaje += `Deseo realizar el siguiente pedido desde la web:\n\n`;
-
-      if (esMayorista) {
-        mensaje += `🌟 *TIPO DE PEDIDO: AL POR MAYOR (${totalUnidades} unidades)*\n\n`;
-      }
-
-      mensaje += `*RELACIÓN DEL PEDIDO:*\n`;
-      keys.forEach((key, index) => {
-        const item = seleccionados[key];
-        const tarifaPlenaUnitario = item.producto.precio || 0;
-        const precioUnitario = esMayorista ? PRECIO_MAYORISTA : tarifaPlenaUnitario;
-
-        subtotalPlenaAcumulado += (tarifaPlenaUnitario * item.cantidad);
-        const subtotalPagar = precioUnitario * item.cantidad;
-        totalPagarAcumulado += subtotalPagar;
-
-        mensaje += `\n*Prenda ${index + 1}:* ${item.producto.nombre}\n`;
-        mensaje += `  • Talla: ${item.talla}\n`;
-        mensaje += `  • Cantidad: ${item.cantidad}\n`;
-        mensaje += `  • Precio Aplicado: ${formatearCOP(precioUnitario)}\n`;
-        mensaje += `  • Subtotal: ${formatearCOP(subtotalPagar)}\n`;
-      });
-
-      const ahorroTotal = subtotalPlenaAcumulado - totalPagarAcumulado;
-      const porcentajeAhorro = subtotalPlenaAcumulado > 0 ? Math.round((ahorroTotal / subtotalPlenaAcumulado) * 100) : 0;
-
-      mensaje += `\n─────────────────\n`;
-      if (esMayorista) {
-        mensaje += `• *Subtotal Tarifa Plena:* ${formatearCOP(subtotalPlenaAcumulado)}\n`;
-        mensaje += `• *Ahorro Total:* ${formatearCOP(ahorroTotal)} (${porcentajeAhorro}% OFF)\n`;
-      }
-      mensaje += `• *TOTAL ESTIMADO A PAGAR:* ${formatearCOP(totalPagarAcumulado)}\n`;
-      mensaje += `─────────────────\n`;
-      mensaje += `*DATOS DEL CLIENTE PARA ENTREGA:*\n`;
-      mensaje += `• *Nombre:* ${nombre}\n`;
-      mensaje += `• *Teléfono:* ${telefono}\n`;
-
-      mensaje += `\nQuedo atento(a) para confirmar disponibilidad y coordinar la entrega. ¡Muchas gracias!`;
-
-      // Construcción del enlace universal de WhatsApp
-      const urlWhatsApp = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
-
-      // Disparo agnóstico del navegador
-      window.open(urlWhatsApp, '_blank');
-    }
 
     function vaciarPedido() {
       if (Object.keys(seleccionados).length === 0) return;
