@@ -959,8 +959,14 @@
         por WhatsApp.</p>
     </header>
 
+    <!-- SECCIÓN 1: PRODUCTOS -->
     <section id="sec-productos" aria-labelledby="sec-productos-title">
       <h2 id="sec-productos-title" class="section-title">1. Selecciona tus productos</h2>
+
+      <!-- Bloque superior aleatorio (12 productos) -->
+      <div id="randomFeaturedGrid" class="catalog-grid"></div>
+
+      <!-- Bloque general completo -->
       <div id="catalogGrid" class="catalog-grid"></div>
     </section>
 
@@ -1307,13 +1313,16 @@
           if (data.sitio && data.sitio.productos) {
             productosDisponibles = data.sitio.productos;
 
-            // Cargar estado guardado antes de renderizar
-            cargarEstadoLocal();
+            // Generar selección aleatoria de 12 productos para el bloque superior
+            const aleatorios12 = [...productosDisponibles]
+              .sort(() => 0.5 - Math.random())
+              .slice(0, 12);
 
-            renderizarMosaico(productosDisponibles);
+            // Renderizar bloque aleatorio superior y bloque general
+            renderizarMosaico(aleatorios12, 'randomFeaturedGrid', 'rand-');
+            renderizarMosaico(productosDisponibles, 'catalogGrid', '');
+
             inyectarSchemaProductos(productosDisponibles);
-            actualizarResumen();
-            validarFormularioCompleto();
 
             if (data.sitio.contacto) {
               if (data.sitio.contacto.direccion) {
@@ -1387,19 +1396,17 @@
       document.getElementById('schema-products').textContent = JSON.stringify(itemList);
     }
 
-    function renderizarMosaico(productos) {
-      const grid = document.getElementById('catalogGrid');
+    // Función adaptada para renderizar en cualquier contenedor manteniendo identificadores sincronizados
+    function renderizarMosaico(productos, containerId, prefix = '') {
+      const grid = document.getElementById(containerId);
+      if (!grid) return;
       grid.innerHTML = '';
 
       productos.forEach((prod) => {
         const card = document.createElement('article');
         card.className = 'product-card';
-        card.id = `card-prod-${prod.id}`;
-
-        const estaSeleccionado = !!seleccionados[prod.id];
-        if (estaSeleccionado) {
-          card.classList.add('selected');
-        }
+        card.id = `card-prod-${prefix}${prod.id}`;
+        card.dataset.prodId = prod.id;
 
         card.onclick = function (e) {
           if (e.target.closest('.item-controls')) {
@@ -1409,11 +1416,9 @@
         };
 
         const precioFormateado = prod.precio ? formatearCOP(prod.precio) : 'Consultar';
-        const tallaActual = estaSeleccionado ? seleccionados[prod.id].talla : '37';
-        const cantActual = estaSeleccionado ? seleccionados[prod.id].cantidad : 1;
 
         card.innerHTML = `
-          <div class="select-badge" id="badge-prod-${prod.id}">✓</div>
+          <div class="select-badge" id="badge-prod-${prefix}${prod.id}">✓</div>
           <img src="${prod.imagen || 'https://via.placeholder.com/300'}" alt="${prod.nombre} - NEXO GLOBAL Cúcuta" loading="lazy" width="300" height="280">
           <div class="product-info">
             <div>
@@ -1422,22 +1427,21 @@
               <p class="product-details">${prod.caracteristicas || ''}</p>
             </div>
 
-            <div class="item-controls" id="controls-prod-${prod.id}" onclick="event.stopPropagation();">
+            <div class="item-controls" id="controls-prod-${prefix}${prod.id}" onclick="event.stopPropagation();">
               <div class="control-row">
-                <label for="talla-${prod.id}">Elije la Talla:</label>
-                <select id="talla-${prod.id}" onchange="actualizarItemConfig(${prod.id})" aria-label="Seleccionar Talla">
-                  <option value="35" ${tallaActual === '35' ? 'selected' : ''}>Talla 35</option>
-                  <option value="36" ${tallaActual === '36' ? 'selected' : ''}>Talla 36</option>
-                  <option value="37" ${tallaActual === '37' ? 'selected' : ''}>Talla 37</option>
-                  <option value="38" ${tallaActual === '38' ? 'selected' : ''}>Talla 38</option>
-                  <option value="39" ${tallaActual === '39' ? 'selected' : ''}>Talla 39</option>
-                  <option value="40" ${tallaActual === '40' ? 'selected' : ''}>Talla 40</option>
-                  <option value="41" ${tallaActual === '41' ? 'selected' : ''}>Talla 41</option>
+                <label for="talla-${prefix}${prod.id}">Talla:</label>
+                <select id="talla-${prefix}${prod.id}" onchange="actualizarItemConfig(${prod.id}, '${prefix}')" aria-label="Seleccionar Talla">
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37" selected>37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
                 </select>
               </div>
               <div class="control-row">
-                <label for="cant-${prod.id}">Cantidad:</label>
-                <input type="number" id="cant-${prod.id}" value="${cantActual}" min="1" max="10" onchange="actualizarItemConfig(${prod.id})" aria-label="Cantidad">
+                <label for="cant-${prefix}${prod.id}">Cantidad:</label>
+                <input type="number" id="cant-${prefix}${prod.id}" value="1" min="1" max="10" onchange="actualizarItemConfig(${prod.id}, '${prefix}')" aria-label="Cantidad">
               </div>
             </div>
           </div>
@@ -1447,46 +1451,47 @@
       });
     }
 
+    // Manejador centralizado para seleccionar/deseleccionar de manera sincrónica en ambos bloques
     function toggleSeleccion(prodId) {
-      const card = document.getElementById(`card-prod-${prodId}`);
+      const cards = document.querySelectorAll(`[data-prod-id="${prodId}"]`);
       const producto = productosDisponibles.find(p => p.id === prodId);
-      const tallaSelect = document.getElementById(`talla-${prodId}`);
-      const cantInput = document.getElementById(`cant-${prodId}`);
-      const controlsBox = document.getElementById(`controls-prod-${prodId}`);
 
       if (seleccionados[prodId]) {
         delete seleccionados[prodId];
-        card.classList.remove('selected');
+        cards.forEach(card => card.classList.remove('selected'));
       } else {
+        const primerTalla = document.getElementById(`talla-${prodId}`) || document.getElementById(`talla-rand-${prodId}`);
+        const primerCant = document.getElementById(`cant-${prodId}`) || document.getElementById(`cant-rand-${prodId}`);
+
         seleccionados[prodId] = {
           producto: producto,
-          talla: tallaSelect ? tallaSelect.value : '37',
-          cantidad: parseInt(cantInput ? cantInput.value : 1, 10)
+          talla: primerTalla ? primerTalla.value : '37',
+          cantidad: parseInt(primerCant ? primerCant.value : 1, 10)
         };
-        card.classList.add('selected');
 
-        setTimeout(() => {
-          if (controlsBox) {
-            controlsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          if (tallaSelect) {
-            tallaSelect.focus({ preventScroll: true });
-          }
-        }, 50);
+        cards.forEach(card => card.classList.add('selected'));
       }
 
       actualizarResumen();
-      guardarEstadoLocal();
     }
 
-    function actualizarItemConfig(prodId) {
-      if (seleccionados[prodId]) {
-        const tallaSelect = document.getElementById(`talla-${prodId}`);
-        const cantInput = document.getElementById(`cant-${prodId}`);
-        seleccionados[prodId].talla = tallaSelect.value;
-        seleccionados[prodId].cantidad = parseInt(cantInput.value || 1, 10);
-        actualizarResumen();
-        guardarEstadoLocal();
+    // Sincronización de inputs de talla y cantidad entre ambas listas si el producto coincide
+    function actualizarItemConfig(prodId, originPrefix) {
+      const tallaInput = document.getElementById(`talla-${originPrefix}${prodId}`);
+      const cantInput = document.getElementById(`cant-${originPrefix}${prodId}`);
+
+      if (tallaInput && cantInput) {
+        const otraTalla = document.getElementById(originPrefix === '' ? `talla-rand-${prodId}` : `talla-${prodId}`);
+        const otraCant = document.getElementById(originPrefix === '' ? `cant-rand-${prodId}` : `cant-${prodId}`);
+
+        if (otraTalla) otraTalla.value = tallaInput.value;
+        if (otraCant) otraCant.value = cantInput.value;
+
+        if (seleccionados[prodId]) {
+          seleccionados[prodId].talla = tallaInput.value;
+          seleccionados[prodId].cantidad = parseInt(cantInput.value || 1, 10);
+          actualizarResumen();
+        }
       }
     }
 
