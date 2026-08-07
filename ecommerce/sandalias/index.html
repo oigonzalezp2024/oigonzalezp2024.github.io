@@ -932,20 +932,22 @@
   </style>
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2953487184993036');
-  fbq('track', 'PageView');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2953487184993036');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2953487184993036&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=2953487184993036&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
 
@@ -1129,7 +1131,7 @@
   </div>
 
   <script id="schema-products" type="application/ld+json"></script>
-
+  <script src="./MetaPixelTracker.js"></script>
   <script>
     let WHATSAPP_NUMERO = "573212962876";
     let productosDisponibles = [];
@@ -1148,6 +1150,8 @@
     // PERSISTENCIA LOCALSTORAGE
     const STORAGE_KEY_SELECCIONADOS = 'nexo_global_seleccionados';
     const STORAGE_KEY_FORMULARIO = 'nexo_global_formulario';
+
+    const pixelTracker = new MetaPixelTracker('2953487184993036');
 
     function guardarEstadoLocal() {
       try {
@@ -1470,26 +1474,41 @@
 
     // Manejador centralizado para seleccionar/deseleccionar de manera sincrónica en ambos bloques
     function toggleSeleccion(prodId) {
-      const cards = document.querySelectorAll(`[data-prod-id="${prodId}"]`);
-      const producto = productosDisponibles.find(p => p.id === prodId);
+      const prod = PRODUCTOS.find(p => p.id === prodId);
+      if (!prod) return;
 
-      if (seleccionados[prodId]) {
-        delete seleccionados[prodId];
-        cards.forEach(card => card.classList.remove('selected'));
+      const index = estadoPedido.items.findIndex(item => item.id === prodId);
+
+      if (index > -1) {
+        // 1. Si ya existe, lo removemos del pedido
+        estadoPedido.items.splice(index, 1);
       } else {
-        const primerTalla = document.getElementById(`talla-${prodId}`) || document.getElementById(`talla-rand-${prodId}`);
-        const primerCant = document.getElementById(`cant-${prodId}`) || document.getElementById(`cant-rand-${prodId}`);
+        // 2. Si no existe, lo agregamos al pedido
+        const tallaDefault = prod.tallasDisponibles ? prod.tallasDisponibles[0] : 36;
 
-        seleccionados[prodId] = {
-          producto: producto,
-          talla: primerTalla ? primerTalla.value : '37',
-          cantidad: parseInt(primerCant ? primerCant.value : 1, 10)
-        };
+        estadoPedido.items.push({
+          id: prod.id,
+          nombre: prod.nombre,
+          precioPlena: prod.precioPlena,
+          talla: tallaDefault,
+          cantidad: 1,
+          imagen: prod.imagen
+        });
 
-        cards.forEach(card => card.classList.add('selected'));
+        // 3. Notificamos exclusivamente el evento "AddToCart" a Meta Pixel
+        if (typeof pixelTracker !== 'undefined' && pixelTracker) {
+          pixelTracker.trackAddToCart({
+            id: prod.id,
+            nombre: prod.nombre,
+            precio: prod.precioPlena,
+            cantidad: 1
+          });
+        }
       }
 
-      actualizarResumen();
+      // Actualizamos la interfaz y persistimos los datos
+      actualizarVistaSeleccion();
+      guardarEstadoEnLocalStorage();
     }
 
     // Sincronización de inputs de talla y cantidad entre ambas listas si el producto coincide
