@@ -1213,8 +1213,53 @@
       formularioCompletado = (nombre !== '' && telefono !== '');
       actualizarBotonesStepper();
     }
+    
+    /**
+     * Construye la lista de productos con el formato de Meta Pixel a partir del objeto seleccionados.
+     * @param {Object} seleccionadosObj - Objeto con las prendas/productos seleccionados.
+     * @returns {Array} Arreglo de objetos formateados para el parámetro 'contents' de Meta.
+     */
+    function obtenerProductosMeta(seleccionadosObj) {
+        if (!seleccionadosObj || typeof seleccionadosObj !== 'object') {
+            return [];
+        }
+    
+        var productosArray = Object.values(seleccionadosObj);
+    
+        return productosArray.map(function(item) {
+            // Determinar la cantidad
+            var cantidad = item.cantidad || item.qty || 1;
+    
+            // Calcular el precio unitario correspondiente (mayorista vs. tarifa plena)
+            // Ajusta las variables 'precioMayorista' y 'precioPlena' a la propiedad real de tus objetos
+            var precioUnitario = (cantidad >= 6) 
+                ? (item.precioMayorista || item.precio_mayorista || item.precio) 
+                : (item.precioPlena || item.precio_plena || item.precio);
+    
+            return {
+                id: item.id || item.codigo || item.sku || item.nombre,
+                quantity: cantidad,
+                item_price: Number(precioUnitario) || 0
+            };
+        });
+    }
 
     function actualizarBotonesStepper() {
+      // 1. Obtener la lista formateada llamando a la nueva función
+      var listaProductosMeta = obtenerProductosMeta(seleccionados);
+      // 2. Calcular la cantidad total de prendas
+      var totalArticulos = listaProductosMeta.reduce(function(acc, item) {
+          return acc + item.quantity;
+      }, 0);
+      // 3. Disparar el evento Purchase en el Píxel de Meta
+      fbq('track', 'Purchase', {
+          content_type: 'product',
+          contents: listaProductosMeta,
+          value: totalPagar, // Tu variable local con el total a pagar
+          currency: 'COP',   // O la divisa que corresponda
+          num_items: totalArticulos
+      });
+      // Píxel - FIN --
       const btnPrev = document.getElementById('btnPrevSection');
       const btnNext = document.getElementById('btnNextSection');
 
