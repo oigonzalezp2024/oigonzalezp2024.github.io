@@ -1245,21 +1245,7 @@
     }
 
     function actualizarBotonesStepper() {
-      // 1. Obtener la lista formateada llamando a la nueva función
-      var listaProductosMeta = obtenerProductosMeta(seleccionados);
-      // 2. Calcular la cantidad total de prendas
-      var totalArticulos = listaProductosMeta.reduce(function(acc, item) {
-          return acc + item.quantity;
-      }, 0);
-      // 3. Disparar el evento Purchase en el Píxel de Meta
-      fbq('track', 'Purchase', {
-          content_type: 'product',
-          contents: listaProductosMeta,
-          value: totalPagar, // Tu variable local con el total a pagar
-          currency: 'COP',   // O la divisa que corresponda
-          num_items: totalArticulos
-      });
-      // Píxel - FIN --
+      
       const btnPrev = document.getElementById('btnPrevSection');
       const btnNext = document.getElementById('btnNextSection');
 
@@ -1327,10 +1313,39 @@
         mensaje += `• *Teléfono:* ${telefono}\n`;
         mensaje += `\nQuedo atento(a) para confirmar disponibilidad y coordinar la entrega. ¡Muchas gracias!`;
 
-        // Asignación directa al atributo HTML
-        btnNext.href = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
+        // Asignación directa al atributo HTML Guardamos la URL de WhatsApp en una variable en lugar de asignarla directamente al href
+        var urlWhatsApp = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
+        
+        btnNext.href = 'javascript:void(0);'; // Evitamos la navegación automática
         btnNext.textContent = 'Enviar Pedido';
         btnNext.classList.add('btn-send-ready');
+  
+        btnNext.onclick = function (e) {
+          if (e) e.preventDefault(); // Detenemos la redirección inmediata del navegador
+  
+          // 1. Obtener la lista formateada llamando a la función de Meta
+          var listaProductosMeta = obtenerProductosMeta(seleccionados);
+  
+          // 2. Calcular la cantidad total de prendas
+          var totalArticulos = listaProductosMeta.reduce(function (acc, item) {
+            return acc + item.quantity;
+          }, 0);
+  
+          // 3. Disparar el evento Purchase en el Píxel de Meta
+          fbq('track', 'Purchase', {
+            content_type: 'product',
+            contents: listaProductosMeta,
+            value: totalPagarAcumulado,
+            currency: 'COP',
+            num_items: totalArticulos
+          });
+  
+          // 4. Esperar 300 ms para dar tiempo al Píxel y luego redirigir a WhatsApp
+          setTimeout(function () {
+            window.location.href = urlWhatsApp;
+          }, 300);
+        };
+        
       } else {
         // Si no está listo para enviar, reseteamos el enlace a '#'
         btnNext.href = '#';
