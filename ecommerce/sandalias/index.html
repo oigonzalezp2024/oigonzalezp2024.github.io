@@ -932,22 +932,20 @@
   </style>
   <!-- Meta Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2953487184993036');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2953487184993036');
+  fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2953487184993036&ev=PageView&noscript=1" /></noscript>
+  src="https://www.facebook.com/tr?id=2953487184993036&ev=PageView&noscript=1"
+  /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
 
@@ -1131,7 +1129,7 @@
   </div>
 
   <script id="schema-products" type="application/ld+json"></script>
-  <script src="../../shared/meta-pixel-tracker/MetaPixelTracker.js"></script>
+
   <script>
     let WHATSAPP_NUMERO = "573212962876";
     let productosDisponibles = [];
@@ -1150,8 +1148,6 @@
     // PERSISTENCIA LOCALSTORAGE
     const STORAGE_KEY_SELECCIONADOS = 'nexo_global_seleccionados';
     const STORAGE_KEY_FORMULARIO = 'nexo_global_formulario';
-
-    const pixelTracker = new MetaPixelTracker('2953487184993036');
 
     function guardarEstadoLocal() {
       try {
@@ -1217,8 +1213,39 @@
       formularioCompletado = (nombre !== '' && telefono !== '');
       actualizarBotonesStepper();
     }
+    
+    /**
+     * Construye la lista de productos con el formato de Meta Pixel a partir del objeto seleccionados.
+     * @param {Object} seleccionadosObj - Objeto con las prendas/productos seleccionados.
+     * @returns {Array} Arreglo de objetos formateados para el parámetro 'contents' de Meta.
+     */
+    function obtenerProductosMeta(seleccionadosObj) {
+        if (!seleccionadosObj || typeof seleccionadosObj !== 'object') {
+            return [];
+        }
+    
+        var productosArray = Object.values(seleccionadosObj);
+    
+        return productosArray.map(function(item) {
+            // Determinar la cantidad
+            var cantidad = item.cantidad || item.qty || 1;
+    
+            // Calcular el precio unitario correspondiente (mayorista vs. tarifa plena)
+            // Ajusta las variables 'precioMayorista' y 'precioPlena' a la propiedad real de tus objetos
+            var precioUnitario = (cantidad >= 6) 
+                ? (item.precioMayorista || item.precio_mayorista || item.precio) 
+                : (item.precioPlena || item.precio_plena || item.precio);
+    
+            return {
+                id: item.id || item.codigo || item.sku || item.nombre,
+                quantity: cantidad,
+                item_price: Number(precioUnitario) || 0
+            };
+        });
+    }
 
     function actualizarBotonesStepper() {
+      
       const btnPrev = document.getElementById('btnPrevSection');
       const btnNext = document.getElementById('btnNextSection');
 
@@ -1286,10 +1313,39 @@
         mensaje += `• *Teléfono:* ${telefono}\n`;
         mensaje += `\nQuedo atento(a) para confirmar disponibilidad y coordinar la entrega. ¡Muchas gracias!`;
 
-        // Asignación directa al atributo HTML
-        btnNext.href = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
+        // Asignación directa al atributo HTML Guardamos la URL de WhatsApp en una variable en lugar de asignarla directamente al href
+        var urlWhatsApp = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(mensaje)}`;
+        
+        btnNext.href = 'javascript:void(0);'; // Evitamos la navegación automática
         btnNext.textContent = 'Enviar Pedido';
         btnNext.classList.add('btn-send-ready');
+  
+        btnNext.onclick = function (e) {
+          if (e) e.preventDefault(); // Detenemos la redirección inmediata del navegador
+  
+          // 1. Obtener la lista formateada llamando a la función de Meta
+          var listaProductosMeta = obtenerProductosMeta(seleccionados);
+  
+          // 2. Calcular la cantidad total de prendas
+          var totalArticulos = listaProductosMeta.reduce(function (acc, item) {
+            return acc + item.quantity;
+          }, 0);
+  
+          // 3. Disparar el evento Purchase en el Píxel de Meta
+          fbq('track', 'Purchase', {
+            content_type: 'product',
+            contents: listaProductosMeta,
+            value: totalPagarAcumulado,
+            currency: 'COP',
+            num_items: totalArticulos
+          });
+  
+          // 4. Esperar 300 ms para dar tiempo al Píxel y luego redirigir a WhatsApp
+          setTimeout(function () {
+            window.location.href = urlWhatsApp;
+          }, 300);
+        };
+        
       } else {
         // Si no está listo para enviar, reseteamos el enlace a '#'
         btnNext.href = '#';
@@ -1474,41 +1530,37 @@
 
     // Manejador centralizado para seleccionar/deseleccionar de manera sincrónica en ambos bloques
     function toggleSeleccion(prodId) {
-      const prod = PRODUCTOS.find(p => p.id === prodId);
-      if (!prod) return;
+      const cards = document.querySelectorAll(`[data-prod-id="${prodId}"]`);
+      const producto = productosDisponibles.find(p => p.id === prodId);
 
-      const index = estadoPedido.items.findIndex(item => item.id === prodId);
-
-      if (index > -1) {
-        // 1. Si ya existe, lo removemos del pedido
-        estadoPedido.items.splice(index, 1);
+      if (seleccionados[prodId]) {
+        delete seleccionados[prodId];
+        cards.forEach(card => card.classList.remove('selected'));
       } else {
-        // 2. Si no existe, lo agregamos al pedido
-        const tallaDefault = prod.tallasDisponibles ? prod.tallasDisponibles[0] : 36;
+        const primerTalla = document.getElementById(`talla-${prodId}`) || document.getElementById(`talla-rand-${prodId}`);
+        const primerCant = document.getElementById(`cant-${prodId}`) || document.getElementById(`cant-rand-${prodId}`);
 
-        estadoPedido.items.push({
-          id: prod.id,
-          nombre: prod.nombre,
-          precioPlena: prod.precioPlena,
-          talla: tallaDefault,
-          cantidad: 1,
-          imagen: prod.imagen
-        });
+        seleccionados[prodId] = {
+          producto: producto,
+          talla: primerTalla ? primerTalla.value : '37',
+          cantidad: parseInt(primerCant ? primerCant.value : 1, 10)
+        };
 
-        // 3. Notificamos exclusivamente el evento "AddToCart" a Meta Pixel
-        if (typeof pixelTracker !== 'undefined' && pixelTracker) {
-          pixelTracker.trackAddToCart({
-            id: prod.id,
-            nombre: prod.nombre,
-            precio: prod.precioPlena,
-            cantidad: 1
+        cards.forEach(card => card.classList.add('selected'));
+        
+        // Meta Pixel: Tracking de Agregar al Carrito
+        if (typeof fbq === 'function' && producto) {
+          fbq('track', 'AddToCart', {
+            content_name: producto.nombre || 'Sandalia',
+            content_ids: [prodId],
+            content_type: 'product',
+            value: producto.precio ? producto.precio * seleccionados[prodId].cantidad : 0,
+            currency: 'COP'
           });
         }
       }
 
-      // Actualizamos la interfaz y persistimos los datos
-      actualizarVistaSeleccion();
-      guardarEstadoEnLocalStorage();
+      actualizarResumen();
     }
 
     // Sincronización de inputs de talla y cantidad entre ambas listas si el producto coincide
