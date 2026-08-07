@@ -1487,6 +1487,17 @@
         };
 
         cards.forEach(card => card.classList.add('selected'));
+        
+        // Meta Pixel: Tracking de Agregar al Carrito
+        if (typeof fbq === 'function' && producto) {
+          fbq('track', 'AddToCart', {
+            content_name: producto.nombre || 'Sandalia',
+            content_ids: [prodId],
+            content_type: 'product',
+            value: producto.precio ? producto.precio * seleccionados[prodId].cantidad : 0,
+            currency: 'COP'
+          });
+        }
       }
 
       actualizarResumen();
