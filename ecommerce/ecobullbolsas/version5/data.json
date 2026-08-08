@@ -1,0 +1,93 @@
+{
+  "empresa": {
+    "nombre": "Ecobull Bolsas",
+    "slogan": "La bolsa es la consecuencia de nuestra labor ecológica",
+    "subtitulo": "Transformamos materiales recuperados en soluciones que fortalecen la imagen de tu negocio.",
+    "tagline": "Negocio Verde Certificado",
+    "logoUrl": "assets/img/logo-ecobull.png",
+    "certificadoUrl": "assets/img/corponor-logo.png"
+  },
+  "menuNavegacion": [
+    { "id": "inicio", "label": "INICIO", "url": "#inicio" },
+    { "id": "nosotros", "label": "NOSOTROS", "url": "#nosotros" },
+    { "id": "productos", "label": "PRODUCTOS", "url": "#soluciones" },
+    { "id": "sostenibilidad", "label": "SOSTENIBILIDAD", "url": "#sostenibilidad" },
+    { "id": "posicionamiento", "label": "CLIENTES / EVENTOS", "url": "#posicionamiento" },
+    { "id": "contacto", "label": "CONTACTO", "url": "#contacto" }
+  ],
+  "bloqueNecesidad": {
+    "subtitulo": "NUESTRA HISTORIA Y COMPROMISO",
+    "titulo": "TODO COMIENZA AQUÍ",
+    "descripcion": "Recuperamos materiales plásticos que pueden convertirse en contaminación y los transformamos en bolsas de alta calidad, idénticas a las de material virgen.",
+    "diferencial": "Creemos que un Negocio Verde puede ser rentable, generar bienestar y dejar una huella positiva en el planeta.",
+    "estadisticaClave": {
+      "valor": "+80%",
+      "etiqueta": "Material recuperado en nuestras bolsas"
+    },
+    "pilaresValor": [
+      { "id": 1, "icono": "fas fa-recycle", "titulo": "Materiales Recuperados", "texto": "Damos nueva vida a lo que otros desechan" },
+      { "id": 2, "icono": "fas fa-leaf", "titulo": "Menos huella de carbono", "texto": "Reducimos emisiones y cuidamos el planeta" },
+      { "id": 3, "icono": "fas fa-sync-alt", "titulo": "Economía circular", "texto": "Recuperamos, transformamos y volvemos a usar" },
+      { "id": 4, "icono": "fas fa-users", "titulo": "Impacto social", "texto": "Generamos bienestar a recicladores y comunidades" },
+      { "id": 5, "icono": "fas fa-check-circle", "titulo": "Negocio verde certificado", "texto": "Avalados por CORPONOR como Negocio Verde" }
+    ]
+  },
+  "bloqueSolucion": {
+    "titulo": "Solución",
+    "subtitulo": "SOLUCIONES PARA FORTALECER TU MARCA",
+    "itemsGrid": [
+      { "id": 1, "nombre": "Perfumería", "imagen": "assets/img/perfumeria.jpg", "tipo": "categoria" },
+      { "id": 2, "nombre": "Femenino", "imagen": "assets/img/femenino.jpg", "tipo": "categoria" },
+      { "id": 3, "nombre": "Calzado y Vestuario", "imagen": "assets/img/calzado-vestuario.jpg", "tipo": "categoria" },
+      { "id": 4, "nombre": "Cosméticos", "imagen": "assets/img/cosmeticos.jpg", "tipo": "categoria" },
+      { "id": 5, "nombre": "Calzado", "imagen": "assets/img/calzado.jpg", "tipo": "categoria" },
+      { "id": 6, "nombre": "Personalizados", "imagen": "assets/img/personalizados.jpg", "tipo": "destacado" }
+    ]
+  },
+  "bloqueComo": {
+    "titulo": "Cómo",
+    "subtitulo": "Así transformamos el material",
+    "descripcion": "De residuos plásticos a soluciones de empaque ecológicas y resistentes.",
+    "video": {
+      "poster": "assets/img/proceso-transformacion.jpg",
+      "videoUrl": "https://youtube.com/watch?v=ejemplo",
+      "pieDeFoto": "Recuperamos hoy, transformamos para el mañana."
+    }
+  },
+  "bloquePosicionamiento": {
+    "titulo": "Posicionamiento",
+    "subtitulo": "Nuestra Experiencia y Presencia Nacional",
+    "itemsGrid": [
+      { "id": 1, "nombre": "Personalizamos", "tipo": "media", "icono": "fas fa-play" },
+      { "id": 2, "nombre": "Bolsas Divinas", "tipo": "media", "icono": "fas fa-play" },
+      { "id": 3, "nombre": "Bioexpo Cúcuta", "tipo": "evento", "icono": "fas fa-award" },
+      { "id": 4, "nombre": "Bioexpo Bucaramanga", "tipo": "evento", "icono": "fas fa-award" },
+      { "id": 5, "nombre": "Stand COP 16", "tipo": "evento_destacado", "icono": "fas fa-globe-americas" },
+      { "id": 6, "nombre": "Negocios Verdes", "tipo": "certificacion", "icono": "fas fa-certificate" }
+    ]
+  },
+  "bloqueCatalogo": {
+    "titulo": "CATÁLOGO DE PRODUCTOS",
+    "subtitulo": "Encuentra la solución ideal para tu negocio",
+    "llamadoAccion": "Consulta precios, cantidades y solicita tu cotización por WhatsApp",
+    "caracteristicas": [
+      "Variedad de tamaños y referencias",
+      "Precios por cantidad y medidas",
+      "Personalización de alta calidad",
+      "Asesoría por WhatsApp"
+    ]
+  },
+  "contacto": {
+    "email": "contacto@ecobullbolsas.com",
+    "telefono": "+57 300 000 0000",
+    "whatsappNumber": "573000000000",
+    "whatsappMensajeDefault": "Hola Ecobull, me interesa solicitar una cotización.",
+    "ubicacion": "Cúcuta, Norte de Santander, Colombia",
+    "qrCodeUrl": "assets/img/qr-whatsapp.png",
+    "redesSociales": [
+      { "red": "Facebook", "url": "https://facebook.com/ecobull", "icono": "fab fa-facebook-f" },
+      { "red": "Instagram", "url": "https://instagram.com/ecobull", "icono": "fab fa-instagram" },
+      { "red": "LinkedIn", "url": "https://linkedin.com/company/ecobull", "icono": "fab fa-linkedin-in" }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecobull Bolsas | Negocio Verde Certificado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="layout-wrapper">
+
+    <!-- 1. HEADER HERO (Aprobado de la Versión 1) -->
+    <header class="header-hero">
+      <div class="logo-container">
+        <img id="empresa-logo" src="" alt="Logo" class="logo-img">
+        <span id="empresa-tag" class="tag-verde"></span>
+      </div>
+      <div class="hero-content">
+        <h1>EXPERIENCIA DIGITAL<br><span id="empresa-nombre" class="brand-highlight"></span></h1>
+        <p id="empresa-slogan" class="hero-quote"></p>
+        <p id="empresa-subtitulo" class="hero-subtext"></p>
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn btn-primary"><i class="fas fa-book-open"></i> Ver Catálogo</a>
+          <a id="btn-hero-wa" href="" class="btn btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cotizar Ahora
+          </a>
+        </div>
+      </div>
+      <div class="certifications">
+        <img id="empresa-certificado" src="" alt="Certificación Ecológica" class="cert-img">
+      </div>
+    </header>
+
+    <!-- 2. MENÚ DE NAVEGACIÓN (Aprobado de la Versión 1) -->
+    <nav class="main-nav">
+      <ul id="nav-list"></ul>
+    </nav>
+
+    <!-- 3. BARRA DE PILARES DE SOSTENIBILIDAD (Aprobado de la Versión 1) -->
+    <section id="pilares-container" class="value-bar"></section>
+
+    <!-- 4. BLOQUE DOBLE: NECESIDAD | SOLUCIÓN (Avance Retenido) -->
+    <section id="nosotros" class="grid-two-col">
+      <!-- Columna Izquierda: Necesidad -->
+      <article class="card flex-col-between">
+        <div>
+          <h2>Necesidad</h2>
+          <span id="necesidad-subtitulo" class="card-subtitle"></span>
+          <h3 id="necesidad-titulo" class="story-title"></h3>
+          <p id="necesidad-desc"></p>
+          <p id="necesidad-diferencial" class="highlight-text"></p>
+        </div>
+        <div class="stat-badge">
+          <strong id="stat-valor"></strong> <span id="stat-etiqueta"></span>
+        </div>
+      </article>
+
+      <!-- Columna Derecha: Solución (Grilla 3x2 con Imágenes) -->
+      <article id="soluciones" class="card">
+        <div class="section-header-inline">
+          <h2>Solución</h2>
+          <span class="tag-label">Soluciones para tu Marca <i class="fas fa-leaf text-green"></i></span>
+        </div>
+        
+        <div id="grid-soluciones" class="sub-grid-3x2"></div>
+
+        <div class="cta-mini">
+          <a id="btn-soluciones-wa" href="" class="btn-link" target="_blank">
+            Quiero mi Bolsa Personalizada <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5. BLOQUE DOBLE: CÓMO | POSICIONAMIENTO (Avance Retenido) -->
+    <section class="grid-two-col">
+      <!-- Columna Izquierda: Cómo (Video y Proceso) -->
+      <article class="card flex-col-between">
+        <div>
+          <h2>Cómo</h2>
+          <h3 id="como-subtitulo"></h3>
+          <p id="como-desc" class="caption-text"></p>
+        </div>
+
+        <div class="media-container">
+          <img id="como-poster" src="" alt="Proceso de transformación">
+          <div class="media-overlay">
+            <i class="fas fa-play-circle play-btn"></i>
+            <span>Ver Video del Proceso</span>
+          </div>
+        </div>
+
+        <p class="quote-footer"><em id="como-pie"></em></p>
+      </article>
+
+      <!-- Columna Derecha: Posicionamiento (Grilla 3x2 Eventos/Credibilidad) -->
+      <article id="posicionamiento" class="card">
+        <div class="section-header-inline">
+          <h2>Posicionamiento</h2>
+          <span class="tag-label">Presencia Nacional y Eventos</span>
+        </div>
+
+        <div id="grid-posicionamiento" class="sub-grid-3x2"></div>
+
+        <div class="cta-mini">
+          <span class="trust-text"><i class="fas fa-shield-alt"></i> Avalados oficialmente por CORPONOR</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- 6. CATÁLOGO (Avance Retenido) -->
+    <section id="catalogo" class="card block-section catalog-banner">
+      <div class="catalog-content">
+        <h2 id="cat-titulo"></h2>
+        <p id="cat-subtitulo" class="catalog-sub"></p>
+        
+        <div id="cat-features" class="catalog-features"></div>
+
+        <a id="btn-cat-wa" href="" class="btn btn-wa-lg" target="_blank">
+          <i class="fab fa-whatsapp"></i> Ver Catálogo Completo / Solicitar Cotización
+        </a>
+      </div>
+    </section>
+
+    <!-- 7. CONTACTO / FOOTER (Avance Retenido) -->
+    <footer id="contacto" class="card block-section footer-bg">
+      <h2>CONTACTO</h2>
+      <div class="footer-columns">
+        <div class="footer-info">
+          <h4><i class="fas fa-envelope"></i> Escríbenos</h4>
+          <p id="contacto-email"></p>
+          <p id="contacto-tel"></p>
+        </div>
+        <div class="footer-info">
+          <h4><i class="fas fa-qrcode"></i> Escanea el Código</h4>
+          <div class="qr-box">Código QR WhatsApp</div>
+        </div>
+        <div class="footer-info">
+          <h4><i class="fas fa-hashtag"></i> Síguenos</h4>
+          <div id="social-container" class="social-icons"></div>
+        </div>
+        <div class="footer-info">
+          <h4><i class="fas fa-map-marker-alt"></i> Visítanos</h4>
+          <p id="contacto-ubicacion"></p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

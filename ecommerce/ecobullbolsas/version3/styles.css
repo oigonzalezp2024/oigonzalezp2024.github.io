@@ -1,0 +1,285 @@
+:root {
+  --green-main: #2e7d32;
+  --green-bright: #10b981;
+  --green-dark: #1b5e20;
+  --wa-color: #25d366;
+  --dark-bg: #111827;
+  --border-color: #333333;
+  --text-main: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f3f4f6;
+  color: var(--text-main);
+  padding: 15px;
+}
+
+/* APROVECHAR TODO EL ANCHO DE PANTALLA EN PC Y TABLETS */
+.layout-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tarjetas base tipo alambre/wireframe del boceto */
+.card {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.flex-col-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 1. HEADER BANNER */
+.header-banner {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 180px 1fr 140px;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-box {
+  border: 2px dashed var(--green-main);
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  background: #f0fdf4;
+}
+
+.logo-img { max-width: 100%; height: auto; }
+.tag-verde { font-size: 0.75rem; background: var(--green-bright); color: #fff; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 6px; font-weight: bold; }
+
+.banner-info { text-align: center; }
+.banner-info h1 { font-size: 1.5rem; line-height: 1.2; }
+.brand-highlight { color: var(--green-main); font-weight: 800; }
+.quote { font-style: italic; color: var(--green-main); font-weight: 600; margin-top: 4px; }
+.subquote { font-size: 0.85rem; color: #555; margin-bottom: 12px; }
+
+.banner-buttons { display: flex; justify-content: center; gap: 10px; }
+
+.btn { padding: 9px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: transform 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-dark { background: #333; color: #fff; }
+.btn-wa { background: var(--wa-color); color: #fff; }
+
+.cert-box img { max-width: 100%; height: auto; }
+
+/* 2. MENÚ DE NAVEGACIÓN FULL WIDTH */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #1e293b;
+  overflow: hidden;
+}
+
+.main-nav li {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #334155;
+}
+
+.main-nav li:last-child { border-right: none; }
+
+.main-nav a {
+  display: block;
+  padding: 12px 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.main-nav a:hover { background-color: var(--green-main); }
+.nav-wa-btn { background-color: var(--wa-color) !important; }
+
+/* 3 & 4. GRILLAS DE 2 COLUMNAS (NECESIDAD/SOLUCIÓN & CÓMO/POSICIONAMIENTO) */
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 15px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.card-subtitle { font-size: 0.75rem; color: var(--green-main); font-weight: bold; letter-spacing: 0.5px; }
+.story-title { font-size: 1.2rem; margin: 4px 0 8px 0; }
+
+.value-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.pill {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.stat-badge { background: #ecfdf5; padding: 10px; border-radius: 6px; border-left: 4px solid var(--green-main); font-size: 0.85rem; }
+
+.section-header-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tag-label { font-size: 0.8rem; font-weight: bold; color: var(--green-main); }
+
+/* GRILLAS INTERNAS EXACTAS (3 COLUMNAS X 2 FILAS = 6 CAJAS DE DISEÑO MODERNO) */
+.sub-grid-3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  height: 220px;
+}
+
+.grid-card {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.grid-card img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 4px;
+}
+
+.highlight-card { background: #1e293b; color: white; font-weight: bold; font-size: 0.85rem; }
+.event-card { font-size: 0.8rem; font-weight: bold; padding: 8px; gap: 5px; }
+.featured-event { background: #ecfdf5; border-color: var(--green-bright); }
+.media-card { background: #0f172a; color: white; cursor: pointer; }
+.media-card i { color: var(--wa-color); font-size: 1.2rem; margin-bottom: 4px; }
+
+.cta-mini { margin-top: 12px; text-align: right; font-size: 0.8rem; }
+.btn-link { color: var(--green-main); font-weight: bold; text-decoration: none; }
+
+/* MEDIA CONTAINER (CÓMO) */
+.media-container {
+  position: relative;
+  height: 140px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.media-container img { width: 100%; height: 100%; object-fit: cover; }
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.play-btn { font-size: 2rem; color: var(--wa-color); cursor: pointer; }
+.quote-footer { font-size: 0.8rem; color: var(--green-main); text-align: center; }
+
+/* 5. CATÁLOGO */
+.block-section { text-align: center; }
+.catalog-banner { background-color: var(--dark-bg); color: white; border-color: var(--dark-bg); }
+.catalog-sub { color: var(--green-bright); margin-bottom: 15px; font-size: 0.9rem; }
+
+.catalog-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+.feat-box { background: rgba(255,255,255,0.06); padding: 10px; border-radius: 6px; }
+
+.btn-wa-lg {
+  background: var(--wa-color);
+  color: white;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* 6. CONTACTO / FOOTER */
+.footer-bg { background-color: #0f172a; color: white; }
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  text-align: left;
+}
+.footer-info h4 { color: var(--green-bright); margin-bottom: 8px; font-size: 0.9rem; }
+.qr-box { border: 1px dashed #ffffff60; padding: 12px; font-size: 0.75rem; text-align: center; border-radius: 4px; }
+.social-icons a { color: white; font-size: 1.2rem; margin-right: 10px; }
+
+/* ADAPTACIÓN RESPONSIVA (MÓVILES) */
+@media (max-width: 900px) {
+  .header-banner { grid-template-columns: 1fr; text-align: center; }
+  .grid-two-col { grid-template-columns: 1fr; }
+  .catalog-features { grid-template-columns: 1fr 1fr; }
+  .footer-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .main-nav ul { flex-direction: column; }
+  .main-nav li { border-right: none; border-bottom: 1px solid #334155; }
+  .sub-grid-3x2 { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .catalog-features, .footer-columns { grid-template-columns: 1fr; }
+  .value-pills { grid-template-columns: 1fr; }
+}

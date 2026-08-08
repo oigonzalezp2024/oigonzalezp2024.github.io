@@ -1,0 +1,759 @@
+:root {
+  --primary-green: #2e7d32;
+  --bright-green: #10b981;
+  --dark-green: #154d1a;
+  --accent-wa: #25d366;
+  --hero-bg: #0d2826;
+  --dark-bg: #111827;
+  --border-color: #cbd5e1;
+  --text-dark: #1f2937;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+  padding: 15px;
+}
+
+.layout-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.flex-col-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER HERO */
+.header-hero {
+  background-color: var(--hero-bg);
+  color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container { text-align: center; }
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+}
+.tag-verde {
+  background-color: var(--bright-green);
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.hero-content h1 { font-size: 1.6rem; font-weight: 700; }
+.brand-highlight { color: var(--bright-green); font-size: 2.2rem; font-weight: 800; }
+.hero-quote { font-style: italic; font-size: 1.05rem; color: #a7f3d0; margin: 8px 0 4px 0; }
+.hero-subtext { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 20px; }
+.hero-buttons { display: flex; gap: 12px; }
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary { background-color: var(--primary-green); color: white; }
+.btn-whatsapp { background-color: var(--bright-green); color: white; }
+.certifications { text-align: center; }
+.cert-img { max-width: 100px; height: auto; }
+
+/* MENÚ DE NAVEGACIÓN */
+.main-nav ul {
+  list-style: none;
+  background-color: var(--dark-green);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 12px;
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.btn-nav-wa {
+  background-color: var(--bright-green) !important;
+  border-radius: 6px;
+  padding: 8px 16px !important;
+}
+
+/* BARRA DE VALOR (5 PILARES) */
+.value-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.value-item { text-align: center; }
+.value-item i { font-size: 2rem; color: var(--primary-green); margin-bottom: 10px; }
+.value-item h4 { font-size: 0.9rem; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.value-item p { color: #6b7280; font-size: 0.8rem; line-height: 1.3; }
+
+/* GRILLAS PRINCIPALES */
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 15px;
+  align-items: start; /* Mantiene la alineación natural al inicio para no deformar contenedores */
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.card-subtitle { font-size: 0.75rem; color: var(--primary-green); font-weight: bold; }
+.story-title { font-size: 1.2rem; margin: 4px 0 8px 0; }
+
+.body-text {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.body-paragraph {
+  margin-bottom: 1rem;
+}
+
+.body-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-text { margin: 10px 0; font-weight: 600; color: var(--primary-green); font-size: 0.88rem; }
+.stat-badge { background: #ecfdf5; padding: 12px; border-radius: 6px; border-left: 4px solid var(--primary-green); font-size: 0.85rem; }
+
+.section-header-inline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.tag-label { font-size: 0.8rem; font-weight: bold; color: var(--primary-green); }
+
+/* DIFERENCIALES */
+.diferencial-container {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.highlight-lead {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.diferenciales-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.diff-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-green);
+}
+
+.diff-item i {
+  font-size: 1.1rem;
+  color: var(--primary-green);
+  margin-top: 2px;
+}
+
+.diff-item-content h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.diff-item-content p {
+  font-size: 0.8rem;
+  color: #4b5563;
+  line-height: 1.3;
+}
+
+/* RETÍCULA INTERNA 3x2 */
+.sub-grid-3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: auto; 
+  gap: 12px;
+  height: auto;
+}
+
+.grid-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  cursor: pointer;
+}
+
+.grid-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.video-overlay {
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.play-icon {
+  font-size: 1.8rem;
+  color: var(--accent-wa);
+  transition: transform 0.2s ease;
+}
+
+.grid-card:hover .play-icon {
+  transform: scale(1.2);
+}
+
+.cta-mini { margin-top: 12px; text-align: right; font-size: 0.8rem; }
+.btn-link { color: var(--primary-green); font-weight: bold; text-decoration: none; }
+
+/* MEDIA CONTAINER (CÓMO SE HIZO) - VIDEO VERTICAL INLINE */
+.media-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px; /* Ancho idóneo para video vertical en desktop */
+  aspect-ratio: 9 / 16; /* Forzado a proporción 9:16 */
+  margin: 15px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-container img,
+.media-container video,
+.media-container iframe { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  border: none;
+  display: block;
+}
+
+.quote-footer { font-size: 0.8rem; color: var(--primary-green); text-align: center; }
+
+/* CATÁLOGO */
+.block-section { text-align: center; }
+.catalog-banner { background-color: var(--dark-bg); color: white; }
+.catalog-sub { color: var(--bright-green); margin-bottom: 15px; font-size: 0.9rem; }
+.catalog-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; font-size: 0.85rem; }
+.feat-box { background: rgba(255,255,255,0.06); padding: 10px; border-radius: 6px; }
+
+.btn-wa-lg {
+  background: var(--accent-wa);
+  color: white;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* ==========================================
+   MODAL FULLSCREEN PREMIUM & GLASSMORPHISM
+   ========================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 18, 15, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Botón Cierre Flotante (Fuera de la tarjeta) */
+.modal-close {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close:hover {
+  background: var(--bright-green);
+  color: #ffffff;
+  border-color: var(--bright-green);
+  transform: rotate(90deg) scale(1.05);
+}
+
+/* Contenedor Principal Glassmorphism */
+.modal-content-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 85vh;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  width: 100%;
+  max-height: 85vh;
+  background: #ffffff;
+}
+
+/* Sección Multimedia (Fondo Cinematográfico) */
+.modal-media-box {
+  background: #090d0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
+}
+
+.modal-media-box video,
+.modal-media-box img {
+  width: 100%;
+  height: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Sección Informativa Elegante */
+.modal-info-box {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.modal-info-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.modal-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.modal-info-box h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark-green);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+  border: none;
+}
+
+.modal-info-box p {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-top: 12px;
+}
+
+/* Botón de WhatsApp Premium */
+.btn-modal-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--bright-green);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+  transition: all 0.25s ease;
+  margin-top: 24px;
+}
+
+.btn-modal-wa:hover {
+  background: #059669;
+  box-shadow: 0 14px 28px -4px rgba(16, 185, 129, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-modal-wa i {
+  font-size: 1.3rem;
+}
+
+/* ==========================================
+   FOOTER / CONTACTO PROFESIONAL (COMPACTO)
+   ========================================== */
+
+.footer-pro {
+  background: linear-gradient(145deg, #0f172a 0%, #090d0c 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 20px 15px 20px !important;
+  text-align: left !important;
+}
+
+.footer-header {
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+.footer-lead {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.footer-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Formulario Express Compacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group select option {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--bright-green);
+}
+
+.w-100 {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Items de Información Compactos */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-box {
+  width: 32px;
+  height: 32px;
+  background: rgba(16, 185, 129, 0.12);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bright-green);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.item-text span {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.item-text a,
+.item-text p {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.social-block {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.social-block span {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.social-icons-pro a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: #ffffff;
+  margin-right: 6px;
+  transition: all 0.25s ease;
+}
+
+.social-icons-pro a:hover {
+  background: var(--bright-green);
+  transform: translateY(-2px);
+}
+
+/* Tarjeta QR Compacta */
+.qr-card {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-box-pro {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.qr-box-pro img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+.qr-desc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+/* Footer Copyright */
+.footer-bottom {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* RESPONSIVO GENERAL Y MODAL */
+@media (max-width: 950px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-hero { grid-template-columns: 1fr; text-align: center; padding: 20px; }
+  .grid-two-col { grid-template-columns: 1fr; }
+  .value-bar { grid-template-columns: repeat(2, 1fr); }
+  .catalog-features, .footer-columns { grid-template-columns: 1fr 1fr; }
+  .main-nav ul { flex-direction: column; }
+}
+
+@media (max-width: 850px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+  
+  .modal-media-box {
+    min-height: 320px;
+    max-height: 400px;
+  }
+
+  .modal-info-box {
+    padding: 30px 24px;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sub-grid-3x2 { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .catalog-features, .footer-columns, .value-bar { grid-template-columns: 1fr; }
+}

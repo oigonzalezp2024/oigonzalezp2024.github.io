@@ -1,0 +1,500 @@
+/* Variable de Colores Institucionales Ecobull */
+:root {
+  --primary-green: #2e7d32;
+  --bright-green: #10b981;
+  --dark-green: #1b5e20;
+  --accent-wa: #25d366;
+  --dark-bg: #111827;
+  --light-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Wrapper para aprovechar TODO el ancho disponible en PC y Tablets */
+.layout-wrapper {
+  width: 100%;
+  max-width: 1400px; /* Ancho amplio ideal para monitores */
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Reutilizable */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-green);
+}
+
+.btn-whatsapp {
+  background-color: var(--accent-wa);
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1eb954;
+}
+
+/* Header / Hero */
+.header-hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tag-verde {
+  background-color: var(--bright-green);
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.hero-content h1 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.brand-highlight {
+  color: var(--bright-green);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.hero-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #a7f3d0;
+  margin: 10px 0 5px 0;
+}
+
+.hero-subtext {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  margin-bottom: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.certifications img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nav Menu */
+.main-nav ul {
+  list-style: none;
+  background-color: var(--dark-green);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 12px;
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.main-nav a:hover {
+  background-color: var(--primary-green);
+}
+
+.btn-nav-wa {
+  background-color: var(--accent-wa) !important;
+  border-radius: 4px;
+  padding: 8px 14px !important;
+}
+
+/* Barra de Valor */
+.value-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.value-item {
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.value-item i {
+  font-size: 1.8rem;
+  color: var(--primary-green);
+  margin-bottom: 8px;
+}
+
+.value-item h4 {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+
+.value-item p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Layout 2 Columnas */
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.story-card .subtitle {
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.story-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.highlight-text {
+  margin: 15px 0;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #ecfdf5;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--bright-green);
+  margin-top: 15px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-green);
+}
+
+/* Contenedor Multimedia */
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.play-btn {
+  font-size: 2.5rem;
+  color: var(--accent-wa);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* Eventos Grid (5 Columnas) */
+.events-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.event-card {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.event-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background-color: #eee;
+}
+
+.event-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Soluciones Grid 3x2 (6 categorías) */
+.solutions-section h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.green-icon {
+  color: var(--primary-green);
+}
+
+.sub-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.category-card {
+  position: relative;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 -30px 20px rgba(0,0,0,0.6);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.cta-center-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-lg-whatsapp {
+  background-color: var(--accent-wa);
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  border-radius: 25px;
+}
+
+/* Catálogo Banner */
+.catalog-banner {
+  background-color: var(--dark-bg);
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.catalog-subtitle {
+  color: var(--bright-green);
+  margin-bottom: 15px;
+}
+
+.catalog-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.catalog-cta {
+  text-align: center;
+  background-color: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.btn-catalog {
+  margin-top: 15px;
+  width: 100%;
+  background-color: var(--bright-green);
+}
+
+/* Footer */
+.main-footer {
+  background-color: #1e293b;
+  color: white;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  font-size: 0.85rem;
+}
+
+.footer-col h3 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--bright-green);
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 12px;
+}
+
+.qr-placeholder {
+  border: 1px dashed #ffffff50;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Adaptación para Pantallas Medianas (Tablets) y Móviles */
+@media (max-width: 1024px) {
+  .value-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .grid-two-columns, .catalog-banner {
+    grid-template-columns: 1fr;
+  }
+  .sub-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .sub-grid-6, .value-bar, .events-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
