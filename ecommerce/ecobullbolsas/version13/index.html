@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecobull Bolsas | Negocio Verde Certificado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="layout-wrapper" id="inicio">
+
+    <!-- 1. HEADER HERO UNIFICADO CON MENÚ INTEGRADO -->
+    <header class="hero-unified">
+      <div class="hero-overlay"></div>
+
+      <!-- Barra Superior: Logo e Integración de Menú -->
+      <div class="hero-top-bar">
+        <div class="hero-brand">
+          <img id="empresa-logo" src="" alt="Logo Ecobull" class="logo-hero-img">
+        </div>
+
+        <nav class="main-nav-integrated">
+          <ul id="nav-list"></ul>
+        </nav>
+      </div>
+
+      <!-- Cuerpo Principal del Hero -->
+      <div class="hero-main-body">
+        <!-- Contenido Textual e Interactivo (Izquierda) -->
+        <div class="hero-left-content">
+          <h1>EXPERIENCIA DIGITAL<br><span id="empresa-nombre" class="brand-highlight"></span></h1>
+          <p id="empresa-slogan" class="hero-quote"></p>
+          <p id="empresa-subtitulo" class="hero-subtext"></p>
+          
+          <div class="hero-buttons">
+            <a target="_blank" href="https://ecobullbolsas.com/landing_page/catalogo.php" class="btn btn-primary-hero">
+              Ver Catálogo
+            </a>
+            <a id="btn-hero-wa" href="" class="btn btn-whatsapp-hero" target="_blank">
+              Cotizar Ahora <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sellos y Certificaciones (Derecha) -->
+        <div class="hero-right-certifications">
+          <img src="assets/img/negocios-verdes-logo.png" alt="Sello Negocios Verdes" class="cert-hero-img">
+          <img id="empresa-certificado" src="" alt="Certificación CORPONOR" class="cert-hero-img">
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. BARRA DE PILARES DE SOSTENIBILIDAD -->
+    <section id="sostenibilidad" class="value-bar"></section>
+
+    <!-- 3. BLOQUE DOBLE: NECESIDAD | SOLUCIÓN -->
+    <section id="nosotros" class="grid-two-col">
+      <!-- Columna Izquierda: Necesidad -->
+      <article class="card flex-col-between">
+        <div>
+          <span id="necesidad-subtitulo" class="card-subtitle"></span>
+          <h3 id="necesidad-titulo" class="story-title"></h3>
+          <div id="necesidad-desc" class="body-text"></div>
+          <div class="diferencial-container">
+            <p id="necesidad-diferencial-lead" class="highlight-lead"></p>
+            <div id="necesidad-diferenciales-list" class="diferenciales-grid"></div>
+          </div>
+        </div>
+        <div class="stat-badge">
+          <strong id="stat-valor"></strong> <span id="stat-etiqueta"></span>
+        </div>
+      </article>
+
+      <!-- Columna Derecha: Solución (Grilla 3x2) -->
+      <article id="soluciones" class="card">
+        <div class="section-header-inline">
+          <div>
+            <span id="solucion-subtitulo" class="card-subtitle"></span>
+            <h2 id="solucion-titulo" class="story-title"></h2>
+          </div>
+          <span class="tag-label">Soluciones para tu Marca <i class="fas fa-leaf text-green"></i></span>
+        </div>
+
+        <div id="grid-soluciones" class="sub-grid-3x2"></div>
+
+        <div class="cta-mini">
+          <a id="btn-soluciones-wa" href="" class="btn-link" target="_blank">
+            Quiero mi Bolsa Personalizada <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. BLOQUE DOBLE: CÓMO | POSICIONAMIENTO -->
+    <section class="grid-two-col">
+      <!-- Columna Izquierda: Cómo -->
+      <article class="card flex-col-between">
+        <div>
+          <span id="como-subtitulo" class="card-subtitle"></span>
+          <h2 id="como-titulo" class="story-title"></h2>
+          <p id="como-desc" class="body-text"></p>
+        </div>
+
+        <div id="como-media-container" class="media-container media-card">
+          <img id="como-poster" src="" alt="Proceso de transformación">
+          <div class="card-overlay video-overlay">
+            <i class="fas fa-play-circle play-icon"></i>
+            <span>Ver Video del Proceso</span>
+          </div>
+        </div>
+
+        <p class="quote-footer"><em id="como-pie"></em></p>
+      </article>
+
+      <!-- Columna Derecha: Posicionamiento (Grilla 3x2) -->
+      <article id="posicionamiento" class="card">
+        <div class="section-header-inline">
+          <div>
+            <span id="posicionamiento-subtitulo" class="card-subtitle"></span>
+            <h2 id="posicionamiento-titulo" class="story-title"></h2>
+          </div>
+          <span class="tag-label">Presencia Nacional y Eventos</span>
+        </div>
+
+        <div id="grid-posicionamiento" class="sub-grid-3x2"></div>
+
+        <div class="cta-mini">
+          <span class="trust-text"><i class="fas fa-shield-alt"></i> Avalados oficialmente por CORPONOR</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5. CATÁLOGO -->
+    <section id="catalogo" class="card block-section catalog-banner">
+      <div class="catalog-content">
+        <h2 id="cat-titulo"></h2>
+        <p id="cat-subtitulo" class="catalog-sub"></p>
+
+        <div id="cat-features" class="catalog-features"></div>
+
+        <a id="btn-cat-wa" href="" class="btn btn-wa-lg" target="_blank">
+          <i class="fab fa-whatsapp"></i> Ver Catálogo Completo / Solicitar Cotización
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. CONTACTO / FOOTER PROFESIONAL -->
+    <footer id="contacto" class="card block-section footer-pro">
+      <div class="footer-header">
+        <span class="card-subtitle">ATENCIÓN DIRECTA Y RÁPIDA</span>
+        <h2 class="story-title text-light">PONTE EN CONTACTO CON NOSOTROS</h2>
+        <p class="footer-lead">Respondemos a tus inquietudes de empaque, cotizaciones o alianzas ambientales en tiempo récord.</p>
+      </div>
+
+      <div class="footer-grid">
+
+        <!-- Columna 1: Formulario Express -->
+        <div class="footer-card form-card">
+          <h3><i class="fas fa-paper-plane text-green"></i> Envíanos un mensaje</h3>
+          <form id="contact-fast-form" class="contact-form">
+            <div class="form-group">
+              <input type="text" id="form-nombre" placeholder="Tu Nombre o Empresa" required>
+            </div>
+            <div class="form-group">
+              <select id="form-asunto" required>
+                <option value="" disabled selected>Selecciona un motivo...</option>
+                <option value="Cotización de empaque">Cotización de empaques</option>
+                <option value="Asesoría de Sostenibilidad">Asesoría / Sello Verde</option>
+                <option value="Alianza / Eventos">Alianzas y Eventos</option>
+                <option value="PQRS">PQRS o Servicio al Cliente</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="form-mensaje" rows="3" placeholder="¿En qué te podemos ayudar?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp w-100">
+              <i class="fab fa-whatsapp"></i> Enviar a WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <!-- Columna 2: Canales Oficiales -->
+        <div class="footer-card info-card">
+          <h3><i class="fas fa-headset text-green"></i> Canales de Atención</h3>
+
+          <div class="contact-item">
+            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+            <div class="item-text">
+              <span>Correo Electrónico</span>
+              <a id="contacto-email" href="#">--</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+            <div class="item-text">
+              <span>Línea Directa / WhatsApp</span>
+              <a id="contacto-tel" href="#">--</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="item-text">
+              <span>Ubicación Comercial</span>
+              <p id="contacto-ubicacion">--</p>
+            </div>
+          </div>
+
+          <div class="social-block">
+            <span>Síguenos en Redes</span>
+            <div id="social-container" class="social-icons-pro"></div>
+          </div>
+        </div>
+
+        <!-- Columna 3: QR de Contacto Rápido -->
+        <div class="footer-card qr-card">
+          <h3><i class="fas fa-qrcode text-green"></i> Escaneo Directo</h3>
+          <div class="qr-box-pro">
+            <img id="contacto-qr" src="" alt="Código QR WhatsApp">
+          </div>
+          <p class="qr-desc">Escanea el código con tu móvil para iniciar chat instantáneo con nuestro equipo comercial.</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="current-year">2026</span> Ecobull Bolsas S.A.S. - Todos los derechos reservados. | Negocio Verde Certificado</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- MODAL FULLSCREEN UNIVERSAL -->
+  <div id="modal-fullscreen" class="modal-overlay hidden">
+    <div class="modal-content-wrapper">
+      <button id="modal-close-btn" class="modal-close">&times;</button>
+
+      <div class="modal-body">
+        <div id="modal-media-container" class="modal-media-box">
+          <!-- Inyección dinámica -->
+        </div>
+
+        <div class="modal-info-box">
+          <span id="modal-tag" class="tag-verde"></span>
+          <h2 id="modal-titulo"></h2>
+          <p id="modal-descripcion"></p>
+
+          <a id="modal-btn-wa" href="" class="btn btn-whatsapp btn-modal-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cotizar este producto por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+{
+  "empresa": {
+    "nombre": "Ecobull Bolsas",
+    "slogan": "La bolsa es la consecuencia de nuestra labor ecológica",
+    "subtitulo": "Transformamos materiales recuperados en soluciones que fortalecen la imagen de tu negocio.",
+    "tagline": "Negocio Verde Certificado",
+    "logoUrl": "assets/img/logo-ecobull.png",
+    "certificadoUrl": "assets/img/corponor-logo.png"
+  },
+  "menuNavegacion": [
+    {
+      "id": "inicio",
+      "label": "INICIO",
+      "url": "#inicio"
+    },
+    {
+      "id": "nosotros",
+      "label": "NOSOTROS",
+      "url": "#nosotros"
+    },
+    {
+      "id": "productos",
+      "label": "PRODUCTOS",
+      "url": "#soluciones"
+    },
+    {
+      "id": "sostenibilidad",
+      "label": "SOSTENIBILIDAD",
+      "url": "#sostenibilidad"
+    },
+    {
+      "id": "posicionamiento",
+      "label": "CLIENTES / EVENTOS",
+      "url": "#posicionamiento"
+    },
+    {
+      "id": "contacto",
+      "label": "CONTACTO",
+      "url": "#contacto"
+    }
+  ],
+  "bloqueNecesidad": {
+    "subtitulo": "EL RETO AMBIENTAL Y EMPRESARIAL",
+    "titulo": "DEL PROBLEMA DEL PLÁSTICO A LA SOLUCIÓN CIRCULAR",
+    "descripcion": [
+      "Cada día, miles de comercios y empresas enfrentan una encrucijada crítica: entregar sus productos en un empaque resistente, funcional y representativo, sin generar un impacto ambiental negativo ni exponerse a rigurosas sanciones por normativas de plásticos de un solo uso.",
+      "Durante décadas, la respuesta fue el plástico convencional no regulado, acumulando toneladas de residuos en vertederos y castigando la reputación de las marcas. Hoy, eliminar por completo el plástico no es viable para la logística comercial, pero mantener el modelo tradicional tampoco lo es.",
+      "En Ecobull transformamos esta problemática en una oportunidad competitiva: reincorporamos el plástico reciclado al ciclo productivo mediante procesos de alta ingeniería y aditivos de vanguardia, garantizando que tu empresa cumpla la ley, proteja el entorno y proyecte una imagen responsable."
+    ],
+    "diferencialLead": "No se trata de erradicar el plástico, sino de rediseñar su ciclo de vida: recuperamos residuos postindustriales y los convertimos en empaques técnicos de alto impacto.",
+    "diferenciales": [
+      {
+        "icono": "fas fa-flask",
+        "titulo": "Tecnología Oxo-biodegradable P-Life",
+        "texto": "Integramos aditivos que programan la degradación de la bolsa al finalizar su vida útil, acelerando su reintegración al medio ambiente sin dejar microplásticos ni residuos tóxicos."
+      },
+      {
+        "icono": "fas fa-shield-alt",
+        "titulo": "Blindaje Legal y Aval CORPONOR",
+        "texto": "Contamos con la certificación oficial de Negocio Verde, garantizando a tu empresa el cumplimiento de la normatividad ambiental vigente y blindándola ante riesgos sancionatorios."
+      }
+    ],
+    "estadisticaClave": {
+      "valor": "+80%",
+      "etiqueta": "Material plástico recuperado e integrado en cada bolsa"
+    },
+    "pilaresValor": [
+      {
+        "id": 1,
+        "icono": "fas fa-recycle",
+        "titulo": "Recuperación Materia Prima",
+        "texto": "Capturamos y seleccionamos residuos plásticos postindustriales y postconsumo, evadiendo su llegada a los rellenos sanitarios."
+      },
+      {
+        "id": 2,
+        "icono": "fas fa-leaf",
+        "titulo": "Degradación Controlada",
+        "texto": "Aplicamos la molécula P-Life para asegurar un ciclo de descomposición limpio, eficiente y programado por oxidación."
+      },
+      {
+        "id": 3,
+        "icono": "fas fa-sync-alt",
+        "titulo": "Modelo de Economía Circular",
+        "texto": "Cerramos el ciclo del material reincorporándolo a la cadena de valor en forma de empaques comerciales de alta resistencia."
+      },
+      {
+        "id": 4,
+        "icono": "fas fa-users",
+        "titulo": "Impacto Social y Humano",
+        "texto": "Dignificamos el trabajo de las asociaciones de recicladores locales, promoviendo comercio justo y desarrollo comunitario."
+      },
+      {
+        "id": 5,
+        "icono": "fas fa-check-circle",
+        "titulo": "Sello Verde Oficial",
+        "texto": "Certificación otorgada por CORPONOR que respalda la sostenibilidad integral y la responsabilidad ambiental de tu marca."
+      }
+    ]
+  },
+  "bloqueSolucion": {
+    "subtitulo": "SOLUCIONES PARA FORTALECER TU MARCA",
+    "titulo": "CATÁLOGO POR SECTORES",
+    "itemsGrid": [
+      {
+        "id": 1,
+        "nombre": "Cosméticos",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_15x25_cosmeticos_495x743.avif",
+        "mediaUrl": null
+      },
+      {
+        "id": 2,
+        "nombre": "Perfumería",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_20x30_cosmeticos_495x743.avif",
+        "mediaUrl": null
+      },
+      {
+        "id": 3,
+        "nombre": "Femenino",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_25x35_cosmeticos_495x743.avif",
+        "mediaUrl": null
+      },
+      {
+        "id": 4,
+        "nombre": "Calzado",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_30x40_cosmeticos_495x743_29082024.avif",
+        "mediaUrl": null
+      },
+      {
+        "id": 5,
+        "nombre": "Femenino",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_35x45_cosmeticos495x743_29082024.avif",
+        "mediaUrl": null
+      },
+      {
+        "id": 6,
+        "nombre": "Calzado y Vestuario",
+        "categoria": "categoria",
+        "tipoMedia": "foto",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/c_40x50_cosmeticos_495x743.avif",
+        "mediaUrl": null
+      }
+    ]
+  },
+  "bloqueComo": {
+    "subtitulo": "ASÍ TRANSFORMAMOS EL MATERIAL",
+    "titulo": "NUESTRO PROCESO",
+    "descripcion": "De residuos plásticos a soluciones de empaque ecológicas y resistentes.",
+    "media": {
+      "tipoMedia": "video",
+      "posterUrl": "./assets/video/proceso-transformacion.png",
+      "videoUrl": "./assets/video/proceso-transformacion.mp4",
+      "pieDeFoto": "Recuperamos hoy, transformamos para el mañana."
+    }
+  },
+  "bloquePosicionamiento": {
+    "subtitulo": "NUESTRA EXPERIENCIA Y PRESENCIA NACIONAL",
+    "titulo": "RESPALDO Y EVENTOS",
+    "itemsGrid": [
+      {
+        "id": 1,
+        "nombre": "Generamos empleo local",
+        "categoria": "media",
+        "tipoMedia": "video",
+        "icono": "fas fa-play",
+        "imagenUrl": "https://ecobullbolsas.com/docs/empleadas.png",
+        "mediaUrl": "https://www.tiktok.com/@ecobull.bolsas"
+      },
+      {
+        "id": 2,
+        "nombre": "Evento en UNISIMON",
+        "categoria": "evento",
+        "tipoMedia": "foto",
+        "icono": "fas fa-award",
+        "imagenUrl": "https://ecobullbolsas.com/docs/unisimon-tarima.png",
+        "mediaUrl": null
+      },
+      {
+        "id": 3,
+        "nombre": "Tarima COP 16",
+        "categoria": "evento",
+        "tipoMedia": "foto",
+        "icono": "fas fa-award",
+        "imagenUrl": "https://ecobullbolsas.com/docs/tarima-cop-16.png",
+        "mediaUrl": null
+      },
+      {
+        "id": 4,
+        "nombre": "Bioexpo Bucaramanga",
+        "categoria": "evento",
+        "tipoMedia": "foto",
+        "icono": "fas fa-award",
+        "imagenUrl": "https://ecobullbolsas.com/docs/bioexpo-bucaramanga.png",
+        "mediaUrl": null
+      },
+      {
+        "id": 5,
+        "nombre": "Stand COP 16",
+        "categoria": "evento_destacado",
+        "tipoMedia": "foto",
+        "icono": "fas fa-globe-americas",
+        "imagenUrl": "https://ecobullbolsas.com/docs/cop-16-cub.png",
+        "mediaUrl": null
+      },
+      {
+        "id": 6,
+        "nombre": "Negocios Verdes",
+        "categoria": "certificacion",
+        "tipoMedia": "foto",
+        "icono": "fas fa-certificate",
+        "imagenUrl": "https://ecobullbolsas.com/landing_page/images/nosotros_7.avif",
+        "mediaUrl": null
+      }
+    ]
+  },
+  "bloqueCatalogo": {
+    "titulo": "CATÁLOGO DE PRODUCTOS",
+    "subtitulo": "Encuentra la solución ideal para tu negocio",
+    "llamadoAccion": "Consulta precios, cantidades y solicita tu cotización por WhatsApp",
+    "caracteristicas": [
+      "Variedad de tamaños y referencias",
+      "Precios por cantidad y medidas",
+      "Personalización de alta calidad",
+      "Asesoría por WhatsApp"
+    ]
+  },
+  "contacto": {
+    "email": "ecobullbolsas@gmail.com",
+    "telefono": "+57 301 6388895",
+    "whatsappNumber": "573016388895",
+    "whatsappMensajeDefault": "Hola Ecobull, me interesa solicitar una cotización.",
+    "ubicacion": "Cúcuta, Norte de Santander, Colombia",
+    "qrCodeUrl": "assets/img/qr-whatsapp.avif",
+    "redesSociales": [
+      {
+        "red": "Facebook",
+        "url": "https://ecobullbolsas.com/babull/ecobullbolsas/assets/images/facebook.svg",
+        "icono": "fab fa-facebook-f"
+      },
+      {
+        "red": "Instagram",
+        "url": "https://www.instagram.com/ecobullbolsas/",
+        "icono": "fab fa-instagram"
+      },
+      {
+        "red": "TikTok",
+        "url": "https://www.tiktok.com/@ecobull.bolsas",
+        "icono": "fab fa-tiktok"
+      }
+    ]
+  }
+}
