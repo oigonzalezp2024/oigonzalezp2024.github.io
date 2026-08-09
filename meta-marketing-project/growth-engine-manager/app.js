@@ -217,7 +217,7 @@ async function syncMetaAdsFromPHP() {
         gasto: parseFloat(item.spend || 0),
         impresiones: parseInt(item.impressions || 0, 10),
         clics: parseInt(item.clicks || 0, 10),
-        ctr: parseFloat(item.cctr || 0),
+        ctr: parseFloat(item.ctr || 0),
         origen: 'meta_api'
       }));
 

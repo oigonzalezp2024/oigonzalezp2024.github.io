@@ -10,10 +10,12 @@ header('X-Content-Type-Options: nosniff');
 
 define('GRAPH_VERSION', 'v19.0');
 define('DEFAULT_TIMEOUT', 15);
+define('META_ACT_ACCOUNT_ID', 'act_META_ACT_ACCOUNT_ID_AQUI');
+define('META_ACCESS_TOKEN', 'META_ACCESS_TOKEN_AQUI');
 
 // Obtención de credenciales desde el entorno del servidor (Configurado por Soporte Técnico)
-$accessToken  = getenv('META_ACCESS_TOKEN') ?: null;
-$actAccountId = getenv('META_ACT_ACCOUNT_ID') ?: null;
+$accessToken  = META_ACCESS_TOKEN ?: null;
+$actAccountId = META_ACT_ACCOUNT_ID ?: null;
 
 // Validación de Activación Inicial (Modelo de Negocio)
 if (!$accessToken || !$actAccountId || $accessToken === 'TU_ACCESS_TOKEN_AQUI') {
@@ -34,7 +36,7 @@ $fields = [
     'spend',
     'impressions',
     'clicks',
-    'cctr',
+    'ctr',
     'actions',
     'cost_per_action_type'
 ];
