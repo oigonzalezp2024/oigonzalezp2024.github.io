@@ -1,0 +1,39 @@
+{
+  "backgroundImage": "https://ecobullbolsas.com/babull/ecobullbolsas/assets/images/portadaf_cleanup.avif",
+  "logo": {
+    "src": "https://ecobullbolsas.com/landing_page/images/mobile_lienzo.avif",
+    "alt": "Ecobull Bolsas",
+    "link": "#"
+  },
+  "navigation": [
+    { "label": "Inicio", "url": "#inicio" },
+    { "label": "Nosotros", "url": "https://ecobullbolsas.com/landing_page/nosotros.php" },
+    { "label": "Productos", "url": "https://ecobullbolsas.com/landing_page/productos.php" },
+    { "label": "Sostenibilidad", "url": "https://wa.me/573016388895" },
+    { "label": "Clientes", "url": "https://wa.me/573016388895" },
+    { "label": "Contacto", "url": "https://wa.me/573016388895" }
+  ],
+  "whatsappNav": {
+    "label": "Whatsapp",
+    "url": "https://wa.me/573016388895"
+  },
+  "heroText": {
+    "tagline": "La bolsa es la consecuencia<br>de nuestra labor ecológica",
+    "subHeading": "EXPERIENCIA DIGITAL",
+    "mainHeading": "ECOBULL BOLSAS"
+  },
+  "buttons": {
+    "catalog": {
+      "label": "Ver Catálogo",
+      "url": "https://ecobullbolsas.com/landing_page/catalogo.php"
+    },
+    "quote": {
+      "label": "Cotizar Ahora",
+      "url": "https://wa.me/573016388895"
+    }
+  },
+  "badgeRight": {
+    "src": "./negocios-verdes-logo.png",
+    "alt": "Negocios Verdes"
+  }
+}

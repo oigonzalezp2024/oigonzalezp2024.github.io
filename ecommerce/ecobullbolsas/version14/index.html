@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecobull Bolsas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero-banner {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('https://ecobullbolsas.com/babull/ecobullbolsas/assets/images/portadaf_cleanup.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* MARGEN UNIFICADO DE PANTALLA A LA IZQUIERDA (2.5rem) */
+            padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+            position: relative;
+        }
+
+        /* BARRA DE NAVEGACIÓN SUPERIOR */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* CONTENEDOR DEL LOGO ALINEADO A "0" */
+        .logo-container {
+            position: relative;
+            width: 280px; 
+            height: 60px;
+            flex-shrink: 0;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        /* LOGO PEGADO AL BORDE IZQUIERDO EXACTO */
+        .logo-img {
+            position: absolute;
+            top: -30px;
+            left: -20px; /* ALINEADO EXACTAMENTE A LA IZQUIERDA */
+            height: 220px !important;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #22c55e;
+        }
+
+        .btn-whatsapp-nav {
+            background-color: #00a884;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        /* CONTENIDO PRINCIPAL INFERIOR ALINEADO A "0" */
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .hero-text-side {
+            max-width: 650px;
+            margin-left: 0; /* ASEGURA QUE "LA BOLSA ES..." COMIENCE EN EL MISMO '0' QUE EL LOGO */
+            padding-left: 0;
+        }
+
+        .tagline {
+            font-size: 2.3rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+
+        .sub-heading {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+
+        .main-heading {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #00b080;
+            margin-bottom: 1.8rem;
+            letter-spacing: 1px;
+            -webkit-text-stroke: 1.8px #ffffff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-catalog {
+            background-color: #243c84;
+            color: white;
+            padding: 0.65rem 1.6rem;
+            border-radius: 12px;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-quote {
+            background-color: #00a884;
+            color: white;
+            padding: 0.65rem 1.6rem;
+            border-radius: 12px;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge-right img {
+            height: 250px;
+            width: auto;
+            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.7));
+        }
+
+        @media (max-width: 950px) {
+            .hero-banner {
+                padding: 1rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .logo-container {
+                width: auto;
+                height: auto;
+            }
+
+            .logo-img {
+                position: static;
+                height: 140px !important;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .badge-right {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero-banner">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="https://ecobullbolsas.com/landing_page/images/mobile_lienzo.avif" alt="Ecobull Bolsas" class="logo-img">
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a target="_blank" href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a target="_blank" href="https://ecobullbolsas.com/landing_page/nosotros.php" class="nav-link">Nosotros</a></li>
+                <li><a target="_blank" href="https://ecobullbolsas.com/landing_page/productos.php" class="nav-link">Productos</a></li>
+                <li><a target="_blank" href="https://wa.me/573016388895" class="nav-link">Sostenibilidad</a></li>
+                <li><a target="_blank" href="https://wa.me/573016388895" class="nav-link">Clientes</a></li>
+                <li><a target="_blank" href="https://wa.me/573016388895" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <a href="https://wa.me/573016388895" class="btn-whatsapp-nav" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Whatsapp
+            </a>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text-side">
+                <p class="tagline">La bolsa es la consecuencia<br>de nuestra labor ecológica</p>
+                
+                <h3 class="sub-heading">EXPERIENCIA DIGITAL</h3>
+                <h1 class="main-heading">ECOBULL BOLSAS</h1>
+
+                <div class="cta-buttons">
+                    <a href="https://ecobullbolsas.com/landing_page/catalogo.php" class="btn-catalog">Ver Catálogo</a>
+                    <a href="https://wa.me/573016388895" class="btn-quote" target="_blank">
+                        Cotizar Ahora <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="badge-right">
+                <img src="./negocios-verdes-logo.png" alt="Negocios Verdes">
+            </div>
+        </div>
+    </header>
+
+</body>
+
+</html>

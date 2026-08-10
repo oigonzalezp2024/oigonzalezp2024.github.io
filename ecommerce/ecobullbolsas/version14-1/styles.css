@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-banner {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    position: relative;
+}
+
+/* BARRA DE NAVEGACIÓN SUPERIOR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 100; /* Asegura estar sobre todo */
+}
+
+.nav-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.logo-container {
+    position: relative;
+    width: 280px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 220px !important;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #22c55e;
+}
+
+.btn-whatsapp-nav {
+    background-color: #00a884;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+/* CONTENIDO PRINCIPAL INFERIOR */
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    width: 100%;
+    gap: 2rem;
+}
+
+.hero-text-side {
+    max-width: 650px;
+}
+
+.tagline {
+    font-size: clamp(1.3rem, 3.5vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.sub-heading {
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.main-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #00b080;
+    margin-bottom: 1.8rem;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 1.5px #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.btn-catalog, .btn-quote {
+    padding: 0.65rem 1.6rem;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.btn-catalog {
+    background-color: #243c84;
+    color: white;
+}
+
+.btn-quote {
+    background-color: #00a884;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.badge-right img {
+    height: clamp(120px, 18vw, 250px);
+    width: auto;
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+/* ===================================================
+   DISEÑO PROFESIONAL MÓVIL (Hasta 850px)
+   =================================================== */
+@media (max-width: 850px) {
+    .hero-banner {
+        padding: 1rem 1.2rem 1.8rem 1.2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-top-bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 101;
+    }
+
+    .logo-container {
+        width: calc(100% - 50px);
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-img {
+        position: static;
+        width: 100% !important;
+        max-width: 260px;
+        height: auto !important;
+        object-fit: contain;
+    }
+
+    /* DESPLEGABLE MÓVIL CON POSICIÓN FIJA SOBRE PANTALLA */
+    .nav-menu-wrapper {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(10, 20, 15, 0.98);
+        position: absolute;
+        top: 100%;
+        left: -1.2rem;
+        right: -1.2rem;
+        padding: 1.5rem;
+        border-bottom: 3px solid #00b080;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+        z-index: 99;
+    }
+
+    /* CLASE QUE ACTIVA EL MENÚ */
+    .nav-menu-wrapper.show-menu {
+        display: flex !important;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .btn-whatsapp-nav {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .hero-text-side {
+        width: 100%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .btn-catalog, .btn-quote {
+        width: 100%;
+    }
+
+    .badge-right {
+        align-self: center;
+        margin-top: 0.5rem;
+    }
+
+    .badge-right img {
+        height: 100px;
+    }
+}
