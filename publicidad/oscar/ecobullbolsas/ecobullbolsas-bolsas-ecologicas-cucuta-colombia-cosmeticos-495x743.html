@@ -333,11 +333,11 @@
   <!-- Logo de Marca -->
   <a href="https://ecobullbolsas.com" class="brand-logo-container" aria-label="Ir a Ecobullbolsas">
     <img src="./images/ecobullbolsas-logo.avif" alt="Ecobullbolsas - Fábrica de bolsas ecológicas"
-      class="brand-logo-img">
+      class="brand-logo-img" onclick="logo_click('cosmeticos_ecobullbolsas');">
   </a>
   <a href="https://ecobullbolsas.com" class="brand-logo-container-right" aria-label="Ir a Ecobullbolsas">
     <img src="./images/negocios-verdes-logo.png" alt="Ecobullbolsas - Fábrica de bolsas ecológicas"
-      class="brand-logo-img">
+      class="brand-logo-img" onclick="logo_click('cosmeticos_negocios_verdes_logo');">
   </a>
 
   <!-- Bloque Flotante del Llamado a la Acción (Alegre & B2B) -->
@@ -353,7 +353,7 @@
     <figure>
       <a href="https://wa.me/573212962876?text=Hola,%20quisiera%20cotizar%20bolsas%20ecol%C3%B3gicas%20a%20medida%20para%20tienda%20de%20cosm%C3%A9ticos.%20https://oigonzalezp2024.github.io/publicidad/oscar/ecobullbolsas/ecobullbolsas-bolsas-ecologicas-cucuta-colombia-cosmeticos-495x743.html"
         target="_blank" rel="noopener noreferrer" aria-label="Cotizar bolsas ecológicas de cosméticos por WhatsApp"
-        onclick="trackConversion('Image_Click')">
+        onclick="photo_click('ecobullbolsas-bolsas-ecologicas-cucuta-colombia-cosmeticos-495x743.avif')">
         <img src="./images/ecobullbolsas-bolsas-ecologicas-cucuta-colombia-cosmeticos-495x743.avif"
           alt="Bolsas ecológicas personalizadas de 15x25 cm para tiendas de cosméticos y belleza"
           title="Bolsas Ecológicas para Cosméticos a Medida" width="495" height="743" fetchpriority="high"
@@ -368,7 +368,7 @@
 
     <a href="https://wa.me/573212962876?text=Hola,%20quisiera%20cotizar%20bolsas%20ecol%C3%B3gicas%20a%20medida%20para%20tienda%20de%20cosm%C3%A9ticos.%20https://oigonzalezp2024.github.io/publicidad/oscar/ecobullbolsas/ecobullbolsas-bolsas-ecologicas-cucuta-colombia-cosmeticos-495x743.html"
       class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Cotizar bolsas ecológicas por WhatsApp"
-      onclick="trackConversion('Floating_Button')">
+      onclick="whatsapp_btn_click('cosmeticos_whatsapp')">
       <span class="whatsapp-text">Cotiza por WhatsApp</span>
       <div class="whatsapp-icon-box">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -381,12 +381,31 @@
 
   <!-- Handler de Tracking para Meta Pixel / Google Analytics -->
   <script>
-    function trackConversion(source) {
+
+    function logo_click(source) {
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'Cotizacion_Cosmeticos', source: source });
+        fbq('track', 'Lead', { content_name: 'logo_click', source: source });
       }
       if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', { 'event_category': 'WhatsApp', 'event_label': source });
+        gtag('event', 'generate_lead', { 'event_category': 'logo_click', 'event_label': source });
+      }
+    }
+
+    function photo_click(source) {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'photo_click', source: source });
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { 'event_category': 'photo_click', 'event_label': source });
+      }
+    }
+
+    function whatsapp_btn_click(source) {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'whatsapp_btn_click', source: source });
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { 'event_category': 'whatsapp_btn_click', 'event_label': source });
       }
     }
   </script>
