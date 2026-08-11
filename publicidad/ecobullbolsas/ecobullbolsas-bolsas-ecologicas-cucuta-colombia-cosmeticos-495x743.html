@@ -111,6 +111,25 @@
     .brand-logo-container {
       position: fixed !important;
       top: 24px !important;
+      left: 24px !important;
+      z-index: 99999 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      transition: transform 0.2s ease;
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .brand-logo-container-right {
+      position: fixed !important;
+      top: 24px !important;
       right: 24px !important;
       z-index: 99999 !important;
       display: inline-flex;
@@ -295,6 +314,10 @@
   <!-- Logo de Marca -->
   <a href="https://ecobullbolsas.com" class="brand-logo-container" aria-label="Ir a Ecobullbolsas">
     <img src="./images/ecobullbolsas-logo.avif" alt="Ecobullbolsas - Fábrica de bolsas ecológicas"
+      class="brand-logo-img">
+  </a>
+  <a href="https://ecobullbolsas.com" class="brand-logo-container-right" aria-label="Ir a Ecobullbolsas">
+    <img src="./images/negocios-verdes-logo.png" alt="Ecobullbolsas - Fábrica de bolsas ecológicas"
       class="brand-logo-img">
   </a>
 
