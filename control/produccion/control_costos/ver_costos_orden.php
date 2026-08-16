@@ -66,6 +66,7 @@ $kpis = $data['kpis'];
         td { padding: 12px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
         .row-exceeded { background-color: #fef2f2; }
         .text-danger { color: var(--danger); font-weight: bold; }
+        .text-success { color: var(--success); font-weight: bold; }
         .text-right { text-align: right; }
         .text-center { text-align: center; }
 
@@ -123,8 +124,14 @@ $kpis = $data['kpis'];
                     </td>
                     <td class="text-right">$<?= number_format($item['subtotal_estimado'], 2) ?></td>
                     <td class="text-right">$<?= number_format($item['subtotal_real'], 2) ?></td>
-                    <td class="text-right <?= $item['desviacion'] > 0 ? 'text-danger' : '' ?>">
-                        <?= $item['desviacion'] > 0 ? '+$' . number_format($item['desviacion'], 2) : '$0.00' ?>
+                    <td class="text-right <?= $item['desviacion'] > 0 ? 'text-danger' : ($item['desviacion'] < 0 ? 'text-success' : '') ?>">
+                        <?php if ($item['desviacion'] > 0): ?>
+                            +$<?= number_format($item['desviacion'], 2) ?>
+                        <?php elseif ($item['desviacion'] < 0): ?>
+                            -$<?= number_format(abs($item['desviacion']), 2) ?>
+                        <?php else: ?>
+                            $0.00
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -138,10 +145,26 @@ $kpis = $data['kpis'];
             <small>Presupuestado: $<?= number_format($kpis['costo_total_estimado'], 2) ?></small>
         </div>
 
-        <div class="kpi-card <?= $kpis['desviacion_total'] > 0 ? 'warning' : 'success' ?>">
+        <div class="kpi-card <?= $kpis['desviacion_total'] > 0 ? 'warning' : ($kpis['desviacion_total'] < 0 ? 'success' : '') ?>">
             <div class="kpi-title">Desviación Total</div>
-            <div class="kpi-value"><?= $kpis['desviacion_total'] > 0 ? '+$' . number_format($kpis['desviacion_total'], 2) : '$0.00' ?></div>
-            <small><?= $kpis['desviacion_total'] > 0 ? 'Sobrecosto en materiales' : 'Bajo control presupuestal' ?></small>
+            <div class="kpi-value">
+                <?php if ($kpis['desviacion_total'] > 0): ?>
+                    +$<?= number_format($kpis['desviacion_total'], 2) ?>
+                <?php elseif ($kpis['desviacion_total'] < 0): ?>
+                    -$<?= number_format(abs($kpis['desviacion_total']), 2) ?>
+                <?php else: ?>
+                    $0.00
+                <?php endif; ?>
+            </div>
+            <small>
+                <?php if ($kpis['desviacion_total'] > 0): ?>
+                    Sobrecosto en materiales
+                <?php elseif ($kpis['desviacion_total'] < 0): ?>
+                    Eficiencia / Ahorro en materiales
+                <?php else: ?>
+                    Bajo control presupuestal
+                <?php endif; ?>
+            </small>
         </div>
 
         <div class="kpi-card">
