@@ -57,6 +57,8 @@ $obtenerDetalles       = $data['obtenerDetalles'];
                         <th>Producto / Cliente</th>
                         <th>Responsable</th>
                         <th>Estado</th>
+                        <th></th>
+                        <th></th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -77,6 +79,12 @@ $obtenerDetalles       = $data['obtenerDetalles'];
                                         <option value="<?= $st ?>" <?= $ord['estado'] === $st ? 'selected' : '' ?>><?= ucfirst($st) ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                            </td>
+                            <td>
+                                <a class="btn" href="../control_costos/ver_costos_orden.php?id_orden=<?= $ord['id_orden'] ?>">Ver costos</a>
+                            </td>
+                            <td>
+                                <a class="btn" href="../operario/ver_pdf_taller.php?id_orden=<?= $ord['id_orden'] ?>">Ver hoja taller</a>
                             </td>
                             <td>
                                 <button class="btn-action-warning" onclick="abrirModal('modalEditar-<?= $ord['id_orden'] ?>')">✏️</button>
