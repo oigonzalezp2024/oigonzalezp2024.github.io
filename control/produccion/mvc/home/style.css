@@ -289,8 +289,8 @@ html {
 
 .node-wrapper {
     position: absolute;
-    width: 58px;
-    height: 58px;
+    width: 70px;
+    height: 70px;
     margin-left: -29px;
     margin-top: -29px;
     z-index: 10;
@@ -331,7 +331,7 @@ html {
 }
 
 .node-tag {
-    font-size: 0.42rem;
+    font-size: 0.4rem;
     font-weight: 800;
     color: #0b4da1;
     margin-top: 2px;
