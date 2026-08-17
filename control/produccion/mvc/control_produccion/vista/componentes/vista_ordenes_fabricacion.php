@@ -40,11 +40,43 @@ $conn = conexion();
             <th>monto_utilidad</th>
             <th>monto_total</th>
             <th>creado_en</th>
+            <th></th>
+            <th></th>
         </tr>
    </thead>
     <tbody>
     <?php
-    $sql = 'SELECT * FROM ordenes_fabricacion';
+    $sql = "SELECT 
+    ord.id_orden,
+    ord.numero_orden,
+    ord.cliente_id,
+    ord.asesor_id,
+    ord.fabricante_id,
+    ord.operario_id,
+    ord.producto_id,
+    ord.unidades,
+    ord.estado,
+    ord.fecha_pedido,
+    ord.fecha_entrega,
+    ord.costo_subtotal,
+    ord.costo_mod,
+    ord.costo_cif,
+    ord.porcentaje_utilidad,
+    ord.monto_utilidad,
+    ord.monto_total,
+    ord.creado_en,
+    cli.nombre AS nombre_cliente,
+    ase.nombre AS nombre_asesor,
+    fab.nombre AS nombre_fabricante,
+    ope.nombre AS nombre_operario,
+    pro.nombre_producto AS nombre_producto,
+    pro.codigo_referencia AS codigo_referencia
+FROM `ordenes_fabricacion` ord
+INNER JOIN `personas` cli ON ord.cliente_id = cli.id_persona
+INNER JOIN `personas` ase ON ord.asesor_id = ase.id_persona
+INNER JOIN `personas` fab ON ord.fabricante_id = fab.id_persona
+INNER JOIN `personas` ope ON ord.operario_id = ope.id_persona
+INNER JOIN productos_catalogo pro ON ord.producto_id = pro.id_producto;";
     $result = mysqli_query($conn, $sql);
     WHILE($fila = mysqli_fetch_assoc($result)){
         $datos = $fila['id_orden'] . "||" .
@@ -69,11 +101,11 @@ $conn = conexion();
         <tr>
             <td><?php echo $fila['id_orden']; ?></td>
             <td><?php echo $fila['numero_orden']; ?></td>
-            <td><?php echo $fila['cliente_id']; ?></td>
-            <td><?php echo $fila['asesor_id']; ?></td>
-            <td><?php echo $fila['fabricante_id']; ?></td>
-            <td><?php echo $fila['operario_id']; ?></td>
-            <td><?php echo $fila['producto_id']; ?></td>
+            <td><?php echo $fila['nombre_cliente']; ?></td>
+            <td><?php echo $fila['nombre_asesor']; ?></td>
+            <td><?php echo $fila['nombre_fabricante']; ?></td>
+            <td><?php echo $fila['nombre_operario']; ?></td>
+            <td><?php echo $fila['nombre_producto']; ?></td>
             <td><?php echo $fila['unidades']; ?></td>
             <td><?php echo $fila['estado']; ?></td>
             <td><?php echo $fila['fecha_pedido']; ?></td>
