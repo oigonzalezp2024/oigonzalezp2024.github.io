@@ -191,7 +191,7 @@ $obtenerDetalles       = $data['obtenerDetalles'];
                         <select name="id_cliente" class="input-control" required>
                             <option value="">Seleccione...</option>
                             <?php foreach ($clientes as $c): ?>
-                                <option value="<?= $c['id_tercero'] ?>"><?= htmlspecialchars((string)$c['nombre']) ?></option>
+                                <option value="<?= $c['id_persona'] ?>"><?= htmlspecialchars((string)$c['nombre']) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -200,7 +200,7 @@ $obtenerDetalles       = $data['obtenerDetalles'];
                         <select name="id_asesor" class="input-control" required>
                             <option value="">Seleccione...</option>
                             <?php foreach ($asesores as $a): ?>
-                                <option value="<?= $a['id_tercero'] ?>"><?= htmlspecialchars((string)$a['nombre']) ?></option>
+                                <option value="<?= $a['id_persona'] ?>"><?= htmlspecialchars((string)$a['nombre']) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -209,7 +209,7 @@ $obtenerDetalles       = $data['obtenerDetalles'];
                         <select name="id_fabricante" class="input-control" required>
                             <option value="">Seleccione...</option>
                             <?php foreach ($fabricantes as $f): ?>
-                                <option value="<?= $f['id_tercero'] ?>"><?= htmlspecialchars((string)$f['nombre']) ?></option>
+                                <option value="<?= $f['id_persona'] ?>"><?= htmlspecialchars((string)$f['nombre']) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

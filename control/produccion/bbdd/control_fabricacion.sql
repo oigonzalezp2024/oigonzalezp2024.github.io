@@ -3,8 +3,8 @@
 
 CREATE DATABASE IF NOT EXISTS `control_fabricacion`; 
 
-CREATE TABLE IF NOT EXISTS `control_fabricacion`.`terceros` (
-  `id_tercero` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `control_fabricacion`.`personas` (
+  `id_persona` int(10) UNSIGNED NOT NULL,
   `documento` varchar(20) DEFAULT NULL,
   `nombre` varchar(120) NOT NULL,
   `rol` enum('CLIENTE','ASESOR','FABRICANTE','OPERARIO') NOT NULL,
@@ -132,9 +132,9 @@ ALTER TABLE `control_fabricacion`.`productos_catalogo`
   ADD PRIMARY KEY (`id_producto`),
   ADD UNIQUE KEY `codigo_referencia` (`codigo_referencia`);
 
-ALTER TABLE `control_fabricacion`.`terceros`
-  ADD PRIMARY KEY (`id_tercero`),
-  ADD KEY `idx_terceros_rol` (`rol`);
+ALTER TABLE `control_fabricacion`.`personas`
+  ADD PRIMARY KEY (`id_persona`),
+  ADD KEY `idx_personas_rol` (`rol`);
 
 ALTER TABLE `control_fabricacion`.`categorias_insumos`
   MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
@@ -157,8 +157,8 @@ ALTER TABLE `control_fabricacion`.`orden_fabricacion_detalles`
 ALTER TABLE `control_fabricacion`.`productos_catalogo`
   MODIFY `id_producto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `control_fabricacion`.`terceros`
-  MODIFY `id_tercero` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `control_fabricacion`.`personas`
+  MODIFY `id_persona` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `control_fabricacion`.`inventario_producto_terminado`
   ADD CONSTRAINT `fk_ipt_orden` FOREIGN KEY (`id_orden`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -171,10 +171,10 @@ ALTER TABLE `control_fabricacion`.`movimientos_inventario`
   ADD CONSTRAINT `fk_mov_orden` FOREIGN KEY (`id_orden`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`ordenes_fabricacion`
-  ADD CONSTRAINT `fk_orden_asesor` FOREIGN KEY (`id_asesor`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_fabricante` FOREIGN KEY (`id_fabricante`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_operario` FOREIGN KEY (`id_operario`) REFERENCES `terceros` (`id_tercero`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_asesor` FOREIGN KEY (`id_asesor`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_fabricante` FOREIGN KEY (`id_fabricante`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_operario` FOREIGN KEY (`id_operario`) REFERENCES `personas` (`id_persona`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_orden_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos_catalogo` (`id_producto`) ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`orden_fabricacion_detalles`
@@ -206,9 +206,9 @@ INSERT INTO `control_fabricacion`.`productos_catalogo` (`id_producto`, `codigo_r
 (7, 'HOR-PAN-08', 'Horno Convector Panadero 8 Bandejas', 'Horno a gas/eléctrico con sistema de inyección de vapor e intercambio térmico');
 
 -- ------------------------------------------------------------------------------
--- 3. TERCEROS (CLIENTES, ASESORES, FABRICANTES, OPERARIOS)
+-- 3. personas (CLIENTES, ASESORES, FABRICANTES, OPERARIOS)
 -- ------------------------------------------------------------------------------
-INSERT INTO `control_fabricacion`.`terceros` (`id_tercero`, `documento`, `nombre`, `rol`, `telefono`) VALUES
+INSERT INTO `control_fabricacion`.`personas` (`id_persona`, `documento`, `nombre`, `rol`, `telefono`) VALUES
 (1, '1090123456', 'Distribuidora Comercial SAS', 'CLIENTE', '3001234567'),
 (2, '1090987654', 'Andrés Pérez', 'ASESOR', '3009876543'),
 (3, '900123456', 'FabriMuebles del Norte', 'FABRICANTE', '3101234567'),

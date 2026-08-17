@@ -29,7 +29,7 @@ try {
             t_ope.nombre AS nombre_operario
         FROM ordenes_fabricacion o
         JOIN productos_catalogo p ON o.id_producto = p.id_producto
-        LEFT JOIN terceros t_ope ON o.id_operario = t_ope.id_tercero
+        LEFT JOIN personas t_ope ON o.id_operario = t_ope.id_persona
         WHERE o.id_orden = :id_orden
     ");
     $stmtEnc->execute([':id_orden' => $idOrden]);
