@@ -11,12 +11,12 @@ $conn = conexion();
 <div class="row"><br><br><br><br>
     <div>
 <center>
-<h2>categorias_insumos</h2>
+<h2>Categorías de insumos</h2>
 </center>
 <button class="btn btn-primary navbar-left"
                data-toggle="modal"
                data-target="#modalNuevo">
-    Agregar categorias_insumos
+    Agregar una categoría
     <span class="glyphicon glyphicon-plus"></span>
 </button></div>
     <table class="table table-hover table-condensed table-bordered table-responsive">
@@ -25,6 +25,8 @@ $conn = conexion();
             <th>id_categoria</th>
             <th>nombre_categoria</th>
             <th>descripcion</th>
+            <th></th>
+            <th></th>
         </tr>
    </thead>
     <tbody>
@@ -62,4 +64,3 @@ $conn = conexion();
 </html>
 <?php
 mysqli_close($conn);
-?>

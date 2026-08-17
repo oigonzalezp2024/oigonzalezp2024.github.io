@@ -10,6 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
+                <li><a href="../../home/index.html">Atrás</a></li>
                 <li><a href="categorias_insumos.php">categorias_insumos</a></li>
                 <li><a href="materiales.php">materiales</a></li>
             </ul>
