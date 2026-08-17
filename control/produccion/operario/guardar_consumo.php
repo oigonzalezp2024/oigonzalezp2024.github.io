@@ -29,7 +29,7 @@ try {
     $stmtUpdate = $pdo->prepare("
         UPDATE orden_fabricacion_detalles 
         SET cantidad_consumida = :cant
-        WHERE id_detalle = :id_detalle AND id_orden = :id_orden
+        WHERE id_detalle = :id_detalle AND orden_id = :id_orden
     ");
 
     foreach ($cantidades as $idDetalle => $cantRaw) {

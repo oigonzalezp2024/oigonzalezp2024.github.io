@@ -57,7 +57,7 @@ try {
     $costo_subtotal = round($costo_subtotal, 2);
 
     $stmtUp = $pdo->prepare("UPDATE ordenes_fabricacion SET 
-        numero_orden = :num, id_operario = :ope, unidades = :uni, 
+        numero_orden = :num, operario_id = :ope, unidades = :uni, 
         fecha_entrega = :f_ent, costo_subtotal = :sub, porcentaje_utilidad = :util 
         WHERE id_orden = :id");
     
@@ -71,10 +71,10 @@ try {
         ':id'    => $id_orden
     ]);
 
-    $pdo->prepare("DELETE FROM orden_fabricacion_detalles WHERE id_orden = :id")->execute([':id' => $id_orden]);
+    $pdo->prepare("DELETE FROM orden_fabricacion_detalles WHERE orden_id = :id")->execute([':id' => $id_orden]);
 
     $stmtDet = $pdo->prepare("INSERT INTO orden_fabricacion_detalles 
-        (id_orden, id_material, medidas, cantidad, valor_unitario) 
+        (orden_id, material_id, medidas, cantidad, valor_unitario) 
         VALUES (:id_orden, :id_mat, :medidas, :cant, :val)");
 
     foreach ($detalles as $det) {

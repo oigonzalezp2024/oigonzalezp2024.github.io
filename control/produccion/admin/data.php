@@ -73,9 +73,9 @@ class OrderService implements DataProviderInterface {
         $stmt = $this->pdo->prepare("
             SELECT o.*, p.nombre_producto, c.nombre AS cliente_nombre, op.nombre AS operario_nombre
             FROM ordenes_fabricacion o
-            INNER JOIN productos_catalogo p ON o.id_producto = p.id_producto
-            INNER JOIN personas c ON o.id_cliente = c.id_persona
-            LEFT JOIN personas op ON o.id_operario = op.id_persona
+            INNER JOIN productos_catalogo p ON o.producto_id = p.id_producto
+            INNER JOIN personas c ON o.cliente_id = c.id_persona
+            LEFT JOIN personas op ON o.operario_id = op.id_persona
             ORDER BY o.id_orden DESC
             LIMIT :limit OFFSET :offset
         ");
@@ -96,8 +96,8 @@ class OrderDetailsService implements DataProviderInterface {
             $stmt = $this->pdo->prepare("
                 SELECT d.*, m.descripcion_material AS nombre
                 FROM orden_fabricacion_detalles d
-                INNER JOIN materiales m ON d.id_material = m.id_material
-                WHERE d.id_orden = :id
+                INNER JOIN materiales m ON d.material_id = m.id_material
+                WHERE d.orden_id = :id
             ");
             $stmt->execute([':id' => $orderId]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
