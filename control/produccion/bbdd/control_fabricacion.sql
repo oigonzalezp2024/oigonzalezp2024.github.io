@@ -3,8 +3,8 @@
 
 CREATE DATABASE IF NOT EXISTS `control_fabricacion`; 
 
-CREATE TABLE IF NOT EXISTS `control_fabricacion`.`terceros` (
-  `id_tercero` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `control_fabricacion`.`personas` (
+  `id_persona` int(10) UNSIGNED NOT NULL,
   `documento` varchar(20) DEFAULT NULL,
   `nombre` varchar(120) NOT NULL,
   `rol` enum('CLIENTE','ASESOR','FABRICANTE','OPERARIO') NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `control_fabricacion`.`materiales` (
   `descripcion_material` varchar(200) NOT NULL,
   `unidad_medida` varchar(20) NOT NULL,
   `precio_unitario_defecto` decimal(12,2) NOT NULL DEFAULT 0.00,
-  `id_categoria` int(10) UNSIGNED DEFAULT 3,
+  `categoria_id` int(10) UNSIGNED DEFAULT 3,
   `stock_minimo` decimal(10,2) NOT NULL DEFAULT 0.00,
   `stock_actual` decimal(10,2) NOT NULL DEFAULT 0.00,
   `stock_maximo` decimal(10,2) NOT NULL DEFAULT 0.00,
@@ -44,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `control_fabricacion`.`materiales` (
 CREATE TABLE IF NOT EXISTS `control_fabricacion`.`ordenes_fabricacion` (
   `id_orden` int(10) UNSIGNED NOT NULL,
   `numero_orden` varchar(20) NOT NULL,
-  `id_cliente` int(10) UNSIGNED NOT NULL,
-  `id_asesor` int(10) UNSIGNED NOT NULL,
-  `id_fabricante` int(10) UNSIGNED NOT NULL,
-  `id_operario` int(10) UNSIGNED DEFAULT NULL,
-  `id_producto` int(10) UNSIGNED NOT NULL,
+  `cliente_id` int(10) UNSIGNED NOT NULL,
+  `asesor_id` int(10) UNSIGNED NOT NULL,
+  `fabricante_id` int(10) UNSIGNED NOT NULL,
+  `operario_id` int(10) UNSIGNED DEFAULT NULL,
+  `producto_id` int(10) UNSIGNED NOT NULL,
   `unidades` int(11) NOT NULL DEFAULT 1,
   `estado` enum('simulacion','planeacion','activa','en pasillo','en ejecucion','suspendida','cancelada','terminada') NOT NULL DEFAULT 'planeacion',
   `fecha_pedido` date NOT NULL,
@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `control_fabricacion`.`ordenes_fabricacion` (
 
 CREATE TABLE IF NOT EXISTS `control_fabricacion`.`orden_fabricacion_detalles` (
   `id_detalle` int(10) UNSIGNED NOT NULL,
-  `id_orden` int(10) UNSIGNED NOT NULL,
-  `id_material` int(10) UNSIGNED NOT NULL,
+  `orden_id` int(10) UNSIGNED NOT NULL,
+  `material_id` int(10) UNSIGNED NOT NULL,
   `medidas` varchar(50) DEFAULT NULL,
   `cantidad` decimal(10,2) NOT NULL DEFAULT 1.00,
   `cantidad_consumida` decimal(10,2) DEFAULT NULL,
@@ -82,15 +82,15 @@ CREATE TABLE IF NOT EXISTS `control_fabricacion`.`movimientos_inventario` (
   `id_item` int(10) UNSIGNED NOT NULL,
   `tipo_movimiento` enum('salida_orden','entrada_produccion','ajuste','entrada_compra') NOT NULL,
   `cantidad` decimal(10,2) NOT NULL,
-  `id_orden` int(10) UNSIGNED DEFAULT NULL,
+  `orden_id` int(10) UNSIGNED DEFAULT NULL,
   `observacion` text DEFAULT NULL,
   `fecha_movimiento` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `control_fabricacion`.`inventario_producto_terminado` (
   `id_inventario_pt` int(10) UNSIGNED NOT NULL,
-  `id_producto` int(10) UNSIGNED NOT NULL,
-  `id_orden` int(10) UNSIGNED DEFAULT NULL,
+  `producto_id` int(10) UNSIGNED NOT NULL,
+  `orden_id` int(10) UNSIGNED DEFAULT NULL,
   `cantidad` decimal(10,2) NOT NULL DEFAULT 0.00,
   `ubicacion_bodega` varchar(100) DEFAULT 'Bodega Principal',
   `actualizado_en` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -102,39 +102,39 @@ ALTER TABLE `control_fabricacion`.`categorias_insumos`
 
 ALTER TABLE `control_fabricacion`.`inventario_producto_terminado`
   ADD PRIMARY KEY (`id_inventario_pt`),
-  ADD KEY `fk_ipt_producto` (`id_producto`),
-  ADD KEY `fk_ipt_orden` (`id_orden`);
+  ADD KEY `fk_ipt_producto` (`producto_id`),
+  ADD KEY `fk_ipt_orden` (`orden_id`);
 
 ALTER TABLE `control_fabricacion`.`materiales`
   ADD PRIMARY KEY (`id_material`),
   ADD UNIQUE KEY `codigo_material` (`codigo_material`),
-  ADD KEY `fk_material_categoria` (`id_categoria`);
+  ADD KEY `fk_material_categoria` (`categoria_id`);
 
 ALTER TABLE `control_fabricacion`.`movimientos_inventario`
   ADD PRIMARY KEY (`id_movimiento`),
-  ADD KEY `fk_mov_orden` (`id_orden`);
+  ADD KEY `fk_mov_orden` (`orden_id`);
 
 ALTER TABLE `control_fabricacion`.`ordenes_fabricacion`
   ADD PRIMARY KEY (`id_orden`),
   ADD UNIQUE KEY `numero_orden` (`numero_orden`),
-  ADD KEY `fk_orden_cliente` (`id_cliente`),
-  ADD KEY `fk_orden_asesor` (`id_asesor`),
-  ADD KEY `fk_orden_fabricante` (`id_fabricante`),
-  ADD KEY `fk_orden_operario` (`id_operario`),
-  ADD KEY `fk_orden_producto` (`id_producto`);
+  ADD KEY `fk_orden_cliente` (`cliente_id`),
+  ADD KEY `fk_orden_asesor` (`asesor_id`),
+  ADD KEY `fk_orden_fabricante` (`fabricante_id`),
+  ADD KEY `fk_orden_operario` (`operario_id`),
+  ADD KEY `fk_orden_producto` (`producto_id`);
 
 ALTER TABLE `control_fabricacion`.`orden_fabricacion_detalles`
   ADD PRIMARY KEY (`id_detalle`),
-  ADD KEY `fk_detalle_orden` (`id_orden`),
-  ADD KEY `fk_detalle_material` (`id_material`);
+  ADD KEY `fk_detalle_orden` (`orden_id`),
+  ADD KEY `fk_detalle_material` (`material_id`);
 
 ALTER TABLE `control_fabricacion`.`productos_catalogo`
   ADD PRIMARY KEY (`id_producto`),
   ADD UNIQUE KEY `codigo_referencia` (`codigo_referencia`);
 
-ALTER TABLE `control_fabricacion`.`terceros`
-  ADD PRIMARY KEY (`id_tercero`),
-  ADD KEY `idx_terceros_rol` (`rol`);
+ALTER TABLE `control_fabricacion`.`personas`
+  ADD PRIMARY KEY (`id_persona`),
+  ADD KEY `idx_personas_rol` (`rol`);
 
 ALTER TABLE `control_fabricacion`.`categorias_insumos`
   MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
@@ -157,29 +157,29 @@ ALTER TABLE `control_fabricacion`.`orden_fabricacion_detalles`
 ALTER TABLE `control_fabricacion`.`productos_catalogo`
   MODIFY `id_producto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `control_fabricacion`.`terceros`
-  MODIFY `id_tercero` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `control_fabricacion`.`personas`
+  MODIFY `id_persona` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `control_fabricacion`.`inventario_producto_terminado`
-  ADD CONSTRAINT `fk_ipt_orden` FOREIGN KEY (`id_orden`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_ipt_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos_catalogo` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_ipt_orden` FOREIGN KEY (`orden_id`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ipt_producto` FOREIGN KEY (`producto_id`) REFERENCES `productos_catalogo` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`materiales`
-  ADD CONSTRAINT `fk_material_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categorias_insumos` (`id_categoria`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_material_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categorias_insumos` (`id_categoria`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`movimientos_inventario`
-  ADD CONSTRAINT `fk_mov_orden` FOREIGN KEY (`id_orden`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_mov_orden` FOREIGN KEY (`orden_id`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`ordenes_fabricacion`
-  ADD CONSTRAINT `fk_orden_asesor` FOREIGN KEY (`id_asesor`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_fabricante` FOREIGN KEY (`id_fabricante`) REFERENCES `terceros` (`id_tercero`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_operario` FOREIGN KEY (`id_operario`) REFERENCES `terceros` (`id_tercero`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orden_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos_catalogo` (`id_producto`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_orden_asesor` FOREIGN KEY (`asesor_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_fabricante` FOREIGN KEY (`fabricante_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_operario` FOREIGN KEY (`operario_id`) REFERENCES `personas` (`id_persona`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orden_producto` FOREIGN KEY (`producto_id`) REFERENCES `productos_catalogo` (`id_producto`) ON UPDATE CASCADE;
 
 ALTER TABLE `control_fabricacion`.`orden_fabricacion_detalles`
-  ADD CONSTRAINT `fk_detalle_material` FOREIGN KEY (`id_material`) REFERENCES `materiales` (`id_material`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_detalle_orden` FOREIGN KEY (`id_orden`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_detalle_material` FOREIGN KEY (`material_id`) REFERENCES `materiales` (`id_material`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_detalle_orden` FOREIGN KEY (`orden_id`) REFERENCES `ordenes_fabricacion` (`id_orden`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- ------------------------------------------------------------------------------
 -- 1. CATEGORÍAS DE INSUMOS
@@ -206,9 +206,9 @@ INSERT INTO `control_fabricacion`.`productos_catalogo` (`id_producto`, `codigo_r
 (7, 'HOR-PAN-08', 'Horno Convector Panadero 8 Bandejas', 'Horno a gas/eléctrico con sistema de inyección de vapor e intercambio térmico');
 
 -- ------------------------------------------------------------------------------
--- 3. TERCEROS (CLIENTES, ASESORES, FABRICANTES, OPERARIOS)
+-- 3. personas (CLIENTES, ASESORES, FABRICANTES, OPERARIOS)
 -- ------------------------------------------------------------------------------
-INSERT INTO `control_fabricacion`.`terceros` (`id_tercero`, `documento`, `nombre`, `rol`, `telefono`) VALUES
+INSERT INTO `control_fabricacion`.`personas` (`id_persona`, `documento`, `nombre`, `rol`, `telefono`) VALUES
 (1, '1090123456', 'Distribuidora Comercial SAS', 'CLIENTE', '3001234567'),
 (2, '1090987654', 'Andrés Pérez', 'ASESOR', '3009876543'),
 (3, '900123456', 'FabriMuebles del Norte', 'FABRICANTE', '3101234567'),
@@ -222,7 +222,7 @@ INSERT INTO `control_fabricacion`.`terceros` (`id_tercero`, `documento`, `nombre
 -- ------------------------------------------------------------------------------
 -- 4. MATERIALES E INSUMOS
 -- ------------------------------------------------------------------------------
-INSERT INTO `control_fabricacion`.`materiales` (`id_material`, `codigo_material`, `descripcion_material`, `unidad_medida`, `precio_unitario_defecto`, `id_categoria`, `stock_minimo`, `stock_actual`, `stock_maximo`) VALUES
+INSERT INTO `control_fabricacion`.`materiales` (`id_material`, `codigo_material`, `descripcion_material`, `unidad_medida`, `precio_unitario_defecto`, `categoria_id`, `stock_minimo`, `stock_actual`, `stock_maximo`) VALUES
 (1, 'MAT-CANT-01', 'Canto PVC 2mm', 'MTS', 2500.00, 3, 10.00, 100.00, 500.00),
 (2, 'MAT-HERR-05', 'Corredera Pesada 45cm', 'PAR', 18000.00, 2, 5.00, 20.00, 100.00),
 (3, 'MAT-MEL-18', 'Lámina Melamina RH 18mm Cemento', 'PLIEGO', 185000.00, 1, 2.00, 15.00, 50.00),
@@ -241,7 +241,7 @@ INSERT INTO `control_fabricacion`.`materiales` (`id_material`, `codigo_material`
 -- 5. ÓRDENES DE FABRICACIÓN
 -- ------------------------------------------------------------------------------
 INSERT INTO `control_fabricacion`.`ordenes_fabricacion` 
-(`id_orden`, `numero_orden`, `id_cliente`, `id_asesor`, `id_fabricante`, `id_operario`, `id_producto`, `unidades`, `estado`, `fecha_pedido`, `fecha_entrega`, `costo_subtotal`, `costo_mod`, `costo_cif`, `porcentaje_utilidad`, `monto_utilidad`, `monto_total`) VALUES
+(`id_orden`, `numero_orden`, `cliente_id`, `asesor_id`, `fabricante_id`, `operario_id`, `producto_id`, `unidades`, `estado`, `fecha_pedido`, `fecha_entrega`, `costo_subtotal`, `costo_mod`, `costo_cif`, `porcentaje_utilidad`, `monto_utilidad`, `monto_total`) VALUES
 (21, 'ORD-2026-0001', 1, 2, 3, 4, 1, 1, 'planeacion', '2026-08-15', '2026-08-15', 205500.00, 0.00, 0.00, 25.00, 68500.00, 274000.00),
 (20, 'ORD-2026-0002', 5, 7, 8, 9, 2, 1, 'activa', '2026-08-16', '2026-08-22', 1516000.00, 220000.00, 95000.00, 30.00, 784714.29, 2615714.29),
 (22, 'ORD-2026-0003', 6, 7, 8, 9, 3, 1, 'en ejecucion', '2026-08-16', '2026-08-25', 1839000.00, 310000.00, 120000.00, 28.00, 882388.89, 3151388.89),
@@ -253,7 +253,7 @@ INSERT INTO `control_fabricacion`.`ordenes_fabricacion`
 -- ------------------------------------------------------------------------------
 -- 6. DETALLES DE MATERIALES POR ÓRDEN (DETALLE BOM)
 -- ------------------------------------------------------------------------------
-INSERT INTO `control_fabricacion`.`orden_fabricacion_detalles` (`id_orden`, `id_material`, `medidas`, `cantidad`, `cantidad_consumida`, `valor_unitario`) VALUES
+INSERT INTO `control_fabricacion`.`orden_fabricacion_detalles` (`orden_id`, `material_id`, `medidas`, `cantidad`, `cantidad_consumida`, `valor_unitario`) VALUES
 -- Escritorio Mueble
 (21, 1, 'mm', 1.00, 1.00, 2500.00),
 (21, 2, 'cm', 1.00, 1.00, 18000.00),
@@ -294,7 +294,7 @@ INSERT INTO `control_fabricacion`.`orden_fabricacion_detalles` (`id_orden`, `id_
 -- ------------------------------------------------------------------------------
 -- 7. MOVIMIENTOS DE INVENTARIO
 -- ------------------------------------------------------------------------------
-INSERT INTO `control_fabricacion`.`movimientos_inventario` (`tipo_item`, `id_item`, `tipo_movimiento`, `cantidad`, `id_orden`, `observacion`) VALUES
+INSERT INTO `control_fabricacion`.`movimientos_inventario` (`tipo_item`, `id_item`, `tipo_movimiento`, `cantidad`, `orden_id`, `observacion`) VALUES
 ('material', 1, 'salida_orden', 1.00, 21, 'Salida de prueba mueble ORD-2026-0001'),
 ('material', 2, 'salida_orden', 1.00, 21, 'Salida de prueba mueble ORD-2026-0001'),
 ('material', 3, 'salida_orden', 1.00, 21, 'Salida de prueba mueble ORD-2026-0001'),
@@ -311,7 +311,7 @@ INSERT INTO `control_fabricacion`.`movimientos_inventario` (`tipo_item`, `id_ite
 -- 8. INVENTARIO DE PRODUCTO TERMINADO (BODEGA / DESPACHO)
 -- ------------------------------------------------------------------------------
 INSERT INTO `control_fabricacion`.`inventario_producto_terminado` 
-(`id_inventario_pt`, `id_producto`, `id_orden`, `cantidad`, `ubicacion_bodega`) VALUES
+(`id_inventario_pt`, `producto_id`, `orden_id`, `cantidad`, `ubicacion_bodega`) VALUES
 (1, 1, 21, 1.00, 'Bodega A - Muebles Terminados'),
 (2, 2, 20, 1.00, 'Bodega B - Equipos Gastronómicos'),
 (3, 4, NULL, 1.00, 'Showroom Principal'),

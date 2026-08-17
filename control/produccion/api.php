@@ -21,7 +21,7 @@ $id     = isset($_GET['id']) ? (int)$_GET['id'] : null;
 $db = getDBConnection();
 
 $allowedEntities = [
-    'terceros'                  => ['id' => 'id_tercero'],
+    'personas'                  => ['id' => 'id_persona'],
     'productos_catalogo'        => ['id' => 'id_producto'],
     'materiales'                => ['id' => 'id_material'],
     'ordenes_fabricacion'       => ['id' => 'id_orden'],

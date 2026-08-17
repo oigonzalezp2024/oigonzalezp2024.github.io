@@ -75,7 +75,7 @@ try {
     $costo_subtotal = round($costo_subtotal, 2);
 
     $stmtIns = $pdo->prepare("INSERT INTO ordenes_fabricacion 
-        (numero_orden, id_cliente, id_asesor, id_fabricante, id_operario, id_producto, unidades, estado, fecha_pedido, fecha_entrega, costo_subtotal, porcentaje_utilidad) 
+        (numero_orden, cliente_id, asesor_id, fabricante_id, operario_id, producto_id, unidades, estado, fecha_pedido, fecha_entrega, costo_subtotal, porcentaje_utilidad) 
         VALUES (:num, :cli, :ase, :fab, :ope, :prod, :uni, 'planeacion', :f_ped, :f_ent, :sub, :util)");
     
     $stmtIns->execute([
@@ -95,7 +95,7 @@ try {
     $id_orden = (int)$pdo->lastInsertId();
 
     $stmtDet = $pdo->prepare("INSERT INTO orden_fabricacion_detalles 
-        (id_orden, id_material, medidas, cantidad, valor_unitario) 
+        (orden_id, material_id, medidas, cantidad, valor_unitario) 
         VALUES (:id_orden, :id_mat, :medidas, :cant, :val)");
 
     foreach ($detalles as $det) {

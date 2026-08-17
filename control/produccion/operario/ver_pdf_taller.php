@@ -28,8 +28,8 @@ try {
             p.codigo_referencia AS cod_producto, p.nombre_producto,
             t_ope.nombre AS nombre_operario
         FROM ordenes_fabricacion o
-        JOIN productos_catalogo p ON o.id_producto = p.id_producto
-        LEFT JOIN terceros t_ope ON o.id_operario = t_ope.id_tercero
+        JOIN productos_catalogo p ON o.producto_id = p.id_producto
+        LEFT JOIN personas t_ope ON o.operario_id = t_ope.id_persona
         WHERE o.id_orden = :id_orden
     ");
     $stmtEnc->execute([':id_orden' => $idOrden]);
@@ -46,8 +46,8 @@ try {
             d.id_detalle, d.medidas, d.cantidad AS cantidad_estimada, d.cantidad_consumida, d.es_destacado,
             m.codigo_material, m.descripcion_material, m.unidad_medida
         FROM orden_fabricacion_detalles d
-        JOIN materiales m ON d.id_material = m.id_material
-        WHERE d.id_orden = :id_orden
+        JOIN materiales m ON d.material_id = m.id_material
+        WHERE d.orden_id = :id_orden
         ORDER BY d.id_detalle ASC
     ");
     $stmtDet->execute([':id_orden' => $idOrden]);

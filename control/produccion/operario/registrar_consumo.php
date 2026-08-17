@@ -21,7 +21,7 @@ try {
     $stmtEnc = $pdo->prepare("
         SELECT o.id_orden, o.numero_orden, p.nombre_producto, o.unidades
         FROM ordenes_fabricacion o
-        JOIN productos_catalogo p ON o.id_producto = p.id_producto
+        JOIN productos_catalogo p ON o.producto_id = p.id_producto
         WHERE o.id_orden = :id_orden
     ");
     $stmtEnc->execute([':id_orden' => $idOrden]);
@@ -36,8 +36,8 @@ try {
             d.id_detalle, d.medidas, d.cantidad AS cantidad_estimada, d.cantidad_consumida, d.es_destacado,
             m.codigo_material, m.descripcion_material, m.unidad_medida
         FROM orden_fabricacion_detalles d
-        JOIN materiales m ON d.id_material = m.id_material
-        WHERE d.id_orden = :id_orden
+        JOIN materiales m ON d.material_id = m.id_material
+        WHERE d.orden_id = :id_orden
         ORDER BY d.id_detalle ASC
     ");
     $stmtDet->execute([':id_orden' => $idOrden]);
