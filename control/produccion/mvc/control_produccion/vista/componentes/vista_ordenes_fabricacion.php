@@ -20,7 +20,6 @@ $where_clauses = [];
 if ($buscar !== '') {
     $buscar_clean = mysqli_real_escape_string($conn, $buscar);
 
-    // Búsqueda en el campo 'nombre' de cada alias de personas y producto/orden
     $where_clauses[] = "(
         ord.numero_orden LIKE '%$buscar_clean%' OR 
         cli.nombre LIKE '%$buscar_clean%' OR 
@@ -123,7 +122,6 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
         </thead>
         <tbody>
             <?php
-            // 2. Consulta principal asignando el campo 'nombre' directamente
             $sql = "SELECT 
                 ord.id_orden, ord.numero_orden, ord.cliente_id, ord.asesor_id, ord.fabricante_id,
                 ord.operario_id, ord.producto_id, ord.unidades, ord.estado, ord.fecha_pedido,
@@ -148,7 +146,8 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($fila = mysqli_fetch_assoc($result)) {
-                    $datos = $fila['id_orden'] . "||" .
+                    // Sanitización completa para prevenir fallos en comillas o caracteres especiales
+                    $cadena_raw = $fila['id_orden'] . "||" .
                         $fila['numero_orden'] . "||" .
                         $fila['cliente_id'] . "||" .
                         $fila['asesor_id'] . "||" .
@@ -166,16 +165,18 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
                         $fila['monto_utilidad'] . "||" .
                         $fila['monto_total'] . "||" .
                         $fila['creado_en'];
+
+                    $datos = htmlspecialchars($cadena_raw, ENT_QUOTES, 'UTF-8');
             ?>
                     <tr>
-                        <td><?php echo $fila['numero_orden']; ?></td>
+                        <td><?php echo htmlspecialchars($fila['numero_orden']); ?></td>
                         <td><a href="../../../operario/ver_pdf_taller.php?id_orden=<?php echo $fila['id_orden']; ?>">Ver hoja taller</a></td>
                         <td><a href="../../../control_costos/ver_costos_orden.php?id_orden=<?php echo $fila['id_orden']; ?>">Ver relación de costos</a></td>
-                        <td><?php echo $fila['nombre_cliente']; ?></td>
-                        <td><?php echo $fila['nombre_asesor']; ?></td>
-                        <td><?php echo $fila['nombre_fabricante']; ?></td>
-                        <td><?php echo $fila['nombre_operario']; ?></td>
-                        <td><?php echo $fila['nombre_producto']; ?></td>
+                        <td><?php echo htmlspecialchars($fila['nombre_cliente']); ?></td>
+                        <td><?php echo htmlspecialchars($fila['nombre_asesor']); ?></td>
+                        <td><?php echo htmlspecialchars($fila['nombre_fabricante']); ?></td>
+                        <td><?php echo htmlspecialchars($fila['nombre_operario']); ?></td>
+                        <td><?php echo htmlspecialchars($fila['nombre_producto']); ?></td>
                         <td><?php echo $fila['unidades']; ?></td>
                         <td><span class="label label-default"><?php echo ucfirst($fila['estado']); ?></span></td>
                         <td><?php echo $fila['fecha_pedido']; ?></td>
@@ -197,7 +198,7 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
             <?php
                 }
             } else {
-                echo '<tr><td colspan="16" style="text-align:center;">No se encontraron resultados</td></tr>';
+                echo '<tr><td colspan="17" style="text-align:center;">No se encontraron resultados</td></tr>';
             }
             ?>
         </tbody>
@@ -208,19 +209,16 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
 <?php if ($total_paginas > 1): ?>
     <div style="text-align:center; margin-top: 15px;">
         <ul class="pagination">
-            <!-- Botón Anterior -->
             <li class="<?php echo ($pagina_actual <= 1) ? 'disabled' : ''; ?>">
                 <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual > 1) ? "cargarTabla(" . ($pagina_actual - 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">&laquo; Anterior</a>
             </li>
 
-            <!-- Números de Página -->
             <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
                 <li class="<?php echo ($pagina_actual == $i) ? 'active' : ''; ?>">
                     <a href="javascript:void(0);" onclick="cargarTabla(<?php echo $i; ?>, '<?php echo $buscar; ?>', '<?php echo $estado_filtro; ?>')"><?php echo $i; ?></a>
                 </li>
             <?php endfor; ?>
 
-            <!-- Botón Siguiente -->
             <li class="<?php echo ($pagina_actual >= $total_paginas) ? 'disabled' : ''; ?>">
                 <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual < $total_paginas) ? "cargarTabla(" . ($pagina_actual + 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">Siguiente &raquo;</a>
             </li>
