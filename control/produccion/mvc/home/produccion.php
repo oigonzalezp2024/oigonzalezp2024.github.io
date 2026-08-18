@@ -7,482 +7,7 @@ $id_orden = $_GET['id_orden'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arquitectura Hexagonal - Cadena de Valor Operativa</title>
-    <style>
-        :root {
-            --bg-dark: #0f172a;
-            --laser-core: #38bdf8;
-            --laser-ports: #c084fc;
-            --laser-adapters: #f472b6;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --card-bg: rgba(30, 41, 59, 0.85);
-            --whatsapp-color: #25d366;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        body, html {
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow: hidden;
-        }
-
-        #space-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .ui-header {
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .ui-header h1 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #f8fafc;
-        }
-
-        .ui-header p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .info-card {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            width: 340px;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px;
-            border-radius: 12px;
-            z-index: 10;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .info-card h3 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--laser-core);
-            margin-bottom: 6px;
-        }
-
-        .info-card p {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            line-height: 1.4;
-            margin-bottom: 10px;
-        }
-
-        .business-rule-box {
-            background: rgba(15, 23, 42, 0.6);
-            border-left: 3px solid var(--laser-ports);
-            border-radius: 0 6px 6px 0;
-            padding: 8px 10px;
-            display: none;
-            margin-bottom: 10px;
-        }
-
-        .business-title {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            color: var(--laser-ports);
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 3px;
-            display: block;
-        }
-
-        .business-text {
-            font-size: 0.75rem;
-            color: #e2e8f0;
-            line-height: 1.3;
-        }
-
-        .author-box {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-
-        .author-tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--laser-adapters);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .author-name {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #f8fafc;
-        }
-
-        .author-contact {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            margin-top: 3px;
-            line-height: 1.3;
-        }
-
-        .author-contact a {
-            color: var(--laser-core);
-            text-decoration: none;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 6px;
-            background-color: rgba(37, 211, 102, 0.15);
-            color: var(--whatsapp-color);
-            border: 1px solid var(--whatsapp-color);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: rgba(37, 211, 102, 0.3);
-        }
-
-        /* --- CONTENEDOR 3D COMPACTO (EVITA DESBORDES) --- */
-        .stage {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1200px;
-            overflow: hidden;
-        }
-
-        .viewport {
-            position: relative;
-            width: 500px;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform-style: preserve-3d;
-            transition: transform 0.08s ease-out;
-        }
-
-        .system-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            transform-style: preserve-3d;
-        }
-
-        .svg-hex-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 2;
-            transform-style: preserve-3d;
-        }
-
-        .hex-path-adapters {
-            fill: rgba(30, 41, 59, 0.7);
-            stroke: var(--laser-adapters);
-            stroke-width: 2;
-        }
-
-        .hex-path-ports {
-            fill: rgba(15, 23, 42, 0.85);
-            stroke: var(--laser-ports);
-            stroke-width: 2;
-        }
-
-        .core-circle-path {
-            fill: url(#coreGradient);
-            stroke: var(--laser-core);
-            stroke-width: 2;
-        }
-
-        .core-node {
-            position: absolute;
-            top: 250px;
-            left: 250px;
-            width: 130px;
-            height: 130px;
-            margin-left: -65px;
-            margin-top: -65px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 6;
-            cursor: pointer;
-            text-align: center;
-            padding: 8px;
-            transform: translateZ(2px);
-        }
-
-        .core-title {
-            font-size: 0.72rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .core-subtitle {
-            font-size: 0.52rem;
-            font-weight: 600;
-            color: #0369a1;
-            margin-top: 2px;
-        }
-
-        .badge-label {
-            position: absolute;
-            z-index: 8;
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-size: 0.6rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            pointer-events: none;
-            backdrop-filter: blur(8px);
-            transform: translateZ(5px);
-        }
-
-        .badge-adapters {
-            top: -22px;
-            background: rgba(15, 23, 42, 0.95);
-            color: var(--laser-adapters);
-            border: 1px solid var(--laser-adapters);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .node-wrapper {
-            position: absolute;
-            width: 58px;
-            height: 58px;
-            margin-left: -29px;
-            margin-top: -29px;
-            z-index: 10;
-            transform-style: preserve-3d;
-        }
-
-        .node {
-            width: 100%;
-            height: 100%;
-            background: #f8fafc;
-            border-radius: 10px;
-            border: 2px solid var(--laser-adapters);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-            transform: translateZ(5px);
-        }
-
-        .node:hover {
-            transform: translateZ(12px) scale(1.1);
-            border-color: var(--laser-core);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .node svg {
-            width: 18px;
-            height: 18px;
-            fill: none;
-            stroke: #1e293b;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .node-tag {
-            font-size: 0.42rem;
-            font-weight: 800;
-            color: #1e293b;
-            margin-top: 2px;
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 1;
-            padding: 0 2px;
-        }
-
-        /* Posiciones optimizadas y reescaladas para el contenedor de 500x500 */
-        .pos-1  { top: 25px;  left: 250px; } 
-        .pos-2  { top: 85px;  left: 345px; } 
-        .pos-3  { top: 145px; left: 435px; } 
-        .pos-4  { top: 250px; left: 435px; } 
-        .pos-5  { top: 355px; left: 435px; } 
-        .pos-6  { top: 415px; left: 345px; } 
-        .pos-7  { top: 475px; left: 250px; } 
-        .pos-8  { top: 415px; left: 155px; } 
-        .pos-9  { top: 355px; left: 65px;  } 
-        .pos-10 { top: 250px; left: 65px;  } 
-        .pos-11 { top: 145px; left: 65px;  } 
-        .pos-12 { top: 85px;  left: 155px; } 
-
-        .footer-credits {
-            position: absolute;
-            bottom: 20px;
-            left: 30px;
-            z-index: 10;
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            background: rgba(30, 41, 59, 0.85);
-            backdrop-filter: blur(8px);
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer-credits strong {
-            color: var(--text-main);
-        }
-
-        .legend {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            z-index: 10;
-            display: flex;
-            gap: 14px;
-            background: rgba(30, 41, 59, 0.85);
-            backdrop-filter: blur(8px);
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.68rem;
-            color: var(--text-muted);
-        }
-
-        .dot { width: 7px; height: 7px; border-radius: 50%; }
-
-        /* --- VISTA MÓVIL --- */
-        .mobile-view {
-            display: none;
-            position: relative;
-            z-index: 10;
-            padding: 80px 16px 30px 16px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .mobile-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 12px;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-card-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .mobile-badge {
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--laser-core);
-            border: 1px solid var(--laser-core);
-        }
-
-        .mobile-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .mobile-desc {
-            font-size: 0.78rem;
-            color: #cbd5e1;
-            line-height: 1.35;
-            margin-bottom: 6px;
-        }
-
-        .mobile-rule {
-            font-size: 0.75rem;
-            color: #e2e8f0;
-            background: rgba(15, 23, 42, 0.6);
-            border-left: 3px solid var(--laser-ports);
-            padding: 6px 8px;
-            border-radius: 0 6px 6px 0;
-        }
-
-        @media (max-width: 768px) {
-            body, html { 
-                overflow-y: auto !important; 
-                height: auto;
-            }
-            .ui-header { 
-                position: fixed; 
-                top: 0; 
-                left: 0; 
-                width: 100%;
-                background: rgba(15, 23, 42, 0.9);
-                backdrop-filter: blur(10px);
-                padding: 12px 16px; 
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .ui-header h1 { font-size: 1rem; }
-            .ui-header p { font-size: 0.7rem; }
-
-            .info-card, .legend, .footer-credits, .stage { 
-                display: none !important; 
-            }
-
-            .mobile-view { 
-                display: block; 
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -525,7 +50,7 @@ $id_orden = $_GET['id_orden'];
                     <defs>
                         <radialGradient id="coreGradient" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" stop-color="#ffffff" />
-                            <stop offset="100%" stop-color="#cbd5e1" />
+                            <stop offset="100%" stop-color="#f7d100" />
                         </radialGradient>
                     </defs>
                     <polygon class="hex-path-adapters" points="250,25 433,130 433,370 250,475 67,370 67,130" />
@@ -550,29 +75,20 @@ $id_orden = $_GET['id_orden'];
                     </a>
                 </div>
 
-                <div class="node-wrapper pos-4">
-                    <a href="../../admin/index.php">
-                        <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
-                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            <span class="node-tag">Admin</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="node-wrapper pos-6">
-                    <a href="../../control_costos/ver_costos_orden.php?id_orden=<?php echo $id_orden; ?>">
-                        <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
-                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            <span class="node-tag">Costos</span>
-                        </div>
-                    </a>
-                </div>
-
                 <div class="node-wrapper pos-5">
                     <a href="../../operario/ver_pdf_taller.php?id_orden=<?php echo $id_orden; ?>">
                         <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
                             <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
                             <span class="node-tag">Hoja taller</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="node-wrapper pos-7">
+                    <a href="../../control_costos/ver_costos_orden.php?id_orden=<?php echo $id_orden; ?>">
+                        <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
+                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            <span class="node-tag">Costos</span>
                         </div>
                     </a>
                 </div>
@@ -600,18 +116,18 @@ $id_orden = $_GET['id_orden'];
     </div>
 
     <div class="legend">
-        <div class="legend-item"><div class="dot" style="background: var(--laser-core)"></div>Núcleo / Reglas</div>
-        <div class="legend-item"><div class="dot" style="background: var(--laser-ports)"></div>Control & Estándares</div>
-        <div class="legend-item"><div class="dot" style="background: var(--laser-adapters)"></div>Operación / Recursos</div>
+        <div class="legend-item"><div class="dot" style="background: #f7d100; border:1px solid #0b4da1;"></div>Núcleo / Reglas</div>
+        <div class="legend-item"><div class="dot" style="background: #0b4da1"></div>Control & Estándares</div>
+        <div class="legend-item"><div class="dot" style="background: #f7d100"></div>Operación / Recursos</div>
     </div>
 
     <!-- VISTA MÓVIL -->
     <section class="mobile-view">
-        <div class="mobile-card" style="border-left: 3px solid var(--laser-adapters);">
+        <div class="mobile-card" style="border-left: 3px solid #0b4da1;">
             <span class="author-tag">Desarrollo de Software a Medida</span>
             <div class="author-name">Óscar Iván González Peña</div>
             <div class="author-contact" style="margin-top:6px;">
-                ✉️ <a href="mailto:oigonzalezp2024@gmail.com" style="color:var(--laser-core);">oigonzalezp2024@gmail.com</a><br>
+                ✉️ <a href="mailto:oigonzalezp2024@gmail.com" style="color:#0b4da1;">oigonzalezp2024@gmail.com</a><br>
                 📱 <a href="https://wa.me/573212962876?text=Hola,%20estoy%20interesado%20en%20desarrollo%20de%20software%20a%20medida" target="_blank" style="color:var(--whatsapp-color); font-weight:700;">3212962876 - WhatsApp</a>
             </div>
             <a href="https://wa.me/573212962876?text=Hola,%20estoy%20interesado%20en%20desarrollo%20de%20software%20a%20medida" target="_blank" class="whatsapp-btn">
@@ -619,7 +135,7 @@ $id_orden = $_GET['id_orden'];
             </a>
         </div>
 
-        <div class="mobile-card" style="border: 1px solid var(--laser-core);">
+        <div class="mobile-card" style="border: 1px solid #0b4da1;">
             <div class="mobile-card-header">
                 <span class="mobile-badge">NÚCLEO</span>
                 <span class="mobile-title">Sistema Central de Gestión</span>
@@ -718,8 +234,8 @@ $id_orden = $_GET['id_orden'];
                 this.x = (Math.random() - 0.5) * width * 1.5;
                 this.y = (Math.random() - 0.5) * height * 1.5;
                 this.z = Math.random() * 1000 + 1;
-                this.size = Math.random() * 1.2 + 0.2;
-                this.alpha = Math.random() * 0.4 + 0.1;
+                this.size = Math.random() * 1.5 + 0.3;
+                this.alpha = Math.random() * 0.5 + 0.2;
             }
             update() {
                 this.z -= 0.4;
@@ -734,7 +250,7 @@ $id_orden = $_GET['id_orden'];
 
                 ctxSpace.beginPath();
                 ctxSpace.arc(px, py, this.size * k * 0.25, 0, Math.PI * 2);
-                ctxSpace.fillStyle = `rgba(148, 163, 184, ${this.alpha})`;
+                ctxSpace.fillStyle = `rgba(11, 77, 161, ${this.alpha})`;
                 ctxSpace.fill();
             }
         }
@@ -788,7 +304,7 @@ $id_orden = $_GET['id_orden'];
             mouse.x += (mouse.targetX - mouse.x) * 0.08;
             mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
-            ctxSpace.fillStyle = '#0f172a';
+            ctxSpace.fillStyle = '#f4f4f4';
             ctxSpace.fillRect(0, 0, width, height);
 
             stars.forEach(s => { s.update(); s.draw(); });

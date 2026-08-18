@@ -10,8 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="orden_fabricacion_detalles.php">orden_fabricacion_detalles</a></li>
-                <li><a href="ordenes_fabricacion.php">ordenes_fabricacion</a></li>
+                <li><a href="../../home/index.html">Atrás</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><?php echo "<a href='../modelo/salir.php'><span class='glyphicon glyphicon-log-in'></span> Cerrar sesión </a>" ?></li>

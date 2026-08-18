@@ -28,12 +28,12 @@ try {
 
     // Si cambia a activa y no lo estaba, realizar descuento de stock
     if ($nuevo_estado === 'activa' && $ordActual && $ordActual['estado'] !== 'activa') {
-        $stmtDet = $pdo->prepare("SELECT id_material, cantidad FROM orden_fabricacion_detalles WHERE id_orden = :id");
+        $stmtDet = $pdo->prepare("SELECT id_material, cantidad FROM orden_fabricacion_detalles WHERE orden_id = :id");
         $stmtDet->execute([':id' => $id_orden]);
         $detalles = $stmtDet->fetchAll();
 
         $stmtInv = $pdo->prepare("UPDATE materiales SET stock_actual = stock_actual - :cant WHERE id_material = :mat");
-        $stmtMov = $pdo->prepare("INSERT INTO movimientos_inventario (tipo_item, id_item, tipo_movimiento, cantidad, id_orden, observacion) VALUES ('material', :mat, 'salida_orden', :cant, :id, 'Descuento por aprobación administrativa')");
+        $stmtMov = $pdo->prepare("INSERT INTO movimientos_inventario (tipo_item, id_item, tipo_movimiento, cantidad, orden_id, observacion) VALUES ('material', :mat, 'salida_orden', :cant, :id, 'Descuento por aprobación administrativa')");
 
         foreach ($detalles as $det) {
             $stmtInv->execute([':cant' => $det['cantidad'], ':mat' => $det['id_material']]);

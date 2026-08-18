@@ -9,7 +9,7 @@ function obtenerDatosCostosOrden(PDO $pdo, int $idOrden): ?array {
             COALESCE(p.nombre_producto, 'Producto Estándar') AS producto_nombre,
             COALESCE(p.codigo_referencia, '') AS producto_codigo
         FROM ordenes_fabricacion o
-        LEFT JOIN productos_catalogo p ON o.id_producto = p.id_producto
+        LEFT JOIN productos_catalogo p ON o.producto_id = p.id_producto
         WHERE o.id_orden = :id_orden
     ");
     $stmtOrden->execute([':id_orden' => $idOrden]);
@@ -31,8 +31,8 @@ function obtenerDatosCostosOrden(PDO $pdo, int $idOrden): ?array {
             m.unidad_medida,
             COALESCE(m.precio_unitario_defecto, 0.00) AS costo_unitario
         FROM orden_fabricacion_detalles d
-        INNER JOIN materiales m ON d.id_material = m.id_material
-        WHERE d.id_orden = :id_orden
+        INNER JOIN materiales m ON d.material_id = m.id_material
+        WHERE d.orden_id = :id_orden
         ORDER BY d.id_detalle ASC
     ");
     $stmtDetalles->execute([':id_orden' => $idOrden]);

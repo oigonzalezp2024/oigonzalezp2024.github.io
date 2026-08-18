@@ -15,7 +15,7 @@ if ($id_orden <= 0) {
 try {
     $pdo = getPDOConnection();
     $pdo->beginTransaction();
-    $pdo->prepare("DELETE FROM orden_fabricacion_detalles WHERE id_orden = :id")->execute([':id' => $id_orden]);
+    $pdo->prepare("DELETE FROM orden_fabricacion_detalles WHERE orden_id = :id")->execute([':id' => $id_orden]);
     $pdo->prepare("DELETE FROM ordenes_fabricacion WHERE id_orden = :id")->execute([':id' => $id_orden]);
     $pdo->commit();
 
