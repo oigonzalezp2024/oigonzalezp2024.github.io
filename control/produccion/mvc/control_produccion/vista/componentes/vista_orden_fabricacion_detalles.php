@@ -31,6 +31,8 @@ $conn = conexion();
             <th>valor_unitario</th>
             <th>valor_total</th>
             <th>es_destacado</th>
+            <th></th>
+            <th></th>
         </tr>
    </thead>
     <tbody>

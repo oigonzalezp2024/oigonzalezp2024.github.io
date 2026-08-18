@@ -13,9 +13,7 @@
 	<?php
 	include 'header.php';
 	?>
-	<div class="container">
-	    <div id="tabla"></div>
-	</div>
+	<div id="tabla"></div>
 	<!-- MODAL PARA INSERTAR REGISTROS -->
 	<div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	    <div class="modal-dialog modal-sm" role="document">
