@@ -3,7 +3,7 @@ include_once '../../modelo/conexion.php';
 $conn = conexion();
 
 // Configuración de la paginación (5 registros por página)
-$registros_por_pagina = 5; 
+$registros_por_pagina = 5;
 $pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 if ($pagina_actual < 1) {
     $pagina_actual = 1;
@@ -19,7 +19,7 @@ $where_clauses = [];
 
 if ($buscar !== '') {
     $buscar_clean = mysqli_real_escape_string($conn, $buscar);
-    
+
     // Búsqueda en el campo 'nombre' de cada alias de personas y producto/orden
     $where_clauses[] = "(
         ord.numero_orden LIKE '%$buscar_clean%' OR 
@@ -118,6 +118,7 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
                 <th>Creado En</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -142,7 +143,7 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
             $where_sql
             ORDER BY ord.id_orden DESC
             LIMIT $inicio, $registros_por_pagina;";
-            
+
             $result = mysqli_query($conn, $sql);
 
             if ($result && mysqli_num_rows($result) > 0) {
@@ -165,7 +166,7 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
                         $fila['monto_utilidad'] . "||" .
                         $fila['monto_total'] . "||" .
                         $fila['creado_en'];
-                ?>
+            ?>
                     <tr>
                         <td><?php echo $fila['numero_orden']; ?></td>
                         <td><a href="../../../operario/ver_pdf_taller.php?id_orden=<?php echo $fila['id_orden']; ?>">Ver hoja taller</a></td>
@@ -182,13 +183,18 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
                         <td><?php echo $fila['porcentaje_utilidad']; ?>%</td>
                         <td><?php echo $fila['creado_en']; ?></td>
                         <td>
+                            <a href="./orden_fabricacion_detalles.php?orden_id=<?php echo $fila['id_orden']; ?>" class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-list-alt"></span> Ver Detalle
+                            </a>
+                        </td>
+                        <td>
                             <button class="btn btn-warning glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modalEdicion" onclick="agregaform('<?php echo $datos; ?>')"></button>
                         </td>
                         <td>
                             <button class="btn btn-danger glyphicon glyphicon-remove" onclick="preguntarSiNo('<?php echo $fila['id_orden']; ?>')"></button>
                         </td>
                     </tr>
-                <?php
+            <?php
                 }
             } else {
                 echo '<tr><td colspan="16" style="text-align:center;">No se encontraron resultados</td></tr>';
@@ -200,26 +206,26 @@ $total_paginas = ceil($total_registros / $registros_por_pagina);
 
 <!-- PAGINACIÓN DINÁMICA MEDIANTE AJAX -->
 <?php if ($total_paginas > 1): ?>
-<div style="text-align:center; margin-top: 15px;">
-    <ul class="pagination">
-        <!-- Botón Anterior -->
-        <li class="<?php echo ($pagina_actual <= 1) ? 'disabled' : ''; ?>">
-            <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual > 1) ? "cargarTabla(" . ($pagina_actual - 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">&laquo; Anterior</a>
-        </li>
-
-        <!-- Números de Página -->
-        <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
-            <li class="<?php echo ($pagina_actual == $i) ? 'active' : ''; ?>">
-                <a href="javascript:void(0);" onclick="cargarTabla(<?php echo $i; ?>, '<?php echo $buscar; ?>', '<?php echo $estado_filtro; ?>')"><?php echo $i; ?></a>
+    <div style="text-align:center; margin-top: 15px;">
+        <ul class="pagination">
+            <!-- Botón Anterior -->
+            <li class="<?php echo ($pagina_actual <= 1) ? 'disabled' : ''; ?>">
+                <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual > 1) ? "cargarTabla(" . ($pagina_actual - 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">&laquo; Anterior</a>
             </li>
-        <?php endfor; ?>
 
-        <!-- Botón Siguiente -->
-        <li class="<?php echo ($pagina_actual >= $total_paginas) ? 'disabled' : ''; ?>">
-            <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual < $total_paginas) ? "cargarTabla(" . ($pagina_actual + 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">Siguiente &raquo;</a>
-        </li>
-    </ul>
-</div>
+            <!-- Números de Página -->
+            <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                <li class="<?php echo ($pagina_actual == $i) ? 'active' : ''; ?>">
+                    <a href="javascript:void(0);" onclick="cargarTabla(<?php echo $i; ?>, '<?php echo $buscar; ?>', '<?php echo $estado_filtro; ?>')"><?php echo $i; ?></a>
+                </li>
+            <?php endfor; ?>
+
+            <!-- Botón Siguiente -->
+            <li class="<?php echo ($pagina_actual >= $total_paginas) ? 'disabled' : ''; ?>">
+                <a href="javascript:void(0);" onclick="<?php echo ($pagina_actual < $total_paginas) ? "cargarTabla(" . ($pagina_actual + 1) . ", '$buscar', '$estado_filtro')" : "return false;"; ?>">Siguiente &raquo;</a>
+            </li>
+        </ul>
+    </div>
 <?php endif; ?>
 
 <?php mysqli_close($conn); ?>
