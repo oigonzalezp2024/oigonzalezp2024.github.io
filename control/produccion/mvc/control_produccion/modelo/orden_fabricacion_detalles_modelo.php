@@ -6,7 +6,6 @@ $accion = $_GET['accion'];
 
 if($accion == "insertar"){
 
-    $id_detalle = $_POST['id_detalle'];
     $orden_id = $_POST['orden_id'];
     $material_id = $_POST['material_id'];
     $medidas = $_POST['medidas'];
@@ -17,9 +16,9 @@ if($accion == "insertar"){
     $es_destacado = $_POST['es_destacado'];
 
     $sql="INSERT INTO orden_fabricacion_detalles(
-          id_detalle, orden_id, material_id, medidas, cantidad, cantidad_consumida, valor_unitario, valor_total, es_destacado
+          orden_id, material_id, medidas, cantidad, cantidad_consumida, valor_unitario, valor_total, es_destacado
           )VALUE(
-          '$id_detalle', '$orden_id', '$material_id', '$medidas', '$cantidad', '$cantidad_consumida', '$valor_unitario', '$valor_total', '$es_destacado')";
+          '$orden_id', '$material_id', '$medidas', '$cantidad', '$cantidad_consumida', '$valor_unitario', '$valor_total', '$es_destacado')";
 
     echo $consulta = mysqli_query($conn, $sql);
 }

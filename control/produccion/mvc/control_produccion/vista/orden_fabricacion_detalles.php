@@ -14,12 +14,7 @@ $orden_id = isset($_GET['orden_id']) ? (int)$_GET['orden_id'] : 0;
 <body id="body">
     <?php include 'header.php'; ?>
 
-    <div class="container" style="padding-top: 20px;">
-        <!-- Botón para regresar al listado general de órdenes -->
-        <a href="index.php" class="btn btn-default" style="margin-bottom: 15px;">
-            <span class="glyphicon glyphicon-arrow-left"></span> Volver a Órdenes
-        </a>
-
+    <div class="container" style="padding-top: 50px;">
         <!-- Contenedor dinámico donde se carga la tabla de detalles -->
         <div id="tabla"></div>
     </div>
@@ -39,8 +34,8 @@ $orden_id = isset($_GET['orden_id']) ? (int)$_GET['orden_id'] : 0;
                     <label for="orden_id">ID Órden</label>
                     <input type="number" id="orden_id" class="form-control input-sm" value="<?php echo $orden_id; ?>" readonly>
 
-                    <label for="material_id">ID Material</label>
-                    <input type="number" id="material_id" class="form-control input-sm" required>
+                    <label for="material_id">Material</label>
+                    <select id="material_id" class="form-control input-sm" required></select>
 
                     <label for="medidas">Medidas</label>
                     <textarea id="medidas" rows="3" class="form-control input-sm" required></textarea>
@@ -88,8 +83,8 @@ $orden_id = isset($_GET['orden_id']) ? (int)$_GET['orden_id'] : 0;
                     <label for="orden_idu">ID Órden</label>
                     <input type="number" id="orden_idu" class="form-control input-sm" readonly>
 
-                    <label for="material_idu">ID Material</label>
-                    <input type="number" id="material_idu" class="form-control input-sm" required>
+                    <label for="material_idu">Material</label>
+                    <select id="material_idu" class="form-control input-sm" required></select>
 
                     <label for="medidasu">Medidas</label>
                     <textarea id="medidasu" rows="3" class="form-control input-sm" required></textarea>
@@ -130,9 +125,35 @@ $orden_id = isset($_GET['orden_id']) ? (int)$_GET['orden_id'] : 0;
             $('#tabla').load(url);
         }
 
+        function cargarDesplegablesMateriales() {
+            $.ajax({
+                url: '../modelo/obtener_opciones_detalles.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status === 'success') {
+                        var items = res.data.materiales;
+                        
+                        function llenarSelect(selectId) {
+                            var $select = $(selectId);
+                            $select.empty();
+                            $select.append('<option value="" disabled selected>-- Seleccione Material --</option>');
+
+                            $.each(items, function (i, item) {
+                                $select.append('<option value="' + item.id_material + '">' + item.descripcion_material + '</option>');
+                            });
+                        }
+
+                        llenarSelect('#material_id');
+                        llenarSelect('#material_idu');
+                    }
+                }
+            });
+        }
+
         $(document).ready(function () {
-            // Carga inicial filtrando explícitamente por la orden enviada por GET
             cargarTabla();
+            cargarDesplegablesMateriales(); // Inicializa el desplegable
 
             $('#guardarnuevo').click(function () {
                 var orden_id = $('#orden_id').val();
@@ -148,7 +169,7 @@ $orden_id = isset($_GET['orden_id']) ? (int)$_GET['orden_id'] : 0;
             });
 
             $('#actualizadatos').click(function () {
-                modificarCliente();
+                modificarDetalle();
             });
         });
     </script>

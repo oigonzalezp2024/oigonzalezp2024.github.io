@@ -107,7 +107,7 @@ $fila = mysqli_fetch_assoc($res_orden_padre);
         <thead>
             <tr>
                 <th class="text-center">ID Detalle</th>
-                <th class="text-center">ID Material</th>
+                <th class="text-center">Material</th>
                 <th>Medidas</th>
                 <th class="text-center">Cantidad</th>
                 <th class="text-center">Cant. Consumida</th>
@@ -120,9 +120,11 @@ $fila = mysqli_fetch_assoc($res_orden_padre);
         </thead>
         <tbody>
             <?php
-            $sql_detalles = "SELECT * FROM orden_fabricacion_detalles 
-                             WHERE orden_id = $orden_id 
-                             ORDER BY id_detalle DESC;";
+            $sql_detalles = "SELECT det.*, mat.descripcion_material 
+                            FROM orden_fabricacion_detalles det
+                            LEFT JOIN materiales mat ON det.material_id = mat.id_material
+                            WHERE det.orden_id = $orden_id 
+                            ORDER BY det.id_detalle DESC;";
 
             $result_detalles = mysqli_query($conn, $sql_detalles);
 
@@ -140,7 +142,7 @@ $fila = mysqli_fetch_assoc($res_orden_padre);
                 ?>
                     <tr>
                         <td class="text-center"><strong><?php echo $fila_det['id_detalle']; ?></strong></td>
-                        <td class="text-center"><?php echo $fila_det['material_id']; ?></td>
+                        <td class="text-center"><?php echo htmlspecialchars($fila_det['descripcion_material'] ?? $fila_det['material_id']); ?></td>
                         <td><?php echo nl2br(htmlspecialchars($fila_det['medidas'])); ?></td>
                         <td class="text-center"><?php echo $fila_det['cantidad']; ?></td>
                         <td class="text-center"><?php echo $fila_det['cantidad_consumida']; ?></td>
@@ -157,7 +159,9 @@ $fila = mysqli_fetch_assoc($res_orden_padre);
                             <button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modalEdicion" onclick="agregaform('<?php echo $datos; ?>')"></button>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-danger btn-sm glyphicon glyphicon-remove" onclick="preguntarSiNo('<?php echo $fila_det['id_detalle']; ?>')"></button>
+                            <button class="btn btn-danger btn-sm glyphicon glyphicon-remove" 
+                                    onclick="preguntarSiNo('<?php echo $fila_det['id_detalle']; ?>', '<?php echo $fila_det['orden_id']; ?>')">
+                            </button>
                         </td>
                     </tr>
                 <?php
