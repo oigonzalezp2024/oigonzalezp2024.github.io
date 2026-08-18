@@ -11,37 +11,46 @@ $conn = conexion();
 <div class="row"><br><br><br><br>
     <div>
 <center>
-<h2>Categorías de insumos</h2>
+<h2>Clientes registrados en el sistema</h2>
 </center>
 <button class="btn btn-primary navbar-left"
                data-toggle="modal"
                data-target="#modalNuevo">
-    Agregar una categoría
+    Agregar personas
     <span class="glyphicon glyphicon-plus"></span>
 </button></div>
     <table class="table table-hover table-condensed table-bordered table-responsive">
     <thead>
         <tr>
-            <th>id_categoria</th>
-            <th>nombre_categoria</th>
-            <th>descripcion</th>
+            <th>id_persona</th>
+            <th>documento</th>
+            <th>nombre</th>
+            <th>rol</th>
+            <th>telefono</th>
+            <th>creado_en</th>
             <th></th>
             <th></th>
         </tr>
    </thead>
     <tbody>
     <?php
-    $sql = 'SELECT * FROM categorias_insumos';
+    $sql = "SELECT * FROM `personas` WHERE `rol` = 'CLIENTE';";
     $result = mysqli_query($conn, $sql);
     WHILE($fila = mysqli_fetch_assoc($result)){
-        $datos = $fila['id_categoria'] . "||" .
-                  $fila['nombre_categoria'] . "||" .
-                  $fila['descripcion'];
+        $datos = $fila['id_persona'] . "||" .
+                  $fila['documento'] . "||" .
+                  $fila['nombre'] . "||" .
+                  $fila['rol'] . "||" .
+                  $fila['telefono'] . "||" .
+                  $fila['creado_en'];
     ?>
         <tr>
-            <td><?php echo $fila['id_categoria']; ?></td>
-            <td><?php echo $fila['nombre_categoria']; ?></td>
-            <td><?php echo $fila['descripcion']; ?></td>
+            <td><?php echo $fila['id_persona']; ?></td>
+            <td><?php echo $fila['documento']; ?></td>
+            <td><?php echo $fila['nombre']; ?></td>
+            <td><?php echo $fila['rol']; ?></td>
+            <td><?php echo $fila['telefono']; ?></td>
+            <td><?php echo $fila['creado_en']; ?></td>
             <td>
                 <button class="btn btn-warning glyphicon glyphicon-pencil"
                                data-toggle="modal"
@@ -50,7 +59,7 @@ $conn = conexion();
                 </button></td>
             <td>
                 <button class="btn btn-danger glyphicon glyphicon-remove"
-                           onclick="preguntarSiNo('<?php echo $fila['id_categoria']; ?>')">
+                           onclick="preguntarSiNo('<?php echo $fila['id_persona']; ?>')">
                 </button>
             </td>
         </tr>

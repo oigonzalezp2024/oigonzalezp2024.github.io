@@ -1,6 +1,3 @@
-<?php
-$id_orden = $_GET['id_orden'];
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,44 +63,47 @@ $id_orden = $_GET['id_orden'];
                     <span class="core-subtitle">Gestión & Reglas de Negocio</span>
                 </div>
 
-                <div class="node-wrapper pos-3">
-                    <a href="../control_produccion/vista/ordenes_fabricacion.php">
+                <div class="node-wrapper pos-11">
+                    <a href="./configuracion.html">
                         <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
                             <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            <span class="node-tag">Producción</span>
+                            <span class="node-tag">Atrás</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="node-wrapper pos-3">
+                    <a href="../control_personas/vista/clientes.php">
+                        <div class="node" data-title="7. Contratar Personal" data-desc="Atracción de talento, contratación y asignación de perfiles idóneos." data-rule="📌 Gestión: Garantiza que cada área cuente con el número de colaboradores calificados según la demanda.">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="node-tag">Clientes</span>
                         </div>
                     </a>
                 </div>
 
                 <div class="node-wrapper pos-5">
-                    <a href="../../operario/ver_pdf_taller.php?id_orden=<?php echo $id_orden; ?>">
-                        <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
-                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            <span class="node-tag">Hoja taller</span>
+                    <a href="../control_personas/vista/asesores.php">
+                        <div class="node" data-title="7. Contratar Personal" data-desc="Atracción de talento, contratación y asignación de perfiles idóneos." data-rule="📌 Gestión: Garantiza que cada área cuente con el número de colaboradores calificados según la demanda.">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="node-tag">Asesores</span>
                         </div>
                     </a>
                 </div>
 
                 <div class="node-wrapper pos-7">
-                    <a href="../../control_costos/ver_costos_orden.php?id_orden=<?php echo $id_orden; ?>">
-                        <div class="node" data-title="4. Obtener Herramientas" data-desc="Adquisición de maquinaria, software especializado y equipo operativo." data-rule="📌 Gestión: Otorga al personal la tecnología homologada para cumplir las metas de producción.">
-                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            <span class="node-tag">Costos</span>
+                    <a href="../control_personas/vista/operarios.php">
+                        <div class="node" data-title="7. Contratar Personal" data-desc="Atracción de talento, contratación y asignación de perfiles idóneos." data-rule="📌 Gestión: Garantiza que cada área cuente con el número de colaboradores calificados según la demanda.">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="node-tag">Operarios</span>
                         </div>
                     </a>
                 </div>
 
-                <div class="node-wrapper pos-11">
-                    <a href="./index.html">
-                        <div class="node" data-title="11. Distribución"
-                            data-desc="Organización de rutas logísticas y despacho desde centros de acopio."
-                            data-rule="📌 Logística: Asigna la ruta óptima utilizando los transportes contratados en el paso 3.">
-                            <svg viewBox="0 0 24 24">
-                                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                                <line x1="8" y1="2" x2="8" y2="18"></line>
-                                <line x1="16" y1="6" x2="16" y2="22"></line>
-                            </svg>
-                            <span class="node-tag">Volver</span>
+                <div class="node-wrapper pos-9">
+                    <a href="../control_personas/vista/fabricantes.php">
+                        <div class="node" data-title="7. Contratar Personal" data-desc="Atracción de talento, contratación y asignación de perfiles idóneos." data-rule="📌 Gestión: Garantiza que cada área cuente con el número de colaboradores calificados según la demanda.">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="node-tag">Fabricantes</span>
                         </div>
                     </a>
                 </div>
