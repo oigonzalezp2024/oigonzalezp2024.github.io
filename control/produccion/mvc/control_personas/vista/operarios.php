@@ -1,102 +1,95 @@
 <!DOCTYPE html>
-<html>
-    <head>
-	<meta charset="UTF-8">
-	<title>Clientes</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<?php
-	include('librerias.php');
-	?>
-	<script src="../controlador/funciones_personas.js"></script>
-    </head>
-    <body id="body">
-	<?php
-	include 'header.php';
-	?>
-	<div class="container">
-	    <div id="tabla"></div>
-	</div>
-	<!-- MODAL PARA INSERTAR REGISTROS -->
-	<div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	    <div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-		    <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			    <span aria-hidden="true">&times;</span>
-			</button>
-			<h4 class="modal-title" id="myModalLabel">Agregar cliente</h4>
-		    </div>
-		    <div class="modal-body">
-			<label>id_persona</label>
-			<input type="number" id="id_persona" class="form-control input-sm" required="">
-			<label>documento</label>
-			<textarea id="documento" rows="4" cols="50"class="form-control input-sm" required=""></textarea>
-			<label>nombre</label>
-			<textarea id="nombre" rows="4" cols="50"class="form-control input-sm" required=""></textarea>
-			<label>rol</label>
-			<input type="" id="rol" class="form-control input-sm" required="">
-			<label>telefono</label>
-			<textarea id="telefono" rows="4" cols="50"class="form-control input-sm" required=""></textarea>
-			</div>
-		    <div class="modal-footer">
-			<button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevo">
-			    Agregar
-			</button>
-		    </div>
-		</div>
-	    </div>
-	</div>
-	<!-- MODAL PARA EDICION DE DATOS-->
-	<div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	    <div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-		    <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			    <span aria-hidden="true">&times;</span>
-			</button>
-			<h4 class="modal-title" id="myModalLabel">Actualizar datos</h4>
-		    </div>
-		    <div class="modal-body">
-			<input type="number" hidden="" id="id_personau">
-			<label>documento</label>
-			<textarea id="documentou" rows="4" cols="50" class="form-control input-sm" required=""></textarea>
-			<label>nombre</label>
-			<textarea id="nombreu" rows="4" cols="50" class="form-control input-sm" required=""></textarea>
-			<label>rol</label>
-			<input type="" id="rolu" class="form-control input-sm" required="">
-			<label>telefono</label>
-			<textarea id="telefonou" rows="4" cols="50" class="form-control input-sm" required=""></textarea>
-			</div>
-		    <div class="modal-footer">
-			<button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizadatos">
-			    Actualizar
-			</button>
-		    </div>
-		</div>
-	    </div>
-	</div>
-	<script type="text/javascript">
-	    $(document).ready(function () {
-		$('#tabla').load('componentes/vista_operarios.php');
-	    });
-	</script>
-	<script type="text/javascript">
-	    $(document).ready(function () {
-		$('#guardarnuevo').click(function () {
-		    id_persona = $('#id_persona').val();
-		    documento = $('#documento').val();
-		    nombre = $('#nombre').val();
-		    rol = $('#rol').val();
-		    telefono = $('#telefono').val();
-		    agregardatos(id_persona, documento, nombre, rol, telefono);
-		});
-		$('#actualizadatos').click(function () {
-		    modificarCliente();
-		});
-	    });
-	</script>
-	<?php
-	include './footer.php';
-	?>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Operarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <?php include('librerias.php'); ?>
+    <script src="../controlador/funciones_operarios.js"></script>
+</head>
+<body id="body">
+    <?php include 'header.php'; ?>
+
+    <div id="tabla"></div>
+
+    <!-- MODAL INSERTAR -->
+    <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Agregar Operario</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="documento">Documento</label>
+                    <input type="text" id="documento" class="form-control input-sm" required>
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" class="form-control input-sm" required>
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" class="form-control input-sm" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevo">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDICIÓN -->
+    <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Actualizar Operario</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="id_personau">
+
+                    <label for="documentou">Documento</label>
+                    <input type="text" id="documentou" class="form-control input-sm" required>
+
+                    <label for="nombreu">Nombre</label>
+                    <input type="text" id="nombreu" class="form-control input-sm" required>
+
+                    <label for="rolu">Rol</label>
+                    <select id="rolu" class="form-control input-sm" required>
+                        <option value="CLIENTE">CLIENTE</option>
+                        <option value="ASESOR">ASESOR</option>
+                        <option value="FABRICANTE">FABRICANTE</option>
+                        <option value="OPERARIO">OPERARIO</option>
+                    </select>
+
+                    <label for="telefonou">Teléfono</label>
+                    <input type="text" id="telefonou" class="form-control input-sm" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizadatos">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            cargarTablaOperarios();
+
+            $('#guardarnuevo').click(function () {
+                agregardatosOperario(
+                    $('#documento').val(),
+                    $('#nombre').val(),
+                    $('#telefono').val()
+                );
+            });
+
+            $('#actualizadatos').click(function () {
+                modificarOperario();
+            });
+        });
+    </script>
+
+    <?php include './footer.php'; ?>
+</body>
 </html>
