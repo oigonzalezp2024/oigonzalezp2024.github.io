@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "titulo": "Cronograma de Actividades Comercial - Captación B2B Fast-Track Q3-Q4 2026",
+    "objetivo_principal": "Captar clientes y facturar en el menor tiempo posible mediante desarrollo de software a medida para PyMEs tradicionales.",
+    "periodo": "Q3-Q4 2026",
+    "autor": "Óscar Iván González Peña",
+    "ticket_promedio_meta": "$1,400 USD",
+    "meta_cierres": "3 a 5 proyectos contratados"
+  },
+  "matrices": [
+    {
+      "id": "plan-estrategico",
+      "archivo": "plan-estrategico-comercial-act.json",
+      "titulo": "Plan Estratégico Comercial: Captación B2B",
+      "prioridad": "Alta",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Posicionarme como aliado en transformación digital de PyMEs tradicionales, reemplazando procesos analógicos por software a medida.",
+          "indicadores": [
+            "Crecimiento del 40% en ingresos por desarrollo independiente",
+            "ROI comercial >= 4.0x"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Identificar dueños de negocios tradicionales y demostrarles el valor tangible de digitalizar sus procesos con cierres rápidos.",
+          "indicadores": [
+            "Cierre de 3 a 5 proyectos custom en Q3-Q4 2026",
+            "Ticket promedio >= $1,400 USD",
+            "CPL Calificado < $100 USD",
+            "Tasa conversión propuesta a cierre >= 25%"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Ecosistema de captación digital directa y prospección hiperlocal",
+            "C2. Kit comercial de consultoría inicial y material educativo",
+            "C3. Proceso estandarizado de diagnóstico operativo, propuestas por fases y legal"
+          ],
+          "indicadores": [
+            "100% canales configurados (Google, Meta, WhatsApp)",
+            "Mínimo 8 reuniones de diagnóstico al mes",
+            "100% contratos y NDAs formalizados"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Configurar y ejecutar campañas publicitarias locales (Meta/Google)",
+            "A1.2. Construir e iterar base de datos de prospectos PyME",
+            "A2.1. Diseñar kit digital 'Del Papel al Software' y casos de éxito",
+            "A2.2. Implementar plantillas y guiones en WhatsApp Business y Email",
+            "A3.1. Elaborar plantilla de 'Diagnóstico Operativo' y ejecutar sesiones 30-45m",
+            "A3.2. Estructurar propuestas por fases y redactar contratos legales"
+          ],
+          "indicadores": [
+            "Base activa de PyMEs",
+            "2 contenidos/casos al mes",
+            "100% propuestas con hoja de ruta por fases"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "campanas-pauta",
+      "archivo": "campanas-publicitarias-act.json",
+      "titulo": "Ejecución y Optimización de Campañas Publicitarias (Meta Ads & Google Search)",
+      "prioridad": "Crítica - Semana 1",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Generar flujo constante de prospectos cualificados (dueños/administradores PyME) interesados en software a medida.",
+          "indicadores": [
+            "Mínimo 8 reuniones de diagnóstico al mes por pauta",
+            "Costo por SQL <= $100 USD",
+            "ROAS >= 3.0x en conversión a propuestas"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Diseñar, configurar, desplegar y optimizar campañas locales en Meta Ads y Google Search enfocadas en ahorro de tiempo.",
+          "indicadores": [
+            "100% campañas activas",
+            "CTR >= 2.5% en Google y >= 1.2% en Meta",
+            "Tasa conversión clic a lead >= 10%"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Cuentas publicitarias, píxeles de seguimiento y Conversiones API",
+            "C2. Set de anuncios de alto impacto centrados en dolores operativos",
+            "C3. Sistema de monitoreo diario y negativización de palabras clave"
+          ],
+          "indicadores": [
+            "100% eventos midiendo bien",
+            "Mínimo 3 variaciones de anuncios activas",
+            "Revisiones 2 veces por semana"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Estructurar campañas en Google Search por intención de búsqueda",
+            "A1.2. Configurar audiencias e hiperlocalización en Meta Ads",
+            "A2.1. Redactar copys y diseñar creativos visuales Antes/Después",
+            "A2.2. Implementar extensiones de Google y plantillas instantáneas en Meta",
+            "A3.1. Monitoreo diario de CPC/CPL y negativización",
+            "A3.2. Informe semanal de métricas clave y recomendaciones"
+          ],
+          "indicadores": [
+            "Google Search con >= 2 grupos de anuncios",
+            "Meta Ads con prueba A/B de audiencias",
+            "Reporte semanal los lunes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prospeccion-directa",
+      "archivo": "prospeccion-directa-act.json",
+      "titulo": "Prospección Directa Outbound y Base de Datos PyME",
+      "prioridad": "Crítica - Semana 1-2",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Nutrir el pipeline comercial B2B mediante contacto directo con tomadores de decisión en empresas tradicionales.",
+          "indicadores": [
+            "Aportar >= 4 de las 8 reuniones mensuales vía outbound",
+            "Tasa de respuesta positiva >= 15%",
+            "Costo por oportunidad <= $50 USD"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Ejecutar estrategia Outbound y networking institucional para construir y segmentar base de datos priorizada.",
+          "indicadores": [
+            "Base activa con >= 50 prospectos cualificados/mes",
+            "100% contactos con 3+ intentos",
+            "2+ acercamientos con gremios/mes"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Base de datos estructurada con tomadores de decisión PyME",
+            "C2. Plan de networking con gremios y cámaras de comercio",
+            "C3. Cadencia de prospección outbound (llamadas, emails, WhatsApp)"
+          ],
+          "indicadores": [
+            "100% registros con datos completos de contacto",
+            "1 alianza/evento gremial por trimestre",
+            "Conversión contacto a cita >= 8%"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Investigar PyMEs tradicionales en sectores con alto uso de papel",
+            "A1.2. Validar y enriquecer datos de tomadores de decisión",
+            "A2.1. Mapear gremios/asociaciones locales y establecer primer contacto",
+            "A2.2. Participar en eventos de networking y ruedas de negocio",
+            "A3.1. Ejecutar cadencia outbound (30 contactos diarios)",
+            "A3.2. Calificar oportunidad y agendar Diagnóstico Operativo"
+          ],
+          "indicadores": [
+            "15 prospectos nuevos/semana",
+            "30 contactos outbound diarios",
+            "100% citas agendadas con invite en Google Calendar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diagnostico-operativo",
+      "archivo": "diagnostico-operativo-act.json",
+      "titulo": "Diagnóstico Operativo y Hoja de Ruta Digital",
+      "prioridad": "Alta - Semana 2-3",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Convertir prospectos cualificados en contratos identificando cuellos de botella y presentando hoja de ruta de bajo riesgo.",
+          "indicadores": [
+            "Tasa conversión Diagnóstico a Propuesta >= 70%",
+            "Tasa de cierre sobre diagnósticos >= 35%",
+            "Satisfacción cliente >= 4.8/5.0"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Crear y aplicar el instrumento 'Diagnóstico Operativo' ejecutando sesiones de descubrimiento de 30-45 min.",
+          "indicadores": [
+            "100% sesiones con plantilla estandarizada",
+            "Mínimo 8 sesiones realizadas al mes",
+            "Entrega Hoja de Ruta < 48 hrs post-llamada"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Formulario/Checklist interactivo de Diagnóstico Operativo",
+            "C2. Guión estructurado de entrevista de descubrimiento (30-45 min)",
+            "C3. Plantilla de entregable 'Hoja de Ruta Digital' por fases"
+          ],
+          "indicadores": [
+            "1 plantilla validada",
+            "Guión documentado",
+            "100% diagnósticos generan Hoja de Ruta"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Diseñar cuestionario enfocado en procesos en papel y desperdicio",
+            "A1.2. Validar en 2 sesiones piloto con casos reales",
+            "A2.1. Conducir sesiones gratuitas de 30-45 min con dueños PyME",
+            "A2.2. Documentar mapa de proceso actual (AS-IS) y calcular costo del problema",
+            "A3.1. Sintetizar información y maquetar Hoja de Ruta Digital",
+            "A3.2. Enviar informe y agendar presentación de propuesta"
+          ],
+          "indicadores": [
+            "Plantilla lista en día 5",
+            "Minuta y cálculo de costo del problema registrado",
+            "Envío de hoja de ruta en <= 2 días hábiles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "propuestas-contratos",
+      "archivo": "propuestas-comercales-act.json",
+      "titulo": "Propuestas Técnicas Modulares y Formalización Legal",
+      "prioridad": "Crítica - Cierre Facturación",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Asegurar el cierre de proyectos bajo un marco claro de bajo riesgo, garantizando anticipo y viabilidad financiera.",
+          "indicadores": [
+            "3 a 5 proyectos contratados en Q3-Q4 2026",
+            "100% proyectos con anticipo cobrado antes de iniciar",
+            "0 disputas de alcance"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Presentar propuestas modulares (MVP + Fases) y paquete legal completo (Contrato, NDA, SLA) con firma digital.",
+          "indicadores": [
+            "Tasa de conversión Propuesta a Cierre >= 25%",
+            "Tiempo propuesta a firma <= 10 días hábiles",
+            "100% propuestas con paquete legal"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Plantilla máster de Propuesta Comercial Modular por fases",
+            "C2. Paquete legal estandarizado (Contrato Maestro, NDA, SLA)",
+            "C3. Proceso de presentación ejecutiva y firma digital"
+          ],
+          "indicadores": [
+            "1 plantilla máster en PDF interactivo",
+            "1 paquete legal de 3 documentos validado",
+            "Plataforma de firma digital activa"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Diseñar plantilla de propuesta destacando MVP, fases y forma de pago",
+            "A1.2. Estructurar estimación de costos/tiempos desde el diagnóstico",
+            "A2.1. Redactar plantillas de Contrato Maestro, NDA y SLA",
+            "A2.2. Validar cláusulas de propiedad intelectual, anticipos y garantías",
+            "A3.1. Conducir sesiones de presentación comercial y resolver dudas",
+            "A3.2. Enviar enlace de firma digital, cobrar anticipo y firmar Acta de Inicio"
+          ],
+          "indicadores": [
+            "Plantilla aprobada en día 5",
+            "Desglose claro de MVP (Fase 1)",
+            "Sesión de presentación en < 3 días post-diagnóstico"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mensajes-guiones",
+      "archivo": "mensajes-guiones-venta-act.json",
+      "titulo": "Plantillas, Guiones y WhatsApp Business / Emailing",
+      "prioridad": "Alta - Habilitador",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Estandarizar la comunicación comercial para acelerar prospectos fríos a reuniones de diagnóstico, reduciendo ciclo de venta.",
+          "indicadores": [
+            "Tasa de respuesta en WhatsApp >= 45%",
+            "Tasa de agendamiento sobre respuestas >= 25%",
+            "Respuesta inicial < 15 minutos"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Desplegar kit de plantillas, secuencias de correo y guiones de venta conversacionales en WhatsApp Business.",
+          "indicadores": [
+            "100% plantillas cargadas en CRM/WhatsApp",
+            "Catálogo de servicios actualizado",
+            "Capacitación en respuestas rápidas"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Kit de respuestas rápidas y saludo en WhatsApp Business",
+            "C2. Guiones conversacionales para manejo de objeciones",
+            "C3. Secuencia de correos de seguimiento automatizados"
+          ],
+          "indicadores": [
+            ">= 10 plantillas rápidas guardadas",
+            "Guión de calificación de discovery",
+            "Secuencia de 3 correos redactada"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Configurar perfil de empresa en WhatsApp Business y catálogo",
+            "A1.2. Redactar respuestas rápidas (/bienvenida, /diagnostico, /portafolio)",
+            "A2.1. Redactar guiones para orientar la charla a la cita de diagnóstico",
+            "A2.2. Desarrollar matriz de manejo de objeciones ('no tengo tiempo', 'uso Excel')",
+            "A3.1. Diseñar secuencia de correos de seguimiento",
+            "A3.2. Pruebas A/B de asuntos y apertura"
+          ],
+          "indicadores": [
+            "Perfil WhatsApp 100% en semana 1",
+            "Atajos activos (/bienvenida, etc.)",
+            "Matriz con 5 objeciones clave"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contenidos-educativos",
+      "archivo": "contenidos-educativos-act.json",
+      "titulo": "Contenidos Educativos Visuales y Kit Digital 'Del Papel al Software'",
+      "prioridad": "Media - Nutrición",
+      "niveles": [
+        {
+          "nivel": "FIN",
+          "resumen": "Posicionar la oferta de software mediante material educativo de valor para educar al mercado PyME y generar confianza.",
+          "indicadores": [
+            "30+ descargas del kit digital al mes",
+            "Tasa conversión descarga a cita >= 15%",
+            "3 casos de estudio publicados en el periodo"
+          ]
+        },
+        {
+          "nivel": "PROPOSITO",
+          "resumen": "Producir y distribuir activos visuales (casos Antes/Después, calculadoras) y kit descargable en PDF interactivo.",
+          "indicadores": [
+            "Kit Digital 100% maquetado y listo",
+            "2 contenidos educativos al mes",
+            "Calificación kit >= 4.5/5.0"
+          ]
+        },
+        {
+          "nivel": "COMPONENTES",
+          "resumen": [
+            "C1. Kit digital 'Del Papel al Software' con evaluador de madurez",
+            "C2. Serie de infografías Antes/Después y carruseles para redes",
+            "C3. Repositorio de activos organizados para pauta y WhatsApp"
+          ],
+          "indicadores": [
+            "1 kit digital de 8-12 páginas",
+            "4 piezas visuales/carruseles al mes",
+            "Archivos optimizados < 5MB"
+          ]
+        },
+        {
+          "nivel": "ACTIVIDADES",
+          "resumen": [
+            "A1.1. Diseñar maquetación del kit descargable para móviles",
+            "A1.2. Integrar elementos interactivos y calculadoras simples",
+            "A2.1. Diseñar carruseles e infografías de casos reales",
+            "A2.2. Adaptar gráficos a Meta Ads (1:1, 9:16) y WhatsApp",
+            "A3.1. Organizar banco de recursos por sector industrial",
+            "A3.2. Control de calidad de legibilidad y formato"
+          ],
+          "indicadores": [
+            "Boceto del kit en primeros 10 días",
+            "PDF final < 5MB",
+            "2 carruseles quincenales"
+          ]
+        }
+      ]
+    }
+  ],
+  "cronograma_fast_track": [
+    {
+      "semana": "Semana 1",
+      "fase": "Infraestructura & Pauta Inmediata",
+      "enfoque": "Lanzamiento comercial express para captura de leads desde el día 1.",
+      "actividades": [
+        "Configurar WhatsApp Business con perfil profesional, catálogo y respuestas rápidas (/bienvenida, /diagnostico, /portafolio).",
+        "Lanzar campaña en Google Search para palabras clave de intención ('software control inventario').",
+        "Activar campaña hiperlocal en Meta Ads orientada a dueños de PyMEs locales.",
+        "Cargar paquete legal maestro (Contrato, NDA, SLA) en plataforma de firma digital (SignWell / DocuSign)."
+      ],
+      "hito_facturacion": "Entorno comercial 100% operativo y campañas generando tráfico directo a WhatsApp."
+    },
+    {
+      "semana": "Semana 2",
+      "fase": "Prospección Directa & Discovery",
+      "enfoque": "Iniciación de contactos fríos y primeras citas de Diagnóstico Operativo.",
+      "actividades": [
+        "Ejecutar cadencia outbound de 30 contactos diarios a PyMEs tradicionales (llamadas/mensajes).",
+        "Atender leads entrantes de pauta digital en < 15 minutos mediante plantillas de WhatsApp.",
+        "Conducir las primeras 4-5 sesiones de Diagnóstico Operativo (30-45 min) identificando cuellos de botella.",
+        "Calcular el costo del problema operativo (horas/dinero perdidos) para cada prospecto."
+      ],
+      "hito_facturacion": "Mínimo 4 Diagnósticos Operativos completados con ficha de cliente en CRM."
+    },
+    {
+      "semana": "Semana 3",
+      "fase": "Cierre Comercial & Primer Anticipo",
+      "enfoque": "Presentación de propuestas modulares y recaudación del primer pago.",
+      "actividades": [
+        "Entregar Hojas de Ruta Digitales en menos de 48 horas tras el diagnóstico.",
+        "Estructurar propuestas técnico-comerciales modulares con MVP (Fase 1) con ticket >= $1,400 USD.",
+        "Sostener reuniones de presentación de propuesta comercial resolviendo objeciones con la matriz redactada.",
+        "Enviar paquete legal para firma digital y coordinar la recepción del anticipo del 50%."
+      ],
+      "hito_facturacion": "¡PRIMER CLIENTE CERRADO Y FACTURADO! Recaudo de anticipo y firma de Acta de Inicio."
+    },
+    {
+      "semana": "Semana 4",
+      "fase": "Escalamiento & Secuencias",
+      "enfoque": "Optimizaciones publicitarias y automatización de seguimiento.",
+      "actividades": [
+        "Negativizar términos de búsqueda en Google Search y ajustar audiencias en Meta Ads.",
+        "Implementar la secuencia automatizada de 3 correos de seguimiento a prospectos en propuesta.",
+        "Publicar el primer caso de estudio visual 'Antes vs. Después' (Ej. Inventario manual vs. Software).",
+        "Continuar cadencia outbound y agendamiento de nuevas citas de diagnóstico."
+      ],
+      "hito_facturacion": "Flujo estabilizado de 2 a 3 reuniones de diagnóstico semanales."
+    },
+    {
+      "semana": "Semana 5",
+      "fase": "Activo Magnético & Kit Digital",
+      "enfoque": "Despliegue de material educativo para acelerar la conversión de prospectos fríos.",
+      "actividades": [
+        "Finalizar y publicar el Kit Digital descargable 'Del Papel al Software' (PDF interactivo < 5MB).",
+        "Montar landing page / formulario de descarga con evaluador de madurez digital.",
+        "Lanzar pauta de adquisición para descarga del kit y capturar leads fríos de baja fricción.",
+        "Presentar 2da ronda de propuestas comerciales a prospectos de las semanas 3 y 4."
+      ],
+      "hito_facturacion": "2do Cliente Cerrado y aceleración de leads en etapa media de embudo."
+    },
+    {
+      "semana": "Semana 6",
+      "fase": "Consolidación & Ritmo Recurrente",
+      "enfoque": "Evaluación de KPIs y cumplimiento de meta de facturación Q3-Q4.",
+      "actividades": [
+        "Revisar métricas globales: CPL <= $100 USD, Tasa de conversión propuesta-cierre >= 25%.",
+        "Ajustar presupuesto publicitario reinvirtiendo parte de los anticipos cobrados.",
+        "Ejecutar networking y contacto con al menos 1 gremio o cámara de comercio local.",
+        "Mantener capacidad operativa equilibrada entre desarrollo de proyectos cerrados y prospección."
+      ],
+      "hito_facturacion": "Cumplimiento del objetivo de 3 a 5 proyectos contratados en el periodo."
+    }
+  ]
+}
