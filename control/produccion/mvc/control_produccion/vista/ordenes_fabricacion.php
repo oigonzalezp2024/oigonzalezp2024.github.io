@@ -25,20 +25,20 @@
                     <label for="numero_orden">Número de Orden</label>
                     <input type="text" id="numero_orden" class="form-control input-sm" placeholder="ORD-2026-XXXX" required>
 
-                    <label for="cliente_id">Cliente ID</label>
-                    <input type="number" id="cliente_id" class="form-control input-sm" required>
+                    <label for="cliente_id">Cliente</label>
+                    <select id="cliente_id" class="form-control input-sm" required></select>
 
-                    <label for="asesor_id">Asesor ID</label>
-                    <input type="number" id="asesor_id" class="form-control input-sm" required>
+                    <label for="asesor_id">Asesor</label>
+                    <select id="asesor_id" class="form-control input-sm" required></select>
 
-                    <label for="fabricante_id">Fabricante ID</label>
-                    <input type="number" id="fabricante_id" class="form-control input-sm" required>
+                    <label for="fabricante_id">Fabricante</label>
+                    <select id="fabricante_id" class="form-control input-sm" required></select>
 
-                    <label for="operario_id">Operario ID (Opcional)</label>
-                    <input type="number" id="operario_id" class="form-control input-sm">
+                    <label for="operario_id">Operario (Opcional)</label>
+                    <select id="operario_id" class="form-control input-sm"></select>
 
-                    <label for="producto_id">Producto ID</label>
-                    <input type="number" id="producto_id" class="form-control input-sm" required>
+                    <label for="producto_id">Producto</label>
+                    <select id="producto_id" class="form-control input-sm" required></select>
 
                     <label for="unidades">Unidades</label>
                     <input type="number" id="unidades" class="form-control input-sm" value="1" required>
@@ -60,24 +60,6 @@
 
                     <label for="fecha_entrega">Fecha de Entrega</label>
                     <input type="date" id="fecha_entrega" class="form-control input-sm" required>
-
-                    <label for="costo_subtotal">Costo Subtotal</label>
-                    <input type="number" step="0.01" id="costo_subtotal" class="form-control input-sm" value="0.00">
-
-                    <label for="costo_mod">Costo MOD</label>
-                    <input type="number" step="0.01" id="costo_mod" class="form-control input-sm" value="0.00">
-
-                    <label for="costo_cif">Costo CIF</label>
-                    <input type="number" step="0.01" id="costo_cif" class="form-control input-sm" value="0.00">
-
-                    <label for="porcentaje_utilidad">% Utilidad</label>
-                    <input type="number" step="0.01" id="porcentaje_utilidad" class="form-control input-sm" value="0.00">
-
-                    <label for="monto_utilidad">Monto Utilidad</label>
-                    <input type="number" step="0.01" id="monto_utilidad" class="form-control input-sm" value="0.00">
-
-                    <label for="monto_total">Monto Total</label>
-                    <input type="number" step="0.01" id="monto_total" class="form-control input-sm" value="0.00">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevo">Agregar</button>
@@ -100,20 +82,20 @@
                     <label for="numero_ordenu">Número de Orden</label>
                     <input type="text" id="numero_ordenu" class="form-control input-sm" required>
 
-                    <label for="cliente_idu">Cliente ID</label>
-                    <input type="number" id="cliente_idu" class="form-control input-sm" required>
+                    <label for="cliente_idu">Cliente</label>
+                    <select id="cliente_idu" class="form-control input-sm" required></select>
 
-                    <label for="asesor_idu">Asesor ID</label>
-                    <input type="number" id="asesor_idu" class="form-control input-sm" required>
+                    <label for="asesor_idu">Asesor</label>
+                    <select id="asesor_idu" class="form-control input-sm" required></select>
 
-                    <label for="fabricante_idu">Fabricante ID</label>
-                    <input type="number" id="fabricante_idu" class="form-control input-sm" required>
+                    <label for="fabricante_idu">Fabricante</label>
+                    <select id="fabricante_idu" class="form-control input-sm" required></select>
 
-                    <label for="operario_idu">Operario ID</label>
-                    <input type="number" id="operario_idu" class="form-control input-sm">
+                    <label for="operario_idu">Operario</label>
+                    <select id="operario_idu" class="form-control input-sm"></select>
 
-                    <label for="producto_idu">Producto ID</label>
-                    <input type="number" id="producto_idu" class="form-control input-sm" required>
+                    <label for="producto_idu">Producto</label>
+                    <select id="producto_idu" class="form-control input-sm" required></select>
 
                     <label for="unidadesu">Unidades</label>
                     <input type="number" id="unidadesu" class="form-control input-sm" required>
@@ -168,10 +150,58 @@
             $('#tabla').load(url);
         }
 
+        function cargarDesplegablesFormulario() {
+            $.ajax({
+                url: '../modelo/obtener_opciones_ordenes.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status === 'success') {
+                        var data = res.data;
+
+                        function llenarSelect(selectId, items, valueKey, textKey, defaultText, esOpcional) {
+                            var $select = $(selectId);
+                            $select.empty();
+                            
+                            if (esOpcional) {
+                                $select.append('<option value="">' + defaultText + '</option>');
+                            } else {
+                                $select.append('<option value="" disabled selected>' + defaultText + '</option>');
+                            }
+
+                            $.each(items, function (i, item) {
+                                var texto = item[textKey];
+                                if (item.codigo_referencia) {
+                                    texto += ' (' + item.codigo_referencia + ')';
+                                }
+                                $select.append('<option value="' + item[valueKey] + '">' + texto + '</option>');
+                            });
+                        }
+
+                        // Modal Crear
+                        llenarSelect('#cliente_id', data.clientes, 'id_persona', 'nombre', '-- Seleccione Cliente --', false);
+                        llenarSelect('#asesor_id', data.asesores, 'id_persona', 'nombre', '-- Seleccione Asesor --', false);
+                        llenarSelect('#fabricante_id', data.fabricantes, 'id_persona', 'nombre', '-- Seleccione Fabricante --', false);
+                        llenarSelect('#operario_id', data.operarios, 'id_persona', 'nombre', '-- Sin Asignar --', true);
+                        llenarSelect('#producto_id', data.productos, 'id_producto', 'nombre_producto', '-- Seleccione Producto --', false);
+
+                        // Modal Edición
+                        llenarSelect('#cliente_idu', data.clientes, 'id_persona', 'nombre', '-- Seleccione Cliente --', false);
+                        llenarSelect('#asesor_idu', data.asesores, 'id_persona', 'nombre', '-- Seleccione Asesor --', false);
+                        llenarSelect('#fabricante_idu', data.fabricantes, 'id_persona', 'nombre', '-- Seleccione Fabricante --', false);
+                        llenarSelect('#operario_idu', data.operarios, 'id_persona', 'nombre', '-- Sin Asignar --', true);
+                        llenarSelect('#producto_idu', data.productos, 'id_producto', 'nombre_producto', '-- Seleccione Producto --', false);
+                    }
+                }
+            });
+        }
+
         $(document).ready(function () {
             cargarTabla();
+            cargarDesplegablesFormulario(); // Ejecución al inicializar la vista
 
             $('#guardarnuevo').click(function () {
+                // Mantiene la recolección de .val() de los elementos
                 var numero_orden = $('#numero_orden').val();
                 var cliente_id = $('#cliente_id').val();
                 var asesor_id = $('#asesor_id').val();
@@ -182,14 +212,7 @@
                 var estado = $('#estado').val();
                 var fecha_pedido = $('#fecha_pedido').val();
                 var fecha_entrega = $('#fecha_entrega').val();
-                var costo_subtotal = $('#costo_subtotal').val();
-                var costo_mod = $('#costo_mod').val();
-                var costo_cif = $('#costo_cif').val();
-                var porcentaje_utilidad = $('#porcentaje_utilidad').val();
-                var monto_utilidad = $('#monto_utilidad').val();
-                var monto_total = $('#monto_total').val();
-
-                agregardatos(numero_orden, cliente_id, asesor_id, fabricante_id, operario_id, producto_id, unidades, estado, fecha_pedido, fecha_entrega, costo_subtotal, costo_mod, costo_cif, porcentaje_utilidad, monto_utilidad, monto_total);
+                agregardatos(numero_orden, cliente_id, asesor_id, fabricante_id, operario_id, producto_id, unidades, estado, fecha_pedido, fecha_entrega);
             });
 
             $('#actualizadatos').click(function () {
